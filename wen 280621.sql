@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-06-2021 a las 07:01:11
+-- Tiempo de generación: 28-06-2021 a las 21:42:49
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -120,12 +120,15 @@ CREATE TABLE `eventos` (
   `id_recurso` int(11) DEFAULT NULL,
   `nombre_actividad` varchar(50) DEFAULT NULL,
   `descripcion` text DEFAULT NULL,
-  `fecha_creacion` datetime DEFAULT NULL,
   `encargado` text DEFAULT NULL,
   `telefono_encargado` varchar(12) DEFAULT NULL,
   `imagen` text DEFAULT NULL,
   `cantidad_recurso` int(11) DEFAULT NULL,
-  `estatus_evento` tinyint(1) DEFAULT NULL
+  `estatus_evento` tinyint(1) DEFAULT NULL,
+  `fecha_inicio` date DEFAULT NULL,
+  `fecha_fin` date DEFAULT NULL,
+  `hora_inicio` time DEFAULT NULL,
+  `hora_fin` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
