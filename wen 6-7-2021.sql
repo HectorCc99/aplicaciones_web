@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-06-2021 a las 21:42:49
+-- Tiempo de generación: 07-07-2021 a las 00:34:53
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -146,7 +146,8 @@ CREATE TABLE `grupo` (
   `id_espacio` int(11) DEFAULT NULL,
   `id_horario` int(11) DEFAULT NULL,
   `semestre` varchar(50) DEFAULT NULL,
-  `estatus_grupo` tinyint(1) DEFAULT NULL
+  `estatus_grupo` tinyint(1) DEFAULT NULL,
+  `telefono_prof` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -207,6 +208,19 @@ CREATE TABLE `pres_recurso` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `recurso_evento`
+--
+
+CREATE TABLE `recurso_evento` (
+  `id_recurso` int(11) NOT NULL,
+  `id_evento` int(11) NOT NULL,
+  `cantidad` int(11) DEFAULT NULL,
+  `notas` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `recurso_recreativo`
 --
 
@@ -243,7 +257,8 @@ CREATE TABLE `usuario` (
   `correo` varchar(100) DEFAULT NULL,
   `contrasenia` text DEFAULT NULL,
   `id_carrera` int(11) DEFAULT NULL,
-  `estatus_usuario` tinyint(1) DEFAULT NULL
+  `estatus_usuario` tinyint(1) DEFAULT NULL,
+  `telefono` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -351,6 +366,13 @@ ALTER TABLE `pres_recurso`
   ADD PRIMARY KEY (`id_prestamo_ma`),
   ADD KEY `id_recurso` (`id_recurso`),
   ADD KEY `id_prestamo` (`id_prestamo`);
+
+--
+-- Indices de la tabla `recurso_evento`
+--
+ALTER TABLE `recurso_evento`
+  ADD PRIMARY KEY (`id_recurso`,`id_evento`),
+  ADD KEY `id_evento` (`id_evento`);
 
 --
 -- Indices de la tabla `recurso_recreativo`
@@ -532,6 +554,13 @@ ALTER TABLE `pres_espacio`
 ALTER TABLE `pres_recurso`
   ADD CONSTRAINT `pres_recurso_ibfk_1` FOREIGN KEY (`id_recurso`) REFERENCES `recurso_recreativo` (`id_recurso`),
   ADD CONSTRAINT `pres_recurso_ibfk_2` FOREIGN KEY (`id_prestamo`) REFERENCES `prestamo` (`id_prestamo`);
+
+--
+-- Filtros para la tabla `recurso_evento`
+--
+ALTER TABLE `recurso_evento`
+  ADD CONSTRAINT `recurso_evento_ibfk_1` FOREIGN KEY (`id_recurso`) REFERENCES `recurso_recreativo` (`id_recurso`),
+  ADD CONSTRAINT `recurso_evento_ibfk_2` FOREIGN KEY (`id_evento`) REFERENCES `eventos` (`id_evento`);
 
 --
 -- Filtros para la tabla `usuario`
