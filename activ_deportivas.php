@@ -109,7 +109,7 @@
                                     <label for="nombre" class="col-form-label">Nombre:</label>
                                 </div>
                                 <div class="col-sm-9" id="nombre_ac_m">
-
+                                    <!-- ajax-->
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -126,7 +126,7 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <select  name="tipos" id="tipos" class="form-control">
-
+                                        <!-- ajax-->
                                     </select>
                                 </div>
                             </div>
