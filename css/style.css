@@ -62,6 +62,15 @@ a:focus {
     box-shadow: none;
 }
 
+.select {
+    height: 30px;
+    padding: 15px;
+    background: none;
+    border-radius: 5;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
 .container-fluid {
     max-width: 1366px;
 }
@@ -521,6 +530,7 @@ a:focus {
     position: relative;
     font-size: 40px;
     font-weight: 700;
+    text-transform: uppercase
 }
 
 @media (max-width: 767.98px) {
@@ -1479,6 +1489,7 @@ a:focus {
     background: none;
     border-radius: 5;
 }
+
 .contact .contact-form textarea {
     height: 150px;
     padding: 15px;
@@ -1506,6 +1517,7 @@ a:focus {
     border-radius: 5;
     transition: .3s;
 }
+
 .registro .registro-form .hero-btm .btm {
     padding: 12px 25px;
     font-size: 14px;

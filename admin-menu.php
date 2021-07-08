@@ -112,7 +112,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="buttons"> 
-                        <a href="#" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 1;">
+                        <a href="./activ_deportivas.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 1;">
                             <img src="./icons/sports.svg" alt="" width="80px">
                             <br><label>Actividades Deportivas</label>
                         </a>
@@ -162,7 +162,7 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="buttons"> 
-                        <a href="#" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 7;">
+                        <a href="./admin-inscripciones.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 7;">
                             <img src="./icons/monitor.svg" alt="" width="80px">
                             <br><label>Inscripciones a Deportes</label>
                         </a> 
@@ -188,7 +188,7 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="buttons"> 
-                        <a href="#" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 10;">
+                        <a href="./admin-historial-prestamos.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 10;">
                             <img src="./icons/table.svg" alt="" width="80px">
                             <br><label>Historial de Préstamos</label>
                         </a> 
