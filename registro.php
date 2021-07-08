@@ -1,56 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <title>YOOGA - Free Yoga Website Template</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Free Website Template" name="keywords">
-        <meta content="Free Website Template" name="description">
-
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
-
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Registro</title>
+        <!--Bootstrap CSS-->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
         <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
         <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet"> 
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
     </head>
-
     <body>
         <!-- Top Bar Start -->
-        <div class="top-bar d-none d-md-block">
+        <div class="top-bar d-none d-md-block bg-primary">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="top-bar-left">
                             <div class="text">
-                                <i class="far fa-clock"></i>
-                                <h2>8:00 - 9:00</h2>
-                                <p>Mon - Fri</p>
+                                <img src="./icons/mail.png" alt="" width="20px">
+                                <h2 class="ml-2">osc_basquet@hotmail.com</h2>
                             </div>
                             <div class="text">
-                                <i class="fa fa-phone-alt"></i>
-                                <h2>+123 456 7890</h2>
-                                <p>For Appointment</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="top-bar-right">
-                            <div class="social">
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-facebook-f"></i></a>
-                                <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <img src="./icons/phone.png" alt="" width="18px">
+                                <p></p>
+                                <h2>5623 1813</h2>
                             </div>
                         </div>
                     </div>
@@ -58,40 +38,26 @@
             </div>
         </div>
         <!-- Top Bar End -->
-
         <!-- Nav Bar Start -->
-        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="navbar navbar-expand-lg bg-primary navbar-dark">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">Y<span>oo</span>ga</a>
+                <a href="index.html" class="navbar-brand">A<span>ctiv</span>F<span>esc</span></a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
-                        <a href="price.html" class="nav-item nav-link">Price</a>
-                        <a href="class.html" class="nav-item nav-link">Class</a>
-                        <a href="team.html" class="nav-item nav-link">Trainer</a>
-                        <a href="portfolio.html" class="nav-item nav-link">Pose</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
-                            <div class="dropdown-menu">
-                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                                <a href="single.html" class="dropdown-item">Blog Detail</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                        <a href="index.php" class="nav-item nav-link mr-5">Inicio</a>
+                        <a href="deportes.php" class="nav-item nav-link mr-5">Deportes</a>
+                        <a href="prestamos.php" class="nav-item nav-link mr-5">Préstamos</a>
+                        <a href="registro.php" class="nav-item nav-link mr-5">Registro</a>
+                        <a href="login.php" class="nav-item nav-link mr-5">Iniciar Sesión</a>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Nav Bar End -->
-
-
-        <!-- Page Header Start -->
+        <!-- Page Header Start 
         <div class="page-header">
             <div class="container">
                 <div class="row">
@@ -105,15 +71,13 @@
                 </div>
             </div>
         </div>
-        <!-- Page Header End -->
-
-
-        <!-- Contact Start -->
-        <div class="contact">
+        Page Header End -->
+        <!-- Registro Start -->
+        <div class="registro mt-5">
             <div class="container">
                 <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>Registro de alumnos</p>
-                    <h2>Por favor ingresa tus datos</h2>
+                    <h1>Registro</h1>
+                    <p class="mt-2">Por favor ingresa los siguientes datos</p>
                 </div>
                 <div class="row">
                     <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
@@ -122,7 +86,7 @@
                             <form name="registro" id="registro" novalidate="novalidate">
                                 <div class="registro-form row">
                                     <div class="col-lg-2">
-                                        <label for="nombre">Nombre:</label>
+                                        <label for="nombre" class="col-form-label">Nombre:</label>
                                     </div>
                                     <div class="col-lg-4">
                                         <input type="text" class="form-control" id="name" placeholder="Nombre(s)" required="required" data-validation-required-message="Por favor, ingresa tu nombre" />
@@ -138,15 +102,15 @@
                                     </div>
                                 </div>
                                 <div class="registro-form row">
-                                    <div class="col-lg-3">
-                                        <label for="no_cuenta">No. Cuenta:</label>
+                                    <div class="col-lg-2">
+                                        <label for="no_cuenta" class="col-form-label">No. Cuenta:</label>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-4">
                                         <input type="text" class="form-control" id="cuenta" placeholder="Número de cuenta" required="required" data-validation-required-message="Por favor, ingresa tu número de cuenta" />
                                         <p class="help-block text-danger"></p> 
                                     </div>
                                     <div class="col-lg-3">
-                                        <label for="carrera">Carrera:</label>
+                                        <label for="carrera" class="col-form-label">Carrera:</label>
                                     </div>
                                     <div class="col-lg-3">
                                         <select name="carrera" id="carrera" class="form-control">
@@ -172,10 +136,10 @@
                                     </div>
                                 </div> 
                                 <div class="registro-form row">
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-2">
                                         <label for="password">Contraseña:</label>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-4">
                                         <input type="password" class="form-control" id="clave" placeholder="Ingrese su contraseña" required="required" data-validation-required-message="Escriba una contraseña" />
                                     <p class="help-block text-danger"></p>
                                     </div>
@@ -187,9 +151,9 @@
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>
-                                <div class="botones">
-                                    <button class="boton" type="reset" id="limpar">Cancelar</button>
-                                    <button class="boton" type="submit" id="sendMessageButton">Registrarse</button>
+                                <div class="btn">
+                                    <button class="btn btn-danger" type="reset" id="cancelar">Cancelar</button>
+                                    <button class="btn btn-primary" type="button" id="registrar">Registrarse</button>
                                 </div>
                             </form>
                         </div>
@@ -197,45 +161,31 @@
                 </div>
             </div>
         </div>
-        <!-- Contact End -->
-
-
+        <!-- Registro End -->
         <!-- Footer Start -->
         <div class="footer wow fadeIn" data-wow-delay="0.3s">
             <div class="container-fluid">
                 <div class="container">
                     <div class="footer-info">
-                        <a href="index.html" class="footer-logo">Y<span>oo</span>ga</a>
-                        <h3>123 Street, New York, USA</h3>
+                        <a href="index.html" class="footer-logo mt-0">A<span>ctiv</span>F<span>esc</span></a>
+                        <h3>Edificio de Extensión Universitaria, Km. 2.5 Carretera cuautitlán Teoloyucan, San Sebastián Xhala, Cuautitlán Izcalli, Edo. de México. CP. 54714</h3>
                         <div class="footer-menu">
-                            <p>+012 345 67890</p>
-                            <p>info@example.com</p>
-                        </div>
-                        <div class="footer-social">
-                            <a href=""><i class="fab fa-twitter"></i></a>
-                            <a href=""><i class="fab fa-facebook-f"></i></a>
-                            <a href=""><i class="fab fa-youtube"></i></a>
-                            <a href=""><i class="fab fa-instagram"></i></a>
-                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                            <p>5623 1813</p>
+                            <p>osc_basquet@hotmail.com</p>
                         </div>
                     </div>
                 </div>
-                <div class="container copyright">
+                <div class="container copyright mt-0">
                     <div class="row">
-                        <div class="col-md-6">
-                            <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                        <div class="col-md-12">
+                            <p>&copy; <a href="#"></a>Todos los derechos reservados</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Footer End -->
-
-        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
+        <a href="#" class="back-to-top"><img src="./icons/arrow-up.png" alt="" width="40px"></a>
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
