@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -64,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="contenedor_actividades">
                 <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
                     <table class="table table-hover table-striped table-sm">
                         <thead>
@@ -76,67 +77,8 @@
                             <th scope="col">Estatus</th>
                             <th scope="col">Opciones</th>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Basketbol</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                                <td>Colaborativo</td>
-                                <td>07-07-2021</td>
-                                <td>Activo</td>
-                                <td>
-                                    <!--BOTON OPCIONES-->
-                                    <div class="dropdown">
-                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Opciones
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                                            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#modalEditar">Editar</button>
-                                            <button class="dropdown-item" type="button">Eliminar</button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Karate</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                                <td>Combate</td>
-                                <td>07-07-2021</td>
-                                <td>Activo</td>
-                                <td>
-                                    <!--BOTON OPCIONES-->
-                                    <div class="dropdown">
-                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Opciones
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                                            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#modalEditar">Editar</button>
-                                            <button class="dropdown-item" type="button">Eliminar</button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Atletismo</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
-                                <td>Individual</td>
-                                <td>07-07-2021</td>
-                                <td>Activo</td>
-                                <td>
-                                    <!--BOTON OPCIONES-->
-                                    <div class="dropdown">
-                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Opciones
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                                            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#modalEditar">Editar</button>
-                                            <button class="dropdown-item" type="button">Eliminar</button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+                        <tbody id="tbl-actividades">
+
                         </tbody>
                     </table>
                 </div>
@@ -158,45 +100,49 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <p class="font-weight-bold">Ingrese los siguientes datos:</p>
+                                    <div id="contenedor_act"></div>
+
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-3">
                                     <label for="nombre" class="col-form-label">Nombre:</label>
                                 </div>
-                                <div class="col-sm-9">
-                                    <input type="text" name="nombre" id="nombre" class="form-control">
+                                <div class="col-sm-9" id="nombre_ac_m">
+
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-3">
+                                <div class="col-sm-3" >
                                     <label for="descripcion" class="col-form-label">Descripción:</label>
                                 </div>
-                                <div class="col-sm-9">
-                                    <textarea class="form-control" name="desc" id="desc" rows="3"></textarea>
+                                <div class="col-sm-9" id="descr_m">
+
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-3">
+                                <div class="col-sm-3" >
                                     <label for="categoria" class="col-form-label">Categoría:</label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" name="cat" id="cat" class="form-control">
+                                    <select  name="tipos" id="tipos" class="form-control">
+
+                                    </select>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <div class="col-sm-3">
+                            <!--<div class="form-group row">
+                                <div class="col-sm-3" >
                                     <label for="estatus" class="col-form-label">Estatus:</label>
                                 </div>
-                                <div class="col-sm-9">
-                                    <input type="text" name="status" id="status" class="form-control">
+                                <div class="col-sm-9" id="estatus_m">
+
                                 </div>
-                            </div>
+                            </div>-->
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="editar-datos">Guardar</button>
+                        <button type="button" class="btn btn-primary editar-datos" data-dismiss="modal" id="editar-datos">Guardar</button>
                     </div>
                 </div>
             </div>
@@ -239,5 +185,6 @@
         <script src="mail/contact.js"></script>
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="js/actividades_deportivas.js"></script>
     </body>
 </html>
