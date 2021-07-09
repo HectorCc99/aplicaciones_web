@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Historial de Préstamos</title>
+        <title>Préstamos de Materiales</title>
         <!--Bootstrap CSS-->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <!-- Google Font -->
@@ -41,33 +41,28 @@
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-primary navbar-dark">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">A<span>ctiv</span>F<span>esc</span></a>
+                <a href="index.php" class="navbar-brand">A<span>ctiv</span>F<span>esc</span></a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                    <a href="index.html" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
+                    <a href="index.php" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
                     <a href="admin-menu.php" class="nav-item nav-link mr-5"><img src="./icons/menu.svg" alt="" width="18px"><span class="ml-2">Menú</span></a>
-                    <a href="perfil.html" class="nav-item nav-link mr-5"><img src="./icons/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
+                    <a href="admin-perfil.php" class="nav-item nav-link mr-5"><img src="./icons/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Nav Bar End -->
-        <!-- INICIO TABLAS-->
+        <!-- INICIO TABLA-->
         <div class="container mt-5">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                        <h1 class="mt-5 mb-3"><strong>Historial de Préstamos</strong></h1>
+                        <h1 class="mt-5 mb-3"><strong>Materiales</strong></h1>
+                        <p style="font-size: 20px; text-transform: uppercase;">Solicitudes de Préstamos</p>
                     </div>
-                </div>
-            </div>
-            <!-- INICIO SOLICITUDES-->
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="mb-3"><strong>Materiales</strong></h2>
                 </div>
             </div>
             <div class="row">
@@ -103,109 +98,54 @@
                     <table class="table table-hover table-striped table-sm mt-3">
                         <thead>
                             <th scope="col">#</th>
-                            <th scope="col">Nombre</th>
+                            <th scope="col">Nombre del Alumno</th>
+                            <th scope="col">Material</th>
                             <th scope="col">Fecha</th>
                             <th scope="col">Hora de Inicio</th>
                             <th scope="col">Hora de Término</th>
-                            <th scope="col">Notas</th>
+                            <th scope="col">Estatus</th>
                         </thead>
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
+                                <td>Viviana García</td>
                                 <td>Balón</td>
                                 <td>07-07-2021</td>
                                 <td>12:00</td>
                                 <td>14:00</td>
-                                <td>Devuelto en buenas condiciones</td>
+                                <td>
+                                    <select name="estatus" id="estatus" class="select">
+                                        <option value="0">Aprobada</option>
+                                        <option value="1">Rechaza</option>
+                                    </select>
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
+                                <td>Julian Bautista</td>
                                 <td>Colchoneta</td>
                                 <td>07-07-2021</td>
                                 <td>11:00</td>
                                 <td>13:00</td>
-                                <td>Devuelto en buenas condiciones</td>
+                                <td>
+                                    <select name="estatus" id="estatus" class="select">
+                                        <option value="0">Aprobada</option>
+                                        <option value="1">Rechaza</option>
+                                    </select>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <!-- FIN SOLICITUDES-->
-            <!-- INICIO ACEPTADAS -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="mb-3 mt-5"><strong>Áreas Deportivas</strong></h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="font-weight-bold">Seleccione una opción:</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-2">
-                    <label for="area">Área/Espacio:</label>
-                </div>
-                <div class="col-lg-4">
-                    <select name="area" id="area" class="select">
-                        <option>Todas</option>
-                        <option>Cancha de Fútbol</option>
-                        <option>Cancha de Basketbol</option>
-                        <option>Área de Fútbol Américano</option>
-                    </select>
-                </div>
-                <div class="col-lg-2">
-                    <label for="fecha">fecha:</label>
-                </div>
-                <div class="col-lg-4">
-                    <select name="fecha" id="fecha" class="select">
-                        <option>06-07-2021</option>
-                        <option>07-07-2021</option>
-                        <option>08-07-2021</option>                        
-                    </select>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3 mt-3">
-                    <table class="table table-hover table-striped table-sm">
-                        <thead>
-                            <th scope="col">#</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Fecha</th>
-                            <th scope="col">Hora de Inicio</th>
-                            <th scope="col">Hora de Término</th>
-                            <th scope="col">Notas</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Canchas de Fútbol</td>
-                                <td>08-07-2021</td>
-                                <td>10:00</td>
-                                <td>12:00</td>
-                                <td>Limpia</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Canchas de Basketbol</td>
-                                <td>08-07-2021</td>
-                                <td>09:00</td>
-                                <td>11:00</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <!-- INICIO ACEPTADAS -->
         </div>
-        <!-- FIN TABLAS-->
+        <!-- FIN TABLA-->
         <!-- Footer Start -->
         <div class="footer wow fadeIn" data-wow-delay="0.3s">
             <div class="container-fluid">
                 <div class="container">
                     <div class="footer-info">
-                        <a href="index.html" class="footer-logo mt-0">A<span>ctiv</span>F<span>esc</span></a>
+                        <a href="index.php" class="footer-logo mt-0">A<span>ctiv</span>F<span>esc</span></a>
                         <h3>Edificio de Extensión Universitaria, Km. 2.5 Carretera cuautitlán Teoloyucan, San Sebastián Xhala, Cuautitlán Izcalli, Edo. de México. CP. 54714</h3>
                         <div class="footer-menu">
                             <p>5623 1813</p>

@@ -86,15 +86,15 @@
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-primary navbar-dark">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">A<span>ctiv</span>F<span>esc</span></a>
+                <a href="index.php" class="navbar-brand">A<span>ctiv</span>F<span>esc</span></a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
-                        <a href="about.html" class="nav-item nav-link mr-5"><img src="./icons/menu.svg" alt="" width="18px"><span class="ml-2">Menú</span></a>
-                        <a href="service.html" class="nav-item nav-link mr-5"><img src="./icons/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
+                        <a href="index.php" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
+                        <a href="admin-menu.php" class="nav-item nav-link mr-5"><img src="./icons/menu.svg" alt="" width="18px"><span class="ml-2">Menú</span></a>
+                        <a href="admin-perfil.php" class="nav-item nav-link mr-5"><img src="./icons/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="buttons"> 
-                        <a href="#" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 2;">
+                        <a href="./admin-eventos.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 2;">
                             <img src="./icons/concert.svg" alt="" width="80px">
                             <br><label>Información de Eventos</label>
                         </a> 
@@ -128,7 +128,7 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="buttons"> 
-                        <a href="#" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 3;">
+                        <a href="./inventario_material.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 3;">
                             <img src="./icons/inventory.svg" alt="" width="80px">
                             <br><label>Inventario de utileria</label>
                         </a> 
@@ -146,7 +146,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="buttons"> 
-                        <a href="#" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 5;">
+                        <a href="./admin-prestamos-materiales.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 5;">
                             <img src="./icons/materials.svg" alt="" width="80px">
                             <br><label>Préstamos de Materiales</label>
                         </a>
@@ -154,9 +154,9 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="buttons"> 
-                        <a href="#" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 6;">
+                        <a href="./admin-reservaciones-areas.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 6;">
                             <img src="./icons/field.svg" alt="" width="80px">
-                            <br><label>Préstamos de Áreas Deportivas</label>
+                            <br><label>Reservaciones de Áreas Deportivas</label>
                         </a> 
                     </div>
                 </div>
@@ -170,7 +170,7 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="buttons">
-                        <a href="#" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 8;">
+                        <a href="./admin-documentacion-alumnos.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 8;">
                             <img src="./icons/doc.svg" alt="" width="80px">
                             <br><label>Documentación de Alumnos</label>
                         </a> 
@@ -180,7 +180,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="buttons"> 
-                        <a href="#" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 9;">
+                        <a href="./admin-devoluciones.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 9;">
                             <img src="./icons/health-check.svg" alt="" width="80px">
                             <br><label>Devolución de Materiales</label>
                         </a> 
@@ -202,7 +202,7 @@
             <div class="container-fluid">
                 <div class="container">
                     <div class="footer-info">
-                        <a href="index.html" class="footer-logo mt-0">A<span>ctiv</span>F<span>esc</span></a>
+                        <a href="index.php" class="footer-logo mt-0">A<span>ctiv</span>F<span>esc</span></a>
                         <h3>Edificio de Extensión Universitaria, Km. 2.5 Carretera cuautitlán Teoloyucan, San Sebastián Xhala, Cuautitlán Izcalli, Edo. de México. CP. 54714</h3>
                         <div class="footer-menu">
                             <p>5623 1813</p>
