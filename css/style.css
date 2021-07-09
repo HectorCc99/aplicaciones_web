@@ -1484,7 +1484,7 @@ a:focus {
 }
 
 .registro .registro-form select {
-    height: 30px;
+    height: auto;
     padding: 15px;
     background: none;
     border-radius: 5;

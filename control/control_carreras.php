@@ -8,3 +8,11 @@ function getListaCarreras(){
     return $json_data;
 }
 
+
+function AgregaCarrera($nombre){
+    include "../model/carreras.php";
+    $obj_carreras= new carreras();
+    $obj_carreras->setNombreCarrera($nombre);
+    return $obj_carreras ->crearcarrera() ? "registro exitoso" :"Error al registrar carrera";
+}
+

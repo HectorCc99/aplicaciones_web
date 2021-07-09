@@ -113,11 +113,10 @@
                                         <label for="carrera" class="col-form-label">Carrera:</label>
                                     </div>
                                     <div class="col-lg-3">
-                                        <select name="carrera" id="carrera" class="form-control">
-                                            <option>Informática</option>
-                                            <option>Administración</option>
-                                            <option>Contaduría</option>
+                                        <select  name="carrera" id="carreras" class="form-control">
+                                            <!-- ajax-->
                                         </select>
+
                                     </div>
                                 </div>
                                 <div class="registro-form row">
@@ -153,7 +152,7 @@
                                 </div>
                                 <div class="btn">
                                     <button class="btn btn-danger" type="reset" id="cancelar">Cancelar</button>
-                                    <button class="btn btn-primary" type="button" id="registrar">Registrarse</button>
+                                    <button class="btn btn-primary registrar" type="button" id="registrar">Registrarse</button>
                                 </div>
                             </form>
                         </div>
@@ -201,5 +200,7 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="js/valida_form.js"></script>
+        <script src="js/registro.js"></script>
     </body>
 </html>
