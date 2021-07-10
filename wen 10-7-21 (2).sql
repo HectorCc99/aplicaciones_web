@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-07-2021 a las 19:30:41
--- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.4.10
+-- Tiempo de generación: 10-07-2021 a las 20:13:32
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,6 @@ CREATE TABLE `actividad_recreativa` (
   `nombre_actividad` varchar(100) DEFAULT NULL,
   `descripcion` text DEFAULT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
-  `telefono_encargado` varchar(12) DEFAULT NULL,
   `tipo_actividad` int(11) DEFAULT NULL,
   `estatus_actividad` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -162,7 +161,7 @@ CREATE TABLE `grupo` (
   `id_horario` int(11) DEFAULT NULL,
   `semestre` varchar(50) DEFAULT NULL,
   `estatus_grupo` tinyint(1) DEFAULT NULL,
-  `telefono_prof` int(11) DEFAULT NULL
+  `telefono_prof` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -273,7 +272,7 @@ CREATE TABLE `usuario` (
   `contrasenia` text DEFAULT NULL,
   `id_carrera` int(11) DEFAULT NULL,
   `estatus_usuario` tinyint(1) DEFAULT NULL,
-  `telefono` int(11) DEFAULT NULL
+  `telefono` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
