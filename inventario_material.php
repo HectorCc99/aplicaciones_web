@@ -42,15 +42,15 @@
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-primary navbar-dark">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">A<span>ctiv</span>F<span>esc</span></a>
+                <a href="index.php" class="navbar-brand">A<span>ctiv</span>F<span>esc</span></a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
+                        <a href="index.php" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
                         <a href="admin-menu.php" class="nav-item nav-link mr-5"><img src="./icons/menu.svg" alt="" width="18px"><span class="ml-2">Menú</span></a>
-                        <a href="perfil.html" class="nav-item nav-link mr-5"><img src="./icons/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
+                        <a href="admin-perfil.php" class="nav-item nav-link mr-5"><img src="./icons/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
                     </div>
                 </div>
             </div>
@@ -71,15 +71,24 @@
                         <thead>
                             <th scope="col">Material</th>
                             <th scope="col">Piezas</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Eliminar</th>
+                            <th scope="col">Opciones</th>
                         </thead>
-                        <tbody id="tbl-actividades">
+                        <tbody id="tbl-materiales">
                             <tr>
                                 <td>Balón de soccer</td>
                                 <td>25</td>
-                                <td><button type="button" data-toggle="modal" data-target="#modalEditar">Editar</button></td>
-                                <td><button type="button">Eliminar</button></td>
+                                <td>
+                                    <!--BOTON OPCIONES-->
+                                    <div class="dropdown">
+                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Opciones
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                                            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#modalEditar">Editar</button>
+                                            <button class="dropdown-item" type="button">Eliminar</button>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -106,12 +115,12 @@
                         <form action=""  id="">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <p class="font-weight-bold">Ingrese los datos</p>
+                                    <p class="font-weight-bold">Ingrese los datos:</p>
                                     <div id="contenedor_act"></div>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-3">
+                                <div class="col-sm-2">
                                     <label for="material" class="col-form-label">Material:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
@@ -119,11 +128,11 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-3" >
+                                <div class="col-sm-2" >
                                     <label for="piezas" class="col-form-label">Piezas:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="piezas" id="piezas" class="form-control ml-1">
+                                    <input type="number" name="piezas" id="piezas" class="form-control ml-1">
                                 </div>
                             </div>
                         </form>
@@ -151,7 +160,7 @@
                         <form action="" id="" autocomplete="off">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <p class="font-weight-bold">Ingrese los siguientes datos</p>
+                                    <p class="font-weight-bold">Ingrese los siguientes datos:</p>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -167,7 +176,7 @@
                                     <label for="piezas" class="col-form-label ml-1">Piezas:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="piezas" id="" class="form-control ml-1">
+                                    <input type="number" name="piezas" id="" class="form-control ml-1">
                                 </div>
                             </div>
                         <div class="modal-footer">
@@ -185,7 +194,7 @@
             <div class="container-fluid">
                 <div class="container">
                     <div class="footer-info">
-                        <a href="index.html" class="footer-logo mt-0">A<span>ctiv</span>F<span>esc</span></a>
+                        <a href="index.php" class="footer-logo mt-0">A<span>ctiv</span>F<span>esc</span></a>
                         <h3>Edificio de Extensión Universitaria, Km. 2.5 Carretera cuautitlán Teoloyucan, San Sebastián Xhala, Cuautitlán Izcalli, Edo. de México. CP. 54714</h3>
                         <div class="footer-menu">
                             <p>5623 1813</p>

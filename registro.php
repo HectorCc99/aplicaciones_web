@@ -77,7 +77,7 @@
             <div class="container">
                 <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                     <h1>Registro</h1>
-                    <p class="mt-2">Por favor ingresa los siguientes datos</p>
+                    <p class="mt-2">Ingresa todos los siguientes datos</p>
                 </div>
                 <div class="row">
                     <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
@@ -131,7 +131,7 @@
                                         <label for="telefono">Teléfono:</label>
                                     </div>
                                     <div class="col-lg-3">
-                                        <input type="text" class="form-control" id="tel" name="tel" placeholder="55-55-55-55-55" required="required" data-validation-required-message="Por favor, ingresa tu teléfono">
+                                        <input type="text" class="form-control" id="tel" name="tel" placeholder="Teléfono" required="required" data-validation-required-message="Por favor, ingresa tu teléfono">
                                     </div>
                                 </div> 
                                 <div class="registro-form row">
@@ -139,14 +139,14 @@
                                         <label for="password">Contraseña:</label>
                                     </div>
                                     <div class="col-lg-4">
-                                        <input type="password" class="form-control" id="clave" placeholder="Ingrese su contraseña" required="required" data-validation-required-message="Escriba una contraseña" />
+                                        <input type="password" class="form-control" id="clave" placeholder="Contraseña" required="required" data-validation-required-message="Escriba una contraseña" />
                                     <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="col-lg-3">
                                         <label for="repetir-password">Repetir Contraseña:</label>
                                     </div>
                                     <div class="col-lg-3">
-                                        <input type="password" class="form-control" id="clave_confirm" placeholder="Confirme su contraseña" required="required" data-validation-required-message="Escriba una contraseña" />
+                                        <input type="password" class="form-control" id="clave_confirm" placeholder="Confirmar contraseña" required="required" data-validation-required-message="Escriba una contraseña" />
                                         <p class="help-block text-danger"></p>
                                     </div>
                                 </div>

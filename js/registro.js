@@ -56,7 +56,7 @@ function lista_carreras(){
             success: function (response)
             {
                 let obj_result = JSON.parse(response);
-                let template = " <option selected disabled>SELECCIONE UNA CARRERA </option> ";
+                let template = " <option selected disabled>Seleccionar carrera</option> ";
                 obj_result.forEach(
                     (obj_result)=>
                     {

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-07-2021 a las 00:34:53
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.7
+-- Tiempo de generación: 10-07-2021 a las 19:30:41
+-- Versión del servidor: 10.4.14-MariaDB
+-- Versión de PHP: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -91,8 +91,23 @@ CREATE TABLE `archivos` (
 
 CREATE TABLE `carreras` (
   `id_carrera` int(11) NOT NULL,
-  `nombre` varchar(50) DEFAULT NULL
+  `nombre` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `carreras`
+--
+
+INSERT INTO `carreras` (`id_carrera`, `nombre`) VALUES
+(1001, 'Administración'),
+(1002, 'Contaduría'),
+(1003, 'Informática'),
+(1004, 'Ingeniería Agrícola'),
+(1005, 'Ingeniería Industrial'),
+(1006, 'Ingeniería en Telecomunicaciones, Sistemas y Electrónica'),
+(1007, 'Ingeniería Mecánica Eléctrica'),
+(1008, 'Medicina Veterinaria y Zootecnia'),
+(1009, 'Tecnología');
 
 -- --------------------------------------------------------
 
@@ -432,7 +447,7 @@ ALTER TABLE `archivos`
 -- AUTO_INCREMENT de la tabla `carreras`
 --
 ALTER TABLE `carreras`
-  MODIFY `id_carrera` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_carrera` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1010;
 
 --
 -- AUTO_INCREMENT de la tabla `espacio_recreativo`
