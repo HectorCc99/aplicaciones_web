@@ -116,14 +116,21 @@ class actividad_recursos extends CONEXION_M
 
     //De esta función no estoy seguro que sea igual
     function agregarActividadRecursos(){
-        $query = "INSERT INTO `actividad_recursos`(`id_actividad_recurso`, `id_actividad`, `id_recurso`, `cantidad`, `notas`)
-                    VALUES (NULL,'".$this->getIdActividadFk()."','".$this->getIdRecursoFk()."','".$this->getCantidad()."','".$this->getNotas()."')";
+        $query = "INSERT INTO `actividad_recursos`(`id_actividad_recurso`, `id_actividad`, `id_recurso`, `cantidad`)
+                    VALUES (NULL,'".$this->getIdActividadFk()."','".$this->getIdRecursoFk()."','".$this->getCantidad()."')";
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();
         return $result;
     }
 
+    function agregarnotas(){
+        $query="UPDATE `actividad_recursos` SET   `notas`='".$this->getNotas()."' WHERE `id_actividad_recurso`=".$this->getIdActividadRecurso();
+        $this->connect();
+        $result = $this->executeInstruction($query);
+        $this->close();
+        return $result;
+    }
     //Solo se modifica la cantidad y las notas, deberia ser multitabla?
     function modificarActividadRecursos(){
         $query="UPDATE `actividad_recursos` SET `cantidad`='".$this->getCantidad()."',  `notas`='".$this->getNotas()."' WHERE `id_actividad_recurso`=".$this->getIdActividadRecurso();

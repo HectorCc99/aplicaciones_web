@@ -128,8 +128,8 @@ class horarios extends CONEXION_M
     }
 
     function modificarHorario(){
-        $query="UPDATE `horario` SET `lunes`='".$this->getLunes()."', `martes`='".$this->getMartes()."', `miercoles`='".$this->getMiercoles()."', `jueves`='".$this->getJueves()."', `viernes`='".$this->getViernes()."'
-                WHERE `id_recurso` =".$this->getIdHorario(); //¿llamar la tabla de grupo y hacer un where con el id?
+        $query="UPDATE `horarios` SET `lunes`='".$this->getLunes()."', `martes`='".$this->getMartes()."', `miercoles`='".$this->getMiercoles()."', `jueves`='".$this->getJueves()."', `viernes`='".$this->getViernes()."'
+                WHERE `id_horario` =".$this->getIdHorario(); //¿llamar la tabla de grupo y hacer un where con el id?
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();

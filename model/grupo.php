@@ -196,6 +196,7 @@ class grupo extends CONEXION_M
 
     //Listar todos los grupos
     function mostrarGrupos(){
+        // todos, activos, inactivos
         //funcion para la vista de admin-horarios y grupos
         $query="SELECT gr.*, ar.nombre_actividad, er.nombre_espacio, h.* FROM grupo gr, actividad_recreativa ar, espacio_recreativo er, horarios h 
                 WHERE gr.id_actividad=ar.id_actividad AND gr.id_espacio=er.id_espacio AND gr.id_horario=h.id_horario ORDER BY gr.grupo ASC";
@@ -207,8 +208,9 @@ class grupo extends CONEXION_M
 
     //Mostrar un registro en especifico para editas (?)
     function mostrarGrupo(){
-        $query="SELECT gr.*, ar.nombre_actividad, er.nombre_espacio, h.* FROM grupo gr, actividad_recreativa ar, espacio_recreativo er, horarios h 
-                WHERE gr.id_actividad=ar.id_actividad AND gr.id_espacio=er.id_espacio AND gr.id_horario=h.id_horario AND id_grupo= ".$this->getIdGrupo()." ORDER BY gr.grupo ASC";
+        $query="SELECT gr.*, ar.nombre_actividad, er.nombre_espacio, h.* 
+FROM grupo gr, actividad_recreativa ar, espacio_recreativo er, horarios h 
+                WHERE gr.id_actividad=ar.id_actividad AND gr.id_espacio=er.id_espacio AND gr.id_horario=h.id_horario AND gr.id_grupo=".$this->getIdGrupo();
         $this->connect();
         $result = $this->getData($query);
         $this->close();
@@ -227,7 +229,7 @@ class grupo extends CONEXION_M
     }
 
     function modificarGrupo(){
-        $query="UPDATE `grupo` SET `grupo`='".$this->getGrupo()."', `cupo`='".$this->getCupo()."', `profesor`='".$this->getProfesor()."', `semestre`='".$this->getSemestre()."', `estatus_grupo`='".$this->getEstatusGrupo()."', `telefono_prof`='".$this->getTelProfesor()."'
+        $query="UPDATE `grupo` SET `grupo`='".$this->getGrupo()."', `cupo`='".$this->getCupo()."', `id_espacio`='".$this->getIdEspacioFk()."', `id_horario`='".$this->getIdHorarioFk()."',`profesor`='".$this->getProfesor()."', `semestre`='".$this->getSemestre()."', `telefono_prof`='".$this->getTelProfesor()."'
                 WHERE `id_grupo`=".$this->getIdGrupo();
         $this->connect();
         $result = $this->executeInstruction($query);
@@ -235,8 +237,8 @@ class grupo extends CONEXION_M
         return $result;
     }
 
-    function eliminarGrupo(){
-        $query="DELETE FROM `grupo` WHERE id_grupo = ".$this->getIdGrupo();
+    function Estatus_Grupo(){
+        $query="UPDATE `grupo` SET `estatus_grupo`='".$this->getEstatusGrupo()."' WHERE id_grupo = ".$this->getIdGrupo();
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();
