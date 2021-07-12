@@ -91,32 +91,47 @@ class usuario_actividad extends CONEXION_M
     }
     // funciones propias
     function crearinscripcion(){
-        $query = "INSERT INTO `usuario_actividad`(`id_usuario`, `id_actividad`, `asistencia`, `fecha_inscripcion`, `año`) 
+        $query = "INSERT INTO `usuario_actividad`(`id_usuario`, `id_grupo`, `asistencia`, `fecha_inscripcion`, `año`) 
                     VALUES ('".$this->getIdUsuario()."','".$this->getIdActividad()."','0','".date('Y-m-d H:i:s')."','".$this->getAño()."')";
         $this->connect();
-        $result = $this->getData($query);
+        $result = $this->executeInstruction($query);
         $this->close();
         return $result;
     }
     function cambiar_asistencia(){
-        $query = "UPDATE `usuario_actividad` SET `asistencia`='".$this->getAsistencia()."' WHERE  id_actividad = ".$this->getIdActividad()."  AND id_usuario =".$this->getIdUsuario()." and año=".$this->getAño();
+        $query = "UPDATE `usuario_actividad` SET `asistencia`='".$this->getAsistencia()."' WHERE  id_grupo = ".$this->getIdActividad()."  AND id_usuario =".$this->getIdUsuario()." and año='".$this->getAño()."'";
         $this->connect();
-        $result = $this->getData($query);
+        $result = $this->executeInstruction($query);
         $this->close();
         return $result;
     }
     function borrarinscripcion(){
-        $query = "DELETE FROM `usuario_actividad` WHERE id_actividad = ".$this->getIdActividad()."  AND id_usuario =".$this->getIdUsuario()." and año=".$this->getAño();
+        $query = "DELETE FROM `usuario_actividad` WHERE id_grupo = ".$this->getIdActividad()."  AND id_usuario =".$this->getIdUsuario()." and año= '".$this->getAño()."'";
         $this->connect();
-        $result = $this->getData($query);
+        $result = $this->executeInstruction($query);
         $this->close();
         return $result;
     }
     function verinscripciones(){
         $query = "SELECT u.nombre,u.primer_ap,u.segundo_ap, u.correo, ar.nombre_actividad,ar.descripcion  
-                    FROM usuario_actividad ua, usuario u , actividad_recreativa ar
-                        WHERE u.id_usuario=ua.id_usuario AND
-                        ua.id_actividad=ar.id_actividadC";
+                    FROM usuario_actividad ua, usuario u , actividad_recreativa ar, grupo gp
+                        WHERE u.id_usuario=ua.id_usuario 
+                          AND ua.id_grupo = gp.id_grupo
+                        and gp.id_actividad = ar.id_actividad";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+    function detallesinscripcion(){
+        $query = "SELECT u.nombre,u.primer_ap,u.segundo_ap, u.correo, ar.nombre_actividad,ar.descripcion  
+                    FROM usuario_actividad ua, usuario u , actividad_recreativa ar, grupo gp
+                        WHERE u.id_usuario=ua.id_usuario 
+                          AND ua.id_grupo = gp.id_grupo
+                        and gp.id_actividad = ar.id_actividad
+                        AND ua.id_usuario=".$this->getIdUsuario()."
+                        AND ua.id_grupo =".$this->getIdActividad()."
+                        AND ua.año='".$this->getAño()."' ";
         $this->connect();
         $result = $this->getData($query);
         $this->close();

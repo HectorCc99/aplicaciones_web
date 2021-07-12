@@ -1,13 +1,5 @@
 <?php 
 
-   /* function conexion(){
-        $servidor = "localhost";
-        $usuario = "root";
-        $password = "";
-        $bd = "wen";
-        $conexion = mysqli_connect($servidor, $usuario, $password,bd);
-        return $conexion;
-    }*/
 class CONEXION_M
 {
     private $host = "localhost";
