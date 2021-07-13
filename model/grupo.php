@@ -5,7 +5,7 @@ include"conexion.php";
 class grupo extends CONEXION_M
 {
     private $id_grupo;
-    private $id_actividad;
+    private $id_actividad_fk;
     private $grupo;
     private $cupo;
     private $profesor;
@@ -35,17 +35,17 @@ class grupo extends CONEXION_M
     /**
      * @return mixed
      */
-    public function getIdActividad()
+    public function getIdActividadFk()
     {
-        return $this->id_actividad;
+        return $this->id_actividad_fk;
     }
 
     /**
-     * @param mixed $id_actividad
+     * @param mixed $id_actividad_fk
      */
-    public function setIdActividad($id_actividad)
+    public function setIdActividadFk($id_actividad_fk)
     {
-        $this->id_actividad = $id_actividad;
+        $this->id_actividad_fk = $id_actividad_fk;
     }
 
     /**
@@ -194,42 +194,72 @@ class grupo extends CONEXION_M
 
     //funciones propias de la clase
 
-    //Listar todos los grupos
-    function mostrarGrupos(){
-        // todos, activos, inactivos
-        //funcion para la vista de admin-horarios y grupos
-        $query="SELECT gr.*, ar.nombre_actividad, er.nombre_espacio, h.* FROM grupo gr, actividad_recreativa ar, espacio_recreativo er, horarios h 
-                WHERE gr.id_actividad=ar.id_actividad AND gr.id_espacio=er.id_espacio AND gr.id_horario=h.id_horario ORDER BY gr.grupo ASC";
-        $this->connect();
-        $result = $this->getData($query);
-        $this->close();
-        return $result;
-    }
-
-    //Mostrar un registro en especifico para editas (?)
-    function mostrarGrupo(){
-        $query="SELECT gr.*, ar.nombre_actividad, er.nombre_espacio, h.* 
-FROM grupo gr, actividad_recreativa ar, espacio_recreativo er, horarios h 
-                WHERE gr.id_actividad=ar.id_actividad AND gr.id_espacio=er.id_espacio AND gr.id_horario=h.id_horario AND gr.id_grupo=".$this->getIdGrupo();
-        $this->connect();
-        $result = $this->getData($query);
-        $this->close();
-        return $result;
-    }
-
+    //AGREGAR
     function agregarGrupo(){
         $query="INSERT INTO `grupo` (`id_grupo`, `id_actividad`, `grupo`, `cupo`, `profesor`,
-                                    `id_espacio`, `id_horario`, `semestre`, `estatus_grupo`, `telefono_prof`) 
-		                    VALUES (NULL, '".$this->getIdActividad()."', '".$this->getGrupo()."', '".$this->getCupo()."', '".$this->getProfesor()."',
-		                            '".$this->getIdEspacioFk()."', '".$this->getIdHorarioFk()."', '".$this->getSemestre()."', '".$this->getEstatusGrupo()."', '".$this->getTelProfesor()."')";
+                                    `id_espacio`, `id_horario`, `semestre`, `estatus_grupo`,  `correo`, `telefono_prof`) 
+		                    VALUES (NULL, '".$this->getIdActividadFk()."', '".$this->getGrupo()."', '".$this->getCupo()."', '".$this->getProfesor()."',
+		                            '".$this->getIdEspacioFk()."', '".$this->getIdHorarioFk()."', '".$this->getSemestre()."', '".$this->getEstatusGrupo()."', '".$this->getCorreo()."', '".$this->getTelProfesor()."')";
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();
         return $result;
     }
 
+
+    //MOSTRAR
+    function mostrarGrupos($filtro){ // LISTA
+        $filtro_estatus="";
+        // 0 todos, 1 activos, 2 inactivos
+        switch ($filtro){
+            case "1":
+                $filtro_estatus= " WHERE `estatus_grupo`= 1";
+                break;
+            case "2":
+                $filtro_estatus=" WHERE `estatus_grupo`= 0";
+                break;
+            default:
+                $filtro_estatus="";
+                break;
+        }
+        $query="SELECT g.*, ar.nombre_actividad, er.nombre_espacio, h.* 
+                FROM grupo g, 
+                actividad_recreativa ar,
+                espacio_recreativo er,
+                horarios h 
+                WHERE g.id_actividad = ar.id_actividad
+                AND g.id_espacio = er.id_espacio
+                AND g.id_horario = h.id_horario
+                 AND '.$filtro_estatus.'
+                ORDER BY g.grupo ASC";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+
+    function mostrarGrupo(){
+        $query="SELECT g.*, ar.nombre_actividad, er.nombre_espacio, h.* 
+                FROM grupo g, 
+                actividad_recreativa ar,
+                espacio_recreativo er,
+                horarios h 
+                WHERE g.id_actividad = ar.id_actividad
+                AND g.id_espacio = er.id_espacio
+                AND g.id_horario = h.id_horario
+                AND g.id_grupo =".$this->getIdGrupo();
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+
+
+    // MODIFICAR
     function modificarGrupo(){
-        $query="UPDATE `grupo` SET `grupo`='".$this->getGrupo()."', `cupo`='".$this->getCupo()."', `id_espacio`='".$this->getIdEspacioFk()."', `id_horario`='".$this->getIdHorarioFk()."',`profesor`='".$this->getProfesor()."', `semestre`='".$this->getSemestre()."', `telefono_prof`='".$this->getTelProfesor()."'
+        $query="UPDATE `grupo` SET `id_actividad`='".$this->getIdActividadFk()."', `grupo`='".$this->getGrupo()."', `cupo`='".$this->getCupo()."',
+                `profesor`='".$this->getProfesor()."',  `id_espacio`='".$this->getIdEspacioFk()."', `id_horario`='".$this->getIdHorarioFk()."',
+                `semestre`='".$this->getSemestre()."', `correo`='".$this->getCorreo()."', `telefono_prof`='".$this->getTelProfesor()."'
                 WHERE `id_grupo`=".$this->getIdGrupo();
         $this->connect();
         $result = $this->executeInstruction($query);

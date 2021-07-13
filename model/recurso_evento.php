@@ -1,6 +1,6 @@
 <?php
 
-include"conexion.php";
+include "conexion.php";
 
 class recurso_evento extends CONEXION_M
 {
@@ -75,36 +75,51 @@ class recurso_evento extends CONEXION_M
 
     //funciones propias de la clase
 
-    //mostrar todos los registros
-    function mostrarRecursosEventos(){
-        $query="SELECT * FROM `recurso_evento`";
-        $this->connect();
-        $result = $this->getData($query);
-        $this->close();
-        return $result;
-    }
-
-    //mostrar solo un registro para editar (?)
-    function mostrarRecursoEvento(){
-        $query="SELECT * FROM `recurso_evento` WHERE id_recurso =".$this->getIdRecurso();
-        // ¿se llamaria tambien a la tabla de eventos para ponerlo en el where?
-        $this->connect();
-        $result = $this->getData($query);
-        $this->close();
-        return $result;
-    }
+    // AGREGAR
 
     function agregarRecursoEvento(){
-        $query="INSERT INTO `recurso_evento` (`id_recurso`, `id_evento`, `cantidad`, `notas`) 
-			                        VALUES (NULL, '".$this->getIdEventoPkfk()."', '".$this->getCantidad()."', '".$this->getNotas()."')";
+        $query="INSERT INTO `recurso_evento` (`id_recurso`, `id_evento`, `cantidad`)
+			                        VALUES ('".$this->getIdRecurso()."', '".$this->getIdEventoPkfk()."', '".$this->getCantidad()."')";
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();
         return $result;
     }
 
+
+    // MOSTRAR
+    function mostrarRecursosEventos(){
+        $query="SELECT re.*, rr.nombre_recurso, e.nombre_actividad 
+                FROM recurso_evento re,
+                recurso_recreativo rr, 
+                eventos e  
+                WHERE re.id_recurso = rr.id_recurso 
+                AND re.id_evento = e.id_evento
+                ORDER BY rr.nombre_recurso ASC";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+
+    function mostrarRecursoEvento(){
+        $query="SELECT re.*, rr.nombre_recurso, e.nombre_actividad 
+                FROM recurso_evento re,
+                recurso_recreativo rr, 
+                eventos e  
+                WHERE re.id_recurso = rr.id_recurso 
+                AND re.id_evento = e.id_evento 
+                AND re.id_recurso =".$this->getIdRecurso();
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+
+
+    // MODIFICAR
     function modificarRecursoEvento(){
-        $query="UPDATE `recurso_evento` SET `cantidad`='".$this->getCantidad()."', `notas`='".$this->getNotas()."'
+        $query="UPDATE `recurso_evento` SET `id_recurso`='".$this->getIdRecurso()."', `id_evento`='".$this->getIdEventoPkfk()."', `cantidad`='".$this->getCantidad()."'
                 WHERE `id_recurso`=".$this->getIdRecurso();
         $this->connect();
         $result = $this->executeInstruction($query);
@@ -112,7 +127,17 @@ class recurso_evento extends CONEXION_M
         return $result;
     }
 
-    function eliminarRecursoEvento(){
+    function agregarNotasRE(){
+        $query="UPDATE `recurso_evento` SET `notas`='".$this->getNotas()."'
+                WHERE `id_recurso`=".$this->getIdRecurso();
+        $this->connect();
+        $result = $this->executeInstruction($query);
+        $this->close();
+        return $result;
+    }
+
+    // ELIMINAR
+    function borrarRecursoEvento(){
         $query="DELETE FROM `recurso_evento` WHERE id_recurso = ".$this->getIdRecurso();
         $this->connect();
         $result = $this->executeInstruction($query);

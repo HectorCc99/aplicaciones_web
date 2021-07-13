@@ -94,27 +94,7 @@ class actividad_recursos extends CONEXION_M
 
     //funciones propias de la clase
 
-    // TODOS
-    function mostrarListaActividadRecursos(){
-        $query="SELECT ar.id_actividad_recurso, arc.nombre_actividad, rr.nombre_recurso FROM actividad_recursos ar, actividad_recreativa arc, recurso_recreativo rr 
-                WHERE ar.id_actividad= arc.id_actividad and ar.id_recurso=rr.id_recurso ORDER BY arc.nombre_actividad,rr.nombre_recurso ASC";
-        $this->connect();
-        $result = $this->getData($query);
-        $this->close();
-        return $result;
-    }
-
-    // uno en especifico
-    function mostrarListaRecursosdeActividad(){
-        $query="SELECT ar.id_actividad_recurso, arc.nombre_actividad, rr.nombre_recurso FROM actividad_recursos ar, actividad_recreativa arc, recurso_recreativo rr 
-                WHERE ar.id_actividad= arc.id_actividad AND ar.id_recurso=rr.id_recurso AND id_actividad_recurso=".$this->getIdActividadRecurso()." ORDER BY arc.nombre_actividad,rr.nombre_recurso ASC";
-        $this->connect();
-        $result = $this->getData($query);
-        $this->close();
-        return $result;
-    }
-
-    //De esta función no estoy seguro que sea igual
+    // AGREGAR
     function agregarActividadRecursos(){
         $query = "INSERT INTO `actividad_recursos`(`id_actividad_recurso`, `id_actividad`, `id_recurso`, `cantidad`)
                     VALUES (NULL,'".$this->getIdActividadFk()."','".$this->getIdRecursoFk()."','".$this->getCantidad()."')";
@@ -124,29 +104,50 @@ class actividad_recursos extends CONEXION_M
         return $result;
     }
 
-    function agregarnotas(){
-        $query="UPDATE `actividad_recursos` SET   `notas`='".$this->getNotas()."' WHERE `id_actividad_recurso`=".$this->getIdActividadRecurso();
+    // MOSTRAR
+    function mostrarListaActividadRecursos(){ //TODOS LOS REGISTROS
+        $query="SELECT ar.id_actividad_recurso, arc.nombre_actividad, rr.nombre_recurso FROM actividad_recursos ar, actividad_recreativa arc, recurso_recreativo rr 
+                WHERE ar.id_actividad= arc.id_actividad and ar.id_recurso=rr.id_recurso ORDER BY arc.nombre_actividad,rr.nombre_recurso ASC";
         $this->connect();
-        $result = $this->executeInstruction($query);
+        $result = $this->getData($query);
         $this->close();
         return $result;
     }
-    //Solo se modifica la cantidad y las notas, deberia ser multitabla?
+
+    function mostrarRecursodeActividad(){ //UN REGISTRO
+        $query="SELECT ar.id_actividad_recurso, arc.nombre_actividad, rr.nombre_recurso FROM actividad_recursos ar, actividad_recreativa arc, recurso_recreativo rr 
+                WHERE ar.id_actividad= arc.id_actividad AND ar.id_recurso=rr.id_recurso AND id_actividad_recurso=".$this->getIdActividadRecurso()." ORDER BY arc.nombre_actividad,rr.nombre_recurso ASC";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+
+    // MODIFICAR
     function modificarActividadRecursos(){
-        $query="UPDATE `actividad_recursos` SET `cantidad`='".$this->getCantidad()."',  `notas`='".$this->getNotas()."' WHERE `id_actividad_recurso`=".$this->getIdActividadRecurso();
+        $query="UPDATE `actividad_recursos` SET `id_actividad`='".$this->getIdActividadFk()."', `id_recurso`='".$this->getIdRecursoFk()."', `cantidad`='".$this->getCantidad()."'
+                WHERE `id_actividad_recurso`=".$this->getIdActividadRecurso();
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();
         return $result;
     }
 
-    //No estoy seguro si se use y si sea correcto en el where poner los 3 id.
-    function eliminarActividad_recurso(){
-        $query="DELETE FROM `actividad_recursos` WHERE id_actividad_recurso =".$this->getIdActividadRecurso()."  AND id_actividad =".$this->getIdActividadFk()."  AND id_recurso=".$this->getIdRecursoFk();
+    function agregarNotas(){
+        $query="UPDATE `actividad_recursos` SET   `notas`='".$this->getNotas()."' WHERE `id_actividad_recurso`=".$this->getIdActividadRecurso();
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();
         return $result;
     }
+
+    /* ¿ELIMINAR?
+    function eliminarActividad_recurso(){
+        $query="DELETE FROM `actividad_recursos` WHERE id_actividad_recurso =".$this->getIdActividadRecurso();
+        $this->connect();
+        $result = $this->executeInstruction($query);
+        $this->close();
+        return $result;
+    } */
 
 }

@@ -76,7 +76,7 @@ class recurso_recreativo extends CONEXION_M
     }
 
     function mostrarRecurso(){
-        $query="SELECT * FROM `recurso_recreativo` WHERE `id_recurso` ='.$this->getIdRecurso().' ORDER BY nombre_recurso ASC";
+        $query="SELECT * FROM `recurso_recreativo` WHERE `id_recurso` =".$this->getIdRecurso();
         $this->connect(); //muestra solo un registro en base a su id
         $result = $this->getData($query);
         $this->close();
