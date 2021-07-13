@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Devolucion utileria</title>
+        <title>Devolución de Materiales</title>
         <!--Bootstrap CSS-->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <!-- Google Font -->
@@ -42,15 +41,16 @@
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-primary navbar-dark">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">A<span>ctiv</span>F<span>esc</span></a>
+                <a href="index.php" class="navbar-brand">A<span>ctiv</span>F<span>esc</span></a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
+                        <a href="index.php" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
                         <a href="admin-menu.php" class="nav-item nav-link mr-5"><img src="./icons/menu.svg" alt="" width="18px"><span class="ml-2">Menú</span></a>
-                        <a href="perfil.html" class="nav-item nav-link mr-5"><img src="./icons/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
+                        <a href="admin-perfil.php" class="nav-item nav-link mr-5"><img src="./icons/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
+                        <a href="home.php" class="nav-item nav-link mr-5"><img src="./icons/logout.png" alt="" width="18px"><span class="ml-2">Cerrar Sesión</span></a>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                        <h1 class="mt-5 mb-3"><strong>Devolución de utilería</strong></h1>
+                        <h1 class="mt-5 mb-3"><strong>Devolución de Materiales</strong></h1>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,8 @@
                 <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
                     <table class="table table-hover table-striped table-sm">
                         <thead>
-                            <th scope="col">Usuario</th>
+                            <th scope="col">#</th>
+                            <th scope="col">Alumno</th>
                             <th scope="col">Fecha</th>
                             <th scope="col">Material</th>
                             <th scope="col">Hora Inicio</th>
@@ -80,6 +81,7 @@
                         </thead>
                         <tbody id="tbl-devoluciones">
                             <tr>
+                                <th scope="row">1</th>
                                 <td>Lilia Inclan</td>
                                 <td>10-07-2021</td>
                                 <td>Raquetas de tenis</td>
@@ -87,7 +89,7 @@
                                 <td>11:00</td>
                                 <td>Pesimas condiciones, credencial retenida</td>
                                 <td>Raquetas descosidas(2 pzs)</td>
-                                <td><button type="button" data-toggle="modal" data-target="#modalEditar">Editar</button></td>
+                                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEditar">Editar</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -109,8 +111,8 @@
                         <form action=""  id="">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <p class="font-weight-bold">Ingrese los datos</p>
-                                    <div id="contenedor_act"></div>
+                                    <p class="font-weight-bold">Ingrese los datos faltantes:</p>
+                                    <div id="contenedor_devol"></div>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -118,7 +120,7 @@
                                     <label for="material" class="col-form-label ml-1">Material:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="material" id="" class="form-control ml-1">
+                                    <input type="text" name="material" id="material" class="form-control ml-1">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -126,7 +128,7 @@
                                     <label for="alumno" class="col-form-label ml-1">Alumno:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="alumno" id="" class="form-control ml-1">
+                                    <input type="text" name="alumno" id="alumno" class="form-control ml-1">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -134,7 +136,7 @@
                                     <label for="fecha" class="col-form-label ml-1">Fecha:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="date" name="fecha" id="" class="form-control ml-1">
+                                    <input type="date" name="fecha" id="fecha" class="form-control ml-1">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -142,7 +144,7 @@
                                     <label for="hora_inicio" class="col-form-label ml-1">Hora de inicio:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_inicio" id="" class="form-control ml-1">
+                                    <input type="time" name="hora_inicio" id="hora_inicio" class="form-control ml-1">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -150,7 +152,7 @@
                                     <label for="hora_termino" class="col-form-label ml-1">Hora de termino:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_termino" id="" class="form-control ml-1">
+                                    <input type="time" name="hora_termino" id="hora_termino" class="form-control ml-1">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -159,9 +161,9 @@
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
                                     <select name="estatus" id="estatus" class="form-control ml-1">
-                                        <option>Devuelto optimamente</option>
-                                        <option>Pesimas condiciones (Credencial retenida)</option>
-                                        <option>Material repuesto</option>
+                                        <option values="0">Devuelto optimamente</option>
+                                        <option values="1">Pesimas condiciones (Credencial retenida)</option>
+                                        <option values="3">Material repuesto</option>
                                     </select>
                                 </div>
                             </div>
@@ -189,7 +191,7 @@
             <div class="container-fluid">
                 <div class="container">
                     <div class="footer-info">
-                        <a href="index.html" class="footer-logo mt-0">A<span>ctiv</span>F<span>esc</span></a>
+                        <a href="index.php" class="footer-logo mt-0">A<span>ctiv</span>F<span>esc</span></a>
                         <h3>Edificio de Extensión Universitaria, Km. 2.5 Carretera cuautitlán Teoloyucan, San Sebastián Xhala, Cuautitlán Izcalli, Edo. de México. CP. 54714</h3>
                         <div class="footer-menu">
                             <p>5623 1813</p>

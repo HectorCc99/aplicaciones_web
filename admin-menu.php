@@ -95,6 +95,7 @@
                         <a href="index.php" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
                         <a href="admin-menu.php" class="nav-item nav-link mr-5"><img src="./icons/menu.svg" alt="" width="18px"><span class="ml-2">Menú</span></a>
                         <a href="admin-perfil.php" class="nav-item nav-link mr-5"><img src="./icons/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
+                        <a href="home.php" class="nav-item nav-link mr-5"><img src="./icons/logout.png" alt="" width="18px"><span class="ml-2">Cerrar Sesión</span></a>
                     </div>
                 </div>
             </div>
@@ -130,7 +131,7 @@
                     <div class="buttons"> 
                         <a href="./inventario_material.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 3;">
                             <img src="./icons/inventory.svg" alt="" width="80px">
-                            <br><label>Inventario de utileria</label>
+                            <br><label>Inventario de Materiales</label>
                         </a> 
                     </div>
                 </div>

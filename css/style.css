@@ -8,6 +8,7 @@
     --white: #ffffff !important;
     --lightgray: rgb(216, 214, 214) !important;
     --blue: #044494 !important;
+    --success: rgb(23, 143, 23) !important;
 }
 
 body {
@@ -53,8 +54,21 @@ a:focus {
     background-color: white !important;
 }
 
+.btn-docs{
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    border-radius: 6;
+    transition: .3s;
+}
+
 .btn-primary{
     background-color: var(--primary) !important;
+}
+
+.btn-success{
+    background-color: var(--success) !important;
 }
 
 .btn-primary:hover,
@@ -76,6 +90,20 @@ a:focus {
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 1px;
+}
+
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.alert-password {
+    color: var(--primary);
+    background-color: #F4E29D;
+    border-color: var(--secondary);
 }
 
 .container-fluid {
@@ -1445,6 +1473,13 @@ a:focus {
     width: 100%;
     padding: 45px 0;
 }
+
+.perfil{
+    position: relative;
+    width: 100%;
+    padding: 45px 0;
+}
+
 .contact .container {
     max-width: 900px;
 }
@@ -1477,6 +1512,9 @@ a:focus {
 .registro .registro-form {
     position: relative;
 }
+.perfil .perfil-form {
+    position: relative;
+}
 .contact .contact-form input {
     height: 45px;
     padding: 15px;
@@ -1490,6 +1528,12 @@ a:focus {
     border-radius: 5;
 }
 
+.perfil .perfil-form input {
+    height: 20px;
+    padding: 15px;
+    background: none;
+    border-radius: 5;
+}
 .registro .registro-form select {
     height: auto;
     padding: 15px;
@@ -1497,6 +1541,12 @@ a:focus {
     border-radius: 5;
 }
 
+.perfil .perfil-form select {
+    height: auto;
+    padding: 15px;
+    background: none;
+    border-radius: 5;
+}
 .contact .contact-form textarea {
     height: 150px;
     padding: 15px;
@@ -1524,6 +1574,16 @@ a:focus {
     border-radius: 5;
     transition: .3s;
 }
+.perfil .perfil-form  {
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--primary);
+    background: none;
+    border-radius: 5;
+    transition: .3s;
+}
 
 .registro .registro-form .hero-btm .btm {
     padding: 12px 25px;
@@ -1537,9 +1597,23 @@ a:focus {
 }
 .registro .registro-form .btm:hover {
     color: var(--secondary);
-    background: var(--primary)
+    background: var(--primary);
 }
 
+.perfil .perfil-form .hero-btm .btm {
+    padding: 12px 0;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: white;
+    background: var(--primary);
+    border-radius: 0;
+    transition: .3s;
+}
+.perfil .perfil-form .btm:hover {
+    color: var(--secondary);
+    background: var(--primary)
+}
 .contact .help-block ul {
     margin: 0;
     padding: 0;

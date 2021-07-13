@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Inventariop Utileria</title>
+        <title>Inventario de Material</title>
         <!--Bootstrap CSS-->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <!-- Google Font -->
@@ -51,6 +50,7 @@
                         <a href="index.php" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
                         <a href="admin-menu.php" class="nav-item nav-link mr-5"><img src="./icons/menu.svg" alt="" width="18px"><span class="ml-2">Menú</span></a>
                         <a href="admin-perfil.php" class="nav-item nav-link mr-5"><img src="./icons/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
+                        <a href="home.php" class="nav-item nav-link mr-5"><img src="./icons/logout.png" alt="" width="18px"><span class="ml-2">Cerrar Sesión</span></a>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                        <h1 class="mt-5 mb-3"><strong>Inventario de Utileria</strong></h1>
+                        <h1 class="mt-5 mb-3"><strong>Inventario de Material</strong></h1>
                     </div>
                 </div>
             </div>
@@ -226,6 +226,5 @@
         <script src="mail/contact.js"></script>
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
-        <script src="js/actividades_deportivas.js"></script>
     </body>
 </html>
