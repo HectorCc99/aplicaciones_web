@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Documentacion de alumnos</title>
+        <title>Documentación de Alumnos</title>
         <!--Bootstrap CSS-->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <!-- Google Font -->
@@ -42,15 +41,16 @@
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-primary navbar-dark">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">A<span>ctiv</span>F<span>esc</span></a>
+                <a href="index.php" class="navbar-brand">A<span>ctiv</span>F<span>esc</span></a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
+                        <a href="index.php" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
                         <a href="admin-menu.php" class="nav-item nav-link mr-5"><img src="./icons/menu.svg" alt="" width="18px"><span class="ml-2">Menú</span></a>
-                        <a href="perfil.html" class="nav-item nav-link mr-5"><img src="./icons/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
+                        <a href="admin-perfil.php" class="nav-item nav-link mr-5"><img src="./icons/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
+                        <a href="home.php" class="nav-item nav-link mr-5"><img src="./icons/logout.png" alt="" width="18px"><span class="ml-2">Cerrar Sesión</span></a>
                     </div>
                 </div>
             </div>
@@ -61,29 +61,37 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                        <h1 class="mt-5 mb-3"><strong>Pendientes por revisar</strong></h1>
+                        <h1 class="mt-5 mb-3"><strong>Documentación</strong></h1>
+                        <p style="font-size: 20px; text-transform: uppercase;">Alumnos</p>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="mb-3"><strong>Pendientes por revisar</strong></h2>
                 </div>
             </div>
             <div class="row" >
                 <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
                     <table class="table table-hover table-striped table-sm">
                         <thead>
+                            <th scope="col">#</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">No. de cuenta</th>
+                            <th scope="col">No. de Cuenta</th>
                             <th scope="col">Correo</th>
                             <th scope="col">Carrera</th>
-                            <th scope="col">Fecha de envio</th>
-                            <th scope="col">Documentacion</th>
+                            <th scope="col">Fecha de Envío</th>
+                            <th scope="col">Documentación</th>
                         </thead>
                         <tbody id="">
                             <tr>
+                                <th scope="row">1</th>
                                 <td>Lilia Inclan</td>
                                 <td>315169982</td>
                                 <td>liliaginclan@gmail.com</td>
                                 <td>Informática</td>
                                 <td>12-07-2021</td>
-                                <td><button type="button" data-toggle="modal" data-target="#modalPendientes">Ver</button></td>
+                                <td><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalPendientes">Ver</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -96,30 +104,30 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                        <h1 class="mt-5 mb-3"><strong>Documentacion revisada</strong></h1>
-                    </div>
+                    <h2 class="mb-3"><strong>Revisada</strong></h2>
                 </div>
             </div>
             <div class="row" >
                 <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
                     <table class="table table-hover table-striped table-sm">
                         <thead>
+                            <th scope="col">#</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">No. de cuenta</th>
+                            <th scope="col">No. de Cuenta</th>
                             <th scope="col">Correo</th>
                             <th scope="col">Carrera</th>
-                            <th scope="col">Fecha de envio</th>
-                            <th scope="col">Documentacion</th>
+                            <th scope="col">Fecha de Envío</th>
+                            <th scope="col">Documentación</th>
                         </thead>
                         <tbody id="">
                             <tr>
+                                <th scope="row">1</th>
                                 <td>Lilia Inclan</td>
                                 <td>315169982</td>
                                 <td>liliaginclan@gmail.com</td>
                                 <td>Informática</td>
                                 <td>12-07-2021</td>
-                                <td><button type="button" data-toggle="modal" data-target="#modalRevisados">Ver</button></td>
+                                <td><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalRevisados">Ver</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -133,7 +141,7 @@
             <div class="modal-dialog modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="staticBackdropLabel"><strong>Documentacion</strong></h4>
+                        <h4 class="modal-title" id="staticBackdropLabel"><strong>Documentación</strong></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -141,91 +149,91 @@
                     <div class="modal-body">
                         <form action=""  id="">
                             <div class="form-group row">
+                                <div class="col-sm-3 mb-3 mb-sm-0">
+                                    <label for="tira_materias" class="col-form-label">Tira de materias:</label>
+                                </div>
+                                <div class="col-sm-5 mb-3 mb-sm-0">
+                                    <a href="#"><label for="tira_materias" class="col-form-label">tira_de_materias.pdf</label></a>
+                                </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <label for="tira_materias" class="col-form-label ml-1">Tira de materias:</label>
-                                </div>
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                <label for="tira_materias" class="col-form-label ml-1">tira_de_materias.pdf</label>
-                                </div>
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/check.svg" alt="..." width="30px"></button>
+                                    <button type="button" class="btn-docs btn-success"><img src="./icons/approve.svg" alt="..." width="20px"><span class="ml-1">Aceptar</span></button>
                                 </div>                                
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <label for="notas" class="col-form-label ml-1">Notas:</label>
+                                <div class="col-sm-3 mb-3 mb-sm-0">
+                                    <label for="notas" class="col-form-label">Notas:</label>
                                 </div>
-                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                <div class="col-sm-5 mb-3 mb-sm-0">
                                     <textarea name="notas" id="notas" cols="30" class="form-control" rows="3"></textarea>
                                 </div>
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/reject.svg" alt="..." width="30px"></button>
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <button type="button" class="btn-docs btn-danger"><img src="./icons/reject.svg" alt="..." width="20px"><span class="ml-1">Rechazar</span></button>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <label for="seguro_estudiante" class="col-form-label ml-1">Seguro de estudiante:</label>
+                                <div class="col-sm-3 mb-3 mb-sm-0">
+                                    <label for="seguro_estudiante" class="col-form-label">Seguro de estudiante:</label>
                                 </div>
                                 <div class="col-sm-5 mb-3 mb-sm-0">
-                                <label for="seguro_estudiante" class="col-form-label ml-1">seguro_de_estudiante.pdf</label>
+                                    <a href="#"><label for="seguro_estudiante" class="col-form-label">seguro_de_estudiante.pdf</label></a>
                                 </div>
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/check.svg" alt="..." width="30px"></button>
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <button type="button" class="btn-docs btn-success"><img src="./icons/approve.svg" alt="..." width="20px"><span class="ml-1">Aceptar</span></button>
                                 </div>                                
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <label for="notas" class="col-form-label ml-1">Notas:</label>
+                                <div class="col-sm-3 mb-3 mb-sm-0">
+                                    <label for="notas" class="col-form-label">Notas:</label>
                                 </div>
-                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                <div class="col-sm-5 mb-3 mb-sm-0">
                                     <textarea name="notas" id="notas" cols="30" class="form-control" rows="3"></textarea>
                                 </div>
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/reject.svg" alt="..." width="30px"></button>
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <button type="button" class="btn-docs btn-danger"><img src="./icons/reject.svg" alt="..." width="20px"><span class="ml-1">Rechazar</span></button>
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <div class="col-sm-3 mb-3 mb-sm-0">
+                                    <label for="seguro_axxa" class="col-form-label">Seguro Axxa:</label>
+                                </div>
+                                <div class="col-sm-5 mb-3 mb-sm-0">
+                                    <a href="#"><label for="seguro_axxa" class="col-form-label">seguro_axxa.pdf</label></a>
+                                </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <label for="seguro_axxa" class="col-form-label ml-1">Seguro Axxa:</label>
-                                </div>
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                <label for="seguro_axxa" class="col-form-label ml-1">seguro_axxa.pdf</label>
-                                </div>
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/check.svg" alt="..." width="30px"></button>
+                                    <button type="button" class="btn-docs btn-success"><img src="./icons/approve.svg" alt="..." width="20px"><span class="ml-1">Aceptar</span></button>
                                 </div>                                
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <label for="notas" class="col-form-label ml-1">Notas:</label>
+                                <div class="col-sm-3 mb-3 mb-sm-0">
+                                    <label for="notas" class="col-form-label">Notas:</label>
                                 </div>
-                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                <div class="col-sm-5 mb-3 mb-sm-0">
                                     <textarea name="notas" id="notas" cols="30" class="form-control" rows="3"></textarea>
                                 </div>
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/reject.svg" alt="..." width="30px"></button>
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <button type="button" class="btn-docs btn-danger"><img src="./icons/reject.svg" alt="..." width="20px"><span class="ml-1">Rechazar</span></button>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <label for="credencial" class="col-form-label ml-1">Credencial escolar:</label>
+                                <div class="col-sm-3 mb-3 mb-sm-0">
+                                    <label for="credencial" class="col-form-label">Credencial escolar:</label>
                                 </div>
                                 <div class="col-sm-5 mb-3 mb-sm-0">
-                                <label for="credencial" class="col-form-label ml-1">credencial.pdf</label>
+                                    <a href="#"><label for="credencial" class="col-form-label">credencial.pdf</label></a>
                                 </div>
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/check.svg" alt="..." width="30px"></button>
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <button type="button" class="btn-docs btn-success"><img src="./icons/approve.svg" alt="..." width="20px"><span class="ml-1">Aceptar</span></button>
                                 </div>                                
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <label for="notas" class="col-form-label ml-1">Notas:</label>
+                                <div class="col-sm-3 mb-3 mb-sm-0">
+                                    <label for="notas" class="col-form-label">Notas:</label>
                                 </div>
-                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                <div class="col-sm-5 mb-3 mb-sm-0">
                                     <textarea name="notas" id="notas" cols="30" class="form-control" rows="3"></textarea>
                                 </div>
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/reject.svg" alt="..." width="30px"></button>
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <button type="button" class="btn-docs btn-danger"><img src="./icons/reject.svg" alt="..." width="20px"><span class="ml-1">Rechazar</span></button>
                                 </div>
                             </div>
                         </form>
@@ -243,7 +251,7 @@
             <div class="modal-dialog modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="staticBackdropLabel"><strong>Documentacion</strong></h4>
+                        <h4 class="modal-title" id="staticBackdropLabel"><strong>Documentación</strong></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -252,13 +260,13 @@
                         <form action=""  id="">
                             <div class="form-group row">
                                 <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <label for="tira_materias" class="col-form-label ml-1">Tira de materias:</label>
+                                    <label for="tira_materias" class="col-form-label">Tira de materias:</label>
                                 </div>
                                 <div class="col-sm-5 mb-3 mb-sm-0">
-                                <label for="tira_materias" class="col-form-label ml-1">tira_de_materias.pdf</label>
+                                    <label for="tira_materias" class="col-form-label">tira_de_materias.pdf</label>
                                 </div>
                                 <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/check.svg" alt="..." width="30px"></button>
+                                    <img src="./icons/check.svg" alt="..." width="24px">
                                 </div>                                
                             </div>
                             <div class="form-group row">
@@ -266,10 +274,10 @@
                                     <label for="seguro_estudiante" class="col-form-label ml-1">Seguro de estudiante:</label>
                                 </div>
                                 <div class="col-sm-5 mb-3 mb-sm-0">
-                                <label for="seguro_estudiante" class="col-form-label ml-1">seguro_de_estudiante.pdf</label>
+                                    <a href="#"><label for="seguro_estudiante" class="col-form-label ml-1">seguro_de_estudiante.pdf</label></a>
                                 </div>
                                 <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/reject.svg" alt="..." width="30px"></button>
+                                    <img src="./icons/cross.svg" alt="..." width="24px">
                                 </div>                                
                             </div>
                             <div class="form-group row">
@@ -285,10 +293,10 @@
                                     <label for="seguro_axxa" class="col-form-label ml-1">Seguro Axxa:</label>
                                 </div>
                                 <div class="col-sm-5 mb-3 mb-sm-0">
-                                <label for="seguro_axxa" class="col-form-label ml-1">seguro_axxa.pdf</label>
+                                    <label for="seguro_axxa" class="col-form-label ml-1">seguro_axxa.pdf</label>
                                 </div>
                                 <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/check.svg" alt="..." width="30px"></button>
+                                    <img src="./icons/check.svg" alt="..." width="24px">
                                 </div>                                
                             </div>
                             <div class="form-group row">
@@ -296,16 +304,16 @@
                                     <label for="credencial" class="col-form-label ml-1">Credencial escolar:</label>
                                 </div>
                                 <div class="col-sm-5 mb-3 mb-sm-0">
-                                <label for="credencial" class="col-form-label ml-1">credencial.pdf</label>
+                                    <label for="credencial" class="col-form-label ml-1">credencial.pdf</label>
                                 </div>
                                 <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/check.svg" alt="..." width="30px"></button>
+                                    <img src="./icons/check.svg" alt="..." width="24px">
                                 </div>                                
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary editar-datos" data-dismiss="modal" id="">Aceptar</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="">Aceptar</button>
                     </div>
                 </div>
             </div>
@@ -317,7 +325,7 @@
             <div class="container-fluid">
                 <div class="container">
                     <div class="footer-info">
-                        <a href="index.html" class="footer-logo mt-0">A<span>ctiv</span>F<span>esc</span></a>
+                        <a href="index.php" class="footer-logo mt-0">A<span>ctiv</span>F<span>esc</span></a>
                         <h3>Edificio de Extensión Universitaria, Km. 2.5 Carretera cuautitlán Teoloyucan, San Sebastián Xhala, Cuautitlán Izcalli, Edo. de México. CP. 54714</h3>
                         <div class="footer-menu">
                             <p>5623 1813</p>
