@@ -63,8 +63,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
+            <div class="row" id="contenedor_actividades">
+                <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3" >
                     <table class="table table-hover table-striped table-sm">
                         <thead>
                             <th scope="col">#</th>
@@ -83,63 +83,8 @@
                             <th scope="col">Viernes</th>
                             <th scope="col">Opciones</th>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>1506</td>
-                                <td>Basketbol</td>
-                                <td>Arturo Fernández</td>
-                                <td>5584974180</td>
-                                <td>2021-I</td>
-                                <td>25</td>
-                                <td>Canchas de Basketbol</td>
-                                <td>Activo</td>
-                                <td>13:00-15:00</td>
-                                <td></td>
-                                <td>13:00-15:00</td>
-                                <td></td>
-                                <td>13:00-15:00</td>
-                                <td>
-                                    <!--BOTON OPCIONES-->
-                                    <div class="dropdown">
-                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Opciones
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                                            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#modalEditar">Editar</button>
-                                            <button class="dropdown-item" type="button">Eliminar</button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>1507</td>
-                                <td>Futbol</td>
-                                <td>Roberto González</td>
-                                <td>5589471073</td>
-                                <td>2021-I</td>
-                                <td>24</td>
-                                <td>Canchas de Futbol</td>
-                                <td>Activo</td>
-                                <td></td>
-                                <td>14:00-16:00</td>
-                                <td></td>
-                                <td>14:00-16:00</td>
-                                <td></td>
-                                <td>
-                                    <!--BOTON OPCIONES-->
-                                    <div class="dropdown">
-                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Opciones
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                                            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#modalEditar">Editar</button>
-                                            <button class="dropdown-item" type="button">Eliminar</button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+                        <tbody id="contenido_tabla">
+
                         </tbody>
                     </table>
                 </div>
@@ -541,7 +486,9 @@
         <script src="mail/jqBootstrapValidation.min.js"></script>
         <script src="mail/contact.js"></script>
 
+
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="js/horarios.js"></script>
     </body>
 </html>
