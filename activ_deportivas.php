@@ -185,6 +185,9 @@
         <script src="mail/jqBootstrapValidation.min.js"></script>
         <script src="mail/contact.js"></script>
         <!-- Template Javascript -->
+        <script>
+            let tabla =true;
+        </script>
         <script src="js/main.js"></script>
         <script src="js/actividades_deportivas.js"></script>
     </body>

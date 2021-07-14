@@ -90,9 +90,9 @@
                     </table>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="lista_desplegable">
                 <div class="col-lg-12">
-                    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalAgregar">Agregar Nuevo</button>
+                    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalAgregar">Agregar Nuevo Horario</button>
                 </div>
             </div>
         </div>
@@ -127,9 +127,7 @@
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
                                     <select name="deportes" id="deportes" class="form-control ml-1">
-                                        <option>Karate</option>
-                                        <option>Judo</option>
-                                        <option>Fútbol</option>
+                                        <!--ajax-->
                                     </select>
                                 </div>
                             </div>
@@ -154,7 +152,9 @@
                                     <label for="Semestre" class="col-form-label ml-1">Semestre:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="sem" id="sem" class="form-control ml-1">
+                                    <select name="sem" id="sem" class="form-control ml-1">
+                                        <!--ajax-->
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -171,9 +171,7 @@
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
                                     <select name="lugar" id="lugar" class="form-control ml-1">
-                                        <option>Canchas de Fútbol</option>
-                                        <option>Gimnasio</option>
-                                        <option>Canchas de Basketbol</option>
+                                        <!-- ajax-->
                                     </select>
                                 </div>
                             </div>
@@ -186,13 +184,13 @@
                                     <label for="a" class="col-form-label ml-2">de</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-inicio" class="form-control">
+                                    <input type="time" id="hora-inicio_l" class="form-control">
                                 </div>
                                 <div class="col-sm-1 mb-3 mb-sm-0">
                                     <label for="de" class="col-form-label">a</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-fin" class="form-control">
+                                    <input type="time" id="hora-fin_l" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -203,13 +201,13 @@
                                     <label for="de" class="col-form-label ml-2">de</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-inicio" class="form-control">
+                                    <input type="time" id="hora-inicio_m" class="form-control">
                                 </div>
                                 <div class="col-sm-1 mb-3 mb-sm-0">
                                     <label for="a" class="col-form-label">a</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-fin" class="form-control">
+                                    <input type="time" id="hora-fin_m" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -220,13 +218,13 @@
                                     <label for="de" class="col-form-label ml-2">de</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-inicio" class="form-control">
+                                    <input type="time" id="hora-inicio_mi" class="form-control">
                                 </div>
                                 <div class="col-sm-1 mb-3 mb-sm-0">
                                     <label for="a" class="col-form-label">a</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-fin" class="form-control">
+                                    <input type="time" id="hora-fin_mi" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -237,13 +235,13 @@
                                     <label for="de" class="col-form-label ml-2">de</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-inicio" class="form-control">
+                                    <input type="time" id="hora-inicio_j" class="form-control">
                                 </div>
                                 <div class="col-sm-1 mb-3 mb-sm-0">
                                     <label for="a" class="col-form-label">a</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-fin" class="form-control">
+                                    <input type="time" id="hora-fin_j" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -254,20 +252,20 @@
                                     <label for="de" class="col-form-label ml-2">de</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-inicio" class="form-control">
+                                    <input type="time" id="hora-inicio_v" class="form-control">
                                 </div>
                                 <div class="col-sm-1 mb-3 mb-sm-0">
                                     <label for="a" class="col-form-label">a</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-fin" class="form-control">
+                                    <input type="time" id="hora-fin_v" class="form-control">
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="agregar-nuevo">Agregar</button>
+                        <button type="button" class="btn btn-primary agregar_horario" data-dismiss="modal" id="agregar-nuevo">Agregar</button>
                     </div>
                 </div>
             </div>
@@ -303,7 +301,7 @@
                                     <label for="deporte" class="col-form-label ml-1">Deporte:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="deportes" id="deportes" class="form-control ml-1">
+                                    <select name="deportes" id="deportes_edit" class="form-control ml-1">
                                         <option>Karate</option>
                                         <option>Judo</option>
                                         <option>Fútbol</option>
@@ -331,7 +329,11 @@
                                     <label for="Semestre" class="col-form-label ml-1">Semestre:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="sem" id="sem" class="form-control ml-1">
+                                    <select name="sem_edit" id="sem_edit" class="form-control ml-1">
+
+
+                                    </select>
+
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -347,7 +349,7 @@
                                     <label for="lugar" class="col-form-label ml-1">Lugar:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="lugar" id="lugar" class="form-control ml-1">
+                                    <select name="lugar" id="lugar_edit" class="form-control ml-1">
                                         <option>Canchas de Fútbol</option>
                                         <option>Gimnasio</option>
                                         <option>Canchas de Basketbol</option>
@@ -489,7 +491,12 @@
 
 
         <!-- Template Javascript -->
+        <script>
+            let tabla=false;
+        </script>
         <script src="js/main.js"></script>
         <script src="js/horarios.js"></script>
+        <script src="js/actividades_deportivas.js"></script>
+        <script src="js/espacios.js"></script>
     </body>
 </html>

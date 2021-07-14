@@ -131,17 +131,17 @@ class actividades_deportivas extends CONEXION_M
         // 0 todos, 1 activos, 2 inactivos
         switch ($filtro){
             case "1":
-                $filtro_estatus= " WHERE `estatus_actividad`= 1";
+                $filtro_estatus= " AND `estatus_actividad`= 1";
                 break;
             case "2":
-                $filtro_estatus=" WHERE `estatus_actividad`= 0";
+                $filtro_estatus=" AND `estatus_actividad`= 0";
                 break;
             default:
                 $filtro_estatus="";
                 break;
         }
         $query = "SELECT ar.*, tp.nombre FROM actividad_recreativa ar, tipo_actividad tp WHERE
-                    ar.tipo_actividad=tp.id_tipo".$filtro_estatus." ORDER BY nombre_actividad ASC";
+                    ar.tipo_actividad=tp.id_tipo ".$filtro_estatus." ORDER BY nombre_actividad ASC";
         $this->connect();
         $result = $this->getData($query);
         $this->close();

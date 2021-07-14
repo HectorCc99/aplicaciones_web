@@ -1,6 +1,6 @@
 <?php
 
-include"conexion.php";
+include_once "conexion.php";
 
 class grupo extends CONEXION_M
 {
@@ -160,21 +160,7 @@ class grupo extends CONEXION_M
         $this->semestre = $semestre;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCorreo()
-    {
-        return $this->correo;
-    }
 
-    /**
-     * @param mixed $correo
-     */
-    public function setCorreo($correo)
-    {
-        $this->correo = $correo;
-    }
 
     /**
      * @return mixed
@@ -197,9 +183,9 @@ class grupo extends CONEXION_M
     //AGREGAR
     function agregarGrupo(){
         $query="INSERT INTO `grupo` (`id_grupo`, `id_actividad`, `grupo`, `cupo`, `profesor`,
-                                    `id_espacio`, `id_horario`, `semestre`, `estatus_grupo`,  `correo`, `telefono_prof`) 
+                                    `id_espacio`, `id_horario`, `semestre`, `estatus_grupo`, `telefono_prof`) 
 		                    VALUES (NULL, '".$this->getIdActividadFk()."', '".$this->getGrupo()."', '".$this->getCupo()."', '".$this->getProfesor()."',
-		                            '".$this->getIdEspacioFk()."', '".$this->getIdHorarioFk()."', '".$this->getSemestre()."', '".$this->getEstatusGrupo()."', '".$this->getCorreo()."', '".$this->getTelProfesor()."')";
+		                            '".$this->getIdEspacioFk()."', '".$this->getIdHorarioFk()."', '".$this->getSemestre()."', '".$this->getEstatusGrupo()."', '".$this->getTelProfesor()."')";
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();
@@ -213,10 +199,10 @@ class grupo extends CONEXION_M
         // 0 todos, 1 activos, 2 inactivos
         switch ($filtro){
             case "1":
-                $filtro_estatus= " WHERE `estatus_grupo`= 1";
+                $filtro_estatus= " AND  g.`estatus_grupo`= 1";
                 break;
             case "2":
-                $filtro_estatus=" WHERE `estatus_grupo`= 0";
+                $filtro_estatus=" AND g.`estatus_grupo`= 0";
                 break;
             default:
                 $filtro_estatus="";
@@ -230,7 +216,7 @@ class grupo extends CONEXION_M
                 WHERE g.id_actividad = ar.id_actividad
                 AND g.id_espacio = er.id_espacio
                 AND g.id_horario = h.id_horario
-                 AND '.$filtro_estatus.'
+                 ".$filtro_estatus."
                 ORDER BY g.grupo ASC";
         $this->connect();
         $result = $this->getData($query);
@@ -259,7 +245,7 @@ class grupo extends CONEXION_M
     function modificarGrupo(){
         $query="UPDATE `grupo` SET `id_actividad`='".$this->getIdActividadFk()."', `grupo`='".$this->getGrupo()."', `cupo`='".$this->getCupo()."',
                 `profesor`='".$this->getProfesor()."',  `id_espacio`='".$this->getIdEspacioFk()."', `id_horario`='".$this->getIdHorarioFk()."',
-                `semestre`='".$this->getSemestre()."', `correo`='".$this->getCorreo()."', `telefono_prof`='".$this->getTelProfesor()."'
+                `semestre`='".$this->getSemestre()."',`telefono_prof`='".$this->getTelProfesor()."'
                 WHERE `id_grupo`=".$this->getIdGrupo();
         $this->connect();
         $result = $this->executeInstruction($query);

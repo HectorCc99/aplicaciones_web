@@ -1,7 +1,8 @@
 <?php
-function Agregar_Horario($lunes,$martes,$miercoles,$jueves,$viernes){
+function Agregar_Horario($id,$lunes,$martes,$miercoles,$jueves,$viernes){
     include_once "../model/horarios.php";
     $obj_horarios = new horarios();
+    $obj_horarios->setIdHorario($id);
     $obj_horarios->setLunes($lunes);
     $obj_horarios->setMartes($martes);
     $obj_horarios->setMiercoles($miercoles);
@@ -11,10 +12,10 @@ function Agregar_Horario($lunes,$martes,$miercoles,$jueves,$viernes){
 }
 
 
-function ListaHorarios(){
+function ListaHorarios($filtro){
     include_once "../model/horarios.php";
     $obj_horarios = new horarios();
-    $result=$obj_horarios->mostrarHorarios();
+    $result=$obj_horarios->mostrarHorarios($filtro);
     $data=json_encode($result);
     return$data;
 }

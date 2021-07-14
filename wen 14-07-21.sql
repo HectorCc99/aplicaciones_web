@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-07-2021 a las 20:13:32
+-- Tiempo de generación: 15-07-2021 a las 01:05:38
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -36,6 +36,13 @@ CREATE TABLE `actividad_recreativa` (
   `tipo_actividad` int(11) DEFAULT NULL,
   `estatus_actividad` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `actividad_recreativa`
+--
+
+INSERT INTO `actividad_recreativa` (`id_actividad`, `id_administrador`, `nombre_actividad`, `descripcion`, `fecha_creacion`, `tipo_actividad`, `estatus_actividad`) VALUES
+(1, NULL, 'Futbol Americano', 'Esta es la descripcion de un deporte', '2021-07-12 23:03:54', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -121,6 +128,14 @@ CREATE TABLE `espacio_recreativo` (
   `tipo_area` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `espacio_recreativo`
+--
+
+INSERT INTO `espacio_recreativo` (`id_espacio`, `nombre_espacio`, `ubicacion`, `tipo_area`) VALUES
+(1, 'Los corrales', 'los corrales', 'verde'),
+(2, 'Canchas de vóleibol\r\n\r\n', 'Area 3 junto al gym', 'abierta');
+
 -- --------------------------------------------------------
 
 --
@@ -158,11 +173,22 @@ CREATE TABLE `grupo` (
   `cupo` int(11) DEFAULT NULL,
   `profesor` varchar(100) DEFAULT NULL,
   `id_espacio` int(11) DEFAULT NULL,
-  `id_horario` int(11) DEFAULT NULL,
   `semestre` varchar(50) DEFAULT NULL,
   `estatus_grupo` tinyint(1) DEFAULT NULL,
-  `telefono_prof` varchar(20) DEFAULT NULL
+  `telefono_prof` varchar(20) DEFAULT NULL,
+  `id_horario` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `grupo`
+--
+
+INSERT INTO `grupo` (`id_grupo`, `id_actividad`, `grupo`, `cupo`, `profesor`, `id_espacio`, `semestre`, `estatus_grupo`, `telefono_prof`, `id_horario`) VALUES
+(1, 1, '1500', 50, 'Bianca Sánchez', 1, '2022-1', 1, '4444444444', '2021-07-15 00:52:31'),
+(5, 1, '1502', 45, 'Carlos Barrientos López', 1, '2022-1', 0, '455555555', '2021-07-15 00:52:31'),
+(6, 1, '1503', 30, 'Leonel Salazar', 2, '2021-2', 1, '66666666', '2021-07-15 00:57:25'),
+(7, 1, '1504', 50, 'Carlos Alcantara', 2, '2021-2', 1, '1234567890', '2021-07-15 00:58:54'),
+(8, 1, '1505', 1, 'lolo', 2, '2021-2', 1, '1234456', '2021-07-15 01:03:21');
 
 -- --------------------------------------------------------
 
@@ -171,13 +197,26 @@ CREATE TABLE `grupo` (
 --
 
 CREATE TABLE `horarios` (
-  `id_horario` int(11) NOT NULL,
+  `id_horario` varchar(100) NOT NULL,
   `lunes` varchar(50) DEFAULT NULL,
   `martes` varchar(50) DEFAULT NULL,
   `miercoles` varchar(50) DEFAULT NULL,
   `jueves` varchar(50) DEFAULT NULL,
   `viernes` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `horarios`
+--
+
+INSERT INTO `horarios` (`id_horario`, `lunes`, `martes`, `miercoles`, `jueves`, `viernes`) VALUES
+('2021-07-15 00:52:31', '-', '11:30-00:25', '-', '10:26-11:26', '-'),
+('2021-07-15 00:53:24', '-', '11:30-00:25', '-', '10:26-11:26', '-'),
+('2021-07-15 00:54:06', '-', '11:30-00:25', '-', '10:26-11:26', '-'),
+('2021-07-15 00:55:52', '-', '11:30-00:25', '-', '10:26-11:26', '-'),
+('2021-07-15 00:57:25', '17:57-18:57', '-', '-', '-', '17:57-18:57'),
+('2021-07-15 00:58:54', '-', '13:00-14:00', '-', '18:00-19:00', '-'),
+('2021-07-15 01:03:21', '21:00-22:00', '-', '-', '-', '-');
 
 -- --------------------------------------------------------
 
@@ -189,7 +228,7 @@ CREATE TABLE `prestamo` (
   `id_prestamo` int(11) NOT NULL,
   `id_usuario` int(11) DEFAULT NULL,
   `id_administrador` int(11) DEFAULT NULL,
-  `fecha_prestamo` datetime DEFAULT NULL,
+  `fecha_prestamo` date DEFAULT NULL,
   `hora_inicio` time DEFAULT NULL,
   `hora_fin` time DEFAULT NULL,
   `notas` text DEFAULT NULL,
@@ -256,6 +295,13 @@ CREATE TABLE `tipo_actividad` (
   `estatus` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `tipo_actividad`
+--
+
+INSERT INTO `tipo_actividad` (`id_tipo`, `nombre`, `estatus`) VALUES
+(1, 'Cooperativo', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -275,6 +321,13 @@ CREATE TABLE `usuario` (
   `telefono` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `nombre`, `primer_ap`, `segundo_ap`, `cuenta`, `correo`, `contrasenia`, `id_carrera`, `estatus_usuario`, `telefono`) VALUES
+(1, 'Hector Fernando', 'Cortes', 'Añorve', '123455677', 'hector-cortes@gmail.com', '12345678', 1003, 1, '5567831987');
+
 -- --------------------------------------------------------
 
 --
@@ -283,10 +336,18 @@ CREATE TABLE `usuario` (
 
 CREATE TABLE `usuario_actividad` (
   `id_usuario` int(11) NOT NULL,
-  `id_actividad` int(11) NOT NULL,
+  `id_grupo` int(11) NOT NULL,
   `asistencia` tinyint(1) DEFAULT NULL,
-  `fecha_inscripcion` datetime DEFAULT NULL
+  `fecha_inscripcion` datetime DEFAULT NULL,
+  `año` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuario_actividad`
+--
+
+INSERT INTO `usuario_actividad` (`id_usuario`, `id_grupo`, `asistencia`, `fecha_inscripcion`, `año`) VALUES
+(1, 1, 0, '2021-07-12 23:17:00', '2022-1');
 
 --
 -- Índices para tablas volcadas
@@ -411,8 +472,8 @@ ALTER TABLE `usuario`
 -- Indices de la tabla `usuario_actividad`
 --
 ALTER TABLE `usuario_actividad`
-  ADD PRIMARY KEY (`id_usuario`,`id_actividad`),
-  ADD KEY `id_actividad` (`id_actividad`);
+  ADD PRIMARY KEY (`id_usuario`,`id_grupo`) USING BTREE,
+  ADD KEY `id_grupo` (`id_grupo`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -422,7 +483,7 @@ ALTER TABLE `usuario_actividad`
 -- AUTO_INCREMENT de la tabla `actividad_recreativa`
 --
 ALTER TABLE `actividad_recreativa`
-  MODIFY `id_actividad` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_actividad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `actividad_recursos`
@@ -452,7 +513,7 @@ ALTER TABLE `carreras`
 -- AUTO_INCREMENT de la tabla `espacio_recreativo`
 --
 ALTER TABLE `espacio_recreativo`
-  MODIFY `id_espacio` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_espacio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `eventos`
@@ -464,13 +525,7 @@ ALTER TABLE `eventos`
 -- AUTO_INCREMENT de la tabla `grupo`
 --
 ALTER TABLE `grupo`
-  MODIFY `id_grupo` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `horarios`
---
-ALTER TABLE `horarios`
-  MODIFY `id_horario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_grupo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `prestamo`
@@ -494,13 +549,13 @@ ALTER TABLE `recurso_recreativo`
 -- AUTO_INCREMENT de la tabla `tipo_actividad`
 --
 ALTER TABLE `tipo_actividad`
-  MODIFY `id_tipo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_tipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
@@ -546,7 +601,7 @@ ALTER TABLE `eventos`
 ALTER TABLE `grupo`
   ADD CONSTRAINT `grupo_ibfk_1` FOREIGN KEY (`id_actividad`) REFERENCES `actividad_recreativa` (`id_actividad`),
   ADD CONSTRAINT `grupo_ibfk_2` FOREIGN KEY (`id_espacio`) REFERENCES `espacio_recreativo` (`id_espacio`),
-  ADD CONSTRAINT `grupo_ibfk_3` FOREIGN KEY (`id_horario`) REFERENCES `horarios` (`id_horario`);
+  ADD CONSTRAINT `grupo_ibfk_3` FOREIGN KEY (`id_horario`) REFERENCES `horarios` (`id_horario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `prestamo`
@@ -587,7 +642,8 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `usuario_actividad`
   ADD CONSTRAINT `usuario_actividad_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`),
-  ADD CONSTRAINT `usuario_actividad_ibfk_2` FOREIGN KEY (`id_actividad`) REFERENCES `actividad_recreativa` (`id_actividad`);
+  ADD CONSTRAINT `usuario_actividad_ibfk_2` FOREIGN KEY (`id_grupo`) REFERENCES `actividad_recreativa` (`id_actividad`),
+  ADD CONSTRAINT `usuario_actividad_ibfk_3` FOREIGN KEY (`id_grupo`) REFERENCES `grupo` (`id_grupo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,6 +1,6 @@
 <?php
 
-include"conexion.php";
+include_once "conexion.php";
 
 class horarios extends CONEXION_M
 {
@@ -112,7 +112,7 @@ class horarios extends CONEXION_M
 
     function agregarHorario(){
         $query="INSERT INTO `horarios` (`id_horario`, `lunes`, `martes`, `miercoles`, `jueves`, `viernes`)
-                VALUES (NULL, '".$this->getLunes()."', '".$this->getMartes()."', '".$this->getMiercoles()."', '".$this->getJueves()."', '".$this->getViernes()."')";
+                VALUES ('".$this->getIdHorario()."', '".$this->getLunes()."', '".$this->getMartes()."', '".$this->getMiercoles()."', '".$this->getJueves()."', '".$this->getViernes()."')";
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();
@@ -120,6 +120,7 @@ class horarios extends CONEXION_M
     }
 
     function mostrarHorarios(){
+
         $query="SELECT * FROM `horarios`"; //¿llamar la tabla de grupo y hacer un where con el id?
         $this->connect();
         $result = $this->getData($query);

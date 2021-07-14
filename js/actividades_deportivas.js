@@ -1,12 +1,52 @@
 // Activamos escucha
 
 $(document).ready(function () {
-    ListaActividades(0);
+    if(tabla){
+        TablaActividades();
+    }else{
+        listaActividades();
+    }
+
 
 });
 
+function listaActividades(){
+    $.ajax({
+        url:"./control/list_actividades.php",
+        data: {
+            filtro: 1
+        },
+        type: "POST",
+        success: function (response){
+            //console.log(response);
+            let obj_result=JSON.parse(response);
+            let template="";
+            if(obj_result.length>0){
+                var cont=0;
+                obj_result.forEach((obj_result=>{
+                    cont++;
+                    template+=`<option value="${obj_result.id_actividad}">${obj_result.nombre_actividad}</option>`;
+                }));
+                //se asigna al cuerpo de la tabla
+                $("#deportes").html(template);
+                $("#deportes_edit").html(template);
+            }else{
+                $("#lista_desplegable").empty();
+                template=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Lo sentimos</strong> No hay actividades deportivas activas, por favor active una.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>`;
+                $("#lista_desplegable").html(template);
+            }
+        }
+    })
+}
+
+
 //
-function ListaActividades() {
+function TablaActividades() {
     $.ajax({
         url:"./control/list_actividades.php",
         data: {
@@ -90,7 +130,7 @@ $(document).on("click",".eliminar_actividad",function () {
                 ListaActividades();
             }
         )
-})
+});
 
 $(document).on("click",".editar-datos",function () {
     let id = $("#id_act").attr("value");
@@ -135,7 +175,7 @@ function lista_tipo_Act(){
             success: function (response)
             {
                 let obj_result = JSON.parse(response);
-                let template = " <option selected disabled>SELECCIONE UNA CATEGORIA</option> ";
+                let template = " <option selected disabled>selecione una categoria</option> ";
                 obj_result.forEach(
                     (obj_result)=>
                     {

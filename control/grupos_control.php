@@ -1,6 +1,6 @@
 <?php
 // AGREGAR
-function registra_grupo($id_act,$grupo,$cupo,$profesor,$espacio,$horario,$semestre,$estatus_g,$correo,$tel_prof){
+function registra_grupo($id_act,$grupo,$cupo,$profesor,$espacio,$horario,$semestre,$estatus_g,$tel_prof){
     include_once "../model/grupo.php";
     $obj_grupos= new grupo();
     $obj_grupos->setIdActividadFk($id_act);
@@ -11,7 +11,6 @@ function registra_grupo($id_act,$grupo,$cupo,$profesor,$espacio,$horario,$semest
     $obj_grupos->setIdHorarioFk($horario);
     $obj_grupos->setSemestre($semestre);
     $obj_grupos->setEstatusGrupo($estatus_g);
-    $obj_grupos->setCorreo($correo);
     $obj_grupos->setTelProfesor($tel_prof);
     return $obj_grupos->agregarGrupo() ? "Registro Exitoso" : "Error registro";
 }
@@ -37,7 +36,7 @@ function DetallesGrupo($id){
 
 
 // MODIFICAR
-function Actualiza_grupo($id_grupo,$id_act,$grupo,$cupo,$profesor,$espacio,$estatus_g,$horario,$semestre,$correo,$tel_prof){
+function Actualiza_grupo($id_grupo,$id_act,$grupo,$cupo,$profesor,$espacio,$estatus_g,$horario,$semestre,$tel_prof){
     include_once "../model/grupo.php";
     $obj_grupos= new grupo();
     $obj_grupos->setIdGrupo($id_grupo);
@@ -48,7 +47,6 @@ function Actualiza_grupo($id_grupo,$id_act,$grupo,$cupo,$profesor,$espacio,$esta
     $obj_grupos->setIdEspacioFk($espacio);
     $obj_grupos->setIdHorarioFk($horario);
     $obj_grupos->setSemestre($semestre);
-    $obj_grupos->setCorreo($correo);
     $obj_grupos->setTelProfesor($tel_prof);
     return $obj_grupos->modificarGrupo() ? "Modificacion Exitosa" : "Error al modificar";
 }
