@@ -233,7 +233,7 @@ class usuarios extends CONEXION_M
                 $filtro2= " ";
                 break;
         }
-        $query="SELECT u.*, c.nombre as nombre_carrera FROM usuario u, carrerasc WHERE c.id_carrera =u.id_carrera ".$filtro2." ORDER by nombre ASC";
+        $query="SELECT u.*, c.nombre as nombre_carrera FROM usuario u, carreras c WHERE c.id_carrera =u.id_carrera ".$filtro2." ORDER by nombre ASC";
         $this->connect();
         $result = $this->getData($query);
         $this->close();

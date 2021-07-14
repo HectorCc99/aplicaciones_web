@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-07-2021 a las 01:05:38
+-- Tiempo de generación: 15-07-2021 a las 01:29:10
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -157,7 +157,8 @@ CREATE TABLE `eventos` (
   `fecha_inicio` date DEFAULT NULL,
   `fecha_fin` date DEFAULT NULL,
   `hora_inicio` time DEFAULT NULL,
-  `hora_fin` time DEFAULT NULL
+  `hora_fin` time DEFAULT NULL,
+  `semestre` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -184,7 +185,7 @@ CREATE TABLE `grupo` (
 --
 
 INSERT INTO `grupo` (`id_grupo`, `id_actividad`, `grupo`, `cupo`, `profesor`, `id_espacio`, `semestre`, `estatus_grupo`, `telefono_prof`, `id_horario`) VALUES
-(1, 1, '1500', 50, 'Bianca Sánchez', 1, '2022-1', 1, '4444444444', '2021-07-15 00:52:31'),
+(1, 1, '1500', 50, 'Bianca Sánchez', 1, '2022-1', 0, '4444444444', '2021-07-15 00:52:31'),
 (5, 1, '1502', 45, 'Carlos Barrientos López', 1, '2022-1', 0, '455555555', '2021-07-15 00:52:31'),
 (6, 1, '1503', 30, 'Leonel Salazar', 2, '2021-2', 1, '66666666', '2021-07-15 00:57:25'),
 (7, 1, '1504', 50, 'Carlos Alcantara', 2, '2021-2', 1, '1234567890', '2021-07-15 00:58:54'),

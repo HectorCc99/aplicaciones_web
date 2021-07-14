@@ -106,7 +106,7 @@ $(document).on("click",".editar_actividad",function () {
 
     $("#contenedor_act").html(`<input type="hidden" name="id_actividad" id="id_act" value="${id}" class="form-control">`);
     detalles_actividad(id);
-     ListaActividades();
+    TablaActividades();
      lista_tipo_Act();
 
 })
@@ -127,7 +127,7 @@ $(document).on("click",".eliminar_actividad",function () {
             function (responsive){
                 //console.log(responsive);
                 lista_tipo_Act();
-                ListaActividades();
+                TablaActividades();
             }
         )
 });
@@ -142,7 +142,7 @@ $(document).on("click",".editar-datos",function () {
         {id,nombre,descripcion,tipo},
         function (responsive){
             console.log(responsive);
-            ListaActividades();
+            TablaActividades();
         }
     )
 })
@@ -164,7 +164,7 @@ function detalles_actividad($id_actividad){
                 $("#descr_m").html(`<textarea class="form-control" name="desc" id="desc_c"  rows="3">${obj_result.descripcion}</textarea>`);
                 //$("#estatus_m").html(`<input type="text" name="status" id="status" value="${obj_result.estatus_actividad == 1 ? "Activo":"Inactivo" }" class="form-control">`);
                 }));
-            ListaActividades();
+            TablaActividades();
         }
     })
 }
