@@ -20,7 +20,7 @@ function listaActividades(){
         success: function (response){
             //console.log(response);
             let obj_result=JSON.parse(response);
-            let template="";
+            let template="<option value='0' disabled selected>seleccione...</option>";
             if(obj_result.length>0){
                 var cont=0;
                 obj_result.forEach((obj_result=>{
@@ -41,7 +41,7 @@ function listaActividades(){
                 $("#lista_desplegable").html(template);
             }
         }
-    })
+    });
 }
 
 
@@ -109,7 +109,7 @@ $(document).on("click",".editar_actividad",function () {
     TablaActividades();
      lista_tipo_Act();
 
-})
+});
 
 
 $(document).on("click",".eliminar_actividad",function () {

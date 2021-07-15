@@ -81,24 +81,20 @@
                     <label for="deporte">Deporte:</label>
                 </div>
                 <div class="col-lg-4">
-                    <select name="deportes" id="deportes" class="select">
-                        <option>Basketbol</option>
-                        <option>Karate</option>
-                        <option>Fútbol</option>
+                    <select name="deportes" id="deportes" class="form-select list_actividad" aria-label="Default select example">
+                       <!-- ajax-->
                     </select>
                 </div>
                 <div class="col-lg-2">
                     <label for="deporte">Grupo:</label>
                 </div>
                 <div class="col-lg-4">
-                    <select name="deportes" id="deportes" class="select">
-                        <option>1501</option>
-                        <option>1502</option>
-                        <option>1503</option>
+                    <select name="grupos_1" id="grupos_1" class="form-select grupo-1" aria-label="Default select example">
+                    <!--ajax-->
                     </select>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="contenedor_solicitudes">
                 <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
                     <table class="table table-hover table-striped table-sm mt-3">
                         <thead>
@@ -107,31 +103,8 @@
                             <th scope="col">Fecha de Solicitud</th>
                             <th scope="col">Inscripción</th>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Belem Valdéz</td>
-                                <td>06-07-2021</td>
-                                <td>
-                                    <select name="inscripciones" id="inscripciones" class="select">
-                                        <option value="0">Aprobada</option>
-                                        <option value="1">Pendiente</option>
-                                        <option value="2">Rechazada</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Mauricio López</td>
-                                <td>02-07-2021</td>
-                                <td>
-                                    <select name="inscripciones" id="inscripciones" class="select">
-                                        <option value="0">Aprobada</option>
-                                        <option value="1">Pendiente</option>
-                                        <option value="2">Rechazada</option>
-                                    </select>
-                                </td>
-                            </tr>
+                        <tbody id="tabla_solicitudes">
+                        <!--ajax-->
                         </tbody>
                     </table>
                 </div>
@@ -153,26 +126,22 @@
                     <label for="deporte">Deporte:</label>
                 </div>
                 <div class="col-lg-4">
-                    <select name="deportes" id="deportes" class="select">
-                        <option>Basketbol</option>
-                        <option>Karate</option>
-                        <option>Fútbol</option>
+                    <select name="deportes" id="deportes_edit" class="form-select list_actividad2" aria-label="Default select example">
+                        <!-- Ajax-->
                     </select>
                 </div>
                 <div class="col-lg-2">
                     <label for="deporte">Grupo:</label>
                 </div>
                 <div class="col-lg-4">
-                    <select name="deportes" id="deportes" class="select">
-                        <option>1501</option>
-                        <option>1502</option>
-                        <option>1503</option>
+                    <select name="grupos_2" id="grupos_2" class="form-select grupos_2" aria-label="Default select example">
+
                     </select>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3 mt-3">
-                    <table class="table table-hover table-striped table-sm">
+                    <table class="table table-hover table-striped table-sm" >
                         <thead>
                             <th scope="col">#</th>
                             <th scope="col">Nombre del Alumno</th>
@@ -182,25 +151,8 @@
                             <th scope="col">Carrera</th>
                             <th scope="col">Fecha de Aceptación</th>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Gerardo Martínez</td>
-                                <td>314789414</td>
-                                <td>gerardo@gmail.com</td>
-                                <td>5578941240</td>
-                                <td>Informática</td>
-                                <td>08-07-2021</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Karla Zamora</td>
-                                <td>418794246</td>
-                                <td>karla@gmail.com</td>
-                                <td>5678941207</td>
-                                <td>Administración</td>
-                                <td>07-07-2021</td>
-                            </tr>
+                        <tbody id="tabla_inscripciones">
+
                         </tbody>
                     </table>
                 </div>
@@ -247,5 +199,11 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script>
+            let tabla=false;
+        </script>
+        <script src="js/actividades_deportivas.js"></script>
+        <script src="js/inscripciones.js"></script>
+
     </body>
 </html>

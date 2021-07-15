@@ -25,6 +25,18 @@ function listaGrupos($filtro){
     return $data;
 }
 
+function listaGruposdeunaActividad($id){
+    include_once "../model/grupo.php";
+    $obj_grupos= new grupo();
+    $obj_grupos->setIdActividadFk($id);
+    $resultado= $obj_grupos->mostrarGruposdeactividad();
+    $data=json_encode($resultado);
+    return $data;
+}
+
+
+
+
 function DetallesGrupo($id){
     include_once "../model/grupo.php";
     $obj_grupos= new grupo();

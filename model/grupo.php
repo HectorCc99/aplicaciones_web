@@ -224,6 +224,24 @@ class grupo extends CONEXION_M
         return $result;
     }
 
+    function mostrarGruposdeactividad(){ // LISTA
+
+        $query="SELECT g.*, ar.nombre_actividad, er.nombre_espacio, h.* 
+                FROM grupo g, 
+                actividad_recreativa ar,
+                espacio_recreativo er,
+                horarios h 
+                WHERE g.id_actividad = ar.id_actividad
+                AND g.id_espacio = er.id_espacio
+                AND g.id_horario = h.id_horario
+                AND ar.id_actividad =".$this->getIdActividadFk()."
+                ORDER BY g.grupo ASC";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+
     function mostrarGrupo(){
         $query="SELECT g.*, ar.nombre_actividad, er.nombre_espacio, h.* 
                 FROM grupo g, 
