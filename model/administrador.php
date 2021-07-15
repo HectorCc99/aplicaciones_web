@@ -74,7 +74,7 @@ class administrador extends CONEXION_M
     /*Funciones de la clase administrador*/
     function agregar_admin(){
         $query="INSERT INTO `administrador`(`id_admin`, `id_usuario`, `fecha_alta`, `estatus_admin`) 
-        VALUES (NULL,'".$this->getIdUsuarioFx()."','".date('Y-m-d H:i:s')."','".$this->getEstatusAdmin() ."')";
+        VALUES (NULL,'".$this->getIdUsuarioFx()."','".date('Y-m-d')."','".$this->getEstatusAdmin() ."')";
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();
@@ -101,17 +101,17 @@ class administrador extends CONEXION_M
 
         switch ($tipoEstado){
             case "1":
-                $consultaEstatus= "`estatus_admin` = 1";
+                $consultaEstatus= "AND `estatus_admin` = 1";
                 break;
             case "2":
-                $consultaEstatus= "`estatus_admin` = 0";
+                $consultaEstatus= "AND `estatus_admin` = 0";
                 break;
             default:
                 $consultaEstatus= " ";
                 break;
         }
         $query="SELECT u.nombre, u.primer_ap, u.segundo_ap,  a.*  FROM administrador a, usuario u
-        WHERE a.id_usuario=u.id_usuario AND".$consultaEstatus." ORDER by fecha_alta";
+        WHERE a.id_usuario=u.id_usuario ".$consultaEstatus." ORDER by fecha_alta";
         $this->connect();
         $result = $this->getData($query);
         $this->close();

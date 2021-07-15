@@ -1,9 +1,8 @@
 <?php
-function agregar_admin($id_usuarioFK,$fecha_Registro){
+function agregar_admin($id_usuarioFK){
     include_once "../model/administrador.php";
     $obj_admin= new administrador();
     $obj_admin->setIdUsuarioFx($id_usuarioFK);
-    $obj_admin->setFechaAlta($fecha_Registro);
     $obj_admin->setEstatusAdmin(1);
     return $obj_admin->agregar_admin() ? "Registro exitoso" : "falla en el registro";
 
