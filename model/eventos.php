@@ -1,6 +1,6 @@
 <?php
 
-include"conexion.php";
+include_once "conexion.php";
 
 class eventos extends CONEXION_M
 {
@@ -12,8 +12,6 @@ class eventos extends CONEXION_M
     private $descripcion;
     private $encargado;
     private $tel_encargado;
-    private $semestre_ev;
-    private $cupo_ev;
     private $imagen;
     private $cantidad_recurso;
     private $estatus_evento;
@@ -21,6 +19,7 @@ class eventos extends CONEXION_M
     private $fecha_fin;
     private $hora_inicio;
     private $hora_fin;
+    private $semestre_ev;
 
     /**
      * @return mixed
@@ -148,24 +147,14 @@ class eventos extends CONEXION_M
     public function getSemestreEv()
     {
         return $this->semestre_ev;
-    }/**
+    }
+
+    /**
      * @param mixed $semestre_ev
      */
     public function setSemestreEv($semestre_ev)
     {
         $this->semestre_ev = $semestre_ev;
-    }/**
-     * @return mixed
-     */
-    public function getCupoEv()
-    {
-        return $this->cupo_ev;
-    }/**
-     * @param mixed $cupo_ev
-     */
-    public function setCupoEv($cupo_ev)
-    {
-        $this->cupo_ev = $cupo_ev;
     }
 
     /**
@@ -294,13 +283,13 @@ class eventos extends CONEXION_M
     // AGREGAR
     function agregarEvento(){
         $query= "INSERT INTO `eventos` (`id_evento`, `id_administrador`, `id_espacio_r`, `id_recurso`, `nombre_actividad`,
-                                        `descripcion`, `encargado`, `telefono_encargado`, `semestre`, `cupo`, 
+                                        `descripcion`, `encargado`, `telefono_encargado`,
                                         `imagen`, `cantidad_recurso`, `estatus_evento`, `fecha_inicio`, `fecha_fin`,
-                                        `hora_inicio`, `hora_fin`) 
+                                        `hora_inicio`, `hora_fin`, `semestre`) 
                                 VALUES (NULL, '".$this->getIdAdministradorFk()."', '".$this->getIdEspacioRFk()."', '".$this->getIdRecursoFk()."', '".$this->getNombreActividad()."',
-                                            '".$this->getDescripcion()."', '".$this->getEncargado()."', '".$this->getTelEncargado()."', '".$this->getSemestreEv()."', '".$this->getCupoEv()."',
+                                            '".$this->getDescripcion()."', '".$this->getEncargado()."', '".$this->getTelEncargado()."',
                                             '".$this->getImagen()."', '".$this->getCantidadRecurso()."', '".$this->getEstatusEvento()."','".$this->getFechaInicio()."','".$this->getFechaFin()."',
-                                            '".$this->getHoraInicio()."','".$this->getHoraFin()."')";
+                                            '".$this->getHoraInicio()."','".$this->getHoraFin()."', '".$this->getSemestreEv()."')";
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();
@@ -314,10 +303,10 @@ class eventos extends CONEXION_M
             // 0 todos, 1 activos, 2 inactivos
             switch ($filtro){
                 case "1":
-                    $filtro_estatus= " WHERE `estatus_evento`= 1";
+                    $filtro_estatus= " AND `estatus_evento`= 1";
                     break;
                 case "2":
-                    $filtro_estatus=" WHERE `estatus_evento`= 0";
+                    $filtro_estatus=" AND `estatus_evento`= 0";
                     break;
                 default:
                     $filtro_estatus="";
@@ -330,11 +319,12 @@ class eventos extends CONEXION_M
                 espacio_recreativo er,
                 recurso_evento re,
                 recurso_recreativo rr
-                WHERE e.id_administrador = a.id_admin 
+                WHERE e.id_evento = re.id_evento
+                AND e.id_administrador = a.id_admin 
                 AND a.id_usuario = u.id_usuario
                 AND e.id_espacio_r = er.id_espacio
                 AND e.id_recurso = rr.id_recurso
-                AND e.estatus_evento = '.$filtro_estatus.'
+                ".$filtro_estatus."
                 ORDER BY nombre_actividad ASC";
         $this->connect();
         $result = $this->getData($query);
@@ -350,48 +340,12 @@ class eventos extends CONEXION_M
                 espacio_recreativo er,
                 recurso_evento re,
                 recurso_recreativo rr
-                WHERE e.id_administrador = a.id_admin 
+                WHERE e.id_evento = re.id_evento
+                AND e.id_administrador = a.id_admin 
                 AND a.id_usuario = u.id_usuario
                 AND e.id_espacio_r = er.id_espacio
                 AND e.id_recurso = rr.id_recurso
                 AND e.id_evento=".$this->getIdEvento();
-        $this->connect();
-        $result = $this->getData($query);
-        $this->close();
-        return $result;
-    }
-
-    // MOSTRAR VISTA ADMIN - EVENTOS
-    //Falta el campo de semestre y cupo en la tabla de eventos de la bd
-    function listaEventosAdmin($filtro){ //LISTA
-        $filtro_estatus="";
-        // 0 todos, 1 activos, 2 inactivos
-        switch ($filtro){
-            case "1":
-                $filtro_estatus= " WHERE `estatus_evento`= 1";
-                break;
-            case "2":
-                $filtro_estatus=" WHERE `estatus_evento`= 0";
-                break;
-            default:
-                $filtro_estatus="";
-                break;
-        }
-        $query = "SELECT e.nombre_actividad, e.encargado, e.telefono_encargado, e.semestre, e.cupo, er.nombre_espacio 
-                    FROM eventos e,
-                    espacio_recreativo er 
-                    WHERE e.id_espacio_r = er.id_espacio 
-                    AND '.$filtro_estatus.' 
-                    ORDER BY nombre_actividad ASC";
-        $this->connect();
-        $result = $this->getData($query);
-        $this->close();
-        return $result;
-    }
-
-    function mostrarEventoAdmin(){
-        $query = "SELECT e.nombre_actividad, e.encargado, e.telefono_encargado, e.semestre, e.cupo, er.nombre_espacio 
-                    FROM eventos e, espacio_recreativo er WHERE e.id_espacio_r = er.id_espacio AND e.id_evento =".$this->getIdEvento();
         $this->connect();
         $result = $this->getData($query);
         $this->close();
@@ -403,7 +357,7 @@ class eventos extends CONEXION_M
     function modificarEvento(){
         $query="UPDATE `eventos` SET `id_administrador`='".$this->getIdAdministradorFk()."', `id_espacio_r`='".$this->getIdEspacioRFk()."',`id_recurso`='".$this->getIdRecursoFk()."',
                                     `nombre_actividad`='".$this->getNombreActividad()."', `descripcion`='".$this->getDescripcion()."', `encargado`='".$this->getEncargado()."', 
-                                    `telefono_encargado`= '".$this->getTelEncargado()."', `semestre`='".$this->getSemestreEv()."', `cupo`='".$this->getCupoEv()."',
+                                    `telefono_encargado`= '".$this->getTelEncargado()."', `semestre`='".$this->getSemestreEv()."',
                                     `imagen`='".$this->getImagen()."', `cantidad_recurso`='".$this->getCantidadRecurso()."', `fecha_inicio`='".$this->getFechaInicio()."', 
                                     `fecha_fin`='".$this->getFechaFin()."', `hora_inicio`='".$this->getHoraInicio()."',  `hora_fin`='".$this->getHoraFin()."'  WHERE `id_evento` = ".$this->getIdEvento();
         $this->connect();
@@ -415,6 +369,15 @@ class eventos extends CONEXION_M
 
     function estatusEvento(){
         $query="UPDATE `eventos` SET `estatus_evento`='".$this->getEstatusEvento()."' WHERE `id_evento`=".$this->getIdEvento();
+        $this->connect();
+        $result = $this->executeInstruction($query);
+        $this->close();
+        return $result;
+    }
+
+    // ELIMINAR
+    function borrarEvento(){
+        $query="DELETE FROM `eventos` WHERE `id_evento`=".$this->getIdEvento();
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();
