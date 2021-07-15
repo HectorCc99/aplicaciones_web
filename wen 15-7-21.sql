@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-07-2021 a las 01:29:10
+-- Tiempo de generación: 16-07-2021 a las 00:56:18
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 8.0.7
 
@@ -42,7 +42,8 @@ CREATE TABLE `actividad_recreativa` (
 --
 
 INSERT INTO `actividad_recreativa` (`id_actividad`, `id_administrador`, `nombre_actividad`, `descripcion`, `fecha_creacion`, `tipo_actividad`, `estatus_actividad`) VALUES
-(1, NULL, 'Futbol Americano', 'Esta es la descripcion de un deporte', '2021-07-12 23:03:54', 1, 1);
+(1, NULL, 'Futbol Americano', 'Esta es la descripcion de un deporte', '2021-07-12 23:03:54', 1, 1),
+(2, NULL, 'Futbol', 'Este es el futbol normal', '2021-07-15 21:24:38', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -67,7 +68,7 @@ CREATE TABLE `actividad_recursos` (
 CREATE TABLE `administrador` (
   `id_admin` int(11) NOT NULL,
   `id_usuario` int(11) DEFAULT NULL,
-  `fecha_alta` datetime DEFAULT NULL,
+  `fecha_alta` date DEFAULT NULL,
   `estatus_admin` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -336,19 +337,22 @@ INSERT INTO `usuario` (`id_usuario`, `nombre`, `primer_ap`, `segundo_ap`, `cuent
 --
 
 CREATE TABLE `usuario_actividad` (
+  `id_inscripcion` varchar(100) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `id_grupo` int(11) NOT NULL,
   `asistencia` tinyint(1) DEFAULT NULL,
   `fecha_inscripcion` datetime DEFAULT NULL,
-  `año` varchar(30) DEFAULT NULL
+  `año` varchar(30) DEFAULT NULL,
+  `estatus_inscripcion` tinyint(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuario_actividad`
 --
 
-INSERT INTO `usuario_actividad` (`id_usuario`, `id_grupo`, `asistencia`, `fecha_inscripcion`, `año`) VALUES
-(1, 1, 0, '2021-07-12 23:17:00', '2022-1');
+INSERT INTO `usuario_actividad` (`id_inscripcion`, `id_usuario`, `id_grupo`, `asistencia`, `fecha_inscripcion`, `año`, `estatus_inscripcion`) VALUES
+('112022-1', 1, 1, 0, '2021-07-12 23:17:00', '2022-1', 1),
+('122021-1', 1, 5, NULL, '2021-07-15 05:53:45', '2021-1', 1);
 
 --
 -- Índices para tablas volcadas
@@ -473,7 +477,7 @@ ALTER TABLE `usuario`
 -- Indices de la tabla `usuario_actividad`
 --
 ALTER TABLE `usuario_actividad`
-  ADD PRIMARY KEY (`id_usuario`,`id_grupo`) USING BTREE,
+  ADD PRIMARY KEY (`id_inscripcion`),
   ADD KEY `id_grupo` (`id_grupo`);
 
 --
@@ -484,7 +488,7 @@ ALTER TABLE `usuario_actividad`
 -- AUTO_INCREMENT de la tabla `actividad_recreativa`
 --
 ALTER TABLE `actividad_recreativa`
-  MODIFY `id_actividad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_actividad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `actividad_recursos`
@@ -637,14 +641,6 @@ ALTER TABLE `recurso_evento`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`id_carrera`) REFERENCES `carreras` (`id_carrera`);
-
---
--- Filtros para la tabla `usuario_actividad`
---
-ALTER TABLE `usuario_actividad`
-  ADD CONSTRAINT `usuario_actividad_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`),
-  ADD CONSTRAINT `usuario_actividad_ibfk_2` FOREIGN KEY (`id_grupo`) REFERENCES `actividad_recreativa` (`id_actividad`),
-  ADD CONSTRAINT `usuario_actividad_ibfk_3` FOREIGN KEY (`id_grupo`) REFERENCES `grupo` (`id_grupo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
