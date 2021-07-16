@@ -41,17 +41,18 @@
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-primary navbar-dark">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">A<span>ctiv</span>F<span>esc</span></a>
+                <a href="home.php" class="navbar-brand">A<span>ctiv</span>F<span>esc</span></a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.php" class="nav-item nav-link mr-5">Inicio</a>
-                        <a href="deportes.php" class="nav-item nav-link mr-5">Deportes</a>
-                        <a href="prestamos.php" class="nav-item nav-link mr-5">Préstamos</a>
-                        <a href="registro.php" class="nav-item nav-link mr-5">Registro</a>
-                        <a href="login.php" class="nav-item nav-link mr-5">Iniciar Sesión</a>
+                        <a href="home.php" class="nav-item nav-link">Inicio</a>
+                        <a href="deportes.php" class="nav-item nav-link">Deportes</a>
+                        <a href="prestamos.php" class="nav-item nav-link">Préstamos</a>
+                        <a href="entrenadores.php" class="nav-item nav-link">Entrenadores</a>
+                        <a href="registro.php" class="nav-item nav-link">Registrarse</a>
+                        <a href="login.php" class="nav-item nav-link">Iniciar Sesión</a>
                     </div>
                 </div>
             </div>
