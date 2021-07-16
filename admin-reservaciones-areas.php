@@ -76,13 +76,11 @@
                     <label for="material">Área/Espacio:</label>
                 </div>
                 <div class="col-lg-4">
-                    <select name="area" id="area" class="select">
-                        <option>Todas</option>
-                        <option>Cancha de Fútbol</option>
-                        <option>Cancha de Basketbol</option>
-                        <option>Área de Fútbol Américano</option>
+                    <select name="area" id="area" class="form-select area" aria-label="Default select example">
+
                     </select>
                 </div>
+                <!--
                 <div class="col-lg-2">
                     <label for="fecha">Fecha:</label>
                 </div>
@@ -92,51 +90,16 @@
                         <option>07-07-2021</option>
                         <option>08-07-2021</option>                        
                     </select>
-                </div>
+                </div>-->
             </div>
-            <div class="row">
-                <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
-                    <table class="table table-hover table-striped table-sm mt-3">
-                        <thead>
-                            <th scope="col">#</th>
-                            <th scope="col">Nombre del Alumno</th>
-                            <th scope="col">Espacio</th>
-                            <th scope="col">Fecha</th>
-                            <th scope="col">Hora de Inicio</th>
-                            <th scope="col">Hora de Término</th>
-                            <th scope="col">Estatus</th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Viviana García</td>
-                                <td>Canchas de Basketbol</td>
-                                <td>07-07-2021</td>
-                                <td>12:00</td>
-                                <td>14:00</td>
-                                <td>
-                                    <select name="estatus" id="estatus" class="select">
-                                        <option value="0">Aprobada</option>
-                                        <option value="1">Rechaza</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Julian Bautista</td>
-                                <td>Canchas de Voleilbol</td>
-                                <td>07-07-2021</td>
-                                <td>11:00</td>
-                                <td>13:00</td>
-                                <td>
-                                    <select name="estatus" id="estatus" class="select">
-                                        <option value="0">Aprobada</option>
-                                        <option value="1">Rechaza</option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="row" >
+                <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3" id="tabla">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>Seleccione una area deportiva</strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -179,6 +142,8 @@
         <script src="mail/contact.js"></script>
 
         <!-- Template Javascript -->
+
         <script src="js/main.js"></script>
+        <script src="js/espacios.js"></script>
     </body>
 </html>

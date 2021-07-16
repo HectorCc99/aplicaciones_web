@@ -37,3 +37,17 @@ function listaEspacio(){
     $jason_data = json_encode($result);
     return $jason_data;
 }
+function prestamos_espacio($id_espacio){
+    include_once "../model/espacio_recreativo.php";
+    $obj_prestamo= new espacio_recreativo();
+    $result=$obj_prestamo->prestamosEspacio($id_espacio);
+    $jason_data=json_encode($result);
+    return $jason_data;
+}
+
+function cambia_estatus_prestamo($id_prestamo,$estatus){
+    include_once "../model/espacio_recreativo.php";
+    $obj_espacioRecreativo= new espacio_recreativo();
+    return $obj_espacioRecreativo->modifica_estatus_prestamo($id_prestamo,$estatus) ? "Estatus cambiado correctamente" : "Error a cambiar estatus";
+
+}

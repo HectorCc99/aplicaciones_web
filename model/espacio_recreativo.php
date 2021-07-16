@@ -108,4 +108,24 @@ class espacio_recreativo extends CONEXION_M
         $this->close();
         return $result;
     }
+    function prestamosEspacio($id_espacio){
+        $query="SELECT p.*,er.*,u.* FROM prestamo p, pres_espacio pe, espacio_recreativo er, usuario u
+                where p.id_prestamo=pe.id_prestamo
+                and pe.id_espacio = er.id_espacio
+                and p.id_usuario=u.id_usuario
+                and p.estatus_prestamo=0
+                and er.id_espacio=".$id_espacio;
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+
+    function modifica_estatus_prestamo($id_prestamo,$estatus){
+        $query="UPDATE `prestamo` SET `estatus_prestamo`='".$estatus."' WHERE `id_prestamo`=".$id_prestamo;
+        $this->connect();
+        $result = $this->executeInstruction($query);
+        $this->close();
+        return $result;
+    }
 }
