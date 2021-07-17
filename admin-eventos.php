@@ -65,44 +65,30 @@
                     </div>
                 </div>
             </div>
-            <div class="row" >
+            <div class="row" id="contenedor_eventos">
                 <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
                     <table class="table table-hover table-striped table-sm">
                         <thead>
+                            <th scope="col">#</th>
                             <th scope="col">Evento</th>
                             <th scope="col">Encargado</th>
                             <th scope="col">Teléfono</th>
-                            <th scope="col">Semestre</th>
-                            <th scope="col">Cupo</th>
                             <th scope="col">Lugar</th>
+                            <th scope="col">Recurso</th>
+                            <th scope="col">Cant. Recurso</th>
+                            <th scope="col">Semestre</th>
+                            <th scope="col">Fechas</th>
+                            <th scope="col">Horarios</th>
+                            <th scope="col">Estatus</th>
                             <th scope="col">Opciones</th>
                         </thead>
-                        <tbody id="tbl-eventos">
-                            <tr>
-                                <td>Partido de Basquetball</td>
-                                <td>Oscar Orduño</td>
-                                <td>5539075394</td>
-                                <td>2021-2</td>
-                                <td>500</td>
-                                <td>Canchas de Basquetball</td>
-                                <td>
-                                    <!--BOTON OPCIONES-->
-                                    <div class="dropdown">
-                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Opciones
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                                            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#modalEditar">Editar</button>
-                                            <button class="dropdown-item" type="button">Eliminar</button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+                        <tbody id="contenido_tbleventos">
+                            <!-- AJAX -->
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="lista_desplegable_material">
                 <div class="col-lg-12">
                     <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalAgregar">Agregar Evento</button>
                 </div>
@@ -153,10 +139,12 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="cupo" class="col-form-label ml-1">Cupo:</label>
+                                    <label for="cupo" class="col-form-label ml-1">Semestre:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="cupo" id="" class="form-control ml-2">
+                                    <select name="semEvEd" id="semEvEd" class="form-control ml-1">
+                                        <!--ajax-->
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -164,14 +152,33 @@
                                     <label for="lugar" class="col-form-label ml-1">Lugar:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="lugar" id="lugar" class="form-control ml-2">
-                                        <option>Canchas de Fútbol</option>
-                                        <option>Canchas de Basquetbol</option>
-                                        <option>Canchas de Voleibol</option>
+                                    <select name="lugarEvEd" id="lugarEvEd" class="form-control ml-2">
+                                        <!--ajax-->
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <label for="material" class="col-form-label ml-1">Material:</label>
+                                </div>
+                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                    <select name="materialEvEd" id="materialEvEd" class="form-control ml-2">
+                                        <!--ajax-->
+                                    </select>
+                                </div>
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <button class="btn-img"><img src="./icons/add.svg" alt="..." width="30px"></button>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
+                                </div>
+                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                    <input type="number" name="cantidad" id="" class="form-control ml-2">
+                                </div>
+                            </div>
+                            <!--<div class="form-group row">
                                 <div class="col-sm-2 mb-3 mb-sm-0">
                                     <label for="material" class="col-form-label ml-1">Material:</label>
                                 </div>
@@ -198,29 +205,6 @@
                                 <div class="col-sm-2 mb-3 mb-sm-0">
                                     <label for="material" class="col-form-label ml-1">Material:</label>
                                 </div>
-                                <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <select name="material" id="material" class="form-control ml-2">
-                                        <option>Red tenis</option>
-                                        <option>Pelotas de tenis</option>
-                                        <option>Raquetas de tenis</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/add.svg" alt="..." width="30px"></button>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
-                                </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="cantidad" id="" class="form-control ml-2">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="material" class="col-form-label ml-1">Material:</label>
-                                </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
                                     <select name="material" id="material" class="form-control ml-2">
                                         <option>Red tenis</option>
@@ -236,7 +220,7 @@
                                 <div class="col-sm-10 mb-3 mb-sm-0">
                                     <input type="number" name="cantidad" id="" class="form-control ml-2">
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="form-group row">
                                 <div class="col-sm-3 mb-3 mb-sm-0">
                                     <label for="descripcion" class="col-form-label ml-1">Descripción:</label>
@@ -339,10 +323,12 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="cupo" class="col-form-label ml-1">Cupo:</label>
+                                    <label for="cupo" class="col-form-label ml-1">Semestre:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="cupo" id="" class="form-control ml-2">
+                                    <select name="semEv" id="semEv" class="form-control ml-1">
+                                        <!--ajax-->
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -350,10 +336,8 @@
                                     <label for="lugar" class="col-form-label ml-1">Lugar:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="lugar" id="lugar" class="form-control ml-2">
-                                        <option>Cancha de tenis</option>
-                                        <option>Cancha de fut 7</option>
-                                        <option>Gimnasio</option>
+                                    <select name="lugarEv" id="lugarEv" class="form-control ml-2">
+                                        <!--ajax-->
                                     </select>
                                 </div>
                             </div>
@@ -362,10 +346,8 @@
                                     <label for="material" class="col-form-label ml-1">Material:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <select name="material" id="material" class="form-control ml-2">
-                                        <option>Red tenis</option>
-                                        <option>Pelotas de tenis</option>
-                                        <option>Raquetas de tenis</option>
+                                    <select name="materialEv" id="materialEv" class="form-control ml-2">
+                                        <!-- Ajax -->
                                     </select>
                                 </div>
                                 <div class="col-sm-2 mb-3 mb-sm-0">
@@ -380,7 +362,7 @@
                                     <input type="number" name="cantidad" id="cantidad" class="form-control ml-2">
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <!--<div class="form-group row">
                                 <div class="col-sm-2 mb-3 mb-sm-0">
                                     <label for="material" class="col-form-label ml-1">Material:</label>
                                 </div>
@@ -422,7 +404,7 @@
                                 <div class="col-sm-10 mb-3 mb-sm-0">
                                     <input type="number" name="cantidad" id="" class="form-control ml-2">
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="form-group row">
                                 <div class="col-sm-3 mb-3 mb-sm-0">
                                     <label for="descripcion" class="col-form-label ml-1">Descripción:</label>
@@ -518,7 +500,12 @@
         <script src="mail/jqBootstrapValidation.min.js"></script>
         <script src="mail/contact.js"></script>
         <!-- Template Javascript -->
+        <!--<script>
+            let tablaEv =false;
+        </script>-->
         <script src="js/main.js"></script>
-        <script src="js/actividades_deportivas.js"></script>
+        <script src="js/eventos.js"></script>
+        <script src="js/horarios.js"></script> <!--se ocupo para llamar a la función de semestres-->
+        <script src="js/espacios.js"></script> <!--se ocupo para llamar a la función de semestres-->
     </body>
 </html>

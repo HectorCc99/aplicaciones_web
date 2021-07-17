@@ -96,6 +96,8 @@ function semestres(){
 
         $("#sem").html(template2);
         $("#sem_edit").html(template2);
+        $("#semEv").html(template2); //para los select de admin-eventos.php
+        $("#semEvEd").html(template2); //para los select de admin-eventos.php
 }
 function ListaHorarios(filtro){
     $.ajax({
