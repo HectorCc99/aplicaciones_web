@@ -6,8 +6,6 @@ $(document).ready(function () {
     }else{
         listaActividades();
     }
-
-
 });
 
 function listaActividades(){
@@ -103,12 +101,10 @@ $(document).on("click",".editar_actividad",function () {
     let element = $(this)[0].parentElement.parentElement.parentElement.parentElement;
    //console.log(element);
     let id=$(element).attr("id_actividad");
-
     $("#contenedor_act").html(`<input type="hidden" name="id_actividad" id="id_act" value="${id}" class="form-control">`);
     detalles_actividad(id);
     TablaActividades();
      lista_tipo_Act();
-
 });
 
 

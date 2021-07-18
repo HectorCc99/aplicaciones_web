@@ -77,7 +77,7 @@ function TablaSolicitudes(iddeporte,id_grupo){
                                     <td>${obj_result.nombre+" "+obj_result.primer_ap+" "+obj_result.segundo_ap}</td>
                                     <td>${obj_result.fecha_inscripcion}</td>
                                     <td>
-                                        <div className="btn-group" role="group" aria-label="Basic mixed styles example">
+                                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                                             <button type="button" class="btn btn-success aceptar_inscripcion" >Aprobar</button>
                                             <button type="button" class="btn btn-danger rechazar_inscripcion">Rechazar</button>
                                         </div>

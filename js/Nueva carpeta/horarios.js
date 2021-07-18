@@ -6,122 +6,8 @@ $(document).ready(function () {
 
 });
 
-$(document).on("click",".eliminar_horario",function () {
-
-    //Accedo al tr y el tr tiene un atributo de id
-    let element = $(this)[0].parentElement.parentElement.parentElement.parentElement;
-    let estatus =$(this)[0];
-    let estatus_c;
-    //console.log(element);
-    let id=$(element).attr("id_grupo");
-    let estatus_grupo=$(estatus).attr("estatus");
-    /*console.log(id);
-    console.log(estatus_grupo);*/
-    estatus_grupo==1? estatus_c =0 :estatus_c=1 ;
-    $.post(
-        "./control/modifica_estatus_grupo.php",
-        {id,estatus_c},
-        function (responsive){
-            //console.log(responsive);
-            ListaHorarios(0);
-        }
-    )
-});
-
-
-$(document).on("click",".guardat_datos_Editar",function () {
-
-    let id_horario=$("#horario_id_edit").val();
-    let id = $("#grupo_id_edit").val();
-    let nombre_grupo = $("#grupo_edit").val();
-    let deporte = $("#deportes_edit").val();
-    let prof = $("#profe-edit").val();
-    let tel = $("#tel-edit").val();
-    let semestre = $("#sem_edit").val();
-    let cupo = $("#cupo-edit").val();
-    let lugar = $("#lugar_edit").val();
-    let horainicioL = $("#hora-inicio-l-edit").val();
-    let horafinL = $("#hora-fin-l-edit").val();
-    let horainiciom = $("#hora-inicio-m-edit").val();
-    let horafinm = $("#hora-fin-m-edit").val();
-    let horainiciomi = $("#hora-inicio-mi-edit").val();
-    let horafinmi = $("#hora-fin-mi-edit").val();
-    let horainicioj = $("#hora-inicio-j-edit").val();
-    let horafinj = $("#hora-fin-j-edit").val();
-    let horainiciov = $("#hora-inicio-v-edit").val();
-    let horafinv = $("#hora-fin-v-edit").val();
-    let filtro=3;
-    $.post(
-        "./control/list_grupos.php",
-        {filtro,id_horario,id,nombre_grupo,deporte,prof,tel,semestre,cupo,lugar,horainicioL,horafinL,horainiciom,horafinm,horainiciomi,horafinmi,horainicioj,horafinj,horainiciov,horafinv},
-        function (responsive) {
-            //console.log(responsive);
-            ListaHorarios(0);
-            semestres();
-            lista_desplegable();
-            listaActividades();
-        }
-    )
-});
-
-// guardar el id dentro del modal
-$(document).on("click",".editar_elemento",function () {
-    //Accedo al tr y el tr tiene un atributo de id
-    let element = $(this)[0].parentElement.parentElement.parentElement.parentElement;
-    //console.log(element);
-    let id=$(element).attr("id_grupo");
-    consulta_grupo(id);
-});
-
-// funcion de consiulta
-function consulta_grupo(id){
-    $.ajax({
-        url:"./control/list_grupos.php",
-        data: {
-            // 0 trae todos, 1 trae activos, 2 trae inactivos
-            filtro: 2,
-            id_grupo: id
-        },
-        type: "POST",
-        success: function (response){
-            let obj_result=JSON.parse(response);
-            //console.log(response);
-            obj_result.forEach((obj_result=>{
-                $("#horario_id_edit").val(obj_result.id_horario);
-                $("#grupo_id_edit").val(id);
-                $("#grupo_edit").val(obj_result.grupo);
-                $("#profe-edit").val(obj_result.profesor);
-                $("#tel-edit").val(obj_result.telefono_prof);
-                $("#cupo-edit").val(obj_result.cupo);
-            }));
-        }
-    })
-}
-
-
 // funcion eliminar Horario
 
-$(document).on("click",".eliminar_horario",function () {
-
-    //Accedo al tr y el tr tiene un atributo de id
-    let element = $(this)[0].parentElement.parentElement.parentElement.parentElement;
-    let estatus =$(this)[0];
-    let estatus_c;
-    //console.log(element);
-   let id=$(element).attr("id_grupo");
-   let estatus_grupo=$(estatus).attr("estatus");
-   /*console.log(id);
-   console.log(estatus_grupo);*/
-    estatus_grupo==1? estatus_c =0 :estatus_c=1 ;
-    $.post(
-        "./control/modifica_estatus_grupo.php",
-        {id,estatus_c},
-        function (responsive){
-            //console.log(responsive);
-            ListaHorarios(0);
-        }
-    )
-});
 
 $(document).on("click",".agregar_horario",function () {
         let grupo=$("#grupo").val();
@@ -159,7 +45,6 @@ $(document).on("click",".agregar_horario",function () {
     }
 });
 
-
 function semestres(){
         var fecha = new Date();
         var ano1 = fecha.getFullYear();
@@ -189,8 +74,6 @@ function semestres(){
 
         $("#sem").html(template2);
         $("#sem_edit").html(template2);
-        $("#semEv").html(template2); //para los select de admin-eventos.php
-        $("#semEvEd").html(template2); //para los select de admin-eventos.php
 }
 function ListaHorarios(filtro){
     $.ajax({
@@ -230,7 +113,7 @@ function ListaHorarios(filtro){
                                             Opciones
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                                            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#modalEditar">Editar</button>
+                                            <button class="dropdown-item editar_elemento" type="button" data-toggle="modal" data-target="#modalEditar">Editar</button>
                                             <button class="dropdown-item eliminar_horario" estatus="${obj_result.estatus_grupo}" type="button"> ${obj_result.estatus_grupo ==1? "Deshabilitar" : "Habilitar"}</button>
                                         </div>
                                     </div>

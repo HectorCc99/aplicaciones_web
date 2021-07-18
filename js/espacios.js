@@ -128,7 +128,7 @@ function lista_desplegable(){
         url:"./control/list_espacios.php",
         success: function (response){
             let obj_result=JSON.parse(response);
-            let template=`<option disabled selected>Seleccione...</option>`;
+            let template=`<option disabled selected>seleccione...</option>`;
             if(obj_result.length>0){
                 var cont=0;
                 obj_result.forEach((obj_result=>{
@@ -137,6 +137,8 @@ function lista_desplegable(){
                 }));
                 //se asigna al cuerpo de la tabla
                 $("#area").html(template);
+                $("#lugar").html(template);
+                $("#lugar_edit").html(template);
                 $("#lugarEv").html(template);
                 $("#lugarEvEd").html(template);
             }else{

@@ -282,7 +282,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="" id="edit-grupo">
+
                             <div class="row">
                                 <div class="col-sm-12">
                                     <p class="font-weight-bold">Ingrese los siguientes datos:</p>
@@ -290,10 +290,11 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-2 mb-3 mb-sm-0">
+
                                     <label for="grupo" class="col-form-label ml-1">Grupo:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="grupo" id="grupo" class="form-control ml-1">
+                                    <input type="text" name="grupo_edit" id="grupo_edit" class="form-control ml-1">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -301,19 +302,19 @@
                                     <label for="deporte" class="col-form-label ml-1">Deporte:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="deportes" id="deportes_edit" class="form-control ml-1">
-                                        <option>Karate</option>
-                                        <option>Judo</option>
-                                        <option>Fútbol</option>
+                                    <select name="deportes-edit" id="deportes_edit" class="form-control ml-1">
+
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="profesor" class="col-form-label ml-1">Profesor:</label>
+                                    <label for="profesor-edit" class="col-form-label ml-1">Profesor:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="profe" id="profe" class="form-control ml-1">
+                                    <input type="hidden" name="grupo_id_edit" id="grupo_id_edit" class="form-control ml-1">
+                                    <input type="hidden" name="horario_id_edit" id="horario_id_edit" class="form-control ml-1">
+                                    <input type="text" name="profe-edit" id="profe-edit" class="form-control ml-1">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -321,7 +322,7 @@
                                     <label for="telefono" class="col-form-label ml-1">Teléfono:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="tel" id="tel" class="form-control ml-1">
+                                    <input type="text" name="tel-edit" id="tel-edit" class="form-control ml-1">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -341,7 +342,7 @@
                                     <label for="cupo" class="col-form-label ml-1">Cupo:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="cupo" id="cupo" class="form-control ml-1">
+                                    <input type="number" name="cupo-edit" id="cupo-edit" class="form-control ml-1">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -349,29 +350,27 @@
                                     <label for="lugar" class="col-form-label ml-1">Lugar:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="lugar" id="lugar_edit" class="form-control ml-1">
-                                        <option>Canchas de Fútbol</option>
-                                        <option>Gimnasio</option>
-                                        <option>Canchas de Basketbol</option>
+                                    <select name="lugar-edit" id="lugar_edit" class="form-control ml-1">
+
                                     </select>
                                 </div>
                             </div>
                             <label class="font-weight-bold">Horario:</label>
                             <div class="form-group row">
                                 <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="lunes" class="col-form-label ml-1">Lunes:</label>
+                                    <label for="lunes-edit" class="col-form-label ml-1">Lunes:</label>
                                 </div>
                                 <div class="col-sm-1 mb-3 mb-sm-0">
                                     <label for="a" class="col-form-label ml-2">de</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-inicio" class="form-control">
+                                    <input type="time" id="hora-inicio-l-edit" class="form-control">
                                 </div>
                                 <div class="col-sm-1 mb-3 mb-sm-0">
                                     <label for="de" class="col-form-label">a</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-fin" class="form-control">
+                                    <input type="time" id="hora-fin-l-edit" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -382,13 +381,13 @@
                                     <label for="de" class="col-form-label ml-2">de</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-inicio" class="form-control">
+                                    <input type="time" id="hora-inicio-m-edit" class="form-control">
                                 </div>
                                 <div class="col-sm-1 mb-3 mb-sm-0">
                                     <label for="a" class="col-form-label">a</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-fin" class="form-control">
+                                    <input type="time" id="hora-fin-m-edit" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -399,13 +398,13 @@
                                     <label for="de" class="col-form-label ml-2">de</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-inicio" class="form-control">
+                                    <input type="time" id="hora-inicio-mi-edit" class="form-control">
                                 </div>
                                 <div class="col-sm-1 mb-3 mb-sm-0">
                                     <label for="a" class="col-form-label">a</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-fin" class="form-control">
+                                    <input type="time" id="hora-fin-mi-edit" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -416,13 +415,13 @@
                                     <label for="de" class="col-form-label ml-2">de</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-inicio" class="form-control">
+                                    <input type="time" id="hora-inicio-j-edit" class="form-control">
                                 </div>
                                 <div class="col-sm-1 mb-3 mb-sm-0">
                                     <label for="a" class="col-form-label">a</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-fin" class="form-control">
+                                    <input type="time" id="hora-fin-j-edit" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -433,20 +432,20 @@
                                     <label for="de" class="col-form-label ml-2">de</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-inicio" class="form-control">
+                                    <input type="time" id="hora-inicio-v-edit" class="form-control">
                                 </div>
                                 <div class="col-sm-1 mb-3 mb-sm-0">
                                     <label for="a" class="col-form-label">a</label>
                                 </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <input type="time" id="hora-fin" class="form-control">
+                                    <input type="time" id="hora-fin-v-edit" class="form-control">
                                 </div>
                             </div>
-                        </form>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="editar-datos">Guardar</button>
+                        <button type="button" class="btn btn-primary guardat_datos_Editar" data-dismiss="modal" id="editar-datos">Guardar</button>
                     </div>
                 </div>
             </div>

@@ -69,10 +69,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h2 class="mb-3"><strong>Pendientes por revisar</strong></h2>
+                    <div id="id_usuario">
+
+                    </div>
                 </div>
             </div>
             <div class="row" >
-                <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
+                <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3" id="contenedor_tabla">
                     <table class="table table-hover table-striped table-sm">
                         <thead>
                             <th scope="col">#</th>
@@ -80,19 +83,10 @@
                             <th scope="col">No. de Cuenta</th>
                             <th scope="col">Correo</th>
                             <th scope="col">Carrera</th>
-                            <th scope="col">Fecha de Envío</th>
                             <th scope="col">Documentación</th>
                         </thead>
-                        <tbody id="">
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Lilia Inclan</td>
-                                <td>315169982</td>
-                                <td>liliaginclan@gmail.com</td>
-                                <td>Informática</td>
-                                <td>12-07-2021</td>
-                                <td><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalPendientes">Ver</button></td>
-                            </tr>
+                        <tbody id="tabla_pendientes">
+
                         </tbody>
                     </table>
                 </div>
@@ -108,7 +102,7 @@
                 </div>
             </div>
             <div class="row" >
-                <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
+                <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3" id="contenedor_tabla2">
                     <table class="table table-hover table-striped table-sm">
                         <thead>
                             <th scope="col">#</th>
@@ -119,16 +113,8 @@
                             <th scope="col">Fecha de Envío</th>
                             <th scope="col">Documentación</th>
                         </thead>
-                        <tbody id="">
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Lilia Inclan</td>
-                                <td>315169982</td>
-                                <td>liliaginclan@gmail.com</td>
-                                <td>Informática</td>
-                                <td>12-07-2021</td>
-                                <td><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalRevisados">Ver</button></td>
-                            </tr>
+                        <tbody id="tabla_aceptados">
+
                         </tbody>
                     </table>
                 </div>
@@ -138,7 +124,7 @@
         
         <!--Inicia Modal Pendientes -->
         <div class="modal fade" id="modalPendientes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-md">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title" id="staticBackdropLabel"><strong>Documentación</strong></h4>
@@ -146,97 +132,8 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <form action=""  id="">
-                            <div class="form-group row">
-                                <div class="col-sm-3 mb-3 mb-sm-0">
-                                    <label for="tira_materias" class="col-form-label">Tira de materias:</label>
-                                </div>
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <a href="#"><label for="tira_materias" class="col-form-label">tira_de_materias.pdf</label></a>
-                                </div>
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <button type="button" class="btn-docs btn-success"><img src="./icons/approve.svg" alt="..." width="20px"><span class="ml-1">Aceptar</span></button>
-                                </div>                                
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-3 mb-3 mb-sm-0">
-                                    <label for="notas" class="col-form-label">Notas:</label>
-                                </div>
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <textarea name="notas" id="notas" cols="30" class="form-control" rows="3"></textarea>
-                                </div>
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <button type="button" class="btn-docs btn-danger"><img src="./icons/reject.svg" alt="..." width="20px"><span class="ml-1">Rechazar</span></button>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-3 mb-3 mb-sm-0">
-                                    <label for="seguro_estudiante" class="col-form-label">Seguro de estudiante:</label>
-                                </div>
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <a href="#"><label for="seguro_estudiante" class="col-form-label">seguro_de_estudiante.pdf</label></a>
-                                </div>
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <button type="button" class="btn-docs btn-success"><img src="./icons/approve.svg" alt="..." width="20px"><span class="ml-1">Aceptar</span></button>
-                                </div>                                
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-3 mb-3 mb-sm-0">
-                                    <label for="notas" class="col-form-label">Notas:</label>
-                                </div>
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <textarea name="notas" id="notas" cols="30" class="form-control" rows="3"></textarea>
-                                </div>
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <button type="button" class="btn-docs btn-danger"><img src="./icons/reject.svg" alt="..." width="20px"><span class="ml-1">Rechazar</span></button>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-3 mb-3 mb-sm-0">
-                                    <label for="seguro_axxa" class="col-form-label">Seguro Axxa:</label>
-                                </div>
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <a href="#"><label for="seguro_axxa" class="col-form-label">seguro_axxa.pdf</label></a>
-                                </div>
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <button type="button" class="btn-docs btn-success"><img src="./icons/approve.svg" alt="..." width="20px"><span class="ml-1">Aceptar</span></button>
-                                </div>                                
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-3 mb-3 mb-sm-0">
-                                    <label for="notas" class="col-form-label">Notas:</label>
-                                </div>
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <textarea name="notas" id="notas" cols="30" class="form-control" rows="3"></textarea>
-                                </div>
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <button type="button" class="btn-docs btn-danger"><img src="./icons/reject.svg" alt="..." width="20px"><span class="ml-1">Rechazar</span></button>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-3 mb-3 mb-sm-0">
-                                    <label for="credencial" class="col-form-label">Credencial escolar:</label>
-                                </div>
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <a href="#"><label for="credencial" class="col-form-label">credencial.pdf</label></a>
-                                </div>
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <button type="button" class="btn-docs btn-success"><img src="./icons/approve.svg" alt="..." width="20px"><span class="ml-1">Aceptar</span></button>
-                                </div>                                
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-3 mb-3 mb-sm-0">
-                                    <label for="notas" class="col-form-label">Notas:</label>
-                                </div>
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <textarea name="notas" id="notas" cols="30" class="form-control" rows="3"></textarea>
-                                </div>
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <button type="button" class="btn-docs btn-danger"><img src="./icons/reject.svg" alt="..." width="20px"><span class="ml-1">Rechazar</span></button>
-                                </div>
-                            </div>
-                        </form>
+                    <div class="modal-body" id="contenido_modal">
+                       <!--AJax-->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary editar-datos" data-dismiss="modal" id="">Aceptar</button>
@@ -357,6 +254,7 @@
         <script src="mail/contact.js"></script>
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
-        <script src="js/actividades_deportivas.js"></script>
+        <!--incluimos las funciones necesarias para esta pagina-->
+        <script src="js/documentacion-alumnos.js"></script>
     </body>
 </html>
