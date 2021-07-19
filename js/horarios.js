@@ -66,6 +66,7 @@ $(document).on("click",".guardat_datos_Editar",function () {
 
 // guardar el id dentro del modal
 $(document).on("click",".editar_elemento",function () {
+
     //Accedo al tr y el tr tiene un atributo de id
     let element = $(this)[0].parentElement.parentElement.parentElement.parentElement;
     //console.log(element);
@@ -230,7 +231,7 @@ function ListaHorarios(filtro){
                                             Opciones
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                                            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#modalEditar">Editar</button>
+                                            <button class="dropdown-item editar_elemento" type="button" data-toggle="modal" data-target="#modalEditar">Editar</button>
                                             <button class="dropdown-item eliminar_horario" estatus="${obj_result.estatus_grupo}" type="button"> ${obj_result.estatus_grupo ==1? "Deshabilitar" : "Habilitar"}</button>
                                         </div>
                                     </div>
