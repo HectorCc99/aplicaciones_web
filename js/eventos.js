@@ -10,6 +10,45 @@ $(document).ready(function () {
     }*/
 });
 
+
+$(document).on("click",".agregar_evento",function () {
+    //mis campos de admin-eventos.php
+    let evento = $("#evento").val();
+    let encargado = $("#encargado").val();
+    let telefonoEv = $("#telefonoEv").val();
+    let semEv = $("#semEv").val();
+    let lugarEv = $("#lugarEv").val(); // en teoria ya tenemos aqui el id del lugar (espacio_recreativo)
+    let materialEv = $("#materialEv").val(); // en teoria ya tenemos aqui el id del material (recurso_recreativo)
+    let cantidadEv = $("#cantidadEv").val();
+    let descripcionEv = $("#descripcionEv").val();
+    let fecha_inicio = $("#fecha_inicio").val();
+    let fecha_cierre = $("#fecha_cierre").val();
+    let hora_inicio = $("#hora_inicio").val();
+    let hora_cierre = $("#hora_cierre").val();
+    let poster = $("#poster").val();
+
+    if(evento != "" && encargado != "" && telefonoEv != "" && semEv != "" && lugarEv != ""
+        && materialEv != "" && cantidadEv != "" && descripcionEv != "" && fecha_inicio != ""
+        && fecha_cierre != "" && hora_inicio != "" && hora_cierre != "" /*&& poster != ""*/){
+        $.ajax({
+            url:"./control/add_eventos.php",
+            data: {evento, encargado, telefonoEv, semEv, lugarEv,
+                materialEv, cantidadEv, descripcionEv, fecha_inicio,
+                fecha_cierre, hora_inicio, hora_cierre, poster
+            },
+            type: "POST",
+            success: function (response){
+                console.log(response);
+            TablaEventos(0);
+            }
+        });
+
+    }else{
+        alert("por favor llene los campos faltantes");
+    }
+});
+
+
 function TablaEventos(filtro) {
     $.ajax({
         url:"./control/listar_eventos.php",
@@ -45,7 +84,7 @@ function TablaEventos(filtro) {
                                             Opciones
                                         </button>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                                            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#modalEditar">Editar</button>
+                                            <button class="dropdown-item editar_evento" type="button" data-toggle="modal" data-target="#modalEditar">Editar</button>
                                             <button class="dropdown-item estado_evento" estatusEv="${obj_result.estatus_evento}" type="button">${obj_result.estatus_evento ==1? "Deshabilitar" : "Habilitar"}</button>
                                         </div>
                                     </div>
@@ -113,9 +152,79 @@ function lista_desplegable_material(){
                                 </button>
                             </div>`;
                 $("#lista_desplegable_material").html(template);
-
-
             }
         }
     })
 }
+
+
+// acción al modificar un evento (esta función solo guarda el id dentro del modal)
+$(document).on("click",".editar_evento",function () {
+    //Accedo al tr y el tr tiene un atributo de id
+    let element = $(this)[0].parentElement.parentElement.parentElement.parentElement;
+    //console.log(element);
+    let id=$(element).attr("id_evento");
+    //console.log(id);
+    consulta_evento(id);
+});
+
+//función de consulta de editar un evento
+function consulta_evento(id){
+    $.ajax({
+        url:"./control/list_eventos2.php",
+        data: {
+            // 0 trae todos, 1 trae activos, 2 trae inactivos
+            filtro: 1,
+            idEvento: id
+        },
+        type: "POST",
+        success: function (response){
+            let obj_result=JSON.parse(response);
+            //console.log(response);
+            obj_result.forEach((obj_result=>{
+                $("#evento_id_edit").val(id);
+                $("#eventoEd").val(obj_result.nombre_actividad);
+                $("#encargadoEd").val(obj_result.encargado);
+                $("#telefonoEvEd").val(obj_result.telefono_encargado);
+                $("#semEvEd").val(obj_result.semestre);
+                $("#lugarEvEd").val(obj_result.id_espacio_r);
+                $("#materialEvEd").val(obj_result.id_recurso);
+                $("#cantidadEvEd").val(obj_result.cantidad_recurso);
+                $("#descripcionEvEd").val(obj_result.descripcion);
+                $("#fecha_inicioEd").val(obj_result.fecha_inicio);
+                $("#fecha_cierreEd").val(obj_result.fecha_fin);
+                $("#hora_inicioEd").val(obj_result.hora_inicio);
+                $("#hora_cierreEd").val(obj_result.hora_fin);
+                $("#posterEd").val(obj_result.imagen); //da error
+            }));
+        }
+    })
+}
+
+//f
+$(document).on("click",".guardar_datos_editar",function (){
+    let id = $("#evento_id_edit").val();
+    let evento = $("#eventoEd").val();
+    let encargado =  $("#encargadoEd").val();
+    let tel = $("#telefonoEvEd").val();
+    let semestre =  $("#semEvEd").val();
+    let espacio = $("#lugarEvEd").val();
+    let recurso = $("#materialEvEd").val();
+    let cant = $("#cantidadEvEd").val();
+    let descrip = $("#descripcionEvEd").val();
+    let fechai =  $("#fecha_inicioEd").val();
+    let fechaf = $("#fecha_cierreEd").val();
+    let horai = $("#hora_inicioEd").val();
+    let horac = $("#hora_cierreEd").val();
+    let imagen = $("#posterEd").val();
+    let filtro = 2;
+    $.post(
+        "./control/list_eventos2.php",
+        {filtro,id,evento,encargado,tel,semestre,espacio, recurso,
+            cant, descrip,fechai,fechaf, horai,horac,imagen},
+        function (responsive){
+            //console.log(responsive);
+            TablaEventos(0);
+        }
+    )
+});

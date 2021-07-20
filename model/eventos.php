@@ -280,7 +280,7 @@ class eventos extends CONEXION_M
     //Funciones propias de la clase
 
 
-    // AGREGAR
+    // AGREGAR a la bd
     function agregarEvento(){
         $query= "INSERT INTO `eventos` (`id_evento`, `id_administrador`, `id_espacio_r`, `id_recurso`, `nombre_actividad`,
                                         `descripcion`, `encargado`, `telefono_encargado`,
@@ -296,6 +296,24 @@ class eventos extends CONEXION_M
         return $result;
     }
 
+    // mover el archivo a una carpeta
+    function subirPoster($nombreArchivo, $Archivo)
+    {
+
+        $carpeta = "../archivos_subidos/";
+        if (!file_exists($carpeta)) {
+            if(!mkdir("$carpeta", 0777, true) ){
+                echo "error al crear la carpeta";
+            }
+        }
+        $ruta = $carpeta . '/' .$nombreArchivo;
+        if(move_uploaded_file($Archivo, $ruta)){
+            return $ruta;
+        }else{
+            return false;
+        }
+
+    }
 
     // MOSTRAR EN GENERAL
     function listaEventos($filtro){ // LISTA
@@ -317,10 +335,10 @@ class eventos extends CONEXION_M
                 administrador a,
                 usuario u,
                 espacio_recreativo er,
-                recurso_evento re,
+                /*recurso_evento re,*/
                 recurso_recreativo rr
-                WHERE e.id_evento = re.id_evento
-                AND e.id_administrador = a.id_admin 
+                WHERE /*e.id_evento = re.id_evento
+                AND*/ e.id_administrador = a.id_admin 
                 AND a.id_usuario = u.id_usuario
                 AND e.id_espacio_r = er.id_espacio
                 AND e.id_recurso = rr.id_recurso
@@ -338,10 +356,10 @@ class eventos extends CONEXION_M
                 administrador a,
                 usuario u,
                 espacio_recreativo er,
-                recurso_evento re,
+                /*recurso_evento re,*/
                 recurso_recreativo rr
-                WHERE e.id_evento = re.id_evento
-                AND e.id_administrador = a.id_admin 
+                WHERE /*e.id_evento = re.id_evento
+                AND*/ e.id_administrador = a.id_admin 
                 AND a.id_usuario = u.id_usuario
                 AND e.id_espacio_r = er.id_espacio
                 AND e.id_recurso = rr.id_recurso

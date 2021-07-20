@@ -95,6 +95,192 @@
             </div>
         </div>
         <!--Fin Tabla-->
+
+        <!-- Inicio Modal Agregar -->
+        <div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel"><strong>Agregar Nuevo Evento</strong></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form enctype="multipart/form-data" action="./control/add_eventos.php" method="POST">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <p class="font-weight-bold">Ingrese los siguientes datos:</p>
+                                </div>
+                            </div>                        
+                            <div class="form-group row">
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <label for="evento" class="col-form-label ml-1">Evento:</label>
+                                </div>
+                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                    <input type="text" name="evento" id="evento" class="form-control ml-2">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <label for="encargado" class="col-form-label ml-1">Encargado:</label>
+                                </div>
+                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                    <input type="text" name="encargado" id="encargado" class="form-control ml-2">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <label for="telefono" class="col-form-label ml-1">Teléfono:</label>
+                                </div>
+                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                    <input type="text" name="telefonoEv" id="telefonoEv" class="form-control ml-2">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <label for="cupo" class="col-form-label ml-1">Semestre:</label>
+                                </div>
+                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                    <select name="semEv" id="semEv" class="form-control ml-1">
+                                        <!--ajax-->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <label for="lugar" class="col-form-label ml-1">Lugar:</label>
+                                </div>
+                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                    <select name="lugarEv" id="lugarEv" class="form-control ml-2">
+                                        <!--ajax-->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <label for="material" class="col-form-label ml-1">Material:</label>
+                                </div>
+                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                    <select name="materialEv" id="materialEv" class="form-control ml-2">
+                                        <!-- Ajax -->
+                                    </select>
+                                </div>
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <button class="btn-img"><img src="./icons/add.svg" alt="..." width="30px"></button>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <label for="cantidadEv" class="col-form-label ml-1">Cantidad:</label>
+                                </div>
+                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                    <input type="number" name="cantidadEv" id="cantidadEv" class="form-control ml-2">
+                                </div>
+                            </div>
+                            <!--<div class="form-group row">
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <label for="material" class="col-form-label ml-1">Material:</label>
+                                </div>
+                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                    <select name="material" id="material" class="form-control ml-2">
+                                        <option>Red tenis</option>
+                                        <option>Pelotas de tenis</option>
+                                        <option>Raquetas de tenis</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <button class="btn-img"><img src="./icons/add.svg" alt="..." width="30px"></button>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
+                                </div>
+                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                    <input type="number" name="cantidad" id="" class="form-control ml-2">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <label for="material" class="col-form-label ml-1">Material:</label>
+                                </div>
+                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                    <select name="material" id="material" class="form-control ml-2">
+                                        <option>Red tenis</option>
+                                        <option>Pelotas de tenis</option>
+                                        <option>Raquetas de tenis</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
+                                </div>
+                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                    <input type="number" name="cantidad" id="" class="form-control ml-2">
+                                </div>
+                            </div>-->
+                            <div class="form-group row">
+                                <div class="col-sm-3 mb-3 mb-sm-0">
+                                    <label for="descripcion" class="col-form-label ml-1">Descripción:</label>
+                                </div>
+                                <div class="col-sm-9 mb-3 mb-sm-0">
+                                    <textarea name="descripcionEv" id="descripcionEv" cols="30" class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label for="fecha_inicio" class="col-form-label ml-1">Fecha de inicio:</label>
+                                </div>
+                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                    <input type="date" name="fecha_inicio" id="fecha_inicio" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label for="fecha_cierre" class="col-form-label ml-1">Fecha de cierre:</label>
+                                </div>
+                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                    <input type="date" name="fecha_cierre" id="fecha_cierre" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label for="hora_inicio" class="col-form-label ml-1">Hora de inicio:</label>
+                                </div>
+                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                    <input type="time" name="hora_inicio" id="hora_inicio" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label for="hora_cierre" class="col-form-label ml-1">Hora de cierre:</label>
+                                </div>
+                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                    <input type="time" name="hora_cierre" id="hora_cierre" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-2 mb-3 mb-sm-0">
+                                    <label for="poster" class="col-form-label ml-1">Poster:</label>
+                                </div>
+                                <div class="col-sm-10 mb-3 mb-sm-0">
+                                    <input accept="image/png,image/jpeg,image/jpg" type="file" name="poster" id="poster" class="form-control ml-1">
+                                </div>
+                            </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary agregar_evento" data-dismiss="modal" id="agregar_nuevo">Agregar</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Fin Modal Agregar -->
+
         <!--Inicia Modal Editar datos -->
         <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-md">
@@ -106,7 +292,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action=""  id="">
+                        <!--<form action=""  id="">-->
                             <div class="row">
                                 <div class="col-sm-12">
                                     <p class="font-weight-bold mr-1">Ingrese los datos:</p>
@@ -118,7 +304,8 @@
                                     <label for="evento" class="col-form-label ml-1">Evento:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="evento" id="" class="form-control ml-2">
+                                    <input type="hidden" name="evento_id_edit" id="evento_id_edit" class="form-control ml-2">
+                                    <input type="text" name="eventoEd" id="eventoEd" class="form-control ml-2">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -126,7 +313,7 @@
                                     <label for="encargado" class="col-form-label ml-1">Encargado:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="encargado" id="" class="form-control ml-2">
+                                    <input type="text" name="encargadoEd" id="encargadoEd" class="form-control ml-2">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -134,7 +321,7 @@
                                     <label for="telefono" class="col-form-label ml-1">Telefono:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="telefono" id="" class="form-control ml-2">
+                                    <input type="text" name="telefonoEvEd" id="telefonoEvEd" class="form-control ml-2">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -175,7 +362,7 @@
                                     <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="cantidad" id="" class="form-control ml-2">
+                                    <input type="number" name="cantidadEvEd" id="cantidadEvEd" class="form-control ml-2">
                                 </div>
                             </div>
                             <!--<div class="form-group row">
@@ -226,7 +413,7 @@
                                     <label for="descripcion" class="col-form-label ml-1">Descripción:</label>
                                 </div>
                                 <div class="col-sm-9 mb-3 mb-sm-0">
-                                    <textarea name="descripcion" id="descripcion" cols="30" class="form-control" rows="3"></textarea>
+                                    <textarea name="descripcionEvEd" id="descripcionEvEd" cols="30" class="form-control" rows="3"></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -234,7 +421,7 @@
                                     <label for="fecha_inicio" class="col-form-label ml-1">Fecha de inicio:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="date" name="fecha_inicio" id="fecha-inicio" class="form-control">
+                                    <input type="date" name="fecha_inicioEd" id="fecha_inicioEd" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -242,7 +429,7 @@
                                     <label for="fecha_cierre" class="col-form-label ml-1">Fecha de cierre:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="date" name="fecha_cierre" id="fecha-cierre" class="form-control">
+                                    <input type="date" name="fecha_cierreEd" id="fecha_cierreEd" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -250,7 +437,7 @@
                                     <label for="hora_inicio" class="col-form-label ml-1">Hora de inicio:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_inicio" id="hora-inicio" class="form-control">
+                                    <input type="time" name="hora_inicioEd" id="hora_inicioEd" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -258,7 +445,7 @@
                                     <label for="hora_cierre" class="col-form-label ml-1">Hora de cierre:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_cierre" id="hora-cierre" class="form-control">
+                                    <input type="time" name="hora_cierreEd" id="hora_cierreEd" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -266,203 +453,19 @@
                                     <label for="poster" class="col-form-label ml-1">Poster:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="file" name="poster" id="poster" class="form-control ml-1">
+                                    <input type="file" name="posterEd" id="posterEd" class="form-control ml-1">
                                 </div>
                             </div>
-                        </form>
+                        <!--</form>-->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal"  id="editar-datos">Guardar</button>
+                        <button type="button" class="btn btn-primary guardar_datos_editar" data-dismiss="modal"  id="editar-datos">Guardar</button>
                     </div>
                 </div>
             </div>
         </div>
         <!--Fin Modal Editar datos -->
-
-        <!-- Inicio Modal Agregar -->
-        <div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-md">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="exampleModalLabel"><strong>Agregar Nuevo Evento</strong></h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="" id="" autocomplete="off">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <p class="font-weight-bold">Ingrese los siguientes datos:</p>
-                                </div>
-                            </div>                        
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="evento" class="col-form-label ml-1">Evento:</label>
-                                </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="evento" id="evento" class="form-control ml-2">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="encargado" class="col-form-label ml-1">Encargado:</label>
-                                </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="encargado" id="encargado" class="form-control ml-2">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="telefono" class="col-form-label ml-1">Teléfono:</label>
-                                </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="telefono" id="telefono" class="form-control ml-2">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="cupo" class="col-form-label ml-1">Semestre:</label>
-                                </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="semEv" id="semEv" class="form-control ml-1">
-                                        <!--ajax-->
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="lugar" class="col-form-label ml-1">Lugar:</label>
-                                </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="lugarEv" id="lugarEv" class="form-control ml-2">
-                                        <!--ajax-->
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="material" class="col-form-label ml-1">Material:</label>
-                                </div>
-                                <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <select name="materialEv" id="materialEv" class="form-control ml-2">
-                                        <!-- Ajax -->
-                                    </select>
-                                </div>
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/add.svg" alt="..." width="30px"></button>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
-                                </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="cantidad" id="cantidad" class="form-control ml-2">
-                                </div>
-                            </div>
-                            <!--<div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="material" class="col-form-label ml-1">Material:</label>
-                                </div>
-                                <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <select name="material" id="material" class="form-control ml-2">
-                                        <option>Red tenis</option>
-                                        <option>Pelotas de tenis</option>
-                                        <option>Raquetas de tenis</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/add.svg" alt="..." width="30px"></button>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
-                                </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="cantidad" id="" class="form-control ml-2">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="material" class="col-form-label ml-1">Material:</label>
-                                </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="material" id="material" class="form-control ml-2">
-                                        <option>Red tenis</option>
-                                        <option>Pelotas de tenis</option>
-                                        <option>Raquetas de tenis</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
-                                </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="cantidad" id="" class="form-control ml-2">
-                                </div>
-                            </div>-->
-                            <div class="form-group row">
-                                <div class="col-sm-3 mb-3 mb-sm-0">
-                                    <label for="descripcion" class="col-form-label ml-1">Descripción:</label>
-                                </div>
-                                <div class="col-sm-9 mb-3 mb-sm-0">
-                                    <textarea name="descripcion" id="descripcion" cols="30" class="form-control" rows="3"></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <label for="fecha_inicio" class="col-form-label ml-1">Fecha de inicio:</label>
-                                </div>
-                                <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="date" name="fecha_inicio" id="fecha-inicio" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <label for="fecha_cierre" class="col-form-label ml-1">Fecha de cierre:</label>
-                                </div>
-                                <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="date" name="fecha_cierre" id="fecha-cierre" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <label for="hora_inicio" class="col-form-label ml-1">Hora de inicio:</label>
-                                </div>
-                                <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_inicio" id="hora-inicio" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-4 mb-3 mb-sm-0">
-                                    <label for="hora_cierre" class="col-form-label ml-1">Hora de cierre:</label>
-                                </div>
-                                <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_cierre" id="hora-cierre" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="poster" class="col-form-label ml-1">Poster:</label>
-                                </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="file" name="poster" id="poster" class="form-control ml-1">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="agregar-nuevo">Agregar</button>
-                    </div>                        
-                </div>
-            </div>
-        </div>
-        <!-- Fin Modal Agregar -->
 
         <!-- Footer Start -->
         <div class="footer wow fadeIn" data-wow-delay="0.3s">
