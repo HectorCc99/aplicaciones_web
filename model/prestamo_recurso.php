@@ -90,7 +90,19 @@ class prestamo_recurso extends CONEXION_M
          p.fecha_prestamo, rr.nombre_recurso, p.hora_inicio, p.hora_fin, p.notas
          FROM pres_recurso pr, usuario u, prestamo p, recurso_recreativo rr
          WHERE pr.id_prestamo=p.id_prestamo AND p.id_usuario=u.id_usuario AND pr.id_recurso=rr.id_recurso
+         AND p.estatus_prestamo = '1'
          ORDER BY fecha_prestamo, hora_inicio DESC";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+    function historialPrestamoRecursoFecha(){
+        $query="SELECT p.fecha_prestamo
+         FROM pres_recurso pr, usuario u, prestamo p, recurso_recreativo rr
+         WHERE pr.id_prestamo=p.id_prestamo AND p.id_usuario=u.id_usuario AND pr.id_recurso=rr.id_recurso  
+         AND p.estatus_prestamo='1'
+         GROUP BY fecha_prestamo DESC";
         $this->connect();
         $result = $this->getData($query);
         $this->close();
@@ -98,11 +110,23 @@ class prestamo_recurso extends CONEXION_M
     }
     function listaDevolucion(){
         //Muestra todos menos los Solicitados (0 Solicitados, 1 Aceptados 2 Rechazados)
-        $query="SELECT pr.id_prestamo_ma, u.nombre, u.primer_ap, u.segundo_ap,
+        $query="SELECT p.id_prestamo,pr.id_prestamo_ma, u.nombre, u.primer_ap, u.segundo_ap,
          p.fecha_prestamo, rr.nombre_recurso, p.hora_inicio, p.hora_fin, p.estatus_prestamo,p.notas
          FROM pres_recurso pr, usuario u, prestamo p, recurso_recreativo rr
          WHERE pr.id_prestamo=p.id_prestamo AND p.id_usuario=u.id_usuario AND pr.id_recurso=rr.id_recurso
-         AND NOT (p.estatus_prestamo=0) ORDER BY fecha_prestamo, hora_inicio DESC";
+         AND NOT (p.estatus_prestamo=0) AND NOT (p.estatus_prestamo=2)";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+    function buscarPrestamoMatPorId($id_prestamo){
+
+        $query="SELECT p.id_prestamo,pr.id_prestamo_ma, u.nombre, u.primer_ap, u.segundo_ap,
+         p.fecha_prestamo, rr.nombre_recurso, p.hora_inicio, p.hora_fin, p.estatus_prestamo,p.notas
+         FROM pres_recurso pr, usuario u, prestamo p, recurso_recreativo rr
+         WHERE pr.id_prestamo=p.id_prestamo AND p.id_prestamo=".$id_prestamo."
+         AND p.id_usuario=u.id_usuario AND pr.id_recurso=rr.id_recurso";
         $this->connect();
         $result = $this->getData($query);
         $this->close();
@@ -120,42 +144,84 @@ class prestamo_recurso extends CONEXION_M
         $this->close();
         return $result;
     }
-    function filtroPorFecha($fecha){
+    function filtroPorFecha($filtro, $fecha){
             //Muestra los solicitudes (0 Solicitados, 1 Aceptados 2 Rechazados)
-            $query="SELECT pr.id_prestamo_ma, u.nombre, u.primer_ap, u.segundo_ap,
-         p.fecha_prestamo, p.hora_inicio, p.hora_fin
+        switch ($filtro){
+            case "1":
+                $filtro2= " AND p.estatus_prestamo = 0";
+                break;
+            case "2":
+                $filtro2= " AND p.estatus_prestamo = 1";
+                break;
+            case "3":
+                $filtro2= " AND p.estatus_prestamo = 2";
+                break;
+            default:
+                $filtro2= " ";
+                break;
+        }
+        $query="SELECT pr.id_prestamo_ma, u.nombre, u.primer_ap, u.segundo_ap,
+         p.fecha_prestamo, rr.nombre_recurso, p.hora_inicio, p.hora_fin, p.notas
          FROM pres_recurso pr, usuario u, prestamo p, recurso_recreativo rr
-         WHERE pr.id_prestamo=p.id_prestamo AND p.id_usuario=u.id_usuario AND pr.id_recurso=rr.id_recurso 
+         WHERE pr.id_prestamo=p.id_prestamo AND p.id_usuario=u.id_usuario AND pr.id_recurso=rr.id_recurso ".$filtro2."
          AND p.fecha_prestamo='".$fecha."'
-         AND p.estatus_prestamo=0 ORDER BY fecha_prestamo, hora_inicio DESC";
+         ORDER BY fecha_prestamo, hora_inicio DESC";
             $this->connect();
             $result = $this->getData($query);
             $this->close();
             return $result;
 
     }
-    function filtroPorMaterial($material){
+    function filtroPorMaterial($filtro,$material){
         //Muestra los solicitudes (0 Solicitados, 1 Aceptados 2 Rechazados)
+        switch ($filtro){
+            case "1":
+                $filtro2= "AND p.estatus_prestamo = 0";
+                break;
+            case "2":
+                $filtro2= "AND p.estatus_prestamo = 1";
+                break;
+            case "3":
+                $filtro2= "AND p.estatus_prestamo = 2";
+                break;
+            default:
+                $filtro2= " ";
+                break;
+        }
         $query="SELECT pr.id_prestamo_ma, u.nombre, u.primer_ap, u.segundo_ap,
-         p.fecha_prestamo, p.hora_inicio, p.hora_fin
+         p.fecha_prestamo, rr.nombre_recurso, p.hora_inicio, p.hora_fin, p.notas
          FROM pres_recurso pr, usuario u, prestamo p, recurso_recreativo rr
-         WHERE pr.id_prestamo=p.id_prestamo AND p.id_usuario=u.id_usuario AND pr.id_recurso=rr.id_recurso 
-         AND rr.nombre_recurso='".$material."'
-         AND p.estatus_prestamo=0 ORDER BY nombre_recurso, fecha_prestamo, hora_inicio DESC";
+         WHERE pr.id_prestamo=p.id_prestamo AND p.id_usuario=u.id_usuario AND pr.id_recurso=rr.id_recurso ".$filtro2."
+         AND pr.id_recurso='".$material."'
+         ORDER BY nombre_recurso, fecha_prestamo, hora_inicio DESC";
         $this->connect();
         $result = $this->getData($query);
         $this->close();
         return $result;
 
     }
-    function filtroPorMaterialYFecha($material,$fecha){
+    function filtroPorMaterialYFecha($filtro,$material,$fecha){
         //Muestra los solicitudes (0 Solicitados, 1 Aceptados 2 Rechazados)
+        switch ($filtro){
+            case "1":
+                $filtro2= "AND p.estatus_prestamo = 0";
+                break;
+            case "2":
+                $filtro2= "AND p.estatus_prestamo = 1";
+                break;
+            case "3":
+                $filtro2= "AND p.estatus_prestamo = 2";
+                break;
+            default:
+                $filtro2= " ";
+                break;
+        }
         $query="SELECT pr.id_prestamo_ma, u.nombre, u.primer_ap, u.segundo_ap,
-         p.fecha_prestamo, p.hora_inicio, p.hora_fin
+         p.fecha_prestamo, rr.nombre_recurso, p.hora_inicio, p.hora_fin, p.notas
          FROM pres_recurso pr, usuario u, prestamo p, recurso_recreativo rr
-         WHERE pr.id_prestamo=p.id_prestamo AND p.id_usuario=u.id_usuario AND pr.id_recurso=rr.id_recurso 
-         AND rr.nombre_recurso='".$material."' AND p.fecha_prestamo='".$fecha."'
-         AND p.estatus_prestamo=0 ORDER BY nombre_recurso, fecha_prestamo, hora_inicio DESC";
+         WHERE pr.id_prestamo=p.id_prestamo AND p.id_usuario=u.id_usuario AND pr.id_recurso=rr.id_recurso ".$filtro2."
+         AND pr.id_recurso='".$material."' AND p.fecha_prestamo='".$fecha."'
+       ORDER BY nombre_recurso, fecha_prestamo, hora_inicio DESC";
         $this->connect();
         $result = $this->getData($query);
         $this->close();

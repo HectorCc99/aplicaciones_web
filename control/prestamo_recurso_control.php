@@ -40,6 +40,15 @@ function historialPrestamoRecurso()
     $jason_data = json_encode($result);
     return $jason_data;
 }
+function historialPrestamoRecursoFecha()
+{
+    include_once "../model/prestamo_recurso.php";
+    $obj_prestamoRecurso = new prestamo_recurso();
+    $result = $obj_prestamoRecurso->historialPrestamoRecursoFecha();
+    $jason_data = json_encode($result);
+    return $jason_data;
+}
+
 function listaDevolucion()
 {
     include_once "../model/prestamo_recurso.php";
@@ -57,27 +66,34 @@ function listaSolicitudes()
     $jason_data = json_encode($result);
     return $jason_data;
 }
-function filtroPorFecha($fecha)
+function filtroPorFecha($filtro,$fecha)
 {
     include_once "../model/prestamo_recurso.php";
     $obj_prestamoRecurso = new prestamo_recurso();
-    $result = $obj_prestamoRecurso->filtroPorFecha($fecha);
+    $result = $obj_prestamoRecurso->filtroPorFecha($filtro,$fecha);
     $jason_data = json_encode($result);
     return $jason_data;
 }
-function filtroPorMaterial($material)
+function filtroPorMaterial($filtro,$material)
 {
     include_once "../model/prestamo_recurso.php";
     $obj_prestamoRecurso = new prestamo_recurso();
-    $result = $obj_prestamoRecurso->filtroPorMaterial($material);
+    $result = $obj_prestamoRecurso->filtroPorMaterial($filtro,$material);
     $jason_data = json_encode($result);
     return $jason_data;
 }
-function filtroPorMaterialYFecha($material,$fecha)
+function filtroPorMaterialYFecha($filtro,$material,$fecha)
 {
     include_once "../model/prestamo_recurso.php";
     $obj_prestamoRecurso = new prestamo_recurso();
-    $result = $obj_prestamoRecurso->filtroPorMaterialYFecha($material,$fecha);
+    $result = $obj_prestamoRecurso->filtroPorMaterialYFecha($filtro,$material,$fecha);
+    $jason_data = json_encode($result);
+    return $jason_data;
+}
+function buscarPrestamoMatPorId($idPrestamo){
+    include_once "../model/prestamo_recurso.php";
+    $obj_prestamoRecurso= new prestamo_recurso();
+    $result = $obj_prestamoRecurso->buscarPrestamoMatPorId($idPrestamo);
     $jason_data = json_encode($result);
     return $jason_data;
 }

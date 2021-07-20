@@ -65,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" >
+            <div class="row"  id="contenedor-devoluciones">
                 <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
                     <table class="table table-hover table-striped table-sm">
                         <thead>
@@ -80,17 +80,7 @@
                             <th scope="col">Editar</th>
                         </thead>
                         <tbody id="tbl-devoluciones">
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Lilia Inclan</td>
-                                <td>10-07-2021</td>
-                                <td>Raquetas de tenis</td>
-                                <td>9:00</td>
-                                <td>11:00</td>
-                                <td>Pesimas condiciones, credencial retenida</td>
-                                <td>Raquetas descosidas(2 pzs)</td>
-                                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEditar">Editar</button></td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -98,7 +88,7 @@
         </div>
         <!--Fin Tabla-->
         <!--Inicia Modal Editar datos -->
-        <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalEditarDevolucion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -108,9 +98,10 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action=""  id="">
+
                             <div class="row">
                                 <div class="col-sm-12">
+                                    <input type="hidden" name="id_devolucion" id="id_devolucion">
                                     <p class="font-weight-bold">Ingrese los datos faltantes:</p>
                                     <div id="contenedor_devol"></div>
                                 </div>
@@ -120,7 +111,7 @@
                                     <label for="material" class="col-form-label ml-1">Material:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="material" id="material" class="form-control ml-1">
+                                    <input type="text" disabled name="materialEditarDevolucion" id="materialEditarDevolucion" class="form-control ml-1">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -128,15 +119,15 @@
                                     <label for="alumno" class="col-form-label ml-1">Alumno:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="alumno" id="alumno" class="form-control ml-1">
+                                    <input type="text" disabled="disabled" name="alumnoEditarDevolucion" id="alumnoEditarDevolucion" class="form-control ml-1">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="fecha" class="col-form-label ml-1">Fecha:</label>
+                                    <label for="fecha" disabled="disabled" class="col-form-label ml-1">Fecha:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="date" name="fecha" id="fecha" class="form-control ml-1">
+                                    <input type="date" disabled="disabled" name="fechaEditarDevolucion" id="fechaEditarDevolucion" class="form-control ml-1">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -144,7 +135,7 @@
                                     <label for="hora_inicio" class="col-form-label ml-1">Hora de inicio:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_inicio" id="hora_inicio" class="form-control ml-1">
+                                    <input type="time" name="hora_inicioEditarDevolucion" disabled="disabled" id="hora_inicioEditarDevolucion" class="form-control ml-1">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -152,7 +143,7 @@
                                     <label for="hora_termino" class="col-form-label ml-1">Hora de termino:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_termino" id="hora_termino" class="form-control ml-1">
+                                    <input type="time" name="hora_terminoEditarDevolucion" disabled="disabled" id="hora_terminoEditarDevolucion" class="form-control ml-1">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -160,10 +151,11 @@
                                     <label for="estatus" class="col-form-label ml-1">Estatus:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="estatus" id="estatus" class="form-control ml-1">
-                                        <option values="0">Devuelto optimamente</option>
-                                        <option values="1">Pesimas condiciones (Credencial retenida)</option>
-                                        <option values="3">Material repuesto</option>
+                                    <select name="estatusEditarDevolucion" id="estatusEditarDevolucion" class="form-control ml-1">
+
+                                        <option value="3">Devuelto optimamente</option>
+                                        <option value="4">Pesimas condiciones (Credencial retenida)</option>
+                                        <option value="5">Material repuesto</option>
                                     </select>
                                 </div>
                             </div>
@@ -172,14 +164,14 @@
                                     <label for="notas" class="col-form-label ml-1">Notas:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <textarea name="notas" id="notas" cols="30" class="form-control" rows="3"></textarea>
+                                    <textarea name="notasEditarDevolucion" id="notasEditarDevolucion" cols="30" class="form-control" rows="3"></textarea>
                                 </div>
                             </div>
-                        </form>
+
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary editar-datos" data-dismiss="modal" id="editar-datos">Guardar</button>
+                        <button type="button" class="btn btn-danger cancelar-Edicion" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary guardar-EdicionDevolucion" data-dismiss="modal" id="guardar-Edicion">Guardar</button>
                     </div>
                 </div>
             </div>
@@ -224,5 +216,6 @@
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
         <script src="js/actividades_deportivas.js"></script>
+        <script src="js/devolucionesAdmin.js"></script>
     </body>
 </html>

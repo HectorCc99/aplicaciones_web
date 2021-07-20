@@ -81,28 +81,26 @@
                     <label for="material">Material:</label>
                 </div>
                 <div class="col-lg-4">
-                    <select name="materiales" id="materiales" class="select">
-                        <option>Todos</option>    
-                        <option>Balones</option>
-                        <option>Colchonetas</option>
-                        <option>Conos</option>
+                    <select name="materialesS" id="materialesS" class="form-select listaD_materiales">
+                        <!--AJAX-->
                     </select>
                 </div>
                 <div class="col-lg-2">
                     <label for="fecha">Fecha:</label>
                 </div>
                 <div class="col-lg-4">
-                    <select name="fecha" id="fecha" class="select">
-                        <option>06-07-2021</option>
-                        <option>07-07-2021</option>
-                        <option>08-07-2021</option>                        
+                    <select name="fechaM" id="fechaM" class="form-select listD_fechaMat">
+                        <!--AJAX-->
                     </select>
                 </div>
+                <div class="col-lg-4">
+                    <button type="button" class="btn btn-primary mostrarTodosMat" name="botonTMat" id="botonTMat">Mostrar todos</button>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
+            <div class="row" id="contenedor-historialMateriales">
+                <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3" id="tabla_MaterialesHistorial">
                     <table class="table table-hover table-striped table-sm mt-3">
-                        <thead>
+                        <thead">
                             <th scope="col">#</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Fecha</th>
@@ -111,24 +109,11 @@
                             <th scope="col">Notas</th>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Balón</td>
-                                <td>07-07-2021</td>
-                                <td>12:00</td>
-                                <td>14:00</td>
-                                <td>Devuelto en buenas condiciones</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Colchoneta</td>
-                                <td>07-07-2021</td>
-                                <td>11:00</td>
-                                <td>13:00</td>
-                                <td>Devuelto en buenas condiciones</td>
-                            </tr>
+                        <tbody id="tbl-historialMateriales">
                         </tbody>
                     </table>
+                </div>
+                     <div id="contenedorMensajeMat">
                 </div>
             </div>
             <!-- FIN SOLICITUDES-->
@@ -148,26 +133,25 @@
                     <label for="area">Área/Espacio:</label>
                 </div>
                 <div class="col-lg-4">
-                    <select name="area" id="area" class="select">
-                        <option>Todas</option>
-                        <option>Cancha de Fútbol</option>
-                        <option>Cancha de Basketbol</option>
-                        <option>Área de Fútbol Américano</option>
+                    <select name="listaAreaS" id="listaAreaS" class="form-select listaD_Areas">
+                       <!--AJAX-->
                     </select>
                 </div>
                 <div class="col-lg-2">
-                    <label for="fecha">fecha:</label>
+                    <label for="fecha">Fecha:</label>
                 </div>
                 <div class="col-lg-4">
-                    <select name="fecha" id="fecha" class="select">
-                        <option>06-07-2021</option>
-                        <option>07-07-2021</option>
-                        <option>08-07-2021</option>                        
+                    <select name="areaFechas" id="areaFechas" class="form-select listD_fechaArea">
+
                     </select>
                 </div>
+                <div class="col-lg-4">
+                    <button type="button" class="btn btn-primary mostrarTodosArea" name="botonTArea" id="botonTArea">Mostrar todos</button>
+                </div>
+
             </div>
-            <div class="row">
-                <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3 mt-3">
+            <div class="row" id="contenedor-historialEspacio">
+                <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3 mt-3" id="tabla_AreaHistorial">
                     <table class="table table-hover table-striped table-sm">
                         <thead>
                             <th scope="col">#</th>
@@ -176,26 +160,12 @@
                             <th scope="col">Hora de Inicio</th>
                             <th scope="col">Hora de Término</th>
                             <th scope="col">Notas</th>
-                        </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Canchas de Fútbol</td>
-                                <td>08-07-2021</td>
-                                <td>10:00</td>
-                                <td>12:00</td>
-                                <td>Limpia</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Canchas de Basketbol</td>
-                                <td>08-07-2021</td>
-                                <td>09:00</td>
-                                <td>11:00</td>
-                                <td></td>
-                            </tr>
+                        <tbody id="tbl-historialAreas">
                         </tbody>
                     </table>
+                </div>
+                <div id="contenedorMensajeArea">
                 </div>
             </div>
             <!-- INICIO ACEPTADAS -->
@@ -240,5 +210,7 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="js/historialPrestamo.js"></script>
+        <script src="js/historialPrestamosAreasD.js"></script>
     </body>
 </html>

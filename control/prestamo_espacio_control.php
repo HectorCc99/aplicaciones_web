@@ -47,27 +47,35 @@ function solicitudesAreasDeportivas()
     $jason_data = json_encode($result);
     return $jason_data;
 }
-function listaSolicitudesPorEspacio($nombre_espacio)
+function filtroPorArea($filtro, $id_espacio)
 {
     include_once "../model/prestamo_espacio.php";
     $obj_prestamoEspacio = new prestamo_espacio();
-    $result = $obj_prestamoEspacio->listarSolicitudesPorArea($nombre_espacio);
+    $result = $obj_prestamoEspacio->filtroPorArea($filtro,$id_espacio);
     $jason_data = json_encode($result);
     return $jason_data;
 }
-function listarSolicitudesPorfecha($fecha)
+function filtroPorfechaA($filtro,$fecha)
 {
     include_once "../model/prestamo_espacio.php";
     $obj_prestamoEspacio = new prestamo_espacio();
-    $result = $obj_prestamoEspacio->listarSolicitudesPorfecha($fecha);
+    $result = $obj_prestamoEspacio->filtroPorfecha($filtro,$fecha);
     $jason_data = json_encode($result);
     return $jason_data;
 }
-function listarSolicitudesPorfechaArea($fecha,$area)
+function filtroPorfechaArea($filtro,$fecha,$id_espacio)
 {
     include_once "../model/prestamo_espacio.php";
     $obj_prestamoEspacio = new prestamo_espacio();
-    $result = $obj_prestamoEspacio->listarSolicitudesPorfechaArea($fecha,$area);
+    $result = $obj_prestamoEspacio->filtroPorfechaArea($filtro,$fecha,$id_espacio);
+    $jason_data = json_encode($result);
+    return $jason_data;
+}
+function historialPrestamoFechas()
+{
+    include_once "../model/prestamo_espacio.php";
+    $obj_prestamoEspacio = new prestamo_espacio();
+    $result = $obj_prestamoEspacio->historialPrestamoFechas();
     $jason_data = json_encode($result);
     return $jason_data;
 }
