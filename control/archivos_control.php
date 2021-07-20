@@ -1,6 +1,20 @@
 <?php
 
-function agregarArchivo(){
+function agregarArchivo($id_usuario,$nombre_archivo,$semestre,$tipo_ar,$Archivo){
+    // `estatus_aprobado`, `tipo_archivo`
+    include_once "../model/archivos.php";
+    $obj_archivos = new archivos();
+    $obj_archivos->setIdUsuario($id_usuario);
+    $obj_archivos->setNombreArchivo($nombre_archivo);
+    $obj_archivos->setSemestre($semestre);
+    $obj_archivos->getEstatusAprobado(0);
+    $obj_archivos->setTipoArchivo($tipo_ar);
+    //subri el archivo
+    $resultado=$obj_archivos->subir_Archivo($id_usuario,$nombre_archivo,$Archivo);
+    if($resultado!=false){
+        $obj_archivos->setPathArchivo($resultado);
+        return $obj_archivos->agregar_documentos();
+    }
 
 }
 

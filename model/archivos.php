@@ -175,28 +175,34 @@ class archivos extends CONEXION_M
     }
 
     // FUNCIONES
-
+    // Agregar a la base de datos
     function agregar_documentos()
     {
         $query = "INSERT INTO `archivos`(`id_archivo`, `id_usuario`, `id_administrador`, `nombre_archivo`, `path_archivo`, `fecha_aprobacion`, `notas`, `semestre`, `estatus_aprobado`, `tipo_archivo`) 
-                    VALUES (null,'" . $this->getIdUsuario() . "','" . $this->getIdAdmin() . "','" . $this->getNombreArchivo() . "','" . $this->getPathArchivo() . "','" . date('Y-m-d H:i:s') . "'
+                    VALUES (null,'" . $this->getIdUsuario() . "',null,'" . $this->getNombreArchivo() . "','" . $this->getPathArchivo() . "','" . date('Y-m-d H:i:s') . "'
                     ,'" . $this->getNotas() . "','" . $this->getSemestre() . "','0','".$this->getTipoArchivo()."')";
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();
         return $result;
     }
-
-    function subir_Archivo()
+    // sube el archivo a una carpeta
+    function subir_Archivo($id_usuario,$nombreArchivo,$Archivo)
     {
-        $directorio = '../documentos/';
-        $subir_archivo = $directorio . basename($_FILES['subir_archivo']['name']);
-        if (move_uploaded_file($_FILES['subir_archivo']['tmp_name'], $subir_archivo)) {
-            return "$directorio";
 
-        } else {
-            echo false;
+        $carpeta = "../archivos_subidos/" .$id_usuario;
+        if (!file_exists($carpeta)) {
+            if(!mkdir("$carpeta", 0777, true) ){
+                echo "error al crear la carpeta";
+            }
         }
+        $ruta = $carpeta . '/' .$nombreArchivo;
+        if(move_uploaded_file($Archivo, $ruta)){
+            return $ruta;
+        }else{
+            return false;
+        }
+
     }
 
     function eliminararchivoBD()
