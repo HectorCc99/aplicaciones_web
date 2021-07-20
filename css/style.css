@@ -920,7 +920,7 @@ a:focus {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    background: var(--primary);
+    background: var(--white);
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     border-radius: 40px;
 }
@@ -939,6 +939,7 @@ a:focus {
     margin: 0 0 0 15px;
     white-space: nowrap;
     overflow: hidden;
+    color: var(--primary);
 }
 
 .class .class-teacher a {

@@ -50,7 +50,6 @@
                         <a href="home.php" class="nav-item nav-link">Inicio</a>
                         <a href="deportes.php" class="nav-item nav-link">Deportes</a>
                         <a href="prestamos.php" class="nav-item nav-link">Préstamos</a>
-                        <a href="entrenadores.php" class="nav-item nav-link">Entrenadores</a>
                         <a href="registro.php" class="nav-item nav-link">Registrarse</a>
                         <a href="login.php" class="nav-item nav-link">Iniciar Sesión</a>
                     </div>
@@ -58,21 +57,6 @@
             </div>
         </div>
         <!-- Nav Bar End -->
-        <!-- Page Header Start 
-        <div class="page-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2>Registrate</h2>
-                    </div>
-                    <div class="col-12">
-                        <a href="">Home</a>
-                        <a href="">Registrate</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        Page Header End -->
         <!-- Registro Start -->
         <div class="registro mt-5">
             <div class="container">

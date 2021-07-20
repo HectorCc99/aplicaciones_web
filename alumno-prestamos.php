@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Alumno prestamos</title>
+        <title>Préstamos</title>
         <!--Bootstrap CSS-->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <!-- Google Font -->
@@ -16,6 +17,7 @@
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
     </head>
+
     <body>
         <!-- Top Bar Start -->
         <div class="top-bar d-none d-md-block bg-primary">
@@ -48,13 +50,12 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
                         <a href="indexus.php" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="24px"></a>
+                        <a href="alumno-inicio.php" class="nav-item nav-link mr-5">Inicio</a>
                         <a href="alumno-deportes.php" class="nav-item nav-link mr-5">Deportes</a>
                         <a href="alumno-prestamos.php" class="nav-item nav-link mr-5">Préstamos</a>
-                        <a href="alumno-entrenadores.php" class="nav-item nav-link mr-5">Entrenadores</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cuenta</a>
                             <div class="dropdown-menu">
-                                <a href="alumno-inicio.php" class="dropdown-item"><span class="font-weight-bold">Inicio</span></a>
                                 <a href="alumno-perfil.php" class="dropdown-item"><span class="font-weight-bold">Mi Perfil</span></a>
                                 <a href="home.php" class="dropdown-item"><span class="font-weight-bold">Cerrar Sesión</span></a>
                             </div>
@@ -65,33 +66,56 @@
         </div>
         <!-- Nav Bar End -->
 
-        <!-- Inicio de Botones -->
+        <!-- Inicio de Tarjetas -->
         <div class="container align-item-center mt-5 mb-5">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                        <h1 class="mt-5">Reservación de Material y/o área deportiva</h1>
-                    </div>                        
+                        <h1 class="mt-5">Solicitar</h1>
+                        <p>Material y/o Área Deportiva</p>  
+                    </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="btn-primary btn-lg wow animated" data-toggle="modal" data-target="#modalMaterial"> 
-                        <img src="./icons/materials.svg" alt="" width="80px">
-                        <label>Solicitar Material Deportivo</label>
-                        <br><label>Solicitud para apartar un material en cierto horario</label>
+                <div class="col-sm-6">
+                    <div class="card mb-4 wow fadeInRight animated">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <img src="./icons/materials.svg" alt="" width="110px">
+                                </div>
+                                <div class="col-lg-9">
+                                    <h5 class="card-title font-weight-bold">Solicitar Material Deportivo</h5>
+                                    <p class="card-text text-muted">En este apartado puedes solicitar material deportivo disponible.</p>
+                                    <a href="#" data-toggle="modal" data-target="#modalMaterial">
+                                        <button class="btn btn-primary align-self-center">Solicitar</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="btn-primary btn-lg wow animated" data-toggle="modal" data-target="#modalArea"> 
-                        <img src="./icons/field.svg" alt="" width="80px">
-                        <label>Reservar Área Deportiva</label>
-                        <br><label>Solicitud para apartar un área en cierto horario</label>
+                <div class="col-sm-6">
+                    <div class="card mb-4 wow fadeInRight animated">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <img src="./icons/field.svg" alt="" width="110px">
+                                </div>
+                                <div class="col-lg-9">
+                                    <h5 class="card-title font-weight-bold">Reservar Área Deportiva</h5>
+                                    <p class="card-text text-muted">En este apartado puedes reservar un área deportiva por tiempo definido.</p>
+                                    <a href="#" data-toggle="modal" data-target="#modalArea">
+                                        <button class="btn btn-primary align-self-center">Reservar</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Fin de Botones -->
+        <!-- Fin de Tarjetas -->
 
         <!--Inicia Modal Material-->
         <div class="modal fade" id="modalMaterial" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -104,27 +128,19 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action=""  id="">
+                        <form action="" id="">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <p class="font-weight-bold">Ingrese los datos para solicitar el Material:</p>
-                                    <div id="contenedor_act"></div>
+                                    <p class="font-weight-bold">Ingresa los datos para solicitar el material:</p>
+                                    <div id="contenedor_material"></div>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-5">
-                                    <label for="hora_termino" class="col-form-label">Hora de termino:</label>
-                                </div>
-                                <div class="col-sm-7 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_termino" id="hora_termino" class="form-control ml-1">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2" >
+                                <div class="col-sm-4 mb-3 mb-sm-0">
                                     <label for="material" class="col-form-label">Material:</label>
                                 </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="material" id="material" class="form-control ml-2">
+                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                    <select name="material" id="material" class="form-control">
                                         <option>Red tenis</option>
                                         <option>Pelotas de tenis</option>
                                         <option>Raquetas de tenis</option>
@@ -132,25 +148,33 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-5" >
-                                    <label for="fecha" class="col-form-label">Fecha de prestamo:</label>
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label for="fecha" class="col-form-label">Fecha:</label>
                                 </div>
-                                <div class="col-sm-7 mb-3 mb-sm-0">
-                                    <input type="date" name="fecha" id="fecha" class="form-control ml-1">
+                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                    <input type="date" name="fecha" id="fecha" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-5" >
-                                    <label for="hora_inicio" class="col-form-label">Hora de Inicio:</label>
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label for="hora_solicitada" class="col-form-label">Hora solicitada:</label>
                                 </div>
-                                <div class="col-sm-7 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_inicio" id="hora_inicio" class="form-control ml-1">
+                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                    <input type="time" name="hora_solicitada" id="hora_solicitada" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label for="hora_limite" class="col-form-label">Hora límite:</label>
+                                </div>
+                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                    <input type="time" name="hora_limite" id="hora_lim" class="form-control" disabled>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary editar-datos" data-dismiss="modal" id="" data-toggle="modal" data-target="#modalNoDisponible">Solicitar</button>
+                        <button type="button" class="btn btn-primary">Solicitar</button>
                     </div>
                 </div>
             </div>
@@ -159,7 +183,7 @@
 
         <!--Inicia Modal Area-->
         <div class="modal fade" id="modalArea" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-md">
+            <div class="modal-dialog modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title" id="staticBackdropLabel"><strong>Reservacion de Área Deportiva</strong></h4>
@@ -168,115 +192,58 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action=""  id="">
+                        <form action="" id="">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <p class="font-weight-bold">Ingrese los datos para Reservar el Área:</p>
-                                    <div id="contenedor_act"></div>
+                                    <p class="font-weight-bold">Ingrese los datos para reservar el área:</p>
+                                    <div id="contenedor_area"></div>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-5">
-                                    <label for="hora_termino" class="col-form-label">Hora de termino:</label>
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label for="material" class="col-form-label">Área/Espacio:</label>
                                 </div>
-                                <div class="col-sm-7 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_termino" id="hora_termino" class="form-control ml-1">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2" >
-                                    <label for="material" class="col-form-label">Material:</label>
-                                </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="material" id="material" class="form-control ml-2">
-                                        <option>Red tenis</option>
-                                        <option>Pelotas de tenis</option>
-                                        <option>Raquetas de tenis</option>
+                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                    <select name="material" id="material" class="form-control">
+                                        <option>Cancha de Basquetbol</option>
+                                        <option>Cancha de fútbol</option>
+                                        <option>Área de Fútbol Américano</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-5" >
-                                    <label for="fecha" class="col-form-label">Fecha de prestamo:</label>
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label for="fecha" class="col-form-label">Fecha:</label>
                                 </div>
-                                <div class="col-sm-7 mb-3 mb-sm-0">
-                                    <input type="date" name="fecha" id="fecha" class="form-control ml-1">
+                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                    <input type="date" name="fecha" id="fecha" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-5" >
-                                    <label for="hora_inicio" class="col-form-label">Hora de Inicio:</label>
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label for="hora_inicio" class="col-form-label">Hora solicitada:</label>
                                 </div>
-                                <div class="col-sm-7 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_inicio" id="hora_inicio" class="form-control ml-1">
+                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                    <input type="time" name="hora_inicio" id="hora_inicio" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label for="hora_limite" class="col-form-label">Hora límite:</label>
+                                </div>
+                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                    <input type="time" name="hora_limite" id="hora_limite" class="form-control" disabled>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary editar-datos" data-dismiss="modal" id="" data-toggle="modal" data-target="#modalDisponible">Solicitar</button>
+                        <button type="button" class="btn btn-primary">Reservar</button>
                     </div>
                 </div>
             </div>
         </div>
         <!--Fin Modal Area-->
-
-        <!--Inicia Modal No Disponible-->
-        <div class="modal fade" id="modalNoDisponible" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-md">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="staticBackdropLabel"><strong>Error</strong></h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action=""  id="">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <p class="font-weight-bold">Horario no disponible, elija otro horario</p>
-                                    <div id="contenedor_act"></div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary editar-datos" data-dismiss="modal" id="editar-datos">Cancelar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Fin Modal No Disponible-->
-
-        <!--Inicia Modal Disponible-->
-        <div class="modal fade" id="modalDisponible" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-md">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="staticBackdropLabel"><strong>Registrada</strong></h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action=""  id="">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <p class="font-weight-bold">Solicitud registrada de forma exitosa</p>
-                                    <div id="contenedor_act"></div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary editar-datos" data-dismiss="modal" id="editar-datos">Aceptar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Fin Modal Disponible-->
-
 
         <!-- Footer Start -->
         <div class="footer wow fadeIn" data-wow-delay="0.3s">
@@ -316,4 +283,5 @@
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
     </body>
+
 </html>

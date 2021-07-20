@@ -48,13 +48,12 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
                         <a href="indexus.php" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="24px"></a>
+                        <a href="alumno-inicio.php" class="nav-item nav-link mr-5">Inicio</a>
                         <a href="alumno-deportes.php" class="nav-item nav-link mr-5">Deportes</a>
                         <a href="alumno-prestamos.php" class="nav-item nav-link mr-5">Préstamos</a>
-                        <a href="alumno-entrenadores.php" class="nav-item nav-link mr-5">Entrenadores</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cuenta</a>
                             <div class="dropdown-menu">
-                                <a href="alumno-inicio.php" class="dropdown-item"><span class="font-weight-bold">Inicio</span></a>
                                 <a href="alumno-perfil.php" class="dropdown-item"><span class="font-weight-bold">Mi Perfil</span></a>
                                 <a href="home.php" class="dropdown-item"><span class="font-weight-bold">Cerrar Sesión</span></a>
                             </div>

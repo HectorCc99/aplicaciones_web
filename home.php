@@ -51,7 +51,6 @@
                         <a href="home.php" class="nav-item nav-link">Inicio</a>
                         <a href="deportes.php" class="nav-item nav-link">Deportes</a>
                         <a href="prestamos.php" class="nav-item nav-link">Préstamos</a>
-                        <a href="entrenadores.php" class="nav-item nav-link">Entrenadores</a>
                         <a href="registro.php" class="nav-item nav-link">Registrarse</a>
                         <a href="login.php" class="nav-item nav-link">Iniciar Sesión</a>
                     </div>
