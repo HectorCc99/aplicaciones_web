@@ -2,7 +2,7 @@
 
 // AGREGAR
 function insertarEvento($id_admin, $id_espr, $id_recurso, $nombact, $descrip, $encargado, $telenc,
-                        $imagen, $cantrec, $estatusev, $finicio, $ffin, $hinicio, $hfin,$semestreev){
+                        $cantrec, $estatusev, $finicio, $ffin, $hinicio, $hfin,$semestreev, $nombre_archivo, $Archivo){
     include_once "../model/eventos.php";
     $obj_evento = new eventos();
     $obj_evento -> setIdAdministradorFk($id_admin);
@@ -12,7 +12,6 @@ function insertarEvento($id_admin, $id_espr, $id_recurso, $nombact, $descrip, $e
     $obj_evento -> setDescripcion($descrip);
     $obj_evento -> setEncargado($encargado);
     $obj_evento -> setTelEncargado($telenc);
-    $obj_evento -> setImagen($imagen);
     $obj_evento -> setCantidadRecurso($cantrec);
     $obj_evento -> setEstatusEvento($estatusev);
     $obj_evento -> setFechaInicio($finicio);
@@ -20,7 +19,12 @@ function insertarEvento($id_admin, $id_espr, $id_recurso, $nombact, $descrip, $e
     $obj_evento -> setHoraInicio($hinicio);
     $obj_evento -> setHoraFin($hfin);
     $obj_evento -> setSemestreEv($semestreev);
-    return $obj_evento->agregarEvento() ? "Exito" : "Fallo";
+    //subir la imagen
+    $resultado = $obj_evento->subirPoster($nombre_archivo,$Archivo);// aqui deberian ir los parametros del nombre del archivo (es un input), id_admin y la ruta
+    if($resultado!=false){
+        $obj_evento->setImagen($resultado);
+        return $obj_evento->agregarEvento();
+    }
 }
 //echo insertarEvento(1,2,3,"Yoga chido", "Es chido", "Carlos", 552323, "ruta",30, 1, 20210603, 2021-06-04, 12, 13, 2022-2);
 
