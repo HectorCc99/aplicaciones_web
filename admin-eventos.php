@@ -272,12 +272,12 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-
+                        <div class="btn">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-primary">Agregar</button>
+                        </div>
                     </div>
-                    <div class="col-sm-2 mb-3 mb-sm-0">
-                        <button  class="btn btn-primary " >Agregar</button>
-                    </div>
+                    <!---->
                     </form>
                 </div>
             </div>
