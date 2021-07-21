@@ -74,22 +74,7 @@
                             <th scope="col">Opciones</th>
                         </thead>
                         <tbody id="tbl-materiales">
-                            <tr>
-                                <td>Balón de soccer</td>
-                                <td>25</td>
-                                <td>
-                                    <!--BOTON OPCIONES-->
-                                    <div class="dropdown">
-                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Opciones
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                                            <button class="dropdown-item" type="button" data-toggle="modal" data-target="#modalEditar">Editar</button>
-                                            <button class="dropdown-item" type="button">Eliminar</button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+                            <!--AJAX-->
                         </tbody>
                     </table>
                 </div>
@@ -124,6 +109,7 @@
                                     <label for="material" class="col-form-label">Material:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
+                                    <input type="text" name="id_material" id="id_material" class="form-control ml-1">
                                     <input type="text" name="material" id="material" class="form-control ml-1">
                                 </div>
                             </div>
@@ -139,7 +125,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary editar-datos" data-dismiss="modal" id="editar-datos">Guardar</button>
+                        <button type="button" class="btn btn-primary editar_datos" data-dismiss="modal" id="editar_datos">Guardar</button>
                     </div>
                 </div>
             </div>
@@ -168,7 +154,7 @@
                                     <label for="material" class="col-form-label ml-1">Material:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="material" id="" class="form-control ml-1">
+                                    <input type="text" name="material" id="material_nuevo" class="form-control ml-1">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -176,12 +162,12 @@
                                     <label for="piezas" class="col-form-label ml-1">Piezas:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="piezas" id="" class="form-control ml-1">
+                                    <input type="number" name="piezas" id="piezas_nuevas" class="form-control ml-1">
                                 </div>
                             </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="agregar-nuevo">Agregar</button>
+                            <button type="button" class="btn btn-primary agregar_nuevo" data-dismiss="modal" id="agregar_nuevo">Agregar</button>
                         </div>
                     </div>
                 </div>
@@ -226,5 +212,6 @@
         <script src="mail/contact.js"></script>
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="js/materiales.js"></script>
     </body>
 </html>
