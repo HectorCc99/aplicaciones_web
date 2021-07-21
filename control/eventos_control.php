@@ -20,7 +20,7 @@ function insertarEvento($id_admin, $id_espr, $id_recurso, $nombact, $descrip, $e
     $obj_evento -> setHoraFin($hfin);
     $obj_evento -> setSemestreEv($semestreev);
     //subir la imagen
-    $resultado = $obj_evento->subirPoster($nombre_archivo,$Archivo);// aqui deberian ir los parametros del nombre del archivo (es un input), id_admin y la ruta
+    $resultado = $obj_evento->subirPoster($nombre_archivo,$Archivo);
     if($resultado!=false){
         $obj_evento->setImagen($resultado);
         return $obj_evento->agregarEvento();
@@ -52,8 +52,8 @@ function detallesEvento($id){
 
 // MODIFICAR
 function actualizarEvento($idev, $id_admin, $id_espr, $id_recurso, $nombact, $descrip,
-                          $encargado, $telenc, $imagen, $cantrec,
-                          $finicio, $ffin, $hinicio, $hfin, $semestreev){
+                          $encargado, $telenc, $cantrec,
+                          $finicio, $ffin, $hinicio, $hfin, $semestreev, $nombre_archivo, $Archivo){
     include_once "../model/eventos.php";
     $obj_evento = new eventos();
     $obj_evento ->setIdEvento($idev);
@@ -64,14 +64,18 @@ function actualizarEvento($idev, $id_admin, $id_espr, $id_recurso, $nombact, $de
     $obj_evento -> setDescripcion($descrip);
     $obj_evento -> setEncargado($encargado);
     $obj_evento -> setTelEncargado($telenc);
-    $obj_evento -> setImagen($imagen);
     $obj_evento -> setCantidadRecurso($cantrec);
     $obj_evento -> setFechaInicio($finicio);
     $obj_evento -> setFechaFin($ffin);
     $obj_evento -> setHoraInicio($hinicio);
     $obj_evento -> setHoraFin($hfin);
     $obj_evento -> setSemestreEv($semestreev);
-    return $obj_evento -> modificarEvento() ? "Exito" : "Fallo";
+    //subir la imagen
+    $resultado = $obj_evento->subirPoster($nombre_archivo,$Archivo);
+    if($resultado!=false){
+        $obj_evento->setImagen($resultado);
+        return $obj_evento -> modificarEvento();
+    }
 }
 //echo actualizarEvento(3, 1, 3, 1, "Extreme Yoga", "Yoga extremo", "Hector", "5562326282",  "ruta2", 5, "2021-12-12", "2021-12-13", "001400", "001600","2022-1");
 

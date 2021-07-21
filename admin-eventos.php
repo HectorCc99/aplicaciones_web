@@ -242,7 +242,7 @@
                                     <label for="fecha_cierre" class="col-form-label ml-1">Fecha de cierre:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="date" name="fecha_cierre" id="fecha_cierre" class="form-control">
+                                    <input type="date" name="fecha_cierre" id="fecha_cierre" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -295,7 +295,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <!--<form action=""  id="">-->
+                        <form enctype="multipart/form-data" action="./control/list_eventos2.php" method="POST">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <p class="font-weight-bold mr-1">Ingrese los datos:</p>
@@ -307,8 +307,9 @@
                                     <label for="evento" class="col-form-label ml-1">Evento:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="hidden" name="evento_id_edit" id="evento_id_edit" class="form-control ml-2">
-                                    <input type="text" name="eventoEd" id="eventoEd" class="form-control ml-2">
+                                    <input type="hidden" name="filtro" id="filtro" class="form-control ml-2" value="2"> <!--filtro del control-->
+                                    <input type="hidden" name="evento_id_edit" id="evento_id_edit" class="form-control ml-2"> <!--recuperamos el id-->
+                                    <input type="text" name="eventoEd" id="eventoEd" class="form-control ml-2" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -316,7 +317,7 @@
                                     <label for="encargado" class="col-form-label ml-1">Encargado:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="encargadoEd" id="encargadoEd" class="form-control ml-2">
+                                    <input type="text" name="encargadoEd" id="encargadoEd" class="form-control ml-2" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -324,7 +325,7 @@
                                     <label for="telefono" class="col-form-label ml-1">Telefono:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="telefonoEvEd" id="telefonoEvEd" class="form-control ml-2">
+                                    <input type="text" name="telefonoEvEd" id="telefonoEvEd" class="form-control ml-2" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -332,7 +333,7 @@
                                     <label for="cupo" class="col-form-label ml-1">Semestre:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="semEvEd" id="semEvEd" class="form-control ml-1">
+                                    <select name="semEvEd" id="semEvEd" class="form-control ml-1" required>
                                         <!--ajax-->
                                     </select>
                                 </div>
@@ -342,7 +343,7 @@
                                     <label for="lugar" class="col-form-label ml-1">Lugar:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="lugarEvEd" id="lugarEvEd" class="form-control ml-2">
+                                    <select name="lugarEvEd" id="lugarEvEd" class="form-control ml-2" required>
                                         <!--ajax-->
                                     </select>
                                 </div>
@@ -352,7 +353,7 @@
                                     <label for="material" class="col-form-label ml-1">Material:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <select name="materialEvEd" id="materialEvEd" class="form-control ml-2">
+                                    <select name="materialEvEd" id="materialEvEd" class="form-control ml-2" required>
                                         <!--ajax-->
                                     </select>
                                 </div>
@@ -365,7 +366,7 @@
                                     <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="cantidadEvEd" id="cantidadEvEd" class="form-control ml-2">
+                                    <input type="number" name="cantidadEvEd" id="cantidadEvEd" class="form-control ml-2"required>
                                 </div>
                             </div>
                             <!--<div class="form-group row">
@@ -416,7 +417,7 @@
                                     <label for="descripcion" class="col-form-label ml-1">Descripción:</label>
                                 </div>
                                 <div class="col-sm-9 mb-3 mb-sm-0">
-                                    <textarea name="descripcionEvEd" id="descripcionEvEd" cols="30" class="form-control" rows="3"></textarea>
+                                    <textarea name="descripcionEvEd" id="descripcionEvEd" cols="30" class="form-control" rows="3" required></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -424,7 +425,7 @@
                                     <label for="fecha_inicio" class="col-form-label ml-1">Fecha de inicio:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="date" name="fecha_inicioEd" id="fecha_inicioEd" class="form-control">
+                                    <input type="date" name="fecha_inicioEd" id="fecha_inicioEd" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -432,7 +433,7 @@
                                     <label for="fecha_cierre" class="col-form-label ml-1">Fecha de cierre:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="date" name="fecha_cierreEd" id="fecha_cierreEd" class="form-control">
+                                    <input type="date" name="fecha_cierreEd" id="fecha_cierreEd" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -440,7 +441,7 @@
                                     <label for="hora_inicio" class="col-form-label ml-1">Hora de inicio:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_inicioEd" id="hora_inicioEd" class="form-control">
+                                    <input type="time" name="hora_inicioEd" id="hora_inicioEd" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -448,7 +449,7 @@
                                     <label for="hora_cierre" class="col-form-label ml-1">Hora de cierre:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_cierreEd" id="hora_cierreEd" class="form-control">
+                                    <input type="time" name="hora_cierreEd" id="hora_cierreEd" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -456,15 +457,17 @@
                                     <label for="poster" class="col-form-label ml-1">Poster:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="file" name="posterEd" id="posterEd" class="form-control ml-1">
+                                    <input type="file" name="posterEd" id="posterEd" class="form-control ml-1" required>
                                 </div>
                             </div>
-                        <!--</form>-->
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary guardar_datos_editar" data-dismiss="modal"  id="editar-datos">Guardar</button>
+                        <button class="btn btn-primary">Guardar</button>
+                        <!--<button type="button" class="btn btn-primary guardar_datos_editar" data-dismiss="modal"  id="editar-datos">Guardar</button>-->
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

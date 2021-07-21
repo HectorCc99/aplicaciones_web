@@ -164,7 +164,7 @@ function consulta_evento(id){
     })
 }
 
-//f
+/*
 $(document).on("click",".guardar_datos_editar",function (){
     let id = $("#evento_id_edit").val();
     let evento = $("#eventoEd").val();
@@ -191,3 +191,4 @@ $(document).on("click",".guardar_datos_editar",function (){
         }
     )
 });
+*/

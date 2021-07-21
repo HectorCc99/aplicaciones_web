@@ -10,28 +10,37 @@ if(isset($_POST['filtro'])){
             echo detallesEvento($id_evento);
             break;
         case "2":
-            $id=$_POST['id'];
-            $evento=$_POST['evento'];
-            $encargado=$_POST['encargado'];
-            $tel=$_POST['tel'];
-            $semestre=$_POST['semestre'];
-            $espacio=$_POST['espacio'];
-            $recurso=$_POST['recurso'];
-            $cant=$_POST['cant'];
-            $descrip=$_POST['descrip'];
-            $fechai=$_POST['fechai'];
-            $fechaf=$_POST['fechaf'];
-            $horai=$_POST['horai'];
-            $horac=$_POST['horac'];
-            $imagen=$_POST['imagen'];
-            $id_admin=1; //Dato temporal, Se tomara cuando se trabaje con sesiones?
+            if(isset($_FILES['posterEd'])){
+                include_once "eventos_control.php";
+                $id=$_POST['evento_id_edit'];
+                $evento=$_POST['eventoEd'];
+                $encargado=$_POST['encargadoEd'];
+                $tel=$_POST['telefonoEvEd'];
+                $semestre=$_POST['semEvEd'];
+                $espacio=$_POST['lugarEvEd'];
+                $recurso=$_POST['materialEvEd'];
+                $cant=$_POST['cantidadEvEd'];
+                $descrip=$_POST['descripcionEvEd'];
+                $fechai=$_POST['fecha_inicioEd'];
+                $fechaf=$_POST['fecha_cierreEd'];
+                $horai=$_POST['hora_inicioEd'];
+                $horac=$_POST['hora_cierreEd'];
+                $id_admin=1; //Dato temporal, Se tomara cuando se trabaje con sesiones?
 
-            include_once "eventos_control.php";
-            echo actualizarEvento($id, $id_admin, $espacio, $recurso, $evento, $descrip,
-                $encargado, $tel, $imagen, $cant,
-                $fechai, $fechaf, $horai, $horac, $semestre);
+                $nombreArchivo = $_FILES['posterEd']['name'];
+                $Archivo = $_FILES['posterEd']['tmp_name'];
+
+                $result= actualizarEvento($id, $id_admin, $espacio, $recurso, $evento, $descrip,
+                    $encargado, $tel, $cant,
+                    $fechai, $fechaf, $horai, $horac, $semestre, $nombreArchivo, $Archivo);
+
+                if($result==1){
+                    header('Location: ../admin-eventos.php ');
+                }
+
+            }else{
+                echo "Error al enviar el archivo";
+            }
             break;
-
-
     }
 }
