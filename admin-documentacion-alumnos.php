@@ -153,61 +153,8 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <form action=""  id="">
-                            <div class="form-group row">
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <label for="tira_materias" class="col-form-label">Tira de materias:</label>
-                                </div>
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <label for="tira_materias" class="col-form-label">tira_de_materias.pdf</label>
-                                </div>
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <img src="./icons/check.svg" alt="..." width="24px">
-                                </div>                                
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <label for="seguro_estudiante" class="col-form-label ml-1">Seguro de estudiante:</label>
-                                </div>
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <a href="#"><label for="seguro_estudiante" class="col-form-label ml-1">seguro_de_estudiante.pdf</label></a>
-                                </div>
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <img src="./icons/cross.svg" alt="..." width="24px">
-                                </div>                                
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <label for="notas" class="col-form-label ml-1">Notas:</label>
-                                </div>
-                                <div class="col-sm-7 mb-3 mb-sm-0">
-                                    <textarea name="notas" id="notas" cols="30" class="form-control" rows="3">Documento ilegible</textarea>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <label for="seguro_axxa" class="col-form-label ml-1">Seguro Axxa:</label>
-                                </div>
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <label for="seguro_axxa" class="col-form-label ml-1">seguro_axxa.pdf</label>
-                                </div>
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <img src="./icons/check.svg" alt="..." width="24px">
-                                </div>                                
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <label for="credencial" class="col-form-label ml-1">Credencial escolar:</label>
-                                </div>
-                                <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <label for="credencial" class="col-form-label ml-1">credencial.pdf</label>
-                                </div>
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <img src="./icons/check.svg" alt="..." width="24px">
-                                </div>                                
-                            </div>
-                        </form>
+                    <div class="modal-body" id="contenido_modal2">
+                       <!--AJAX-->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-dismiss="modal" id="">Aceptar</button>

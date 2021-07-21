@@ -19,7 +19,8 @@ switch ($filtro){
     case "3":
         include_once "archivos_control.php";
         $id=$_POST['id'];
-        echo archivosAlumno($id);
+        $estatus=$_POST['estatus'];
+        echo archivosAlumno($id,$estatus);
         break;
     default:
         //incluyo el control al que le voy a enviar el filtro

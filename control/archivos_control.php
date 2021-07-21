@@ -46,11 +46,21 @@ function consultaArchivos(){
     return$data;
 }
 
-function archivosAlumno($id){
+function archivosAlumno($id,$estatus){
     include_once "../model/archivos.php";
     $obj_archivos = new archivos();
     $obj_archivos->setIdUsuario($id);
-    $result=$obj_archivos->consultadocumentosUsuario();
+    $result=$obj_archivos->consultadocumentosUsuario($estatus);
     $data=json_encode($result);
     return$data;
+}
+
+function modificaestadoarchivo($id_usuario,$id_archivo,$notas,$estatus){
+    include_once "../model/archivos.php";
+    $obj_archivos = new archivos();
+    $obj_archivos->setIdUsuario($id_usuario);
+    $obj_archivos->setIdArchivo($id_archivo);
+    $obj_archivos->setNotas($notas);
+    $obj_archivos->setEstatusAprobado($estatus);
+    return $obj_archivos->ModificaEstatusARchivo();
 }

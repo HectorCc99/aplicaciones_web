@@ -13,7 +13,6 @@ clave
 clave_confirm*/
 //escucha que se acciona al dar clic al boton
 $(document).on("click",".registrar",function () {
-
     let nombre=$("#name").val();
     let primera=$("#primer_ap").val();
     let segunda=$("#segundo_ap").val();
@@ -28,15 +27,7 @@ $(document).on("click",".registrar",function () {
     email!="",tel!="", clave!="",clave_co!=""){
     $.post(
         "./control/registro_usuario.php",
-        {nombre,
-            primera,
-            segunda,
-            cuenta,
-            carrera,
-            email,
-            tel,
-            clave,
-            clave_co},
+        {nombre, primera, segunda, cuenta, carrera, email, tel, clave, clave_co},
         function (responsive){
             console.log(responsive);
           window.location.href="login.php";
