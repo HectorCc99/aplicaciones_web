@@ -11,43 +11,6 @@ $(document).ready(function () {
 });
 
 
-$(document).on("click",".agregar_evento",function () {
-    //mis campos de admin-eventos.php
-    let evento = $("#evento").val();
-    let encargado = $("#encargado").val();
-    let telefonoEv = $("#telefonoEv").val();
-    let semEv = $("#semEv").val();
-    let lugarEv = $("#lugarEv").val(); // en teoria ya tenemos aqui el id del lugar (espacio_recreativo)
-    let materialEv = $("#materialEv").val(); // en teoria ya tenemos aqui el id del material (recurso_recreativo)
-    let cantidadEv = $("#cantidadEv").val();
-    let descripcionEv = $("#descripcionEv").val();
-    let fecha_inicio = $("#fecha_inicio").val();
-    let fecha_cierre = $("#fecha_cierre").val();
-    let hora_inicio = $("#hora_inicio").val();
-    let hora_cierre = $("#hora_cierre").val();
-    let poster = $("#poster").val();
-
-    if(evento != "" && encargado != "" && telefonoEv != "" && semEv != "" && lugarEv != ""
-        && materialEv != "" && cantidadEv != "" && descripcionEv != "" && fecha_inicio != ""
-        && fecha_cierre != "" && hora_inicio != "" && hora_cierre != "" /*&& poster != ""*/){
-        $.ajax({
-            url:"./control/add_eventos.php",
-            data: {evento, encargado, telefonoEv, semEv, lugarEv,
-                materialEv, cantidadEv, descripcionEv, fecha_inicio,
-                fecha_cierre, hora_inicio, hora_cierre, poster
-            },
-            type: "POST",
-            success: function (response){
-                console.log(response);
-            TablaEventos(0);
-            }
-        });
-
-    }else{
-        alert("por favor llene los campos faltantes");
-    }
-});
-
 
 function TablaEventos(filtro) {
     $.ajax({

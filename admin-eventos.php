@@ -118,7 +118,7 @@
                                     <label for="evento" class="col-form-label ml-1">Evento:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="evento" id="evento" class="form-control ml-2">
+                                    <input type="text" name="evento" id="evento" class="form-control ml-2"  required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -126,7 +126,7 @@
                                     <label for="encargado" class="col-form-label ml-1">Encargado:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="encargado" id="encargado" class="form-control ml-2">
+                                    <input type="text" name="encargado" id="encargado" class="form-control ml-2" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -134,7 +134,7 @@
                                     <label for="telefono" class="col-form-label ml-1">Teléfono:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="telefonoEv" id="telefonoEv" class="form-control ml-2">
+                                    <input type="text" name="telefonoEv" id="telefonoEv" class="form-control ml-2" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -142,7 +142,7 @@
                                     <label for="cupo" class="col-form-label ml-1">Semestre:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="semEv" id="semEv" class="form-control ml-1">
+                                    <select name="semEv" id="semEv" class="form-control ml-1" required>
                                         <!--ajax-->
                                     </select>
                                 </div>
@@ -152,7 +152,7 @@
                                     <label for="lugar" class="col-form-label ml-1">Lugar:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="lugarEv" id="lugarEv" class="form-control ml-2">
+                                    <select name="lugarEv" id="lugarEv" class="form-control ml-2" required>
                                         <!--ajax-->
                                     </select>
                                 </div>
@@ -162,7 +162,7 @@
                                     <label for="material" class="col-form-label ml-1">Material:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <select name="materialEv" id="materialEv" class="form-control ml-2">
+                                    <select name="materialEv" id="materialEv" class="form-control ml-2" required>
                                         <!-- Ajax -->
                                     </select>
                                 </div>
@@ -175,7 +175,7 @@
                                     <label for="cantidadEv" class="col-form-label ml-1">Cantidad:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="cantidadEv" id="cantidadEv" class="form-control ml-2">
+                                    <input type="number" name="cantidadEv" id="cantidadEv" class="form-control ml-2" required>
                                 </div>
                             </div>
                             <!--<div class="form-group row">
@@ -226,7 +226,7 @@
                                     <label for="descripcion" class="col-form-label ml-1">Descripción:</label>
                                 </div>
                                 <div class="col-sm-9 mb-3 mb-sm-0">
-                                    <textarea name="descripcionEv" id="descripcionEv" cols="30" class="form-control" rows="3"></textarea>
+                                    <textarea name="descripcionEv" id="descripcionEv" cols="30" class="form-control" rows="3" required></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -234,7 +234,7 @@
                                     <label for="fecha_inicio" class="col-form-label ml-1">Fecha de inicio:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="date" name="fecha_inicio" id="fecha_inicio" class="form-control">
+                                    <input type="date" name="fecha_inicio" id="fecha_inicio" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -250,7 +250,7 @@
                                     <label for="hora_inicio" class="col-form-label ml-1">Hora de inicio:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_inicio" id="hora_inicio" class="form-control">
+                                    <input type="time" name="hora_inicio" id="hora_inicio" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -258,7 +258,7 @@
                                     <label for="hora_cierre" class="col-form-label ml-1">Hora de cierre:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_cierre" id="hora_cierre" class="form-control">
+                                    <input type="time" name="hora_cierre" id="hora_cierre" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -266,14 +266,17 @@
                                     <label for="poster" class="col-form-label ml-1">Poster:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input accept="image/png,image/jpeg,image/jpg" type="file" name="poster" id="poster" class="form-control ml-1">
+                                    <input accept="image/png,image/jpeg,image/jpg" type="file" name="poster" id="poster"  class="form-control-file" required>
                                 </div>
                             </div>
 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary agregar_evento" data-dismiss="modal" id="agregar_nuevo">Agregar</button>
+
+                    </div>
+                    <div class="col-sm-2 mb-3 mb-sm-0">
+                        <button  class="btn btn-primary " >Agregar</button>
                     </div>
                     </form>
                 </div>

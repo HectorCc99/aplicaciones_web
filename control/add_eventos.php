@@ -25,7 +25,9 @@ if(/*isset($_POST['evento']) && isset($_POST['encargado']) && isset($_POST['tele
     $result= insertarEvento($id_admin, $lugar, $material,  $evento, $descrip,  $encargado, $telefono,
                         $cantidad, 1, $finicio,  $fcierre, $hinicio, $hcierre, $sem, $nombreArchivo, $Archivo);
 
-    echo $result;
+    if($result==1){
+        header('Location: ../admin-eventos.php ');
+    }
 } else{
     echo "error al enviar el archivo";
 }
