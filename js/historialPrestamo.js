@@ -61,7 +61,7 @@ function selectMateriales(){
             success: function (response)
             {
                 let obj_result = JSON.parse(response);
-                let template = " <option selected value='0' disabled>Seleccione una material</option> ";
+                let template = " <option selected value='0' disabled>Seleccione un material</option> ";
                 if (obj_result.length>0) {
                 obj_result.forEach(
                     (obj_result)=>
@@ -70,6 +70,7 @@ function selectMateriales(){
                     }
                 );
                 $("#materialesS").html(template);
+                $("#materialespm").html(template);
                 }else{
                     $("#materialesS").html(`<option selected disabled> No hay Materiales</option>`);
                 }

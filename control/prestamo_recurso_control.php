@@ -58,14 +58,14 @@ function listaDevolucion()
     return $jason_data;
 }
 
-function listaSolicitudes()
-{
+function listaSolicitudes($id_recurso){ //mostrar las solicitudes pendientes
     include_once "../model/prestamo_recurso.php";
     $obj_prestamoRecurso = new prestamo_recurso();
-    $result = $obj_prestamoRecurso->listaSolicitudes();
+    $result = $obj_prestamoRecurso->listaSolicitudes($id_recurso);
     $jason_data = json_encode($result);
     return $jason_data;
 }
+
 function filtroPorFecha($filtro,$fecha)
 {
     include_once "../model/prestamo_recurso.php";

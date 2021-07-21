@@ -132,13 +132,14 @@ class prestamo_recurso extends CONEXION_M
         $this->close();
         return $result;
     }
-    function listaSolicitudes(){
-        //Muestra los solicitudes (0 Solicitados, 1 Aceptados 2 Rechazados)
-        $query="SELECT pr.id_prestamo_ma, u.nombre, u.primer_ap, u.segundo_ap,
-         p.fecha_prestamo, p.hora_inicio, p.hora_fin
-         FROM pres_recurso pr, usuario u, prestamo p, recurso_recreativo rr
-         WHERE pr.id_prestamo=p.id_prestamo AND p.id_usuario=u.id_usuario AND pr.id_recurso=rr.id_recurso
-         AND p.estatus_prestamo=0 ORDER BY fecha_prestamo, hora_inicio DESC";
+
+    function listaSolicitudes($id_recurso){ //para mostrar todos los que estan pendientes de ser aceptados
+        $query="SELECT p.*, rr.*, u.* FROM prestamo p, pres_recurso pr, recurso_recreativo rr, usuario u
+                 WHERE p.id_prestamo=pr.id_prestamo
+                 AND pr.id_recurso=rr.id_recurso
+                 AND p.id_usuario=u.id_usuario
+                 AND p.estatus_prestamo=0
+                 AND rr.id_recurso=".$id_recurso;
         $this->connect();
         $result = $this->getData($query);
         $this->close();
