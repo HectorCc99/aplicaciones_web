@@ -215,7 +215,7 @@
         <script src="mail/contact.js"></script>
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
-        <script src="js/actividades_deportivas.js"></script>
+       
         <script src="js/devolucionesAdmin.js"></script>
     </body>
 </html>
