@@ -192,8 +192,8 @@
                                 <p><span class="font-weight-bold">Categoría: </span>Individual</p>
                             </div>
                             <div class="class-meta">
-                                <p><span class="font-weight-bold">Horario: </span>Jue , Vier </p>
-                                <p>15:00 - 15:00</p>
+                                <p><span class="font-weight-bold">Horario: </span>Jue , Vier</p>
+                                <p>13:00 - 15:00</p>
                             </div>
                             <div class="class-meta">
                                 <p><span class="font-weight-bold">Ubicación: </span>Club de Ajedrez</p>
@@ -268,11 +268,9 @@
                                 <label for="tira" class="col-form-label">Tira de Materias:</label>
                             </div>
                             <div class="col-lg-8 mb-3 mb-sm-0 mt-1">
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="tira">
-                                        <label class="custom-file-label" for="tira" aria-describedby="inputGroupFileAddon02">Elige un archivo</label>
-                                    </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="tira">
+                                    <label class="custom-file-label" for="tira" data-browse="Buscar">Selecciona un archivo</label>
                                 </div>
                             </div>
                         </div>
@@ -281,11 +279,9 @@
                                 <label for="seguro_estudiante" class="col-form-label">Seguro de Estudiante:</label>
                             </div>
                             <div class="col-lg-8 mb-3 mb-sm-0 mt-3">
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="seguro_estudiante">
-                                        <label class="custom-file-label" for="seguro_estudiante" aria-describedby="inputGroupFileAddon02">Elige un archivo</label>
-                                    </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="seguro_estudiante">
+                                    <label class="custom-file-label" for="seguro_estudiante" data-browse="Buscar">Selecciona un archivo</label>
                                 </div>
                             </div>
                         </div>
@@ -294,11 +290,9 @@
                                 <label for="seguro_axa" class="col-form-label">Seguro AXA:</label>
                             </div>
                             <div class="col-lg-8 mb-3 mb-sm-0 mt-1">
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="seguro_axa">
-                                        <label class="custom-file-label" for="seguro_axa" aria-describedby="inputGroupFileAddon02">Elige un archivo</label>
-                                    </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="seguro_axa">
+                                    <label class="custom-file-label" for="seguro_axa" data-browse="Buscar">Selecciona un archivo</label>
                                 </div>
                             </div>
                         </div>
@@ -307,11 +301,9 @@
                                 <label for="credencial_escolar" class="col-form-label">Credencial Escolar:</label>
                             </div>
                             <div class="col-lg-8 mb-3 mb-sm-0 mt-3">
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="credencial_escolar">
-                                        <label class="custom-file-label" for="credencial_escolar" aria-describedby="inputGroupFileAddon02">Elige un archivo</label>
-                                    </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="credencial_escolar">
+                                    <label class="custom-file-label" for="credencial_escolar" data-browse="Buscar">Selecciona un archivo</label>
                                 </div>
                             </div>
                         </div>

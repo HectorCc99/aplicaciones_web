@@ -68,55 +68,47 @@
             </div>
         </div>
         <!-- Nav Bar End -->
-
-        <!-- Inicio de Tarjetas -->
-        <div class="container align-item-center mt-5 mb-5">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                        <h1 class="mt-5">Deportes</h1>
+        <!-- Inicia Deportes -->
+        <div class="class mt-5">
+            <div class="container">
+                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <p  class="mt-3">Nuestros</p>    
+                    <h1>Deportes</h1>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul id="class-filter">
+                            <li data-filter="*" class="filter-active">Todos los deportes</li>
+                            <li data-filter=".filter-1">Combate</li>
+                            <li data-filter=".filter-2">Conjunto con Pelota</li>
+                            <li data-filter=".filter-3">Individuales</li>
+                            <li data-filter=".filter-4">Fitness</li>
+                            <li data-filter=".filter-5">Para Mejorar la Salud</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-
-            <div class="card border-0 align-items-center">
-                <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item btn-primary nav-link ">Todos los deportes</li>
-                    <li class="list-group-item btn-primary nav-link">Combate</li>
-                    <li class="list-group-item btn-primary nav-link">Colaborativo</li>
-                    <li class="list-group-item btn-primary nav-link">Individual</li>
-                    <li class="list-group-item btn-primary nav-link">Fitnes</li>
-                </ul>
-            </div>
-        </div>
-        <!-- Fin de Tarjetas -->
-        <!-- Inicia Deportes -->
-        <div class="class">
-            <div class="container">
                 <div class="row class-container">
-                    <div class="col-lg-3 col-md-6 col-sm-12 class-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
+                    <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
                         <div class="class-wrap">
                             <div class="class-img">
-                                <img src="img/volibol.jpg" alt="Image">
+                                <img src="img/full-contact.jpg" alt="Image">
                             </div>
                             <div class="class-text">
                                 <div class="class-teacher">
                                     <img src="icons/teacher.svg" alt="Image">
-                                    <h3>Luis Manuel Vivas Amador</h3>
-                                    <a href="#" data-toggle="modal" data-target="#modalSolicitud">
-                                        <img src="icons/add.svg" alt="Image">
-                                    </a>
+                                    <h3>Eréndira Hernández Rojas</h3>
+                                    <a href="#" data-toggle="modal" data-target="#modalSolicitud">+</a>
                                 </div>
-                                <h2>Volibol</h2>
+                                <h2>Full Contact</h2>
                                 <div class="class-meta">
-                                    <p><span class="font-weight-bold">Categoría: </span>Conjunto con pelota</p>
+                                    <p><span class="font-weight-bold">Categoría: </span>Combate</p>
                                 </div>
                                 <div class="class-meta">
-                                    <p><span class="font-weight-bold">Horario: </span>Lun, Miér, Vier</p>
-                                    <p>13:00 - 17:00</p>
+                                    <p><span class="font-weight-bold">Horario: </span>Lun, Miér</p>
+                                    <p>11:00 - 12:00</p>
                                 </div>
                                 <div class="class-meta">
-                                    <p><span class="font-weight-bold">Ubicación: </span>Canchas de Volibol</p>
+                                    <p><span class="font-weight-bold">Ubicación: </span>Gimnasio</p>
                                 </div>
                                 <div class="class-meta">
                                     <p><span class="font-weight-bold">Grupo: </span>2145</p>
@@ -124,37 +116,35 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 class-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="class-wrap">
                             <div class="class-img">
-                                <img src="img/futbol-varonil.jpg" alt="Image">
+                                <img src="img/futbol-femenil.jpg" alt="Image">
                             </div>
                             <div class="class-text">
                                 <div class="class-teacher">
                                     <img src="icons/teacher.svg" alt="Image">
-                                    <h3>Dagoberto Riaño Ruíz</h3>
-                                    <a href="#" data-toggle="modal" data-target="#modalSolicitud">
-                                        <img src="icons/add.svg" alt="Image">
-                                    </a>
+                                    <h3>Alfredo Pérez Rojas</h3>
+                                    <a href="#" data-toggle="modal" data-target="#modalSolicitud">+</a>
                                 </div>
-                                <h2>Fútbol Varonil</h2>
+                                <h2>Fútbol Asociación Femenil</h2>
                                 <div class="class-meta">
-                                    <p><span class="font-weight-bold">Categoría: </span>Conjunto con pelota</p>
+                                    <p><span class="font-weight-bold">Categoría: </span>Conjunto con Pelota</p>
                                 </div>
                                 <div class="class-meta">
-                                    <p><span class="font-weight-bold">Horario: </span>Lun - Vier</p>
-                                    <p>14:00 - 16:00</p>
+                                    <p><span class="font-weight-bold">Horario: </span>Lun, Miér, Vier</p>
+                                    <p>11:00 - 15:00</p>
                                 </div>
                                 <div class="class-meta">
-                                    <p><span class="font-weight-bold">Ubicación: </span>Canchas de Fútbol</p>
+                                    <p><span class="font-weight-bold">Ubicación: </span>Campo de Fútbol</p>
                                 </div>
                                 <div class="class-meta">
-                                    <p><span class="font-weight-bold">Grupo: </span>2032</p>
+                                    <p><span class="font-weight-bold">Grupo: </span>2146</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 class-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
                         <div class="class-wrap">
                             <div class="class-img">
                                 <img src="img/ajedrez1.png" alt="Image">
@@ -163,53 +153,77 @@
                                 <div class="class-teacher">
                                     <img src="icons/teacher.svg" alt="Image">
                                     <h3>Teresa Vázquez Hernández</h3>
-                                    <a href="#" data-toggle="modal" data-target="#modalSolicitud">
-                                        <img src="icons/add.svg" alt="Image">
-                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#modalSolicitud">+</a>
                                 </div>
                                 <h2>Ajedrez</h2>
                                 <div class="class-meta">
                                     <p><span class="font-weight-bold">Categoría: </span>Individual</p>
                                 </div>
                                 <div class="class-meta">
-                                    <p><span class="font-weight-bold">Horario: </span>Jue , Vier </p>
-                                    <p>15:00 - 15:00</p>
+                                    <p><span class="font-weight-bold">Horario: </span>Jue , Vier</p>
+                                    <p>13:00 - 15:00</p>
                                 </div>
                                 <div class="class-meta">
                                     <p><span class="font-weight-bold">Ubicación: </span>Club de Ajedrez</p>
                                 </div>
                                 <div class="class-meta">
-                                    <p><span class="font-weight-bold">Grupo: </span>1548</p>
+                                    <p><span class="font-weight-bold">Grupo: </span>2147</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 class-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-4 wow fadeInUp" data-wow-delay="0.6s">
                         <div class="class-wrap">
                             <div class="class-img">
-                                <img src="img/futbol-varonil.jpg" alt="Image">
+                                <img src="img/danza-arabe.jpg" alt="Image">
                             </div>
                             <div class="class-text">
                                 <div class="class-teacher">
                                     <img src="icons/teacher.svg" alt="Image">
-                                    <h3>Dagoberto Riaño Ruíz</h3>
-                                    <a href="#" data-toggle="modal" data-target="#modalSolicitud">
-                                        <img src="icons/add.svg" alt="Image">
-                                    </a>
+                                    <h3>Jeymy Nancy Cazares Arellano</h3>
+                                    <a href="#" data-toggle="modal" data-target="#modalSolicitud">+</a>
                                 </div>
-                                <h2>Fútbol Femenil</h2>
+                                <h2>Danza Árabe</h2>
                                 <div class="class-meta">
-                                    <p><span class="font-weight-bold">Categoría: </span>Conjunto con pelota</p>
+                                    <p><span class="font-weight-bold">Categoría: </span>Fitness</p>
                                 </div>
                                 <div class="class-meta">
-                                    <p><span class="font-weight-bold">Horario: </span>Lun - Vier</p>
+                                    <p><span class="font-weight-bold">Horario: </span>Mar, Jue</p>
                                     <p>14:00 - 16:00</p>
                                 </div>
                                 <div class="class-meta">
-                                    <p><span class="font-weight-bold">Ubicación: </span>Canchas de Fútbol</p>
+                                    <p><span class="font-weight-bold">Ubicación: </span>Gimnasio</p>
                                 </div>
                                 <div class="class-meta">
-                                    <p><span class="font-weight-bold">Grupo: </span>2032</p>
+                                    <p><span class="font-weight-bold">Grupo: </span>2148</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-5 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="class-wrap">
+                            <div class="class-img">
+                                <img src="img/activacion-fisica.png" alt="Image">
+                            </div>
+                            <div class="class-text">
+                                <div class="class-teacher">
+                                    <img src="icons/teacher.svg" alt="Image">
+                                    <h3>Teresa Vázquez Hernández</h3>
+                                    <a href="#" data-toggle="modal" data-target="#modalSolicitud">+</a>
+                                </div>
+                                <h2>Activación Física</h2>
+                                <div class="class-meta">
+                                    <p><span class="font-weight-bold">Categoría: </span>Prog. Int. para Mejorar la Salud</p>
+                                </div>
+                                <div class="class-meta">
+                                    <p><span class="font-weight-bold">Horario: </span>Lun - Vier</p>
+                                    <p>10:00 - 11:30</p>
+                                </div>
+                                <div class="class-meta">
+                                    <p><span class="font-weight-bold">Ubicación: </span>Explanadas y Canchas</p>
+                                </div>
+                                <div class="class-meta">
+                                    <p><span class="font-weight-bold">Grupo: </span>2149</p>
                                 </div>
                             </div>
                         </div>
@@ -224,7 +238,7 @@
             <div class="modal-dialog modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="staticBackdropLabel"><strong>Solicitud de Deporte</strong></h4>
+                        <h4 class="modal-title" id="staticBackdropLabel"><strong>Solicitud a Deporte</strong></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -233,44 +247,18 @@
                         <form action="" id="">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <p class="font-weight-bold">¿Deseas solicitar tu inscripción a este deporte?</p><br><br>
-                                    <div id=""></div>
+                                    <p>¿Deseas solicitar tu inscripción a este deporte?</p>
                                 </div>
                             </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSolicitar">Solicitar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-primary">Sí</button>
                     </div>
                 </div>
             </div>
         </div>
         </div>
         <!--Fin Modal Solicitud-->
-
-         <!--Inicia Modal Solicitar-->
-        <div class="modal fade" id="modalSolicitar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-md">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="" id="">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <p class="font-weight-bold">De ser aprobada tu solicitud, el deporte aparecerá en tu inicio en la seccion de deportes inscritos</p>
-                                    <div id=""></div>
-                                </div>
-                            </div>
-                        <div class="modal-footer">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Fin Modal Solicitar-->
 
         <!-- Footer Start -->
         <div class="footer wow fadeIn" data-wow-delay="0.3s">
