@@ -109,7 +109,7 @@
                                     <label for="material" class="col-form-label">Material:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="text" name="id_material" id="id_material" class="form-control ml-1">
+                                    <input type="hidden" name="id_material" id="id_material" class="form-control ml-1">
                                     <input type="text" name="material" id="material" class="form-control ml-1">
                                 </div>
                             </div>
