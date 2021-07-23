@@ -205,4 +205,40 @@ class usuario_actividad extends CONEXION_M
         $this->close();
         return $result;
     }
+
+    //para solo un usuario (historial de inscripciones, todas de momento)
+    function verIncripcionesAnteriores(){
+        //u.nombre, u.primer_ap, u.segundo_ap, si dejo el nombre de usuario lo confunde con ta.nombre
+        $query = "SELECT  ar.nombre_actividad, ta.nombre, g.grupo, g.semestre
+                FROM usuario u, actividad_recreativa ar, tipo_actividad ta, grupo g, usuario_actividad ua
+                WHERE u.id_usuario = ua.id_usuario
+                AND ar.id_actividad = g.id_actividad
+                AND ar.tipo_actividad = ta.id_tipo
+                AND ua.estatus_inscripcion = 1
+                AND g.id_grupo = ua.id_grupo
+                AND ua.id_usuario ='".$this->getIdUsuario()."'";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+
+    //para un solo usuario (incripciones del semestre actual)
+    function verIncripcionesActuales(){
+        //u.nombre, u.primer_ap, u.segundo_ap, si dejo el nombre de usuario lo confunde con ta.nombre
+        $query = "SELECT g.profesor, g.grupo, MAX(g.semestre), h.*, ar.nombre_actividad, ta.nombre, er.nombre_espacio
+                    FROM grupo g, horarios h, actividad_recreativa ar, tipo_actividad ta, usuario_actividad ua, usuario u, espacio_recreativo er
+                    WHERE g.id_grupo = ua.id_grupo
+                    AND g.id_actividad = ar.id_actividad
+                    AND g.id_espacio = er.id_espacio
+                    AND g.id_horario = h.id_horario
+                    AND ar.tipo_actividad = ta.id_tipo
+                    AND ua.estatus_inscripcion = 1
+                    AND ua.id_usuario = u.id_usuario
+                    AND u.id_usuario ='".$this->getIdUsuario()."'";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
 }

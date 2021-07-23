@@ -263,4 +263,15 @@ class archivos extends CONEXION_M
         $this->close();
         return $result;
     }
+
+    function verEstadoDocAlumno(){
+        $query="SELECT  a.nombre_archivo, a.estatus_aprobado, a.notas
+                FROM archivos a, usuario u
+                WHERE a.id_usuario = u.id_usuario
+                AND u.id_usuario ='".$this->getIdUsuario()."'";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
 }

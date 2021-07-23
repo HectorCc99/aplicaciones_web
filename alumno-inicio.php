@@ -65,6 +65,10 @@
         </div>
     </div>
     <!-- Nav Bar End -->
+
+    <input type="hidden" name="id_usuario" id="id_usuario" class="form-control ml-2" value="<?php echo 1; ?>">
+    <!--recuperamos el id por sesiones, esta pendiente la sesion que trairia el id del usuario el codigo php iria en el value-->
+
     <!-- Inicia Tarjetas -->
     <div class="container mt-5">
         <div class="row">
@@ -114,46 +118,65 @@
         </div>
     </div>
     <!-- Finaliza Tarjetas -->
+
+
     <!-- Inicia Deportes Inscritos -->
     <div class="class">
         <div class="container">
+
             <div class="row">
                 <div class="col-lg-12">
                     <h2 class="mb-4 text-center"><strong>Deportes Inscritos</strong></h2>
                 </div>
             </div>
-            <div class="row class-container">
-                <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
-                    <div class="class-wrap">
+
+            <div class="row class-container" id="contenedorInscripActuales">
+                <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-1 wow fadeInUp" data-wow-delay="0.0s" id="tarjetainscripcionesA">
+                    <div class="class-wrap" >
                         <div class="class-img">
-                            <img src="img/volibol.jpg" alt="Image">
+                            <img src="./icons/sports.svg" alt="" width="80px">
                         </div>
-                        <div class="class-text">
+                        <div class="class-text" >
                             <div class="class-teacher">
                                 <img src="icons/teacher.svg" alt="Image">
                                 <h3>Luis Manuel Vivas Amador</h3>
                             </div>
                             <h2>Volibol</h2>
                             <div class="class-meta">
-                                <p><span class="font-weight-bold">Categoría: </span>Conjunto con pelota</p>
+                                <p><span class="font-weight-bold">Categoría: </span></p>
+                            </div>
+                            <span class="font-weight-bold">------------------------------</span>
+                            <div class="class-meta">
+                                <p><span class="font-weight-bold">Lunes: </span></p>
                             </div>
                             <div class="class-meta">
-                                <p><span class="font-weight-bold">Horario: </span>Lun, Miér, Vier</p>
-                                <p>13:00 - 17:00</p>
+                                <p><span class="font-weight-bold">Martes: </span></p>
                             </div>
                             <div class="class-meta">
-                                <p><span class="font-weight-bold">Ubicación: </span>Canchas de Volibol</p>
+                                <p><span class="font-weight-bold">Miércoles: </span></p>
                             </div>
                             <div class="class-meta">
-                                <p><span class="font-weight-bold">Grupo: </span>2145</p>
+                                <p><span class="font-weight-bold">Jueves: </span></p>
+                            </div>
+                            <div class="class-meta">
+                                <p><span class="font-weight-bold">Viernes: </span></p>
+                            </div>
+                            <span class="font-weight-bold">------------------------------</span>
+                            <div class="class-meta">
+                                <p><span class="font-weight-bold">Ubicación: </span></p>
+                            </div>
+                            <span class="font-weight-bold">------------------------------</span>
+                            <div class="class-meta">
+                                <p><span class="font-weight-bold">Grupo: </span></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
+
+                <!--<div class="col-lg-4 col-md-6 col-sm-12 class-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="class-wrap">
                         <div class="class-img">
-                            <img src="img/futbol-varonil.jpg" alt="Image">
+                            <img src="./icons/sports.svg" alt="" width="80px">
                         </div>
                         <div class="class-text">
                             <div class="class-teacher">
@@ -180,7 +203,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
                     <div class="class-wrap">
                         <div class="class-img">
-                            <img src="img/ajedrez1.png" alt="Image">
+                            <img src="./icons/sports.svg" alt="" width="80px">
                         </div>
                         <div class="class-text">
                             <div class="class-teacher">
@@ -203,11 +226,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
     <!-- Finaliza Deportes Inscritos -->
+
+
     <!-- Inicia Tabla Historial de Deportes -->
     <div class="container">
         <div class="row">
@@ -215,7 +240,7 @@
                 <h3 class="mt-5 mb-3"><strong>Historial de Deportes Inscritos Anteriormente</strong></h3>
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="contenedorhistorial">
             <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
                 <table class="table table-hover table-striped table-sm mt-3">
                     <thead>
@@ -225,21 +250,8 @@
                         <th scope="col">Grupo</th>
                         <th scope="col">Semestre</th>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Baloncesto</td>
-                            <td>Conjunto con pelota</td>
-                            <td>2154</td>
-                            <td>2021-I</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Karate</td>
-                            <td>Combate</td>
-                            <td>2204</td>
-                            <td>2020-II</td>
-                        </tr>
+                    <tbody id="tablahistorialinscripciones">
+                        <!--ajax-->
                     </tbody>
                 </table>
             </div>
@@ -333,7 +345,7 @@
                             <p>Si alguno de tus documentos aún no es aprobado, deberás volver a envíarlo para su verificación, revisa las notas para conocer los motivos de su rechazo.</p>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" id="contenedorestdoc">
                         <div class="col-md-12 overflow-auto table-responsive-lg mt-3 mb-3">
                             <table class="table table-hover table-striped table-sm mt-3">
                                 <thead>
@@ -342,31 +354,8 @@
                                     <th scope="col">Estatus</th>
                                     <th scope="col">Notas</th>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Tira de Materias</td>
-                                        <td>Aprobado</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Seguro de Estudiante</td>
-                                        <td>Aprobado</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Seguro Axa</td>
-                                        <td>Aprobado</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Credencial Escolar</td>
-                                        <td>Rechazado</td>
-                                        <td>Debe tener el sello vigente</td>
-                                    </tr>
+                                <tbody id="tablaestadodocumentos">
+                                    <!--ajax-->
                                 </tbody>
                             </table>
                         </div>
@@ -416,6 +405,7 @@
     <script src="mail/contact.js"></script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/alumno_inicio.js"></script>
 </body>
 
 </html>

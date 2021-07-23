@@ -72,3 +72,23 @@ function  detalles_asignacion($id){
     return $data;
 }
 //echo detalles_asignacion(1,1,'2022-1');
+
+function historialInscripcionesUsuario($id){
+    include "../model/usuario_actividad.php";
+    $obj_usuario= new usuario_actividad();
+    $obj_usuario->setIdUsuario($id);
+    $result= $obj_usuario->verIncripcionesAnteriores() ;
+    $data=json_encode($result);
+    return $data;
+}
+//echo historialInscripcionesUsuario(1);
+
+function inscripcionesActuales($id){
+    include "../model/usuario_actividad.php";
+    $obj_usuario= new usuario_actividad();
+    $obj_usuario->setIdUsuario($id);
+    $result= $obj_usuario->verIncripcionesActuales() ;
+    $data=json_encode($result);
+    return $data;
+}
+//echo inscripcionesActuales(1);

@@ -64,3 +64,13 @@ function modificaestadoarchivo($id_usuario,$id_archivo,$notas,$estatus){
     $obj_archivos->setEstatusAprobado($estatus);
     return $obj_archivos->ModificaEstatusARchivo();
 }
+
+function revisarEstadoDocAlumno($id){
+    include_once "../model/archivos.php";
+    $obj_archivos = new archivos();
+    $obj_archivos->setIdUsuario($id);
+    $result = $obj_archivos->verEstadoDocAlumno();
+    $data=json_encode($result);
+    return$data;
+}
+//echo revisarEstadoDocAlumno(2);
