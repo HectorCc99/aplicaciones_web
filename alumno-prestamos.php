@@ -72,7 +72,9 @@
                 <div class="col-lg-12">
                     <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                         <h1 class="mt-5">Solicitar</h1>
-                        <p>Material y/o Área Deportiva</p>  
+                        <p>Material y/o Área Deportiva</p>
+                        <!--<input type="text" name="id_alumno" value="<?php //echo $_SESSION['alumno']; ?>">-->
+                        <input type="hidden" name="id_alumno" id="id_alumno" value="1">
                     </div>
                 </div>
             </div>
@@ -128,7 +130,6 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="" id="">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <p class="font-weight-bold">Ingresa los datos para solicitar el material:</p>
@@ -141,9 +142,7 @@
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
                                     <select name="material" id="material" class="form-control">
-                                        <option>Red tenis</option>
-                                        <option>Pelotas de tenis</option>
-                                        <option>Raquetas de tenis</option>
+                                       <!--AJAX-->
                                     </select>
                                 </div>
                             </div>
@@ -152,7 +151,7 @@
                                     <label for="fecha" class="col-form-label">Fecha:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="date" name="fecha" id="fecha" class="form-control">
+                                    <input type="date" name="fechaP" id="fechaP" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -160,7 +159,7 @@
                                     <label for="hora_solicitada" class="col-form-label">Hora solicitada:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_solicitada" id="hora_solicitada" class="form-control">
+                                    <input type="time" name="hora_solicitada" id="hora_solicitada" class="form-control hora_solicitada">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -171,10 +170,10 @@
                                     <input type="time" name="hora_limite" id="hora_lim" class="form-control" disabled>
                                 </div>
                             </div>
-                        </form>
+
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Solicitar</button>
+                        <button type="button" class="btn btn-primary reservar_materiales" data-dismiss="modal">Solicitar</button>
                     </div>
                 </div>
             </div>
@@ -192,7 +191,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="" id="">
+
                             <div class="row">
                                 <div class="col-sm-12">
                                     <p class="font-weight-bold">Ingrese los datos para reservar el área:</p>
@@ -204,10 +203,8 @@
                                     <label for="material" class="col-form-label">Área/Espacio:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <select name="material" id="material" class="form-control">
-                                        <option>Cancha de Basquetbol</option>
-                                        <option>Cancha de fútbol</option>
-                                        <option>Área de Fútbol Américano</option>
+                                    <select name="area" id="area" class="form-control">
+
                                     </select>
                                 </div>
                             </div>
@@ -216,7 +213,7 @@
                                     <label for="fecha" class="col-form-label">Fecha:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="date" name="fecha" id="fecha" class="form-control">
+                                    <input type="date" name="fecha" id="fechaA" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -224,7 +221,7 @@
                                     <label for="hora_inicio" class="col-form-label">Hora solicitada:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_inicio" id="hora_inicio" class="form-control">
+                                    <input type="time" name="hora_inicioA" id="hora_inicioA" class="form-control area_solicitada">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -232,13 +229,12 @@
                                     <label for="hora_limite" class="col-form-label">Hora límite:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <input type="time" name="hora_limite" id="hora_limite" class="form-control" disabled>
+                                    <input type="time" name="hora_limiteA" id="hora_limiteA" class="form-control " disabled>
                                 </div>
                             </div>
-                        </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Reservar</button>
+                        <button type="button" class="btn btn-primary reservar_area" data-dismiss="modal">Reservar</button>
                     </div>
                 </div>
             </div>
@@ -282,6 +278,7 @@
         <script src="mail/contact.js"></script>
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+    <script src="js/prestamo_alumnos.js"></script>
     </body>
 
 </html>

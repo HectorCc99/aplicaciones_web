@@ -1,5 +1,5 @@
 <?php
-include "conexion.php";
+include_once "conexion.php";
 
 class usuarios extends CONEXION_M
 {

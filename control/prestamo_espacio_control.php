@@ -4,7 +4,7 @@ function insertarDatosPrestamoEspacio($id_prestamo, $id_espacio){
     $obj_prestamoEspacio= new prestamo_espacio();
     $obj_prestamoEspacio->setIdPrestamo($id_prestamo);
     $obj_prestamoEspacio->setIdEspacio($id_espacio);
-    return $obj_prestamoEspacio->insertarDatosPrestamo() ? "Registro realizado correctamente." : "Error a agregar los datos.";
+    return $obj_prestamoEspacio->insertarDatosPrestamo();
 }
 function modificarPrestamoEspacio($idPrestamo,$idEspacio){
     include_once "../model/prestamo_espacio.php";

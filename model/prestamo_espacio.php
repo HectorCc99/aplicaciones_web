@@ -1,5 +1,5 @@
 <?php
-include "conexion.php";
+include_once "conexion.php";
 
 class prestamo_espacio extends CONEXION_M
 {
@@ -60,6 +60,7 @@ class prestamo_espacio extends CONEXION_M
         $this->close();
         return $result;
     }
+
     function eliminarPrestamoEspacio(){
         $query="DELETE FROM `pres_espacio` WHERE `id_prestamo`='".$this->getIdPrestamo()."'";
         $this->connect();
@@ -67,10 +68,6 @@ class prestamo_espacio extends CONEXION_M
         $this->close();
         return $result;
     }
-
-
-
-
 
     function historialPrestamos(){
         //Muestra solo los aceptados (0 Solicitados, 1 Aceptados 2 Rechazados)

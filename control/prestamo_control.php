@@ -1,15 +1,16 @@
 <?php
-function agregarprestamo($idUsuarioFK, $idAdminFK, $fechaPrestamo, $horaInicio, $horaFin){
+function agregarprestamo($idUsuarioFK, $fechaPrestamo, $horaInicio, $horaFin){
     include_once "../model/prestamo.php";
     $obj_prestamo= new prestamo();
     $obj_prestamo->setIdUsuarioFK($idUsuarioFK);
-    $obj_prestamo->setIdAdministradorFK($idAdminFK);
     $obj_prestamo->setFechaPrestamo($fechaPrestamo);
     $obj_prestamo->setHoraInicio($horaInicio);
     $obj_prestamo->setHoraFin($horaFin);
     $obj_prestamo->setEstatusPrestamo(0);
-
-    return $obj_prestamo->agregarPrestamo() ? "Solicitud de prestamo ingresada correctamente" : "Error a realizar registro";
+    $obj_prestamo->agregarPrestamo();
+     $result=$obj_prestamo->lastid();
+     $id=json_encode($result);
+    return $id;
 }
 function modificarprestamo($idPrestamo,$idUsuarioFK, $idAdminFK, $fechaPrestamo, $horaInicio, $horaFin,$estatus,$notas){
     include_once "../model/prestamo.php";

@@ -1,5 +1,5 @@
 <?php
-include "conexion.php";
+include_once "conexion.php";
 
 class prestamo extends CONEXION_M
 {
@@ -143,10 +143,17 @@ class prestamo extends CONEXION_M
      */
     function agregarPrestamo(){
         $query="INSERT INTO `prestamo`(`id_prestamo`, `id_usuario`, `id_administrador`, `fecha_prestamo`, `hora_inicio`, `hora_fin`, `notas`, `estatus_prestamo`)
-        VALUES (NULL,'".$this->getIdUsuarioFK()."','".$this->getIdAdministradorFK()."','".$this->getFechaPrestamo()."'
+        VALUES (NULL,'".$this->getIdUsuarioFK()."',null,'".$this->getFechaPrestamo()."'
         ,'".$this->getHoraInicio()."','".$this->getHoraFin()."','','".$this->getEstatusPrestamo()."')";
         $this->connect();
         $result = $this->executeInstruction($query);
+        $this->close();
+        return $result;
+    }
+    function lastid(){
+        $query="SELECT MAX(id_prestamo) FROM `prestamo`";
+        $this->connect();
+        $result = $this->getData($query);
         $this->close();
         return $result;
     }

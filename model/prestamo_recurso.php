@@ -1,5 +1,5 @@
 <?php
-include "conexion.php";
+include_once "conexion.php";
 
 class prestamo_recurso extends CONEXION_M
 {
@@ -55,8 +55,8 @@ class prestamo_recurso extends CONEXION_M
     }
     /*Funciones de la clase*/
     function agregarPrestamoRecursos(){
-        $query="INSERT INTO `pres_recurso`(`id_prestamo_ma`, `id_recurso`,
-                `id_prestamo`) VALUES (NULL,'".$this->getIdRecurso()."','".$this->getIdPrestamo()."')";
+        $query="INSERT INTO `pres_recurso`(`id_prestamo_ma`, `id_recurso`,`id_prestamo`)
+                VALUES (NULL,'".$this->getIdRecurso()."','".$this->getIdPrestamo()."')";
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();

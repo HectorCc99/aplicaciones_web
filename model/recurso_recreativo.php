@@ -1,6 +1,6 @@
 <?php
 
-include"conexion.php";
+include_once "conexion.php";
 
 class recurso_recreativo extends CONEXION_M
 {
