@@ -159,70 +159,50 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <div class="col-sm-2 mb-3 mb-sm-0">
-                                <label for="material" class="col-form-label ml-1">Material:</label>
-                            </div>
-                            <div class="col-sm-8 mb-3 mb-sm-0">
-                                <select name="materialEv" id="materialEv" class="form-control ml-2" required>
-                                    <!-- Ajax -->
-                                </select>
-                            </div>
-                            <div class="col-sm-2 mb-3 mb-sm-0">
-                                <button class="btn-img"><img src="./icons/add.svg" alt="..." width="30px"></button>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-2 mb-3 mb-sm-0">
-                                <label for="cantidadEv" class="col-form-label ml-1">Cantidad:</label>
-                            </div>
-                            <div class="col-sm-10 mb-3 mb-sm-0">
-                                <input type="number" name="cantidadEv" id="cantidadEv" class="form-control ml-2" required>
-                            </div>
-                        </div>
-                        <!--<div class="form-group row">
+
+                        <!--Agregar material-->
+
+                        <!--<style>
+                            .puntero{
+                                cursor: pointer;
+                            }
+                            .ocultar{
+                                display: none;
+                            }
+                        </style>--> <!--Si oculto los estilos aparece el boton de Cancelar (span)-->
+                        <!--Encerre en un div para que el Botoncito de cancelar no quede feo si se quita la clase container el boton se descuadra a la izquierda -->
+                        <div class="container clonar">
+                            <div class="form-group row">
                                 <div class="col-sm-2 mb-3 mb-sm-0">
                                     <label for="material" class="col-form-label ml-1">Material:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <select name="material" id="material" class="form-control ml-2">
-                                        <option>Red tenis</option>
-                                        <option>Pelotas de tenis</option>
-                                        <option>Raquetas de tenis</option>
+                                    <select name="materialEv" id="materialEv" class="form-control ml-2" required>
+                                        <!-- Ajax -->
                                     </select>
                                 </div>
                                 <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/add.svg" alt="..." width="30px"></button>
+                                    <button class="btn-img" id="agregar"><img src="./icons/add.svg" alt="..." width="30px"></button>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
+                                    <label for="cantidadEv" class="col-form-label ml-1">Cantidad:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="cantidad" id="" class="form-control ml-2">
+                                    <input type="number" name="cantidadEv" id="cantidadEv" class="form-control ml-2" required>
                                 </div>
+
+                                <span class="badge badge-pill badge-danger puntero ocultar">Cancelar</span>
                             </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="material" class="col-form-label ml-1">Material:</label>
-                                </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="material" id="material" class="form-control ml-2">
-                                        <option>Red tenis</option>
-                                        <option>Pelotas de tenis</option>
-                                        <option>Raquetas de tenis</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
-                                </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="cantidad" id="" class="form-control ml-2">
-                                </div>
-                            </div>-->
+                        </div>
+
+                        <div id="contenedor"></div> <!--contenedor de los clones-->
+
+                        <!-- Fin agregar material-->
+
+
+
                         <div class="form-group row">
                             <div class="col-sm-4 mb-3 mb-sm-0">
                                 <label for="descripcion" class="col-form-label ml-1">Descripción:</label>
@@ -354,40 +334,21 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <div class="col-sm-2 mb-3 mb-sm-0">
-                                <label for="material" class="col-form-label ml-1">Material:</label>
-                            </div>
-                            <div class="col-sm-8 mb-3 mb-sm-0">
-                                <select name="materialEvEd" id="materialEvEd" class="form-control ml-2" required>
-                                    <!--ajax-->
-                                </select>
-                            </div>
-                            <div class="col-sm-2 mb-3 mb-sm-0">
-                                <button class="btn-img"><img src="./icons/add.svg" alt="..." width="30px"></button>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-2 mb-3 mb-sm-0">
-                                <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
-                            </div>
-                            <div class="col-sm-10 mb-3 mb-sm-0">
-                                <input type="number" name="cantidadEvEd" id="cantidadEvEd" class="form-control ml-2" required>
-                            </div>
-                        </div>
-                        <!--<div class="form-group row">
+
+
+                        <!--Agregar material-->
+                        <div class="container clonar2">
+                            <div class="form-group row">
                                 <div class="col-sm-2 mb-3 mb-sm-0">
                                     <label for="material" class="col-form-label ml-1">Material:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <select name="material" id="material" class="form-control ml-2">
-                                        <option>Red tenis</option>
-                                        <option>Pelotas de tenis</option>
-                                        <option>Raquetas de tenis</option>
+                                    <select name="materialEvEd" id="materialEvEd" class="form-control ml-2" required>
+                                        <!--ajax-->
                                     </select>
                                 </div>
                                 <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img"><img src="./icons/add.svg" alt="..." width="30px"></button>
+                                    <button class="btn-img" id="agregar2"><img src="./icons/add.svg" alt="..." width="30px"></button>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -395,29 +356,18 @@
                                     <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="cantidad" id="" class="form-control ml-2">
+                                    <input type="number" name="cantidadEvEd" id="cantidadEvEd" class="form-control ml-2" required>
                                 </div>
+
+                                <span class="badge badge-pill badge-danger puntero2 ocultar2">Cancelar</span>
                             </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="material" class="col-form-label ml-1">Material:</label>
-                                </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <select name="material" id="material" class="form-control ml-2">
-                                        <option>Red tenis</option>
-                                        <option>Pelotas de tenis</option>
-                                        <option>Raquetas de tenis</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
-                                </div>
-                                <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="cantidad" id="" class="form-control ml-2">
-                                </div>
-                            </div>-->
+                        </div>
+
+                        <div id="contenedor2"></div> <!--contenedor de los clones-->
+                        <!--Fin agregar material-->
+
+
+
                         <div class="form-group row">
                             <div class="col-sm-3 mb-3 mb-sm-0">
                                 <label for="descripcion" class="col-form-label ml-1">Descripción:</label>
@@ -526,6 +476,54 @@
     <!--se ocupo para llamar a la función de semestres-->
     <script src="js/espacios.js"></script>
     <!--se ocupo para llamar a la función de semestres-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
+    <script>
+        let agregar = document.getElementById('agregar'); //id del botoncito de agregar
+        let contenido = document.getElementById('contenedor'); //id del contenedor donde almacenamos los clones
+        agregar.addEventListener('click', e =>{
+            e.preventDefault();
+            let clonado = document.querySelector('.clonar');
+            let clon = clonado.cloneNode(true);
+
+            contenido.appendChild(clon).classList.remove('clonar');
+
+            let remover_ocutar = contenido.lastChild.childNodes[0].querySelectorAll('span');
+            remover_ocutar[0].classList.remove('ocultar');
+        });
+        contenido.addEventListener('click', e =>{
+            e.preventDefault();
+            if(e.target.classList.contains('puntero')){
+                let contenedor  = e.target.parentNode.parentNode;
+
+                contenedor.parentNode.removeChild(contenedor);
+            }
+        });
+
+        let agregar2 = document.getElementById('agregar2');
+        let contenido2 = document.getElementById('contenedor2');
+        agregar2.addEventListener('click', e =>{
+            e.preventDefault();
+            let clonado = document.querySelector('.clonar2');
+            let clon = clonado.cloneNode(true);
+
+            contenido2.appendChild(clon).classList.remove('clonar2');
+
+            let remover_ocutar = contenido.lastChild.childNodes[0].querySelectorAll('span');
+            remover_ocutar[0].classList.remove('ocultar2');
+        });
+
+        contenido2.addEventListener('click', e =>{
+            e.preventDefault();
+            if(e.target.classList.contains('puntero2')){
+                let contenedor  = e.target.parentNode.parentNode;
+
+                contenedor.parentNode.removeChild(contenedor);
+            }
+        });
+
+    </script>
 </body>
 
 </html>
