@@ -171,7 +171,7 @@
                             }
                         </style>--> <!--Si oculto los estilos aparece el boton de Cancelar (span)-->
                         <!--Encerre en un div para que el Botoncito de cancelar no quede feo si se quita la clase container el boton se descuadra a la izquierda -->
-                        <div class="container clonar">
+
                             <div class="form-group row">
                                 <div class="col-sm-2 mb-3 mb-sm-0">
                                     <label for="material" class="col-form-label ml-1">Material:</label>
@@ -181,9 +181,6 @@
                                         <!-- Ajax -->
                                     </select>
                                 </div>
-                                <div class="col-sm-2 mb-3 mb-sm-0">
-                                    <button class="btn-img" id="agregar"><img src="./icons/add.svg" alt="..." width="30px"></button>
-                                </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-2 mb-3 mb-sm-0">
@@ -192,12 +189,63 @@
                                 <div class="col-sm-10 mb-3 mb-sm-0">
                                     <input type="number" name="cantidadEv" id="cantidadEv" class="form-control ml-2" required>
                                 </div>
+                            </div>
 
-                                <span class="badge badge-pill badge-danger puntero ocultar">Cancelar</span>
+
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Mas Materiales
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="form-group row">
+                                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                                <label for="material" class="col-form-label ml-1">Material:</label>
+                                            </div>
+                                            <div class="col-sm-8 mb-3 mb-sm-0">
+                                                <select name="materialEv2" id="materialEv2" class="form-control ml-2" >
+                                                    <!-- Ajax -->
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                                <label for="cantidadEv2" class="col-form-label ml-1">Cantidad:</label>
+                                            </div>
+                                            <div class="col-sm-10 mb-3 mb-sm-0">
+                                                <input type="number" name="cantidadEv2" id="cantidadEv2" class="form-control ml-2" >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                                <label for="material" class="col-form-label ml-1">Material:</label>
+                                            </div>
+                                            <div class="col-sm-8 mb-3 mb-sm-0">
+                                                <select name="materialEv3" id="materialEv3" class="form-control ml-2" >
+                                                    <!-- Ajax -->
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                                <label for="cantidadEv" class="col-form-label ml-1">Cantidad:</label>
+                                            </div>
+                                            <div class="col-sm-10 mb-3 mb-sm-0">
+                                                <input type="number" name="cantidadEv3" id="cantidadEv3" class="form-control ml-2" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div id="contenedor"></div> <!--contenedor de los clones-->
 
                         <!-- Fin agregar material-->
 
@@ -337,7 +385,7 @@
 
 
                         <!--Agregar material-->
-                        <div class="container clonar2">
+
                             <div class="form-group row">
                                 <div class="col-sm-2 mb-3 mb-sm-0">
                                     <label for="material" class="col-form-label ml-1">Material:</label>
@@ -358,12 +406,62 @@
                                 <div class="col-sm-10 mb-3 mb-sm-0">
                                     <input type="number" name="cantidadEvEd" id="cantidadEvEd" class="form-control ml-2" required>
                                 </div>
+                            </div>
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Mas Materiales
+                                        </button>
+                                    </h2>
+                                </div>
 
-                                <span class="badge badge-pill badge-danger puntero2 ocultar2">Cancelar</span>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="form-group row">
+                                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                                <label for="material" class="col-form-label ml-1">Material:</label>
+                                            </div>
+                                            <div class="col-sm-8 mb-3 mb-sm-0">
+                                                <select name="materialEvEd2" id="materialEvEd2" class="form-control ml-2" >
+                                                    <!--ajax-->
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                                <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
+                                            </div>
+                                            <div class="col-sm-10 mb-3 mb-sm-0">
+                                                <input type="number" name="cantidadEvEd2" id="cantidadEvEd2" class="form-control ml-2" >
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                                <label for="material" class="col-form-label ml-1">Material:</label>
+                                            </div>
+                                            <div class="col-sm-8 mb-3 mb-sm-0">
+                                                <select name="materialEvEd3" id="materialEvEd3" class="form-control ml-2" >
+                                                    <!--ajax-->
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-2 mb-3 mb-sm-0">
+                                                <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
+                                            </div>
+                                            <div class="col-sm-10 mb-3 mb-sm-0">
+                                                <input type="number" name="cantidadEvEd3" id="cantidadEvEd3" class="form-control ml-2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div id="contenedor2"></div> <!--contenedor de los clones-->
                         <!--Fin agregar material-->
 
 
@@ -479,51 +577,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
 
-    <script>
-        let agregar = document.getElementById('agregar'); //id del botoncito de agregar
-        let contenido = document.getElementById('contenedor'); //id del contenedor donde almacenamos los clones
-        agregar.addEventListener('click', e =>{
-            e.preventDefault();
-            let clonado = document.querySelector('.clonar');
-            let clon = clonado.cloneNode(true);
-
-            contenido.appendChild(clon).classList.remove('clonar');
-
-            let remover_ocutar = contenido.lastChild.childNodes[0].querySelectorAll('span');
-            remover_ocutar[0].classList.remove('ocultar');
-        });
-        contenido.addEventListener('click', e =>{
-            e.preventDefault();
-            if(e.target.classList.contains('puntero')){
-                let contenedor  = e.target.parentNode.parentNode;
-
-                contenedor.parentNode.removeChild(contenedor);
-            }
-        });
-
-        let agregar2 = document.getElementById('agregar2');
-        let contenido2 = document.getElementById('contenedor2');
-        agregar2.addEventListener('click', e =>{
-            e.preventDefault();
-            let clonado = document.querySelector('.clonar2');
-            let clon = clonado.cloneNode(true);
-
-            contenido2.appendChild(clon).classList.remove('clonar2');
-
-            let remover_ocutar = contenido.lastChild.childNodes[0].querySelectorAll('span');
-            remover_ocutar[0].classList.remove('ocultar2');
-        });
-
-        contenido2.addEventListener('click', e =>{
-            e.preventDefault();
-            if(e.target.classList.contains('puntero2')){
-                let contenedor  = e.target.parentNode.parentNode;
-
-                contenedor.parentNode.removeChild(contenedor);
-            }
-        });
-
-    </script>
 </body>
 
 </html>

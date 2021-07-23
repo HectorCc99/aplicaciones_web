@@ -105,7 +105,12 @@ function lista_desplegable_material(){
                 }));
                 //se asigna al cuerpo de la tabla
                 $("#materialEv").html(template);
+                $("#materialEv2").html(template);
+                $("#materialEv3").html(template);
                 $("#materialEvEd").html(template);
+                $("#materialEvEd2").html(template);
+                $("#materialEvEd3").html(template);
+
             }else{
                 $("#lista_desplegable_material").empty();
                 template=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -158,7 +163,6 @@ function consulta_evento(id){
                 $("#fecha_cierreEd").val(obj_result.fecha_fin);
                 $("#hora_inicioEd").val(obj_result.hora_inicio);
                 $("#hora_cierreEd").val(obj_result.hora_fin);
-                $("#posterEd").val(obj_result.imagen); //da error
             }));
         }
     })

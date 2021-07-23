@@ -1,8 +1,8 @@
 <?php
 
 // AGREGAR
-function insertarEvento($id_admin, $id_espr, $id_recurso, $nombact, $descrip, $encargado, $telenc,
-                        $cantrec, $estatusev, $finicio, $ffin, $hinicio, $hfin,$semestreev, $nombre_archivo, $Archivo){
+function insertarEvento($id_admin, $id_espr, $id_recurso,$id_recurso2,$id_recurso3, $nombact, $descrip, $encargado, $telenc,
+                        $cantrec,$cantrec2,$cantrec3, $estatusev, $finicio, $ffin, $hinicio, $hfin,$semestreev, $nombre_archivo, $Archivo){
     include_once "../model/eventos.php";
     $obj_evento = new eventos();
     $obj_evento -> setIdAdministradorFk($id_admin);
@@ -23,7 +23,15 @@ function insertarEvento($id_admin, $id_espr, $id_recurso, $nombact, $descrip, $e
     $resultado = $obj_evento->subirPoster($nombre_archivo,$Archivo);
     if($resultado!=false){
         $obj_evento->setImagen($resultado);
-        return $obj_evento->agregarEvento();
+        if ($id=$obj_evento->agregarEvento()) {
+            $obj_evento->insertarRecursoEvento($id_recurso, $id, $cantrec);
+            if(!Empty($cantrec2)){
+                $obj_evento->insertarRecursoEvento($id_recurso2, $id, $cantrec);
+            }
+            if (!empty($cantrec3)){
+                $obj_evento->insertarRecursoEvento($id_recurso3, $id, $cantrec);
+            }
+        }
     }
 }
 //echo insertarEvento(1,2,3,"Yoga chido", "Es chido", "Carlos", 552323, "ruta",30, 1, 20210603, 2021-06-04, 12, 13, 2022-2);

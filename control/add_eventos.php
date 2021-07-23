@@ -12,6 +12,20 @@ if(/*isset($_POST['evento']) && isset($_POST['encargado']) && isset($_POST['tele
     $lugar =$_POST['lugarEv'];
     $material =$_POST['materialEv'];
     $cantidad =$_POST['cantidadEv'];
+    if(isset($_POST['materialEv2'])){
+    $id_recurso2=$_POST['materialEv2'];
+        $cantrec2=$_POST['cantidadEv2'];
+    }else{
+        $id_recurso2="";
+        $cantrec2="";
+    }
+    if (isset($_POST['materialEv3'])) {
+        $id_recurso3 = $_POST['materialEv3'];
+        $cantrec3 =$_POST['cantidadEv3'];
+    }else{
+        $id_recurso3="";
+        $cantrec3="";
+    }
     $descrip = $_POST['descripcionEv'];
     $finicio =$_POST['fecha_inicio'];
     $fcierre =$_POST['fecha_cierre'];
@@ -22,10 +36,10 @@ if(/*isset($_POST['evento']) && isset($_POST['encargado']) && isset($_POST['tele
     $nombreArchivo = $_FILES['poster']['name'];
     $Archivo = $_FILES['poster']['tmp_name'];
 
-    $result= insertarEvento($id_admin, $lugar, $material,  $evento, $descrip,  $encargado, $telefono,
-                        $cantidad, 1, $finicio,  $fcierre, $hinicio, $hcierre, $sem, $nombreArchivo, $Archivo);
+    $result= insertarEvento($id_admin, $lugar, $material,$id_recurso2,$id_recurso3,  $evento, $descrip,  $encargado, $telefono,
+                        $cantidad,$cantrec2,$cantrec3, 1, $finicio,  $fcierre, $hinicio, $hcierre, $sem, $nombreArchivo, $Archivo);
 
-    if($result==1){
+    if($result){
         header('Location: ../admin-eventos.php ');
     }
 } else{

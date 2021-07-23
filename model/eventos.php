@@ -278,7 +278,14 @@ class eventos extends CONEXION_M
     }
 
     //Funciones propias de la clase
-
+    function insertarRecursoEvento($id_recurso, $id_evento, $cantidad){
+        include_once "../model/recurso_evento.php";
+        $obj_revento = new recurso_evento();
+        $obj_revento -> setIdRecurso($id_recurso);
+        $obj_revento -> setIdEventoPkfk($id_evento);
+        $obj_revento -> setCantidad($cantidad);
+        return $obj_revento -> agregarRecursoEvento() ? "Se agrego con exito" : "Fallo al agregar";
+    }
 
     // AGREGAR a la bd
     function agregarEvento(){
@@ -286,14 +293,15 @@ class eventos extends CONEXION_M
                                         `descripcion`, `encargado`, `telefono_encargado`,
                                         `imagen`, `cantidad_recurso`, `estatus_evento`, `fecha_inicio`, `fecha_fin`,
                                         `hora_inicio`, `hora_fin`, `semestre`) 
-                                VALUES (NULL, '".$this->getIdAdministradorFk()."', '".$this->getIdEspacioRFk()."', '".$this->getIdRecursoFk()."', '".$this->getNombreActividad()."',
+                                VALUES ('".$this->getIdEspacioRFk().$this->getIdRecursoFk().date("H")."', '".$this->getIdAdministradorFk()."', '".$this->getIdEspacioRFk()."', '".$this->getIdRecursoFk()."', '".$this->getNombreActividad()."',
                                             '".$this->getDescripcion()."', '".$this->getEncargado()."', '".$this->getTelEncargado()."',
                                             '".$this->getImagen()."', '".$this->getCantidadRecurso()."', '".$this->getEstatusEvento()."','".$this->getFechaInicio()."','".$this->getFechaFin()."',
                                             '".$this->getHoraInicio()."','".$this->getHoraFin()."', '".$this->getSemestreEv()."')";
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();
-        return $result;
+        $id=$this->getIdEspacioRFk().$this->getIdRecursoFk().date("H");
+        return $id;
     }
 
     // mover el archivo a una carpeta
