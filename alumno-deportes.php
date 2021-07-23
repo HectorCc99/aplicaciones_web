@@ -87,147 +87,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="row class-container">
-                    <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
-                        <div class="class-wrap">
-                            <div class="class-img">
-                                <img src="img/full-contact.jpg" alt="Image">
-                            </div>
-                            <div class="class-text">
-                                <div class="class-teacher">
-                                    <img src="icons/teacher.svg" alt="Image">
-                                    <h3>Eréndira Hernández Rojas</h3>
-                                    <a href="#" data-toggle="modal" data-target="#modalSolicitud">+</a>
-                                </div>
-                                <h2>Full Contact</h2>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Categoría: </span>Combate</p>
-                                </div>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Horario: </span>Lun, Miér</p>
-                                    <p>11:00 - 12:00</p>
-                                </div>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Ubicación: </span>Gimnasio</p>
-                                </div>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Grupo: </span>2145</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="class-wrap">
-                            <div class="class-img">
-                                <img src="img/futbol-femenil.jpg" alt="Image">
-                            </div>
-                            <div class="class-text">
-                                <div class="class-teacher">
-                                    <img src="icons/teacher.svg" alt="Image">
-                                    <h3>Alfredo Pérez Rojas</h3>
-                                    <a href="#" data-toggle="modal" data-target="#modalSolicitud">+</a>
-                                </div>
-                                <h2>Fútbol Asociación Femenil</h2>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Categoría: </span>Conjunto con Pelota</p>
-                                </div>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Horario: </span>Lun, Miér, Vier</p>
-                                    <p>11:00 - 15:00</p>
-                                </div>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Ubicación: </span>Campo de Fútbol</p>
-                                </div>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Grupo: </span>2146</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="class-wrap">
-                            <div class="class-img">
-                                <img src="img/ajedrez1.png" alt="Image">
-                            </div>
-                            <div class="class-text">
-                                <div class="class-teacher">
-                                    <img src="icons/teacher.svg" alt="Image">
-                                    <h3>Teresa Vázquez Hernández</h3>
-                                    <a href="#" data-toggle="modal" data-target="#modalSolicitud">+</a>
-                                </div>
-                                <h2>Ajedrez</h2>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Categoría: </span>Individual</p>
-                                </div>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Horario: </span>Jue , Vier</p>
-                                    <p>13:00 - 15:00</p>
-                                </div>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Ubicación: </span>Club de Ajedrez</p>
-                                </div>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Grupo: </span>2147</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-4 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="class-wrap">
-                            <div class="class-img">
-                                <img src="img/danza-arabe.jpg" alt="Image">
-                            </div>
-                            <div class="class-text">
-                                <div class="class-teacher">
-                                    <img src="icons/teacher.svg" alt="Image">
-                                    <h3>Jeymy Nancy Cazares Arellano</h3>
-                                    <a href="#" data-toggle="modal" data-target="#modalSolicitud">+</a>
-                                </div>
-                                <h2>Danza Árabe</h2>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Categoría: </span>Fitness</p>
-                                </div>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Horario: </span>Mar, Jue</p>
-                                    <p>14:00 - 16:00</p>
-                                </div>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Ubicación: </span>Gimnasio</p>
-                                </div>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Grupo: </span>2148</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-5 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="class-wrap">
-                            <div class="class-img">
-                                <img src="img/activacion-fisica.png" alt="Image">
-                            </div>
-                            <div class="class-text">
-                                <div class="class-teacher">
-                                    <img src="icons/teacher.svg" alt="Image">
-                                    <h3>Teresa Vázquez Hernández</h3>
-                                    <a href="#" data-toggle="modal" data-target="#modalSolicitud">+</a>
-                                </div>
-                                <h2>Activación Física</h2>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Categoría: </span>Prog. Int. para Mejorar la Salud</p>
-                                </div>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Horario: </span>Lun - Vier</p>
-                                    <p>10:00 - 11:30</p>
-                                </div>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Ubicación: </span>Explanadas y Canchas</p>
-                                </div>
-                                <div class="class-meta">
-                                    <p><span class="font-weight-bold">Grupo: </span>2149</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row " id="Deportes">
+
                 </div>
             </div>
         </div>
@@ -248,11 +109,14 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <p>¿Deseas solicitar tu inscripción a este deporte?</p>
+                                    <input type="hidden" name="id_grupo_select" id="id_grupo_select">
+                                    <input type="hidden" name="id_usuario" id="id_usuario" value="1">
+                                    <input type="hidden" name="semestre" id="semestre" >
                                 </div>
                             </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
-                        <button type="button" class="btn btn-primary">Sí</button>
+                        <button type="button" class="btn btn-primary  solicitar" data-dismiss="modal">Sí</button>
                     </div>
                 </div>
             </div>
@@ -295,8 +159,15 @@
         <!-- Contact Javascript File -->
         <script src="mail/jqBootstrapValidation.min.js"></script>
         <script src="mail/contact.js"></script>
+        <script >
+            let tabla=false;
+            let deportes=true;
+            let cd=false;
+        </script>
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="js/actividades_deportivas.js"></script>
+
     </body>
 
 </html>

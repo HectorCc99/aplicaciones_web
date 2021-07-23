@@ -68,7 +68,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <ul id="class-filter">
+                        <ul id="class-filter" >
                             <li data-filter="*" class="filter-active">Todos los deportes</li>
                             <li data-filter=".filter-1">Combate</li>
                             <li data-filter=".filter-2">Conjunto con Pelota</li>
@@ -78,8 +78,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="row class-container">
-                    <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
+                <div class="row" id="Deportes" >
+                    <!--<div class="col-lg-4 col-md-6 col-sm-12 class-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
                         <div class="class-wrap">
                             <div class="class-img">
                                 <img src="img/full-contact.jpg" alt="Image">
@@ -88,7 +88,7 @@
                                 <div class="class-teacher">
                                     <img src="icons/teacher.svg" alt="Image">
                                     <h3>Eréndira Hernández Rojas</h3>
-                                    <a href="login.php">+</a>                                    
+                                    <a href="login.php">+</a>
                                 </div>
                                 <h2>Full Contact</h2>
                                 <div class="class-meta">
@@ -218,7 +218,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -260,7 +260,13 @@
         <script src="mail/jqBootstrapValidation.min.js"></script>
         <script src="mail/contact.js"></script>
         <!-- Template Javascript -->
+        <script >
+            let tabla=false;
+            let deportes=false;
+            let cd=false;
+        </script>
         <script src="js/main.js"></script>
+        <script src="js/actividades_deportivas.js"></script>
     </body>
 
 </html>

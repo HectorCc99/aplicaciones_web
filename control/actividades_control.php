@@ -1,10 +1,19 @@
 <?php
-function traeActividades($filtro){
+function traeActividades($filtro,$tipo){
     // incluye un filtro
     // 0 todos, 1 activos, 2 inactivos
     include_once "../model/actividades_deportivas.php";
     $objAlumn = new actividades_deportivas();
-    $result = $objAlumn->ListactividadDeport($filtro);
+    $result = $objAlumn->ListactividadDeport($filtro,$tipo);
+    $json_data = json_encode($result);
+    return $json_data;
+}
+function traeActividadesList($filtro){
+    // incluye un filtro
+    // 0 todos, 1 activos, 2 inactivos
+    include_once "../model/actividades_deportivas.php";
+    $objAlumn = new actividades_deportivas();
+    $result = $objAlumn->listdepto($filtro);
     $json_data = json_encode($result);
     return $json_data;
 }

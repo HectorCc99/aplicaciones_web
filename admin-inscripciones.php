@@ -201,6 +201,7 @@
         <script src="js/main.js"></script>
         <script>
             let tabla=false;
+            let cd=true;
         </script>
         <script src="js/actividades_deportivas.js"></script>
         <script src="js/inscripciones.js"></script>

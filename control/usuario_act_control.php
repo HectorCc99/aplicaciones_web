@@ -16,13 +16,12 @@ function verinscritos($id_d,$id_g){
     return $data;
 }
 
-function  crear_asignacion($id_in,$id_u,$id_act,$asistencia,$año){
+function  crear_asignacion($id_u,$id_act,$año){
     include "../model/usuario_actividad.php";
     $obj_usuario= new usuario_actividad();
-    $obj_usuario->setIdInscripcion($id_in);
     $obj_usuario->setIdUsuario($id_u);
     $obj_usuario->setIdActividad($id_act);
-    $obj_usuario->setAsistencia($asistencia);
+    $obj_usuario->setAsistencia(0);
     $obj_usuario->setAño($año);
     $obj_usuario->setEstatusActividad(0);
     return $obj_usuario->crearinscripcion() ? "Registro exitoso" : "falla al registrar";

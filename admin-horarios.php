@@ -492,6 +492,7 @@
         <!-- Template Javascript -->
         <script>
             let tabla=false;
+            let cd=true;
         </script>
         <script src="js/main.js"></script>
         <script src="js/horarios.js"></script>

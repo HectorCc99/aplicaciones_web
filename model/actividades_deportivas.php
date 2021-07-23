@@ -125,9 +125,10 @@ class actividades_deportivas extends CONEXION_M
         $this->tipo_actividad = $tipo_actividad;
     }
  // funciones de la clase actividades deportivas
-    function ListactividadDeport($filtro)
+    function ListactividadDeport($filtro,$tipo)
     {
         $filtro_estatus="";
+        $filtro_tipo=$tipo>0? " AND tipo_actividad=".$tipo:"";
         // 0 todos, 1 activos, 2 inactivos
         switch ($filtro){
             case "1":
@@ -140,13 +141,40 @@ class actividades_deportivas extends CONEXION_M
                 $filtro_estatus="";
                 break;
         }
-        $query = "SELECT ar.*, tp.nombre FROM actividad_recreativa ar, tipo_actividad tp WHERE
-                    ar.tipo_actividad=tp.id_tipo ".$filtro_estatus." ORDER BY nombre_actividad ASC";
+        $query = "SELECT ar.*, tp.*, gpo.*, hr.*,er.*  FROM actividad_recreativa ar, tipo_actividad tp,grupo gpo, horarios hr, espacio_recreativo er WHERE
+                    ar.tipo_actividad=tp.id_tipo
+                    and gpo.id_actividad=ar.id_actividad
+                    and hr.id_horario=gpo.id_horario ".$filtro_tipo."
+                     and er.id_espacio=gpo.id_espacio ".$filtro_estatus." ORDER BY nombre_actividad ASC";
         $this->connect();
         $result = $this->getData($query);
         $this->close();
         return $result;
     }
+
+    function listdepto($filtro){
+        $filtro_estatus="";
+        // 0 todos, 1 activos, 2 inactivos
+        switch ($filtro){
+            case "1":
+                $filtro_estatus= " AND ar.`estatus_actividad`= 1";
+                break;
+            case "2":
+                $filtro_estatus=" AND ar.`estatus_actividad`= 0";
+                break;
+            default:
+                $filtro_estatus="";
+                break;
+        }
+        $query = "SELECT ar.*, tp.* FROM actividad_recreativa ar, tipo_actividad tp WHERE
+                    ar.tipo_actividad=tp.id_tipo
+                     ".$filtro_estatus." ORDER BY nombre_actividad ASC";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+
     function agregaActividadDepot(){
         $query ="INSERT INTO `actividad_recreativa`(`id_actividad`, `id_administrador`, 
                               `nombre_actividad`, `descripcion`, `fecha_creacion`, `tipo_actividad`, `estatus_actividad`) 
