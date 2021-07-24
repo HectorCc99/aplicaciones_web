@@ -248,6 +248,13 @@ class usuarios extends CONEXION_M
         return $result;
     }
 
-
+    function busquedalogin($correo){
+        $query="SELECT u.*, c.nombre as nombre_carrera FROM usuario u, carreras c WHERE c.id_carrera =u.id_carrera 
+                AND u.correo= '".$correo."'";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
 
 }
