@@ -52,3 +52,12 @@ function actualizarAdmin($idUsuarioFK,$fechaAlta,$estatusAdmin,$id_admin){
     $obj_admin->setIdAdmin($id_admin);
     return $obj_admin->actualizarAdmin() ? "Registro modificado exitosamente" : "Error al modificar registro";
 }
+
+function detalles_usuarioAdmin($id){
+    include_once "../model/administrador.php";
+    $obj_usuario = new administrador();
+    $obj_usuario->setIdAdmin($id);
+    $result=$obj_usuario->detallesusuarioAdmin();
+    $data=json_encode($result);
+    return$data;
+}

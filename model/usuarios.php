@@ -219,6 +219,16 @@ class usuarios extends CONEXION_M
         $this->close();
         return $result;
     }
+
+    function modificar_usuarioAdmin(){
+        $query="UPDATE `usuario` SET `nombre`='".$this->getNombre()."',`primer_ap`='".$this->getPrimerAp()."',`segundo_ap`='".$this->getSegundoAp()."',`cuenta`='".$this->getCuenta()."',`correo`='".$this->getCorreo()."'
+                    ,`telefono`='".$this->getTelefono()."' WHERE `id_usuario`='".$this->getIdUsuario()."'";
+        $this->connect();
+        $result = $this->executeInstruction($query);
+        $this->close();
+        return $result;
+    }
+
     function listausuarios($filtro){
         // 1 activos 2 inactivos 3 todos
 
@@ -240,8 +250,10 @@ class usuarios extends CONEXION_M
         return $result;
     }
     function detallesusuario(){
-        $query="SELECT u.*, c.nombre as nombre_carrera FROM usuario u, carrerasc WHERE c.id_carrera =u.id_carrera AND
-                u.id_usuario=".$this->getIdUsuario();
+        $query="SELECT u.nombre, u.primer_ap, u.segundo_ap, u.cuenta, u.correo, u.telefono , c.id_carrera
+                FROM usuario u, carreras c 
+                WHERE c.id_carrera = u.id_carrera 
+                AND u.id_usuario =".$this->getIdUsuario();
         $this->connect();
         $result = $this->getData($query);
         $this->close();

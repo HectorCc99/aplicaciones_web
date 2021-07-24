@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(empty($_SESSION['id_usuario'])) {
+    header('location: home.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -55,7 +62,7 @@
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cuenta</a>
                             <div class="dropdown-menu">
                                 <a href="alumno-perfil.php" class="dropdown-item"><span class="font-weight-bold">Mi Perfil</span></a>
-                                <a href="home.php" class="dropdown-item"><span class="font-weight-bold">Cerrar Sesión</span></a>
+                                <a href="control/cerrarSesion.php?cerrar=yes" class="dropdown-item"><span class="font-weight-bold">Cerrar Sesión</span></a>
                             </div>
                         </div>
                     </div>
@@ -100,19 +107,20 @@
                     <div class="row mt-3">
                         <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="perfil-form">
-                                <form name="actualizar-datos-per" id="actualizar-datos-per">
+                                <!--<form name="actualizar-datos-per" id="actualizar-datos-per">-->
                                     <div class="perfil-form row">
                                         <div class="col-lg-2">
-                                            <label for="nombre" class="col-form-label">Nombre:</label>
+                                            <input type="hidden" name="id_us_perfil" id="id_us_perfil" class="form-control ml-2" value="<?php echo $_SESSION['id_usuario']; ?>">
+                                            <label for="nombre" class="col-form-label">Nombres:</label>
                                         </div>
                                         <div class="col-lg-4">
-                                            <input type="text" class="form-control mt-2" id="name" placeholder="Nombre(s)" required="required">
+                                            <input type="text" class="form-control mt-2" name="nombreu" id="nombreu" disabled>
                                         </div>
                                         <div class="col-lg-3">
-                                            <input type="text" class="form-control mt-2" id="primer_ap" placeholder="Primer Apellido" required="required">
+                                            <input type="text" class="form-control mt-2" name="primer_apu" id="primer_apu" disabled>
                                         </div>
                                         <div class="col-lg-3">
-                                            <input type="text" class="form-control mt-2" id="segundo_ap" placeholder="Segundo Apellido" required="required">
+                                            <input type="text" class="form-control mt-2" name="segundo_apu" id="segundo_apu" disabled>
                                         </div>
                                     </div>
                                     <div class="perfil-form row">
@@ -120,16 +128,14 @@
                                             <label for="no_cuenta" class="col-form-label">No. Cuenta:</label>
                                         </div>
                                         <div class="col-lg-4">
-                                            <input type="text" class="form-control mb-2" id="no_trabajador" placeholder="Número de Cuenta" required="required">
+                                            <input type="text" class="form-control mb-2" name="cuentau" id="cuentau" disabled>
                                         </div>
                                         <div class="col-lg-3">
                                             <label for="carrera" class="col-form-label">Carrera:</label>
                                         </div>
                                         <div class="col-lg-3">
-                                            <select name="carreras" id="carreras" class="form-control select">
-                                                <option>Administración</option>
-                                                <option>Contaduría</option>
-                                                <option>Informática</option>
+                                            <select name="carrerau" id="carrerau" class="form-control select" disabled>
+                                                <!--ajax-->
                                             </select>
                                         </div>
                                     </div>
@@ -138,20 +144,21 @@
                                             <label for="correo" class="col-form-label">Correo:</label>
                                         </div>
                                         <div class="col-lg-4">
-                                            <input type="email" class="form-control" id="email" placeholder="Correo Electrónico" required="required">
+                                            <input type="email" class="form-control" name="correou" id="correou" disabled>
                                         </div>
                                         <div class="col-lg-3">
                                             <label for="telefono" class="col-form-label">Teléfono:</label>
                                         </div>
                                         <div class="col-lg-3">
-                                            <input type="text" class="form-control" id="tel" name="tel" placeholder="Teléfono" required="required">
+                                            <input type="text" class="form-control" name="telu" id="telu" disabled>
                                         </div>
                                     </div>
                                     <div class="perfil-form row">
-                                        <button class="btn btn-danger" type="reset" id="cancelar">Cancelar</button>
-                                        <button class="btn btn-primary guardar ml-3" type="button" id="guardar">Guardar</button>
+                                        <!--<button class="btn btn-danger" id="cancelar">Cancelar</button>-->
+                                        <button class="btn btn-primary btn-lg btn-block mt-3" data-toggle="modal" data-target="#modalActualizarDatos">Actualizar Información Personal</button>
                                     </div>
-                                </form>
+                                <!--</form>-->
+
                             </div>
                         </div>
                     </div>
@@ -159,6 +166,89 @@
             </div>
         </div>
         <!-- Finaliza Contenedor Principal -->
+
+        <!-- Inicia Modal Actualizar Datos-->
+        <div class="modal fade" id="modalActualizarDatos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel"><strong>Actualizar datos personales</strong></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                            <div class="form-group row">
+                                <div class="col-sm-5 mb-3 mb-sm-0">
+                                    <label for="nombre" class="col-form-label">Nombres:</label>
+                                </div>
+                                <div class="col-sm-7 mb-3 mb-sm-0">
+                                    <input type="text" class="form-control mt-2" name="nombreu2" id="nombreu2" required="required">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-5 mb-3 mb-sm-0">
+                                    <label for="nombre" class="col-form-label">Primer apellido:</label>
+                                </div>
+                                <div class="col-sm-7 mb-3 mb-sm-0">
+                                    <input type="text" class="form-control mt-2" name="primer_apu2" id="primer_apu2" required="required">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-5 mb-3 mb-sm-0">
+                                    <label for="nombre" class="col-form-label">Segundo apellido:</label>
+                                </div>
+                                <div class="col-sm-7 mb-3 mb-sm-0">
+                                    <input type="text" class="form-control mt-2" name="segundo_apu2" id="segundo_apu2" required="required">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-5 mb-3 mb-sm-0">
+                                    <label for="no_cuenta" class="col-form-label">No. Cuenta:</label>
+                                </div>
+                                <div class="col-sm-7 mb-3 mb-sm-0">
+                                    <input type="text" class="form-control mb-2" name="cuentau2" id="cuentau2" required="required">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-5 mb-3 mb-sm-0">
+                                    <label for="carrera" class="col-form-label">Carrera:</label>
+                                </div>
+                                <div class="col-sm-7 mb-3 mb-sm-0">
+                                    <select name="carrerau2" id="carrerau2" class="form-control select" required="required">
+                                        <!--ajax-->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-5 mb-3 mb-sm-0">
+                                    <label for="correo" class="col-form-label">Correo:</label>
+                                </div>
+                                <div class="col-sm-7 mb-3 mb-sm-0">
+                                    <input type="email" class="form-control" name="correou2" id="correou2" required="required">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-5 mb-3 mb-sm-0">
+                                    <label for="telefono" class="col-form-label">Teléfono:</label>
+                                </div>
+                                <div class="col-sm-7 mb-3 mb-sm-0">
+                                    <input type="text" class="form-control" name="telu2" id="telu2" required="required">
+                                </div>
+                            </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary act_datos_alumno" data-dismiss="modal">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Finaliza Modal Actualizar datos-->
+
+
         <!-- Inicia Modal Cambio de Contraseña-->
         <div class="modal fade" id="modalPassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-md">
@@ -170,7 +260,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="" id="update-password" autocomplete="off">
+                        <!--<form action="" id="update-password" autocomplete="off">-->
                             <div class="form-group row">
                                 <div class="col-sm-5 mb-3 mb-sm-0">
                                     <label for="contra-actual" class="col-form-label">Contraseña Actual:</label>
@@ -195,7 +285,7 @@
                                     <input type="password" name="pass-repetida" id="pass-repetida" placeholder="Repetir Contraseña" class="form-control">
                                 </div>
                             </div>
-                        </form>
+                        <!--</form>-->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
@@ -242,5 +332,7 @@
         <script src="mail/contact.js"></script>
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="js/usuario_actualiza_datos.js"></script>
+        <script src="js/registro.js"></script>
     </body>
 </html>

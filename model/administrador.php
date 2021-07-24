@@ -141,4 +141,15 @@ class administrador extends CONEXION_M
         $this->close();
         return $result;
     }
+
+    function detallesusuarioAdmin(){
+        $query="SELECT u.nombre, u.primer_ap, u.segundo_ap, u.cuenta, u.correo, u.telefono, u.id_usuario, a.id_admin
+                FROM usuario u, administrador a 
+                WHERE u.id_usuario = a.id_usuario
+                AND a.id_admin =".$this->getIdAdmin();
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
 }

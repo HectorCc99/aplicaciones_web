@@ -55,6 +55,8 @@ function lista_carreras(){
                     }
                 );
                 $("#carreras").html(template);
+                $("#carrerau").html(template);
+                $("#carrerau2").html(template);
             }
         }
     );

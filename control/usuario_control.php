@@ -13,7 +13,7 @@ function registra_usuario($nombre,$primer,$segundo,$cuenta,$carrera,$email,$tel,
     return $obj_usuario->agregar_usuario() ? "Registro exitoso" : "falla en el registro";
 
 }
-function editar_usuario($id,$nombre,$primer,$segundo,$cuenta,$carrera,$email,$tel,$clave){
+function editar_usuario($id,$nombre,$primer,$segundo,$cuenta,$carrera,$email,$tel){
     include "../model/usuarios.php";
     $obj_usuario= new usuarios();
     $obj_usuario->setIdUsuario($id);
@@ -25,6 +25,19 @@ function editar_usuario($id,$nombre,$primer,$segundo,$cuenta,$carrera,$email,$te
     $obj_usuario->setCorreo($email);
     $obj_usuario->setTelefono($tel);
     return $obj_usuario->modificar_usuario() ? "Modificacion exitosa" : "falla al modificar";
+}
+
+function editar_usuarioAdmin($id,$nombre,$primer,$segundo,$cuenta,$email,$tel){
+    include "../model/usuarios.php";
+    $obj_usuario= new usuarios();
+    $obj_usuario->setIdUsuario($id);
+    $obj_usuario->setNombre($nombre);
+    $obj_usuario->setPrimerAp($primer);
+    $obj_usuario->setSegundoAp($segundo);
+    $obj_usuario->setCuenta($cuenta);
+    $obj_usuario->setCorreo($email);
+    $obj_usuario->setTelefono($tel);
+    return $obj_usuario->modificar_usuarioAdmin() ? "Modificacion exitosa" : "falla al modificar";
 }
 
 function getlistaUsuarios($filtro)

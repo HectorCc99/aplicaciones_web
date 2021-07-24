@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(empty($_SESSION['id_Admin'])) {
+    header('location: home.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -50,12 +57,14 @@
                         <a href="index.php" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
                         <a href="admin-menu.php" class="nav-item nav-link mr-5"><img src="./icons/menu.svg" alt="" width="18px"><span class="ml-2">Menú</span></a>
                         <a href="admin-perfil.php" class="nav-item nav-link mr-5"><img src="./icons/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
-                        <a href="home.php" class="nav-item nav-link mr-5"><img src="./icons/logout.png" alt="" width="18px"><span class="ml-2">Cerrar Sesión</span></a>
+                        <a href="control/cerrarSesion.php?cerrar=yes" class="nav-item nav-link mr-5"><img src="./icons/logout.png" alt="" width="18px"><span class="ml-2">Cerrar Sesión</span></a>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Nav Bar End -->
+
+
         <!-- Inicia Contenedor Principal -->
         <div class="container mt-5">
             <div class="row">
@@ -93,19 +102,21 @@
                     <div class="row mt-3">
                         <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="perfil-form">
-                                <form name="actualizar-datos-per" id="actualizar-datos-per">
+
                                     <div class="perfil-form row">
                                         <div class="col-lg-2">
-                                            <label for="nombre" class="col-form-label">Nombre:</label>
+                                            <input type="hidden" name="id_ad_perfil" id="id_ad_perfil" class="form-control ml-2" value="<?php echo $_SESSION['id_Admin']; ?>">
+                                            <input type="hidden" name="id_usad" id="id_usad" class="form-control ml-2">
+                                            <label for="nombre" class="col-form-label">Nombres:</label>
                                         </div>
                                         <div class="col-lg-4">
-                                            <input type="text" class="form-control mt-2" id="name" placeholder="Nombre(s)" required="required">
+                                            <input type="text" class="form-control mt-2" name="nombreA" id="nombreA" disabled>
                                         </div>
                                         <div class="col-lg-3">
-                                            <input type="text" class="form-control mt-2" id="primer_ap" placeholder="Primer Apellido" required="required">
+                                            <input type="text" class="form-control mt-2" name="primer_apA" id="primer_apA" disabled>
                                         </div>
                                         <div class="col-lg-3">
-                                            <input type="text" class="form-control mt-2" id="segundo_ap" placeholder="Segundo Apellido" required="required">
+                                            <input type="text" class="form-control mt-2" name="segundo_apA" id="segundo_apA" disabled>
                                         </div>
                                     </div>
                                     <div class="perfil-form row">
@@ -113,13 +124,13 @@
                                             <label for="no_trabajador" class="col-form-label">No. Trabajador:</label>
                                         </div>
                                         <div class="col-lg-4">
-                                            <input type="text" class="form-control mb-2" id="no_trabajador" placeholder="Número de Trabajador" required="required">
+                                            <input type="text" class="form-control mb-2" name="numtrab" id="numtrab" disabled>
                                         </div>
                                         <div class="col-lg-3">
                                             <label for="telefono" class="col-form-label">Teléfono:</label>
                                         </div>
                                         <div class="col-lg-3">
-                                            <input type="text" class="form-control" id="tel" name="tel" placeholder="Teléfono" required="required">
+                                            <input type="text" class="form-control" name="telA" id="telA" disabled>
                                         </div>
                                     </div>
                                     <div class="perfil-form row">
@@ -127,14 +138,13 @@
                                             <label for="correo" class="col-form-label">Correo:</label>
                                         </div>
                                         <div class="col-lg-10">
-                                            <input type="email" class="form-control" id="email" placeholder="Correo Electrónico" required="required">
+                                            <input type="email" class="form-control" name="correoA" id="correoA" disabled>
                                         </div>
                                     </div>
                                     <div class="perfil-form row">
-                                        <button class="btn btn-danger" type="reset" id="cancelar">Cancelar</button>
-                                        <button class="btn btn-primary guardar ml-3" type="button" id="guardar">Guardar</button>
+                                        <!--<button class="btn btn-danger" type="reset" id="cancelar">Cancelar</button>-->
+                                        <button class="btn btn-primary btn-lg btn-block mt-3" data-toggle="modal" data-target="#modalActDatosAdmin">Actualizar Información Personal</button>
                                     </div>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -142,6 +152,79 @@
             </div>
         </div>
         <!-- Finaliza Contenedor Principal -->
+
+
+        <!-- Inicia Modal Actualizar Datos-->
+        <div class="modal fade" id="modalActDatosAdmin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel"><strong>Actualizar datos personales</strong></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group row">
+                            <div class="col-sm-5 mb-3 mb-sm-0">
+                                <label for="nombre" class="col-form-label">Nombres:</label>
+                            </div>
+                            <div class="col-sm-7 mb-3 mb-sm-0">
+                                <input type="text" class="form-control mt-2" name="nombreA2" id="nombreA2" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-5 mb-3 mb-sm-0">
+                                <label for="nombre" class="col-form-label">Primer apellido:</label>
+                            </div>
+                            <div class="col-sm-7 mb-3 mb-sm-0">
+                                <input type="text" class="form-control mt-2" name="primer_apA2" id="primer_apA2" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-5 mb-3 mb-sm-0">
+                                <label for="nombre" class="col-form-label">Segundo apellido:</label>
+                            </div>
+                            <div class="col-sm-7 mb-3 mb-sm-0">
+                                <input type="text" class="form-control mt-2" name="segundo_apA2" id="segundo_apA2" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-5 mb-3 mb-sm-0">
+                                <label for="no_trabajador" class="col-form-label">No. Trabajador:</label>
+                            </div>
+                            <div class="col-sm-7 mb-3 mb-sm-0">
+                                <input type="text" class="form-control mb-2" name="numtrab2" id="numtrab2" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-5 mb-3 mb-sm-0">
+                                <label for="telefono" class="col-form-label">Teléfono:</label>
+                            </div>
+                            <div class="col-sm-7 mb-3 mb-sm-0">
+                                <input type="text" class="form-control" name="telA2" id="telA2" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-5 mb-3 mb-sm-0">
+                                <label for="correo" class="col-form-label">Correo:</label>
+                            </div>
+                            <div class="col-sm-7 mb-3 mb-sm-0">
+                                <input type="email" class="form-control" name="correoA2" id="correoA2" required="required">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary act_datos_admin" data-dismiss="modal">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Finaliza Modal Actualizar datos-->
+
+
         <!-- Inicia Modal Cambio de Contraseña-->
         <div class="modal fade" id="modalPassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-md">
@@ -153,7 +236,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="" id="update-password" autocomplete="off">
+                        <!--<form action="" id="update-password" autocomplete="off">-->
                             <div class="form-group row">
                                 <div class="col-sm-5 mb-3 mb-sm-0">
                                     <label for="contra-actual" class="col-form-label">Contraseña Actual:</label>
@@ -178,7 +261,7 @@
                                     <input type="password" name="pass-repetida" id="pass-repetida" placeholder="Repetir Contraseña" class="form-control">
                                 </div>
                             </div>
-                        </form>
+                        <!--</form>-->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
@@ -225,5 +308,6 @@
         <script src="mail/contact.js"></script>
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="js/usuario_actualiza_datos.js"></script>
     </body>
 </html>
