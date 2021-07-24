@@ -66,7 +66,7 @@
     </div>
     <!-- Nav Bar End -->
 
-    <input type="hidden" name="id_usuario" id="id_usuario" class="form-control ml-2" value="<?php echo 1; ?>">
+
     <!--recuperamos el id por sesiones, esta pendiente la sesion que trairia el id del usuario el codigo php iria en el value-->
 
     <!-- Inicia Tarjetas -->
@@ -130,103 +130,8 @@
                 </div>
             </div>
 
-            <div class="row class-container" id="contenedorInscripActuales">
-                <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-1 wow fadeInUp" data-wow-delay="0.0s" id="tarjetainscripcionesA">
-                    <div class="class-wrap" >
-                        <div class="class-img">
-                            <img src="./icons/sports.svg" alt="" width="80px">
-                        </div>
-                        <div class="class-text" >
-                            <div class="class-teacher">
-                                <img src="icons/teacher.svg" alt="Image">
-                                <h3>Luis Manuel Vivas Amador</h3>
-                            </div>
-                            <h2>Volibol</h2>
-                            <div class="class-meta">
-                                <p><span class="font-weight-bold">Categoría: </span></p>
-                            </div>
-                            <span class="font-weight-bold">------------------------------</span>
-                            <div class="class-meta">
-                                <p><span class="font-weight-bold">Lunes: </span></p>
-                            </div>
-                            <div class="class-meta">
-                                <p><span class="font-weight-bold">Martes: </span></p>
-                            </div>
-                            <div class="class-meta">
-                                <p><span class="font-weight-bold">Miércoles: </span></p>
-                            </div>
-                            <div class="class-meta">
-                                <p><span class="font-weight-bold">Jueves: </span></p>
-                            </div>
-                            <div class="class-meta">
-                                <p><span class="font-weight-bold">Viernes: </span></p>
-                            </div>
-                            <span class="font-weight-bold">------------------------------</span>
-                            <div class="class-meta">
-                                <p><span class="font-weight-bold">Ubicación: </span></p>
-                            </div>
-                            <span class="font-weight-bold">------------------------------</span>
-                            <div class="class-meta">
-                                <p><span class="font-weight-bold">Grupo: </span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--<div class="col-lg-4 col-md-6 col-sm-12 class-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="class-wrap">
-                        <div class="class-img">
-                            <img src="./icons/sports.svg" alt="" width="80px">
-                        </div>
-                        <div class="class-text">
-                            <div class="class-teacher">
-                                <img src="icons/teacher.svg" alt="Image">
-                                <h3>Dagoberto Riaño Ruíz</h3>
-                            </div>
-                            <h2>Fútbol Asociación Varonil</h2>
-                            <div class="class-meta">
-                                <p><span class="font-weight-bold">Categoría: </span>Conjunto con pelota</p>
-                            </div>
-                            <div class="class-meta">
-                                <p><span class="font-weight-bold">Horario: </span>Lun - Vier</p>
-                                <p>14:00 - 16:00</p>
-                            </div>
-                            <div class="class-meta">
-                                <p><span class="font-weight-bold">Ubicación: </span>Canchas de Fútbol</p>
-                            </div>
-                            <div class="class-meta">
-                                <p><span class="font-weight-bold">Grupo: </span>2032</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="class-wrap">
-                        <div class="class-img">
-                            <img src="./icons/sports.svg" alt="" width="80px">
-                        </div>
-                        <div class="class-text">
-                            <div class="class-teacher">
-                                <img src="icons/teacher.svg" alt="Image">
-                                <h3>Teresa Vázquez Hernández</h3>
-                            </div>
-                            <h2>Ajedrez</h2>
-                            <div class="class-meta">
-                                <p><span class="font-weight-bold">Categoría: </span>Individual</p>
-                            </div>
-                            <div class="class-meta">
-                                <p><span class="font-weight-bold">Horario: </span>Jue , Vier</p>
-                                <p>13:00 - 15:00</p>
-                            </div>
-                            <div class="class-meta">
-                                <p><span class="font-weight-bold">Ubicación: </span>Club de Ajedrez</p>
-                            </div>
-                            <div class="class-meta">
-                                <p><span class="font-weight-bold">Grupo: </span>1548</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
+            <div class="row " id="contenedorInscripActuales">
+             <!--AJAX-->
             </div>
         </div>
     </div>
@@ -269,7 +174,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="" id="update-password" autocomplete="off">
+                    <form action="./control/subir_documentos.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-lg-12">
                                 <p>En cada apartado selecciona el documento que se te solicita. <span class="font-weight-bold">(Nota: En certificados médicos no se aceptarán de similares ni particulares)</span></p>
@@ -277,12 +182,14 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-4 mb-3 mb-sm-0">
+                                <input type="hidden" name="id_usuario" id="id_usuario" class="form-control ml-2" value="<?php echo 1; ?>">
+                                <input type="text" name="semestre" id="semestre" value="<?php echo "2021-1"; ?>">
                                 <label for="tira" class="col-form-label">Tira de Materias:</label>
                             </div>
                             <div class="col-lg-8 mb-3 mb-sm-0 mt-1">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="tira">
-                                    <label class="custom-file-label" for="tira" data-browse="Buscar">Selecciona un archivo</label>
+                                    <input type="file" class="custom-file-input" name="tira" id="tira" required>
+                                    <label class="custom-file-label" for="tira" data-browse="Buscar" >Selecciona un archivo</label>
                                 </div>
                             </div>
                         </div>
@@ -292,7 +199,7 @@
                             </div>
                             <div class="col-lg-8 mb-3 mb-sm-0 mt-3">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="seguro_estudiante">
+                                    <input type="file" class="custom-file-input" name="seguro_estudiante" id="seguro_estudiante" required>
                                     <label class="custom-file-label" for="seguro_estudiante" data-browse="Buscar">Selecciona un archivo</label>
                                 </div>
                             </div>
@@ -303,7 +210,7 @@
                             </div>
                             <div class="col-lg-8 mb-3 mb-sm-0 mt-1">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="seguro_axa">
+                                    <input type="file" class="custom-file-input" name="seguro_axa" id="seguro_axa" required>
                                     <label class="custom-file-label" for="seguro_axa" data-browse="Buscar">Selecciona un archivo</label>
                                 </div>
                             </div>
@@ -314,17 +221,18 @@
                             </div>
                             <div class="col-lg-8 mb-3 mb-sm-0 mt-3">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="credencial_escolar">
+                                    <input type="file" class="custom-file-input" name="credencial_escolar" id="credencial_escolar" required>
                                     <label class="custom-file-label" for="credencial_escolar" data-browse="Buscar">Selecciona un archivo</label>
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="subirDocs">Envíar</button>
-                </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" id="subirDocs">Envíar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

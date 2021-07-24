@@ -62,7 +62,8 @@ function inscripcionesActuales(){
                 obj_result.forEach((obj_result=>{
                     //console.log(response);
                     cont++;
-                        template+=`<div class="class-wrap" >
+                        template+=` <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-1 wow fadeInUp" data-wow-delay="0.0s" id="tarjetainscripcionesA">
+                                    <div class="class-wrap" >
                                    <div class="class-img">
                                         <img src="./icons/sports.svg" alt="" width="60px">
                                    </div>
@@ -101,10 +102,11 @@ function inscripcionesActuales(){
                                        </div>
                                    </div>
                                    </div>
+                                   </div>
                                `;
                 }));
                 //se asigna al cuerpo de la tabla
-                $("#tarjetainscripcionesA").html(template);
+                $("#contenedorInscripActuales").html(template);
             }else{
                 $("#contenedorInscripActuales").empty();
                 template=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -131,15 +133,27 @@ function tablaEstatusDocumentos(){
         success: function (response){
             let obj_result=JSON.parse(response);
             let template="";
+            let estatus="";
             if(obj_result.length>0){
                 var cont=0;
                 obj_result.forEach((obj_result=>{
                     //console.log(response);
+
                     cont++;
+                    if(obj_result.estatus_aprobado == 1){
+                        estatus="Aceptado";
+                    }
+                    if(obj_result.estatus_aprobado == 2){
+                        estatus="Rechazado";
+                    }
+                    if(obj_result.estatus_aprobado == 0){
+                        estatus="Pendiente de Revisar";
+                    }
+
                     template+=`<tr>
                                 <th scope="row">${cont}</th>
                                 <td>${obj_result.nombre_archivo}</td>
-                                <td>${obj_result.estatus_aprobado == 1 ? "Aceptado":"Rechazado"}</td>
+                                <td>${estatus}</td>
                                 <td>${obj_result.notas}</td>
                                 </tr>`;
                 }));

@@ -190,9 +190,9 @@ class archivos extends CONEXION_M
     function subir_Archivo($id_usuario,$nombreArchivo,$Archivo)
     {
 
-        $carpeta = "../archivos_subidos/" .$id_usuario;
+        $carpeta = "./archivos_subidos/" .$id_usuario;
         if (!file_exists($carpeta)) {
-            if(!mkdir("$carpeta", 0777, true) ){
+            if(!mkdir(".$carpeta", 0777, true) ){
                 echo "error al crear la carpeta";
             }
         }

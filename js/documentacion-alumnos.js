@@ -124,7 +124,7 @@ function archivos_usuario(id,estatus){
                                 <label  class="col-form-label">${obj_result.tipo_archivo}:</label>
                             </div>
                             <div class="col-sm-5 mb-3 mb-sm-0" id="tira">
-                                <a href="${obj_result.path_archivo}"><label for="tira_materias" class="col-form-label">${obj_result.nombre_archivo}</label></a>
+                                <a href="${obj_result.path_archivo}" download="${obj_result.path_archivo}"><label for="tira_materias" class="col-form-label">${obj_result.nombre_archivo}</label></a>
                             </div>
                                 <div class="col-sm-4 mb-3 mb-sm-0">
                                     <label for="notas" class="col-form-label ml-1">Notas:</label>
