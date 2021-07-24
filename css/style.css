@@ -1,4 +1,30 @@
 /*******************************/
+/********* login CSS *********/
+/*******************************/
+.contenedorLogin{
+    margin-top: 100px;
+}
+
+
+ .contenedorLogin .bg{
+
+    background-repeat: no-repeat;
+    background-image: url(../img/imglogin.png);
+    background-position: center center;
+
+
+}
+.contenedorLogin .loginDiv{
+    background-color:  #d1d3d6 ;
+}
+ #regresarbtn {
+    background-image: url(../img/regresar.png);
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+}
+
+/*******************************/
 /********* General CSS *********/
 /*******************************/
 

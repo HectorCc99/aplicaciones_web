@@ -83,7 +83,7 @@ class administrador extends CONEXION_M
 
     function buscarIdUsuarioFK($idUsuarioFK){
         $query= "SELECT u.nombre, u.primer_ap, u.segundo_ap,  a.*  FROM administrador a, usuario  u 
-        WHERE u.id_usuario=a.id_usuario AND a.id_usuario=".$idUsuarioFK." AND a.estatus_admin=1";
+        WHERE u.id_usuario=a.id_usuario AND a.id_usuario='".$idUsuarioFK."' AND a.estatus_admin= 1";
         $this->connect();
         $result = $this->getData($query);
         $this->close();

@@ -52,3 +52,11 @@ function editar_estatus_usuario($id,$estatus){
     $obj_usuario->setEstatusUsuario($estatus);
     return $obj_usuario->cambiar_estatus() ? "Modificacion exitosa" : "falla al modificar";
 }
+function busquedalogin($correo)
+{
+    include "../model/usuarios.php";
+    $obj_usuario = new usuarios();
+    $result = $obj_usuario->busquedaLogin($correo);
+    $data = json_encode($result);
+    return $data;
+}
