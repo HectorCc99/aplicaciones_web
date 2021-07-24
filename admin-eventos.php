@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+session_start();
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -113,6 +115,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <p class="font-weight-bold">Ingrese los siguientes datos:</p>
+                                <input type="hidden" name="id_admin" value="<?php echo $_SESSION['id_Admin']; ?>">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -331,6 +334,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <p class="font-weight-bold mr-1">Ingrese los datos:</p>
+                                <input type="hidden" name="id_admin" value="<?php echo $_SESSION['id_Admin']; ?>">
                                 <div id="contenedor_evento"></div>
                             </div>
                         </div>

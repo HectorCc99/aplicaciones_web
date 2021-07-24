@@ -31,7 +31,7 @@ if(/*isset($_POST['evento']) && isset($_POST['encargado']) && isset($_POST['tele
     $fcierre =$_POST['fecha_cierre'];
     $hinicio = $_POST['hora_inicio'];
     $hcierre =$_POST['hora_cierre'];
-    $id_admin = 1; //Dato temporal, Se tomara cuando se trabaje con sesiones?
+    $id_admin = $_POST['id_admin']; //Dato temporal, Se tomara cuando se trabaje con sesiones?
 
     $nombreArchivo = $_FILES['poster']['name'];
     $Archivo = $_FILES['poster']['tmp_name'];

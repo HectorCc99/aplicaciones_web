@@ -141,11 +141,9 @@ class actividades_deportivas extends CONEXION_M
                 $filtro_estatus="";
                 break;
         }
-        $query = "SELECT ar.*, tp.*, gpo.*, hr.*,er.*  FROM actividad_recreativa ar, tipo_actividad tp,grupo gpo, horarios hr, espacio_recreativo er WHERE
-                    ar.tipo_actividad=tp.id_tipo
-                    and gpo.id_actividad=ar.id_actividad
-                    and hr.id_horario=gpo.id_horario ".$filtro_tipo."
-                     and er.id_espacio=gpo.id_espacio ".$filtro_estatus." ORDER BY nombre_actividad ASC";
+        $query = "SELECT ar.*, tp.* FROM actividad_recreativa ar, tipo_actividad tp WHERE
+                    ar.tipo_actividad=tp.id_tipo ".$filtro_tipo."
+                    ".$filtro_estatus."  ORDER BY ar.nombre_actividad ASC ";
         $this->connect();
         $result = $this->getData($query);
         $this->close();

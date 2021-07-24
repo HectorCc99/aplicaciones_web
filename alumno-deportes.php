@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -110,7 +114,7 @@
                                 <div class="col-sm-12">
                                     <p>¿Deseas solicitar tu inscripción a este deporte?</p>
                                     <input type="hidden" name="id_grupo_select" id="id_grupo_select">
-                                    <input type="hidden" name="id_usuario" id="id_usuario" value="1">
+                                    <input type="hidden" name="id_usuario" id="id_usuario" value="<?php echo $_SESSION['id_usuario']; ?>">
                                     <input type="hidden" name="semestre" id="semestre" >
                                 </div>
                             </div>

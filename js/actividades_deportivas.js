@@ -350,7 +350,7 @@ $(document).on("click",".editar-datos",function () {
         "./control/modifica_actividad.php",
         {id,nombre,descripcion,tipo},
         function (responsive){
-            console.log(responsive);
+            //console.log(responsive);
             TablaActividades();
         }
     )
