@@ -308,6 +308,6 @@ if(empty($_SESSION['id_Admin'])) {
         <script src="mail/contact.js"></script>
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
-        <script src="js/usuario_actualiza_datos.js"></script>
+        <script src="js/admin_actualiza_datos.js"></script>
     </body>
 </html>
