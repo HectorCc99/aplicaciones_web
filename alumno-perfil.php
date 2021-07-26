@@ -134,9 +134,7 @@ if(empty($_SESSION['id_usuario'])) {
                                             <label for="carrera" class="col-form-label">Carrera:</label>
                                         </div>
                                         <div class="col-lg-3">
-                                            <select name="carrerau" id="carrerau" class="form-control select" disabled>
-                                                <!--ajax-->
-                                            </select>
+                                            <input type="text" name="carrerau" id="carrerau" class="form-control select" disabled>
                                         </div>
                                     </div>
                                     <div class="perfil-form row">
@@ -289,7 +287,7 @@ if(empty($_SESSION['id_usuario'])) {
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="actuaizarPass">Guardar</button>
+                        <button type="button" class="btn btn-primary cambia_pass" data-dismiss="modal" id="actuaizarPass">Guardar</button>
                     </div>
                 </div>
             </div>

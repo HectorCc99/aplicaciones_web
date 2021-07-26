@@ -73,3 +73,11 @@ function busquedalogin($correo)
     $data = json_encode($result);
     return $data;
 }
+
+function editar_contraAdmin($id,$contra){
+    include "../model/usuarios.php";
+    $obj_usuario= new usuarios();
+    $obj_usuario->setIdUsuario($id);
+    $obj_usuario->setContraseña(md5($contra));
+    return $obj_usuario->modificar_contra_usuario() ? "Modificacion exitosa" : "falla al modificar";
+}

@@ -143,7 +143,7 @@ class administrador extends CONEXION_M
     }
 
     function detallesusuarioAdmin(){
-        $query="SELECT u.nombre, u.primer_ap, u.segundo_ap, u.cuenta, u.correo, u.telefono, u.id_usuario, a.id_admin
+        $query="SELECT u.nombre, u.primer_ap, u.segundo_ap, u.cuenta, u.correo,u.contrasenia, u.telefono, u.id_usuario, a.id_admin
                 FROM usuario u, administrador a 
                 WHERE u.id_usuario = a.id_usuario
                 AND a.id_admin =".$this->getIdAdmin();

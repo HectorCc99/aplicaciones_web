@@ -21,5 +21,11 @@ if(isset($_POST['filtro'])) {
                 echo editar_usuario($id,$nombre,$primer,$segundo,$cuenta,$carrera,$email,$tel);
             }
             break;
+        case "3":
+            $id = $_POST['id_us_perfil'];
+            $pass = $_POST['contrasenia'];
+            include_once "usuario_control.php";
+            echo editar_contraAdmin($id,$pass);
+            break;
     }
 }

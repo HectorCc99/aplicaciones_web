@@ -151,9 +151,8 @@ function List_tipo_deportes(){
 
 function deportesalumno(tipo){
     $.ajax({
-        url:"./control/list_actividades.php",
+        url:"./control/list_actividades2.php",
         data: {
-            filtro: 1,
             tipo: tipo
         },
         type: "POST",

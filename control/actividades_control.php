@@ -8,6 +8,16 @@ function traeActividades($filtro,$tipo){
     $json_data = json_encode($result);
     return $json_data;
 }
+
+function traeDetallesActividades2($tipo){
+    // incluye un filtro
+    // 0 todos, 1 activos, 2 inactivos
+    include_once "../model/actividades_deportivas.php";
+    $objAlumn = new actividades_deportivas();
+    $result = $objAlumn->ListactividadDeportivas($tipo);
+    $json_data = json_encode($result);
+    return $json_data;
+}
 function traeActividadesList($filtro){
     // incluye un filtro
     // 0 todos, 1 activos, 2 inactivos

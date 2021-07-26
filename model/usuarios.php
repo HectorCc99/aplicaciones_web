@@ -250,7 +250,7 @@ class usuarios extends CONEXION_M
         return $result;
     }
     function detallesusuario(){
-        $query="SELECT u.nombre, u.primer_ap, u.segundo_ap, u.cuenta, u.correo, u.telefono , c.id_carrera
+        $query="SELECT u.nombre, u.primer_ap, u.segundo_ap, u.cuenta, u.correo,u.contrasenia, u.telefono , c.nombre as nombre_carrera
                 FROM usuario u, carreras c 
                 WHERE c.id_carrera = u.id_carrera 
                 AND u.id_usuario =".$this->getIdUsuario();
@@ -265,6 +265,14 @@ class usuarios extends CONEXION_M
                 AND u.correo= '".$correo."'";
         $this->connect();
         $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+
+    function modificar_contra_usuario(){
+        $query="UPDATE `usuario` SET `contrasenia`='".$this->getContraseña()."' WHERE `id_usuario`='".$this->getIdUsuario()."'";
+        $this->connect();
+        $result = $this->executeInstruction($query);
         $this->close();
         return $result;
     }

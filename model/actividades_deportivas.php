@@ -150,6 +150,23 @@ class actividades_deportivas extends CONEXION_M
         return $result;
     }
 
+
+    function ListactividadDeportivas($tipo)
+    {
+        $filtro_tipo=$tipo>0? " AND tipo_actividad=".$tipo:"";
+
+        $query = "SELECT ar.*, tp.*,hr.*,grp.*,er.* FROM actividad_recreativa ar, tipo_actividad tp, horarios hr, grupo grp, espacio_recreativo er WHERE
+					hr.id_horario=grp.id_horario
+                    and grp.id_actividad=ar.id_actividad
+                    and er.id_espacio=grp.id_espacio
+                    ".$filtro_tipo."                                                                                                          
+                    and ar.tipo_actividad=tp.id_tipo ORDER BY ar.nombre_actividad ASC ";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+
     function listdepto($filtro){
         $filtro_estatus="";
         // 0 todos, 1 activos, 2 inactivos
