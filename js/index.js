@@ -12,32 +12,21 @@ function eventoCarrucel(){
             let template ="";
             if (obj_result.length>0){
                 var cont = 0;
-                console.log(response);
+                //console.log(response);
             obj_result.forEach((obj_result=>{
             cont++;
-            template += `<div class="blog-item">
-                <div class="blog-img">
-                <img src="${obj_result.imagen}" alt="" width="60px">
-            </div>
-                <div class="blog-text">
-                    <h2>${obj_result.nombre_actividad}</h2>
-                    <div class="blog-meta">
-                        <p><span class="font-weight-bold">Inicio: </span>${obj_result.fecha_inicio}</p>
-                        <p>${obj_result.hora_inicio}</p>
-                    </div>
-                    <div class="blog-meta">
-                        <p><span class="font-weight-bold">Cierre: </span>${obj_result.fecha_fin}</p>
-                        <p>${obj_result.hora_fin}</p>
-                    </div>
-                    <p>
-                        Descripción del evento: ${obj_result.descripcion}
-                    </p>
-                    <div class="blog-meta">
-                        <p><span class="font-weight-bold">Encargado(a): </span>${obj_result.encargado}</p>
-                        <!--<p><span className="font-weight-bold">Cupo: </span>30</p>-->
-                    </div>
-                </div>
-              </div>`;
+                template += `<div class="card">
+                        <img src="${obj_result.imagen}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">${obj_result.nombre_actividad}</h5>
+                            <p class="card-text"><span class="font-weight-bold">Inicio: </span>${obj_result.fecha_inicio}</p>
+                            <p class="card-text">${obj_result.hora_inicio}</p>
+                            <p class="card-text"><span class="font-weight-bold">Fin: </span>${obj_result.fecha_fin}</p>
+                            <p class="card-text">${obj_result.hora_fin}</p>
+                            <p class="card-text">Descripción del evento: ${obj_result.descripcion}</p>
+                            <p class="card-text"><span class="font-weight-bold">Encargado(a): </span>${obj_result.encargado}</p>
+                        </div>
+                    </div>`;
             }));
             $("#carrucelX").html(template);
 

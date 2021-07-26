@@ -308,7 +308,7 @@ class eventos extends CONEXION_M
     function subirPoster($nombreArchivo, $Archivo)
     {
 
-        $carpeta = "../archivos_subidos/";
+        $carpeta = "./archivos_subidos".$nombreArchivo;
         if (!file_exists($carpeta)) {
             if(!mkdir("$carpeta", 0777, true) ){
                 echo "error al crear la carpeta";

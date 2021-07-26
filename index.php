@@ -164,7 +164,7 @@ if(empty($_SESSION['id_Admin'])) {
                     <p>No te pierdas nuestros</p>
                     <h2>Próximos Eventos</h2>
                 </div>
-                <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.1s" id="carrucelX" name="carrucelX">
+                <div class="card-group" id="carrucelX" name="carrucelX">
 
                 </div>
             </div>

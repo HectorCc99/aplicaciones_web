@@ -36,10 +36,8 @@ if(/*isset($_POST['evento']) && isset($_POST['encargado']) && isset($_POST['tele
     $nombreArchivo = $_FILES['poster']['name'];
     $Archivo = $_FILES['poster']['tmp_name'];
 
-    $result= insertarEvento($id_admin, $lugar, $material,$id_recurso2,$id_recurso3,  $evento, $descrip,  $encargado, $telefono,
-                        $cantidad,$cantrec2,$cantrec3, 1, $finicio,  $fcierre, $hinicio, $hcierre, $sem, $nombreArchivo, $Archivo);
-
-    if($result){
+    if(insertarEvento($id_admin, $lugar, $material,$id_recurso2,$id_recurso3,  $evento, $descrip,  $encargado, $telefono,
+                        $cantidad,$cantrec2,$cantrec3, 1, $finicio,  $fcierre, $hinicio, $hcierre, $sem, $nombreArchivo, $Archivo)){
         header('Location: ../admin-eventos.php ');
     }
 } else{

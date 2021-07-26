@@ -163,9 +163,10 @@
                     <p>No te pierdas nuestros</p>
                     <h2>Próximos Eventos</h2>
                 </div>
-                <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.1s" id="carrucelX" name="carrucelX">
+                <div class="card-group" id="carrucelX" name="carrucelX">
 
                 </div>
+
             </div>
         </div>
         <!-- Blog End -->
@@ -252,10 +253,13 @@
         <!-- Footer End -->
         <a href="#" class="back-to-top"><img src="./icons/arrow-up.png" alt="" width="40px"></a>
         <!-- JavaScript Libraries -->
+
+
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
         <script src="lib/easing/easing.min.js"></script>
         <script src="lib/wow/wow.min.js"></script>
+        <script src="js/index.js"></script>
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
         <script src="lib/isotope/isotope.pkgd.min.js"></script>
         <script src="lib/lightbox/js/lightbox.min.js"></script>
@@ -266,6 +270,5 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
-        <script src="js/index.js"></script>
     </body>
 </html>
