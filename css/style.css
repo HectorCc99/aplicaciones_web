@@ -18,10 +18,14 @@
     background-color:  #d1d3d6 ;
 }
  #regresarbtn {
-    background-image: url(../img/regresar.png);
+    border-radius: 50%;
+    border: none;
+    background-color: var(--primary);
+    background-image: url(../icons/arrow-left-2.png);
     background-size: 40px 40px;
-    height: 40px;
-    width: 40px;
+    background-repeat: no-repeat;
+    height: 42px;
+    width: 42px;
 }
 
 /*******************************/
