@@ -163,145 +163,8 @@
                     <p>No te pierdas nuestros</p>
                     <h2>Próximos Eventos</h2>
                 </div>
-                <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="img/flayer-example.jpg" alt="">
-                        </div>
-                        <div class="blog-text">
-                            <h2>Nombre del evento</h2>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Inicio: </span>06 de Agosto 2021</p>
-                                <p>12:00 hrs</p>
-                            </div>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Cierre: </span>10 de Agosto 2021</p>
-                                <p>14:00 hrs</p>
-                            </div>
-                            <p>
-                                Descripción del evento: Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                            </p>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Encargado(a): </span>Lucía Fernández</p>
-                                <p><span class="font-weight-bold">Cupo: </span>30</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="img/flayer-example.jpg" alt="">
-                        </div>
-                        <div class="blog-text">
-                            <h2>Nombre del evento</h2>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Inicio: </span>06 de Agosto 2021</p>
-                                <p>12:00 hrs</p>
-                            </div>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Cierre: </span>10 de Agosto 2021</p>
-                                <p>14:00 hrs</p>
-                            </div>
-                            <p>
-                                Descripción del evento: Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                            </p>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Encargado(a): </span>Lucía Fernández</p>
-                                <p><span class="font-weight-bold">Cupo: </span>30</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="img/flayer-example.jpg" alt="">
-                        </div>
-                        <div class="blog-text">
-                            <h2>Nombre del evento</h2>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Inicio: </span>06 de Agosto 2021</p>
-                                <p>12:00 hrs</p>
-                            </div>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Cierre: </span>10 de Agosto 2021</p>
-                                <p>14:00 hrs</p>
-                            </div>
-                            <p>
-                                Descripción del evento: Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                            </p>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Encargado(a): </span>Lucía Fernández</p>
-                                <p><span class="font-weight-bold">Cupo: </span>30</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="img/flayer-example.jpg" alt="">
-                        </div>
-                        <div class="blog-text">
-                            <h2>Nombre del evento</h2>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Inicio: </span>06 de Agosto 2021</p>
-                                <p>12:00 hrs</p>
-                            </div>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Cierre: </span>10 de Agosto 2021</p>
-                                <p>14:00 hrs</p>
-                            </div>
-                            <p>
-                                Descripción del evento: Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                            </p>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Encargado(a): </span>Lucía Fernández</p>
-                                <p><span class="font-weight-bold">Cupo: </span>30</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="img/flayer-example.jpg" alt="">
-                        </div>
-                        <div class="blog-text">
-                            <h2>Nombre del evento</h2>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Inicio: </span>06 de Agosto 2021</p>
-                                <p>12:00 hrs</p>
-                            </div>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Cierre: </span>10 de Agosto 2021</p>
-                                <p>14:00 hrs</p>
-                            </div>
-                            <p>
-                                Descripción del evento: Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                            </p>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Encargado(a): </span>Lucía Fernández</p>
-                                <p><span class="font-weight-bold">Cupo: </span>30</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="img/flayer-example.jpg" alt="">
-                        </div>
-                        <div class="blog-text">
-                            <h2>Nombre del evento</h2>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Inicio: </span>06 de Agosto 2021</p>
-                                <p>12:00 hrs</p>
-                            </div>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Cierre: </span>10 de Agosto 2021</p>
-                                <p>14:00 hrs</p>
-                            </div>
-                            <p>
-                                Descripción del evento: Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                            </p>
-                            <div class="blog-meta">
-                                <p><span class="font-weight-bold">Encargado(a): </span>Lucía Fernández</p>
-                                <p><span class="font-weight-bold">Cupo: </span>30</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.1s" id="carrucelX" name="carrucelX">
+
                 </div>
             </div>
         </div>
@@ -403,5 +266,6 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="js/index.js"></script>
     </body>
 </html>

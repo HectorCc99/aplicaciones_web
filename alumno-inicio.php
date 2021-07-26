@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(empty($_SESSION['id_usuario'])) {
+    header('location: home.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +63,7 @@ session_start();
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cuenta</a>
                         <div class="dropdown-menu">
                             <a href="alumno-perfil.php" class="dropdown-item"><span class="font-weight-bold">Mi Perfil</span></a>
-                            <a href="home.php" class="dropdown-item"><span class="font-weight-bold">Cerrar Sesión</span></a>
+                            <a href="control/cerrarSesion.php?cerrar=yes" class="dropdown-item"><span class="font-weight-bold">Cerrar Sesión</span></a>
                         </div>
                     </div>
                 </div>

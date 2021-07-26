@@ -106,3 +106,11 @@ function eliminarEvento($id){
     return $obj_recurso -> borrarEvento() ? "Eliminado con exito" : "Fallo al eliminar";
 }
 // echo eliminarEvento(3);
+//DETALLES EVENTOS PRÓXIMOS
+function listarProximosEventos(){
+    include_once "../model/eventos.php";
+    $obj_evento = new eventos();
+    $result = $obj_evento->listarProximosEventos();
+    $data=json_encode($result);
+    return $data;
+}

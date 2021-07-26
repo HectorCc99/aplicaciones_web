@@ -409,5 +409,18 @@ class eventos extends CONEXION_M
         $this->close();
         return $result;
     }
+    //LISTAR PROXIMOS EVENTOS
+    function listarProximosEventos(){
+        $query="SELECT id_evento, imagen, nombre_actividad, descripcion, fecha_inicio, 
+        fecha_fin, encargado, hora_inicio, hora_fin  
+        FROM eventos
+        WHERE estatus_evento = 1
+        AND semestre=(SELECT max(semestre) FROM eventos)
+        AND fecha_inicio > '".date('Y-m-d')."'";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
 
 }
