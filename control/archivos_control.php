@@ -55,12 +55,13 @@ function archivosAlumno($id,$estatus){
     return$data;
 }
 
-function modificaestadoarchivo($id_usuario,$id_archivo,$notas,$estatus){
+function modificaestadoarchivo($id_usuario,$id_archivo,$notas,$estatus,$id_admin){
     include_once "../model/archivos.php";
     $obj_archivos = new archivos();
     $obj_archivos->setIdUsuario($id_usuario);
     $obj_archivos->setIdArchivo($id_archivo);
     $obj_archivos->setNotas($notas);
+    $obj_archivos->setIdAdmin($id_admin);
     $obj_archivos->setEstatusAprobado($estatus);
     return $obj_archivos->ModificaEstatusARchivo();
 }

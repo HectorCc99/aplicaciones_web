@@ -36,10 +36,11 @@ $(document).on("click",".aceptar_doc",function () {
     let notasid=$(this)[0];
     let numeracion=$(notasid).attr("numero");
     let notas= $("#notas"+numeracion).val();
+    let id_Admin=$("#id_Admin").val();
     let estatus=1;
     $.post(
         "./control/modifica_estatus_documentos.php",
-        {id_usuario,id_archivo,notas,estatus},
+        {id_usuario,id_archivo,notas,estatus,id_Admin},
         function (responsive){
             //console.log(responsive);
             archivos_usuario(id_usuario,0);

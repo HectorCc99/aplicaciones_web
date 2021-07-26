@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+session_start();
+if(empty($_SESSION['id_Admin'])) {
+    header('location: home.php');
+}
+?><!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -63,6 +68,7 @@
                     <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                         <h1 class="mt-5 mb-3"><strong>Documentación</strong></h1>
                         <p style="font-size: 20px; text-transform: uppercase;">Alumnos</p>
+                        <input type="hidden" name="id_Admin" id="id_Admin" value="<?php echo $_SESSION['id_Admin'] ?>">
                     </div>
                 </div>
             </div>

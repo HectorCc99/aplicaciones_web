@@ -257,7 +257,7 @@ class archivos extends CONEXION_M
         return $result;
     }
     function ModificaEstatusARchivo(){
-        $query = "UPDATE `archivos` SET `notas`='".$this->getNotas()."',`estatus_aprobado`='".$this->getEstatusAprobado()."' WHERE  `id_archivo`=".$this->getIdArchivo()." AND `id_usuario`=".$this->getIdUsuario();
+        $query = "UPDATE `archivos` SET `id_administrador`='".$this->getIdAdmin()."', `notas`='".$this->getNotas()."',`estatus_aprobado`='".$this->getEstatusAprobado()."' WHERE  `id_archivo`=".$this->getIdArchivo()." AND `id_usuario`=".$this->getIdUsuario();
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();
