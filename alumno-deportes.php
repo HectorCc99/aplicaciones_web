@@ -173,6 +173,7 @@ if(empty($_SESSION['id_usuario'])) {
         </script>
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <script src="js/validacionDocumentacion.js"></script>
         <script src="js/actividades_deportivas.js"></script>
 
     </body>
