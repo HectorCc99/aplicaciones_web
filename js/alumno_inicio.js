@@ -1,8 +1,39 @@
 $(document).ready(function () {
+    validarEstatus();
     historialInscripcionesAnteriores();
     inscripcionesActuales();
     tablaEstatusDocumentos();
+
 });
+function validarEstatus(){
+
+    let id_usuario = $("#id_usuario").val();
+    $.ajax({
+        url:"./control/validacion_archivos.php",
+        data: {
+            id_alumno: id_usuario,
+            filtro:2
+        },
+        type: "POST",
+        success: function (response) {
+            let obj_result=JSON.parse(response);
+            var count="";
+            if (obj_result.length > 0) {
+                obj_result.forEach((obj_result => {
+                    count++;
+                    if (count < 4) {
+                        document.getElementById("alertMensajeInicio").style.display = 'block';
+                    } else if ( count ==4) {
+                        document.getElementById("alertMensajeInicio").style.display = 'none';
+                    }
+                }))
+            }else{
+                document.getElementById("alertMensajeInicio").style.display = 'block';
+            }
+
+        }
+    })
+}
 
 function historialInscripcionesAnteriores(){
     let id_usuario = $("#id_usuario").val();

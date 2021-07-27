@@ -2,9 +2,44 @@
 $(document).ready(function (){
     ListaMateriales();
     lista_desplegable();
-})
+    validacionEstatus();
+});
 
+function validacionEstatus(){
+    let id_alumno=$("#id_alumno").val();
+    $.ajax({
+        url:"./control/validacion_archivos.php",
+        data: {
+            id_alumno: id_alumno,
+            filtro:1
+        },
+        type: "POST",
+        success: function (response) {
+            let obj_result=JSON.parse(response);
 
+            var count="";
+            if (obj_result.length > 0) {
+                obj_result.forEach((obj_result => {
+                    count++;
+
+                    if (count == 1) {
+
+                        document.getElementById("alertaAM").style.display = 'none';
+                        document.getElementById("btnSolicitarMaterial").disabled = false;
+                        document.getElementById("btnReservarEspacio").disabled = false;
+
+                    }
+                }))
+            }else{
+                document.getElementById("alertaAM").style.display = 'block';
+                document.getElementById("btnSolicitarMaterial").disabled = true;
+                document.getElementById("btnReservarEspacio").disabled = true;
+
+            }
+
+        }
+    })
+}
 
 $(document).on("click",".reservar_materiales",function () {
     let id_alumno=$("#id_alumno").val();

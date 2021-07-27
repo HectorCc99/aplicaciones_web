@@ -74,4 +74,20 @@ function revisarEstadoDocAlumno($id){
     $data=json_encode($result);
     return$data;
 }
+function estatusCredencial($id){
+    include_once "../model/archivos.php";
+    $obj_archivos = new archivos();
+    $obj_archivos->setIdUsuario($id);
+    $result = $obj_archivos->estatusCredencial();
+    $data=json_encode($result);
+    return$data;
+}
+function archivosAceptados($id){
+    include_once "../model/archivos.php";
+    $obj_archivos = new archivos();
+    $obj_archivos->setIdUsuario($id);
+    $result = $obj_archivos->archivosAceptados();
+    $data=json_encode($result);
+    return$data;
+}
 //echo revisarEstadoDocAlumno(2);

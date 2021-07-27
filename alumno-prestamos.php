@@ -79,8 +79,11 @@ if(empty($_SESSION['id_usuario'])) {
                     <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                         <h1 class="mt-5">Solicitar</h1>
                         <p>Material y/o Área Deportiva</p>
-                        <!--<input type="text" name="id_alumno" value="<?php //echo $_SESSION['alumno']; ?>">-->
-                        <input type="hidden" name="id_alumno" id="id_alumno" value="1">
+                        <input type="hidden" id="id_alumno" value="<?php echo $_SESSION['id_usuario']; ?>">
+                        <!--<input type="hidden" name="id_alumno" id="id_alumno" value="1">-->
+                        <div class="alert alert-warning" role="alert" style="width: 100%" id="alertaAM">
+                            ¡Para poder reservar una área o solicitar un material primero debes subir tu credencial y debe estar con estatus de aceptado!
+                        </div>
                     </div>
                 </div>
             </div>
@@ -96,7 +99,7 @@ if(empty($_SESSION['id_usuario'])) {
                                     <h5 class="card-title font-weight-bold">Solicitar Material Deportivo</h5>
                                     <p class="card-text text-muted">En este apartado puedes solicitar material deportivo disponible.</p>
                                     <a href="#" data-toggle="modal" data-target="#modalMaterial">
-                                        <button class="btn btn-primary align-self-center">Solicitar</button>
+                                        <button class="btn btn-primary align-self-center" id="btnSolicitarMaterial">Solicitar</button>
                                     </a>
                                 </div>
                             </div>
@@ -114,7 +117,7 @@ if(empty($_SESSION['id_usuario'])) {
                                     <h5 class="card-title font-weight-bold">Reservar Área Deportiva</h5>
                                     <p class="card-text text-muted">En este apartado puedes reservar un área deportiva por tiempo definido.</p>
                                     <a href="#" data-toggle="modal" data-target="#modalArea">
-                                        <button class="btn btn-primary align-self-center">Reservar</button>
+                                        <button class="btn btn-primary align-self-center" id="btnReservarEspacio">Reservar</button>
                                     </a>
                                 </div>
                             </div>

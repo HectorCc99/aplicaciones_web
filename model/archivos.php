@@ -274,4 +274,30 @@ class archivos extends CONEXION_M
         $this->close();
         return $result;
     }
+//Estatus archivo
+    function estatusCredencial(){
+        $query="SELECT a.id_archivo, a.tipo_archivo, a.estatus_aprobado
+                FROM archivos a, usuario u
+                WHERE a.id_usuario = u.id_usuario
+                AND tipo_archivo = 'Credencial_escolar' AND estatus_aprobado = 1  
+                AND a.semestre=(SELECT MAX(semestre) FROM archivos)
+                AND u.id_usuario ='".$this->getIdUsuario()."'";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+    function archivosAceptados(){
+        $query="SELECT a.id_archivo, a.tipo_archivo, a.estatus_aprobado
+                FROM archivos a, usuario u
+                WHERE a.id_usuario = u.id_usuario
+                AND estatus_aprobado = 1
+                AND tipo_archivo IN ('Tira de Materias','Seguro de estudiante','Seguro Axa','Credencial_escolar') 
+                AND a.semestre=(SELECT MAX(semestre) FROM archivos)
+                AND u.id_usuario ='".$this->getIdUsuario()."'";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
 }

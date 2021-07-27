@@ -83,7 +83,7 @@ if(empty($_SESSION['id_usuario'])) {
                     <h1 class="mt-5 mb-3"><strong>Bienvenid@</strong></h1>
                 </div>
             </div>
-            <div class="alert alert-warning" role="alert" style="width: 100%">
+            <div class="alert alert-warning" role="alert"  style="width: 100%" id="alertMensajeInicio" >
                 ¡Para poder inscribir un deporte primero debes subir toda tu documentación!
             </div>
         </div>
