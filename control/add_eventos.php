@@ -1,8 +1,6 @@
 <?php
 
-if(/*isset($_POST['evento']) && isset($_POST['encargado']) && isset($_POST['telefonoEv']) && isset($_POST['semEv']) && isset($_POST['lugarEv'])
-    && isset($_POST['materialEv'])&& isset($_POST['cantidadEv']) && isset($_POST['descripcionEv']) && isset($_POST['fecha_inicio'])
-    && isset($_POST['fecha_cierre']) && isset($_POST['hora_inicio']) && isset($_POST['hora_cierre']) &&*/ isset($_FILES['poster'])){
+if(isset($_FILES['poster'])){
 
     include_once "eventos_control.php";
     $evento =$_POST['evento'];

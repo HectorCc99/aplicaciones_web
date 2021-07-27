@@ -1,4 +1,9 @@
-
+<?php
+session_start();
+if(empty($_SESSION['id_Admin'])) {
+    header('location: home.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -84,6 +89,8 @@
                     </table>
                 </div>
             </div>
+            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalAgregar">Agregar Deporte</button>
+
         </div>
         <!--Fin Tabla-->
         <!--Inicia Modal Editar datos -->
@@ -149,6 +156,72 @@
             </div>
         </div>
         <!--Fin Modal Editar datos -->
+        <!--Inicia Modal Agregar datos -->
+        <div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <form action="control/agregar_deporte.php" method="POST" enctype="multipart/form-data" >
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="staticBackdropLabel"><strong>Agregar Deporte</strong></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <p class="font-weight-bold">Ingrese los siguientes datos:</p>
+                                    <input type="text" name="id_admin_alta" value="<?php echo $_SESSION['id_Admin']; ?>">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <label for="nombre" class="col-form-label">Nombre:</label>
+                                </div>
+                                <div class="col-sm-9" id="nombre_ac_m">
+                                    <input type="text" name="Nombre2" id="nombre2" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3" >
+                                    <label for="descripcion" class="col-form-label">Descripción:</label>
+                                </div>
+                                <div class="col-sm-9" id="descr_m">
+                                    <textarea name="descripcion2" id="descripcion2" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3" >
+                                    <label for="categoria" class="col-form-label">Categoría:</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <select  name="tipos2" id="tipos2" class="form-control">
+                                        <!-- ajax-->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <label for="imagen" class="col-form-label ml-1">Imagen:</label>
+                                </div>
+                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="imagen" id="poster" accept="image/png,image/jpeg,image/jpg" required>
+                                        <label class="custom-file-label" for="poster" data-browse="Buscar">Seleccione un archivo</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary " >Guardar</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--Fin Modal Agregar datos -->
         <!-- Footer Start -->
         <div class="footer wow fadeIn" data-wow-delay="0.3s">
             <div class="container-fluid">

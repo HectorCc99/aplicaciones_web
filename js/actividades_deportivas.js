@@ -3,6 +3,7 @@
 $(document).ready(function () {
     if(tabla){
         TablaActividades();
+        lista_tipo_Act();
     }else{
         if(deportes){
             deportesalumno(0);
@@ -390,6 +391,8 @@ function lista_tipo_Act(){
                     }
                 );
                 $("#tipos").html(template);
+                $("#tipos2").html(template);
+
             }
         }
     );

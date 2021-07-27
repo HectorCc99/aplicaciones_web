@@ -150,6 +150,24 @@ class actividades_deportivas extends CONEXION_M
         return $result;
     }
 
+    function subirImagen($nombreArchivo, $Archivo)
+    {
+        $carpeta = "../img";
+        $carpeta2="./img";
+        if (!file_exists($carpeta)) {
+            if(!mkdir("$carpeta", 0777, true) ){
+                echo "error al crear la carpeta";
+            }
+        }
+        $ruta = $carpeta. '/' .$nombreArchivo;
+        $ruta2=$carpeta2. '/' .$nombreArchivo;
+        if(move_uploaded_file($Archivo, $ruta)){
+            return $ruta2;
+        }else{
+            return false;
+        }
+
+    }
 
     function ListactividadDeportivas($tipo)
     {
@@ -190,11 +208,11 @@ class actividades_deportivas extends CONEXION_M
         return $result;
     }
 
-    function agregaActividadDepot(){
+    function agregaActividadDepot($path){
         $query ="INSERT INTO `actividad_recreativa`(`id_actividad`, `id_administrador`, 
-                              `nombre_actividad`, `descripcion`, `fecha_creacion`, `tipo_actividad`, `estatus_actividad`) 
+                              `nombre_actividad`, `descripcion`, `fecha_creacion`, `tipo_actividad`, `estatus_actividad`,`img`) 
                               VALUES (NULL,'".$this->getIdAdministradorFk()."','".$this->getNombreAct()."','".$this->getDescripcion()."',
-                              '".date('Y-m-d H:i:s')."','".$this->getTipoActividad()."','".$this->getEstatusActividad()."');";
+                              '".date('Y-m-d H:i:s')."','".$this->getTipoActividad()."','".$this->getEstatusActividad()."','".$path."');";
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();

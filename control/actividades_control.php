@@ -42,7 +42,8 @@ function listtipoact(){
     $json_data = json_encode($result);
     return $json_data;
 }
-function registroActividad($id_admin,$nombre,$descripcion,$tipo){
+
+function registroActividad($id_admin,$nombre,$descripcion,$tipo,$nombreArchivo,$Archivo){
     include_once "../model/actividades_deportivas.php";
     //`id_actividad`, `id_administrador`,`nombre_actividad`, `descripcion`, `fecha_creacion`, `tipo_actividad`, `estatus_actividad`
     $obj_actividad= new actividades_deportivas();
@@ -51,7 +52,9 @@ function registroActividad($id_admin,$nombre,$descripcion,$tipo){
     $obj_actividad->setDescripcion($descripcion);
     $obj_actividad->setTipoActividad($tipo);
     $obj_actividad->setEstatusActividad(1);
-    return $obj_actividad->agregaActividadDepot()?"Se agregó correctamente la actividad":"No se pudo agregar la actividad";
+    if($path=$obj_actividad->subirImagen($nombreArchivo,$Archivo)){
+        return $obj_actividad->agregaActividadDepot($path);
+    }
 }
 function modificaActividad($id,$nombre,$descripcion,$tipo){
     include_once "../model/actividades_deportivas.php";
