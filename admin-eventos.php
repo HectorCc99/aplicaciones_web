@@ -204,7 +204,7 @@ if(empty($_SESSION['id_Admin'])) {
                                 <div class="card-header" id="headingOne">
                                     <h2 class="mb-0">
                                         <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Mas Materiales
+                                            Agregar más Materiales
                                         </button>
                                     </h2>
                                 </div>
@@ -258,7 +258,7 @@ if(empty($_SESSION['id_Admin'])) {
 
 
 
-                        <div class="form-group row">
+                        <div class="form-group row mt-3">
                             <div class="col-sm-4 mb-3 mb-sm-0">
                                 <label for="descripcion" class="col-form-label ml-1">Descripción:</label>
                             </div>
@@ -420,7 +420,7 @@ if(empty($_SESSION['id_Admin'])) {
                                 <div class="card-header" id="headingOne">
                                     <h2 class="mb-0">
                                         <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Mas Materiales
+                                            Agregar más Materiales
                                         </button>
                                     </h2>
                                 </div>
@@ -474,7 +474,7 @@ if(empty($_SESSION['id_Admin'])) {
 
 
 
-                        <div class="form-group row">
+                        <div class="form-group row mt-3">
                             <div class="col-sm-3 mb-3 mb-sm-0">
                                 <label for="descripcion" class="col-form-label ml-1">Descripción:</label>
                             </div>
