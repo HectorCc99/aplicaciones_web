@@ -117,6 +117,10 @@ if(empty($_SESSION['id_Admin'])) {
                             <div class="row">
                                 <div class="col-sm-12">
                                     <p class="font-weight-bold">Ingrese los siguientes datos:</p>
+
+                                    //POR SI SE UTILIZA
+                                    <input type="text" name="id_admin" value="<?php echo $_SESSION['id_Admin']; ?>">
+
                                 </div>
                             </div>
                             <div class="form-group row">

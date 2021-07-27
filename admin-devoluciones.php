@@ -106,7 +106,7 @@ if(empty($_SESSION['id_Admin'])) {
                     <div class="modal-body">
 
                         //POR SI SE UTILIZA
-                        <input type="text" name="id_admin_alta" value="<?php echo $_SESSION['id_Admin']; ?>">
+                        <input type="text" name="id_admin" value="<?php echo $_SESSION['id_Admin']; ?>">
 
                             <div class="row">
                                 <div class="col-sm-12">
