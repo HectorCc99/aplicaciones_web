@@ -171,7 +171,7 @@ if(empty($_SESSION['id_Admin'])) {
                             <div class="row">
                                 <div class="col-sm-12">
                                     <p class="font-weight-bold">Ingrese los siguientes datos:</p>
-                                    <input type="text" name="id_admin_alta" value="<?php echo $_SESSION['id_Admin']; ?>">
+                                    <input type="hidden" name="id_admin_alta" value="<?php echo $_SESSION['id_Admin']; ?>">
                                 </div>
                             </div>
                             <div class="form-group row">
