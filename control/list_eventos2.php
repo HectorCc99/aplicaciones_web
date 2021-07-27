@@ -25,7 +25,7 @@ if(isset($_POST['filtro'])){
                 $fechaf=$_POST['fecha_cierreEd'];
                 $horai=$_POST['hora_inicioEd'];
                 $horac=$_POST['hora_cierreEd'];
-                $id_admin=1; //Dato temporal, Se tomara cuando se trabaje con sesiones?
+                $id_admin=$_POST['id_admin'];
 
                 $nombreArchivo = $_FILES['posterEd']['name'];
                 $Archivo = $_FILES['posterEd']['tmp_name'];

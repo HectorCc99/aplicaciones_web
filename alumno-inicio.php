@@ -193,7 +193,7 @@ if(empty($_SESSION['id_usuario'])) {
                         <div class="form-group row">
                             <div class="col-sm-4 mb-3 mb-sm-0">
                                 <input type="hidden" name="id_usuario" id="id_usuario" class="form-control ml-2" value="<?php echo $_SESSION['id_usuario']; ?>">
-                                <input type="text" name="semestre" id="semestre" value="<?php echo "2021-1"; ?>">
+                                <input type="hidden" name="semestre" id="semestre" value="<?php echo "2021-1"; ?>">
                                 <label for="tira" class="col-form-label">Tira de Materias:</label>
                             </div>
                             <div class="col-lg-8 mb-3 mb-sm-0 mt-1">
