@@ -51,20 +51,24 @@ $(document).on("click",".aceptar_doc",function () {
 });
 
 $(document).on("click",".rechazar_doc",function () {
-
     //Accedo al tr y el tr tiene un atributo de id
     let id_usuario=$("#id_us").val();
     let element =$(this)[0].parentElement;
     let id_archivo=$(element).attr('id_archivo');
     let notasid=$(this)[0];
     let numeracion=$(notasid).attr("numero");
-    let notas= $("#notas"+numeracion).val();
+    let notas="";
+    notas=$("#notas"+numeracion).val();
+    let id_Admin=$("#id_Admin").val();
+    if(notas==""){
+        notas="Sin notas";
+    }
     let estatus=2;
     $.post(
         "./control/modifica_estatus_documentos.php",
-        {id_usuario,id_archivo,notas,estatus},
+        {id_usuario,id_archivo,notas,estatus,id_Admin},
         function (responsive){
-            //console.log(responsive);
+            console.log(responsive);
             archivos_usuario(id_usuario,0);
             doc_pendientes();
             docs_revisados();
@@ -101,9 +105,9 @@ function archivos_usuario(id,estatus){
                 obj_result.forEach((obj_result=>{
                     cont++;
                     if(obj_result.estatus_aprobado==1){
-                        icono=`<img src="./icons/check.svg" alt="..." width="24px">`;
+                        icono=`<img src="./iconos/check.svg" alt="..." width="24px">`;
                     }else{
-                        icono=`<img src="./icons/cross.svg" alt="..." width="24px">`;
+                        icono=`<img src="./iconos/cross.svg" alt="..." width="24px">`;
                     }
                     if(obj_result.estatus_aprobado==2){
                         notas_archivo=`<div className="form-group row">
@@ -133,7 +137,7 @@ function archivos_usuario(id,estatus){
                                 </div>
                                  <div class="btn-group" role="group" aria-label="Basic example"id_archivo="${obj_result.id_archivo}" >
                                         <button type="button" class="btn btn-success aceptar_doc" numero="${cont}">Aceptar</button>
-                                        <button type="button" class="btn btn-danger rechazar_doc">Rechazar</button>                                    
+                                        <button type="button" class="btn btn-danger rechazar_doc" numero="${cont}">Rechazar</button>                                    
                                  </div>
                              </div>
                         </div>`;
@@ -160,7 +164,7 @@ function archivos_usuario(id,estatus){
 
             }else{
                 // vaciamos el contenedor de la tabla (DIV)
-                $("#contenedor_tabla").empty();
+                $("#contenido_modal").empty();
                 // creamos un contenedor con un mensaje para el usuario
                 template=`<div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <strong>¡Felicidades!</strong> Ya no hay mas documentos por revisar, vuelva mas tarde.
@@ -169,7 +173,7 @@ function archivos_usuario(id,estatus){
                                 </button>
                             </div>`;
                 //se asigna al contenedor de la tabla
-                $("#contenedor_tabla").html(template);
+                $("#contenido_modal").html(template);
             }
         }
     });
@@ -274,18 +278,14 @@ function docs_revisados(){
                 }));
                 //se asigna al cuerpo de la tabla
                 $("#tabla_aceptados").html(template);
+                $("#contenedor_tabla2").show();
+                $("#alerta").hide();
             }else{
                 // vaciamos el contenedor de la tabla (DIV)
-                $("#contenedor_tabla2").empty();
+                $("#contenedor_tabla2").hide();
                 // creamos un contenedor con un mensaje para el usuario
-                template=`<div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <strong>¡Felicidades!</strong> no hay documentos  revisados, vuelva mas tarde.
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>`;
                 //se asigna al contenedor de la tabla
-                $("#contenedor_tabla2").html(template);
+                $("#alerta").show();
             }
         }
     })

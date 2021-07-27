@@ -24,4 +24,4 @@
         echo agregarArchivo($id_alumno,$seguro_estudiante2,$semestre,$seguro_estudiante3,$seguro_estudiante);
         echo agregarArchivo($id_alumno,$seguro_axa2,$semestre,$seguro_axa3,$seguro_axa);
         echo agregarArchivo($id_alumno,$credencial_escolar2,$semestre,$credencial_escolar3,$credencial_escolar);
-header('Location: ../alumno-inicio.php');
+header('Location: ./alumno-inicio.php');

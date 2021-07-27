@@ -31,11 +31,11 @@ if(empty($_SESSION['id_Admin'])) {
                     <div class="col-md-12">
                         <div class="top-bar-left">
                             <div class="text">
-                                <img src="./icons/mail.png" alt="" width="20px">
+                                <img src="iconos/mail.png" alt="" width="20px">
                                 <h2 class="ml-2">osc_basquet@hotmail.com</h2>
                             </div>
                             <div class="text">
-                                <img src="./icons/phone.png" alt="" width="18px">
+                                <img src="iconos/phone.png" alt="" width="18px">
                                 <p></p>
                                 <h2>5623 1813</h2>
                             </div>
@@ -54,10 +54,10 @@ if(empty($_SESSION['id_Admin'])) {
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.php" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
-                        <a href="admin-menu.php" class="nav-item nav-link mr-5"><img src="./icons/menu.svg" alt="" width="18px"><span class="ml-2">Menú</span></a>
-                        <a href="admin-perfil.php" class="nav-item nav-link mr-5"><img src="./icons/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
-                         <a href="control/cerrarSesion.php?cerrar=yes" class="nav-item nav-link mr-5"><img src="./icons/logout.png" alt="" width="18px"><span class="ml-2">Cerrar Sesión</span></a>
+                        <a href="index.php" class="nav-item nav-link mr-5"><img src="iconos/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
+                        <a href="admin-menu.php" class="nav-item nav-link mr-5"><img src="iconos/menu.svg" alt="" width="18px"><span class="ml-2">Menú</span></a>
+                        <a href="admin-perfil.php" class="nav-item nav-link mr-5"><img src="iconos/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
+                         <a href="control/cerrarSesion.php?cerrar=yes" class="nav-item nav-link mr-5"><img src="iconos/logout.png" alt="" width="18px"><span class="ml-2">Cerrar Sesión</span></a>
                     </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@ if(empty($_SESSION['id_Admin'])) {
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
                         <div class="categorias-item">
                             <div class="categorias-img">
-                                <img src="./icons/combate.png" alt="" width="50px">
+                                <img src="iconos/combate.png" alt="" width="50px">
                             </div>
                             <h3>Combate</h3>
                             <p>
@@ -108,7 +108,7 @@ if(empty($_SESSION['id_Admin'])) {
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="categorias-item">
                             <div class="categorias-img">
-                                <img src="./icons/ball.png" alt="" width="50px">
+                                <img src="iconos/ball.png" alt="" width="50px">
                             </div>
                             <h3>Conjunto con Pelota</h3>
                             <p>
@@ -120,7 +120,7 @@ if(empty($_SESSION['id_Admin'])) {
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
                         <div class="categorias-item">
                             <div class="categorias-img">
-                                <img src="./icons/body.png" alt="" width="50px">
+                                <img src="iconos/body.png" alt="" width="50px">
                             </div>
                             <h3>Individuales</h3>
                             <p>
@@ -132,7 +132,7 @@ if(empty($_SESSION['id_Admin'])) {
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                         <div class="categorias-item">
                             <div class="categorias-img">
-                                <img src="./icons/fitness.png" alt="" width="50px">
+                                <img src="iconos/fitness.png" alt="" width="50px">
                             </div>
                             <h3>Fitness</h3>
                             <p>
@@ -144,7 +144,7 @@ if(empty($_SESSION['id_Admin'])) {
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
                         <div class="categorias-item">
                             <div class="categorias-img">
-                                <img src="./icons/health.png" alt="" width="50px">
+                                <img src="iconos/health.png" alt="" width="50px">
                             </div>
                             <h3>Programas Integrales para Mejorar la Salud</h3>
                             <p>
@@ -251,7 +251,7 @@ if(empty($_SESSION['id_Admin'])) {
             </div>
         </div>
         <!-- Footer End -->
-        <a href="#" class="back-to-top"><img src="./icons/arrow-up.png" alt="" width="40px"></a>
+        <a href="#" class="back-to-top"><img src="iconos/arrow-up.png" alt="" width="40px"></a>
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>

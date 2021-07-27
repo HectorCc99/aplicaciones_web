@@ -189,14 +189,13 @@ class archivos extends CONEXION_M
     // sube el archivo a una carpeta
     function subir_Archivo($id_usuario,$nombreArchivo,$Archivo)
     {
-
-        $carpeta = "./control/archivos_subidos/" .$id_usuario;
+        $carpeta = "../control/archivos_subidos/".$id_usuario;
         if (!file_exists($carpeta)) {
-            if(!mkdir(".$carpeta", 0777, true) ){
+            if(!mkdir("$carpeta", 0777, true) ){
                 echo "error al crear la carpeta";
             }
         }
-        $ruta = $carpeta . '/' .$nombreArchivo;
+        $ruta = $carpeta .'/'.$nombreArchivo;
         if(move_uploaded_file($Archivo, $ruta)){
             return $ruta;
         }else{

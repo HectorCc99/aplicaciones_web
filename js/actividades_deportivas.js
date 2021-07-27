@@ -79,7 +79,7 @@ function deportesindex(tipo){
                             </div>
                             <div class="class-text">
                                 <div class="class-teacher">
-                                    <img src="icons/teacher.svg" alt="Image">
+                                    <img src="iconos/teacher.svg" alt="Image">
                                     <h3>${obj_result.profesor}</h3>
                                     <a href="login.php">+</a>
                                 </div>
@@ -172,7 +172,7 @@ function deportesalumno(tipo){
                             </div>
                             <div class="class-text">
                                 <div class="class-teacher">
-                                    <img src="icons/teacher.svg" alt="Image">
+                                    <img src="iconos/teacher.svg" alt="Image">
                                     <h3>${obj_result.profesor}</h3>
                                     <a href="#" data-toggle="modal" class="inscribir" id_grupo="${obj_result.id_grupo}"  semestre="${obj_result.semestre}"data-target="#modalSolicitud">+</a>
                                 </div>

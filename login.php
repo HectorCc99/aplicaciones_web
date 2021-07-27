@@ -43,11 +43,11 @@ if (isset($_SESSION['id_usuario']) || isset($_SESSION['id_Admin'])) {
                 <div class="col-md-12">
                     <div class="top-bar-left">
                         <div class="text">
-                            <img src="./icons/mail.png" alt="" width="20px">
+                            <img src="iconos/mail.png" alt="" width="20px">
                             <h2 class="ml-2">osc_basquet@hotmail.com</h2>
                         </div>
                         <div class="text">
-                            <img src="./icons/phone.png" alt="" width="18px">
+                            <img src="iconos/phone.png" alt="" width="18px">
                             <p></p>
                             <h2>5623 1813</h2>
                         </div>
@@ -142,7 +142,7 @@ if (isset($_SESSION['id_usuario']) || isset($_SESSION['id_Admin'])) {
         </div>
     </div>
     <!-- Footer End -->
-    <a href="#" class="back-to-top"><img src="./icons/arrow-up.png" alt="" width="40px"></a>
+    <a href="#" class="back-to-top"><img src="iconos/arrow-up.png" alt="" width="40px"></a>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>

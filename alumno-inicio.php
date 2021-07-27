@@ -32,11 +32,11 @@ if(empty($_SESSION['id_usuario'])) {
                 <div class="col-md-12">
                     <div class="top-bar-left">
                         <div class="text">
-                            <img src="./icons/mail.png" alt="" width="20px">
+                            <img src="./iconos/mail.png" alt="" width="20px">
                             <h2 class="ml-2">osc_basquet@hotmail.com</h2>
                         </div>
                         <div class="text">
-                            <img src="./icons/phone.png" alt="" width="18px">
+                            <img src="./iconos/phone.png" alt="" width="18px">
                             <p></p>
                             <h2>5623 1813</h2>
                         </div>
@@ -55,7 +55,7 @@ if(empty($_SESSION['id_usuario'])) {
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto">
-                    <a href="indexus.php" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="24px"></a>
+                    <a href="indexus.php" class="nav-item nav-link mr-5"><img src="./iconos/home.svg" alt="" width="24px"></a>
                     <a href="alumno-inicio.php" class="nav-item nav-link mr-5">Inicio</a>
                     <a href="alumno-deportes.php" class="nav-item nav-link mr-5">Deportes</a>
                     <a href="alumno-prestamos.php" class="nav-item nav-link mr-5">Préstamos</a>
@@ -94,7 +94,7 @@ if(empty($_SESSION['id_usuario'])) {
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-3">
-                                <img src="./icons/doc.svg" alt="" width="100px">
+                                <img src="./iconos/doc.svg" alt="" width="100px">
                             </div>
                             <div class="col-lg-9">
                                 <h5 class="card-title font-weight-bold">Subir Documentación</h5>
@@ -112,7 +112,7 @@ if(empty($_SESSION['id_usuario'])) {
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-3">
-                                <img src="./icons/check.svg" alt="" width="100px">
+                                <img src="./iconos/check.svg" alt="" width="100px">
                             </div>
                             <div class="col-lg-9">
                                 <h5 class="card-title font-weight-bold">Estatus de Documentos</h5>
@@ -309,7 +309,7 @@ if(empty($_SESSION['id_usuario'])) {
         </div>
     </div>
     <!-- Footer End -->
-    <a href="#" class="back-to-top"><img src="./icons/arrow-up.png" alt="" width="40px"></a>
+    <a href="#" class="back-to-top"><img src="./iconos/arrow-up.png" alt="" width="40px"></a>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>

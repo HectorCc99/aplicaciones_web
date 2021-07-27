@@ -75,11 +75,11 @@ if(empty($_SESSION['id_Admin'])) {
                     <div class="col-md-12">
                         <div class="top-bar-left">
                             <div class="text">
-                                <img src="./icons/mail.png" alt="" width="20px">
+                                <img src="iconos/mail.png" alt="" width="20px">
                                 <h2 class="ml-2">osc_basquet@hotmail.com</h2>
                             </div>
                             <div class="text">
-                                <img src="./icons/phone.png" alt="" width="18px">
+                                <img src="iconos/phone.png" alt="" width="18px">
                                 <p></p>
                                 <h2>5623 1813</h2>
                             </div>
@@ -98,10 +98,10 @@ if(empty($_SESSION['id_Admin'])) {
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.php" class="nav-item nav-link mr-5"><img src="./icons/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
-                        <a href="admin-menu.php" class="nav-item nav-link mr-5"><img src="./icons/menu.svg" alt="" width="18px"><span class="ml-2">Menú</span></a>
-                        <a href="admin-perfil.php" class="nav-item nav-link mr-5"><img src="./icons/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
-                        <a href="control/cerrarSesion.php?cerrar=yes" class="nav-item nav-link mr-5"><img src="./icons/logout.png" alt="" width="18px"><span class="ml-2">Cerrar Sesión</span></a>
+                        <a href="index.php" class="nav-item nav-link mr-5"><img src="iconos/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
+                        <a href="admin-menu.php" class="nav-item nav-link mr-5"><img src="iconos/menu.svg" alt="" width="18px"><span class="ml-2">Menú</span></a>
+                        <a href="admin-perfil.php" class="nav-item nav-link mr-5"><img src="iconos/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
+                        <a href="control/cerrarSesion.php?cerrar=yes" class="nav-item nav-link mr-5"><img src="iconos/logout.png" alt="" width="18px"><span class="ml-2">Cerrar Sesión</span></a>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@ if(empty($_SESSION['id_Admin'])) {
                 <div class="col-lg-3">
                     <div class="buttons"> 
                         <a href="./activ_deportivas.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 1;">
-                            <img src="./icons/sports.svg" alt="" width="80px">
+                            <img src="iconos/sports.svg" alt="" width="80px">
                             <br><label>Actividades Deportivas</label>
                         </a>
                     </div>
@@ -128,7 +128,7 @@ if(empty($_SESSION['id_Admin'])) {
                 <div class="col-lg-3">
                     <div class="buttons"> 
                         <a href="./admin-eventos.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 2;">
-                            <img src="./icons/concert.svg" alt="" width="80px">
+                            <img src="iconos/concert.svg" alt="" width="80px">
                             <br><label>Información de Eventos</label>
                         </a> 
                     </div>
@@ -136,7 +136,7 @@ if(empty($_SESSION['id_Admin'])) {
                 <div class="col-lg-3">
                     <div class="buttons"> 
                         <a href="./inventario_material.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 3;">
-                            <img src="./icons/inventory.svg" alt="" width="80px">
+                            <img src="iconos/inventory.svg" alt="" width="80px">
                             <br><label>Inventario de Materiales</label>
                         </a> 
                     </div>
@@ -144,7 +144,7 @@ if(empty($_SESSION['id_Admin'])) {
                 <div class="col-lg-3">
                     <div class="buttons"> 
                         <a href="./admin-horarios.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 4;">
-                            <img src="./icons/calendar.svg" alt="" width="80px">
+                            <img src="iconos/calendar.svg" alt="" width="80px">
                             <br><label>Horarios de Deportes</label>
                         </a> 
                     </div>
@@ -154,7 +154,7 @@ if(empty($_SESSION['id_Admin'])) {
                 <div class="col-lg-3">
                     <div class="buttons"> 
                         <a href="./admin-prestamos-materiales.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 5;">
-                            <img src="./icons/materials.svg" alt="" width="80px">
+                            <img src="iconos/materials.svg" alt="" width="80px">
                             <br><label>Préstamos de Materiales</label>
                         </a>
                     </div>
@@ -162,7 +162,7 @@ if(empty($_SESSION['id_Admin'])) {
                 <div class="col-lg-3">
                     <div class="buttons"> 
                         <a href="./admin-reservaciones-areas.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 6;">
-                            <img src="./icons/field.svg" alt="" width="80px">
+                            <img src="iconos/field.svg" alt="" width="80px">
                             <br><label>Reservaciones de Áreas Deportivas</label>
                         </a> 
                     </div>
@@ -170,7 +170,7 @@ if(empty($_SESSION['id_Admin'])) {
                 <div class="col-lg-3">
                     <div class="buttons"> 
                         <a href="./admin-inscripciones.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 7;">
-                            <img src="./icons/monitor.svg" alt="" width="80px">
+                            <img src="iconos/monitor.svg" alt="" width="80px">
                             <br><label>Inscripciones a Deportes</label>
                         </a> 
                     </div>
@@ -178,7 +178,7 @@ if(empty($_SESSION['id_Admin'])) {
                 <div class="col-lg-3">
                     <div class="buttons">
                         <a href="./admin-documentacion-alumnos.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 8;">
-                            <img src="./icons/doc.svg" alt="" width="80px">
+                            <img src="iconos/doc.svg" alt="" width="80px">
                             <br><label>Documentación de Alumnos</label>
                         </a> 
                     </div>
@@ -188,7 +188,7 @@ if(empty($_SESSION['id_Admin'])) {
                 <div class="col-lg-3">
                     <div class="buttons"> 
                         <a href="./admin-devoluciones.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 9;">
-                            <img src="./icons/health-check.svg" alt="" width="80px">
+                            <img src="iconos/health-check.svg" alt="" width="80px">
                             <br><label>Devolución de Materiales</label>
                         </a> 
                     </div>
@@ -196,7 +196,7 @@ if(empty($_SESSION['id_Admin'])) {
                 <div class="col-lg-3">
                     <div class="buttons"> 
                         <a href="./admin-historial-prestamos.php" class="btn btn-primary btn-lg wow fadeInRight animated" data-wow-duration="3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 3s; animation-delay: 0.3s; animation-name: 10;">
-                            <img src="./icons/table.svg" alt="" width="80px">
+                            <img src="iconos/table.svg" alt="" width="80px">
                             <br><label>Historial de Préstamos</label>
                         </a> 
                     </div>
@@ -227,7 +227,7 @@ if(empty($_SESSION['id_Admin'])) {
             </div>
         </div>
         <!-- Footer End -->
-        <a href="#" class="back-to-top"><img src="./icons/arrow-up.png" alt="" width="40px"></a>
+        <a href="#" class="back-to-top"><img src="iconos/arrow-up.png" alt="" width="40px"></a>
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
