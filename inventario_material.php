@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(empty($_SESSION['id_usuario'])) {
+if(empty($_SESSION['id_Admin'])) {
     header('location: home.php');
 }
 ?>
