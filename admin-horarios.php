@@ -118,8 +118,8 @@ if(empty($_SESSION['id_Admin'])) {
                                 <div class="col-sm-12">
                                     <p class="font-weight-bold">Ingrese los siguientes datos:</p>
 
-                                    //POR SI SE UTILIZA
-                                    <input type="text" name="id_admin" value="<?php echo $_SESSION['id_Admin']; ?>">
+                                    <!--POR SI SE UTILIZA-->
+                                    <input type="hidden" name="id_admin" value="<?php echo $_SESSION['id_Admin']; ?>">
 
                                 </div>
                             </div>
