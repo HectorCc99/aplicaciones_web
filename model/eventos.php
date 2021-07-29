@@ -305,18 +305,20 @@ class eventos extends CONEXION_M
     }
 
     // mover el archivo a una carpeta
+
     function subirPoster($nombreArchivo, $Archivo)
     {
-
-        $carpeta = "./archivos_subidos".$nombreArchivo;
+        $carpeta = "./archivos_subidos/".$nombreArchivo;
+        $carpeta2="control/archivos_subidos/".$nombreArchivo;
         if (!file_exists($carpeta)) {
             if(!mkdir("$carpeta", 0777, true) ){
                 echo "error al crear la carpeta";
             }
         }
-        $ruta = $carpeta . '/' .$nombreArchivo;
+        $ruta = $carpeta .'/'.$nombreArchivo;
+        $ruta2=$carpeta2.'/'.$nombreArchivo;
         if(move_uploaded_file($Archivo, $ruta)){
-            return $ruta;
+            return $ruta2;
         }else{
             return false;
         }

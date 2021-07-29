@@ -124,9 +124,9 @@ class usuario_actividad extends CONEXION_M
     }
     // funciones propias
     function crearinscripcion(){
-        $query = "INSERT INTO `usuario_actividad`(`id_inscripcion`,`id_usuario`, `id_grupo`, `asistencia`, `fecha_inscripcion`, `año`) 
-                    VALUES ('".$this->getIdUsuario().$this->getIdActividad().$this->getAño()."','".$this->getIdUsuario()."','".$this->getIdActividad()."',".$this->getAsistencia().",'".date('Y-m-d H:i:s')."'
-                    ,'".$this->getAño()."')";
+        $query = "INSERT INTO `usuario_actividad` (`id_inscripcion`, `id_usuario`, `id_grupo`, `asistencia`, `fecha_inscripcion`, `año`, `estatus_inscripcion`) 
+                        VALUES ('".$this->getIdUsuario().$this->getIdActividad().$this->getAño()."', '".$this->getIdUsuario()."', '".$this->getIdActividad()."', 
+                        '".$this->getAsistencia()."', '".date('Y-m-d H:i:s')."', '".$this->getAño()."', '0');";
         $this->connect();
         $result = $this->executeInstruction($query);
         $this->close();

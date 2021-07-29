@@ -15,7 +15,8 @@ function eventoCarrucel(){
                 //console.log(response);
             obj_result.forEach((obj_result=>{
             cont++;
-                template += `<div class="card">
+                template += `
+                    <div class="col-lg-4"><div class="card">
                         <img src="${obj_result.imagen}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">${obj_result.nombre_actividad}</h5>
@@ -26,7 +27,7 @@ function eventoCarrucel(){
                             <p class="card-text">Descripción del evento: ${obj_result.descripcion}</p>
                             <p class="card-text"><span class="font-weight-bold">Encargado(a): </span>${obj_result.encargado}</p>
                         </div>
-                    </div>`;
+                    </div></div>`;
             }));
             $("#carrucelX").html(template);
 

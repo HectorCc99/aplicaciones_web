@@ -23,7 +23,6 @@ function  crear_asignacion($id_u,$id_act,$año){
     $obj_usuario->setIdActividad($id_act);
     $obj_usuario->setAsistencia(0);
     $obj_usuario->setAño($año);
-    $obj_usuario->setEstatusActividad(0);
     return $obj_usuario->crearinscripcion() ? "Registro exitoso" : "falla al registrar";
 }
 
