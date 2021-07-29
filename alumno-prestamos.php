@@ -128,6 +128,78 @@ if(empty($_SESSION['id_usuario'])) {
         </div>
         <!-- Fin de Tarjetas -->
 
+        <!-- Inicia Tabla Historial prestamo materiales -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="mt-5 mb-3"><strong>Historial Prestamos de Material</strong></h3>
+                </div>
+            </div>
+            <div class="row" id="">
+                <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
+                    <table class="table table-hover table-striped table-sm mt-3">
+                        <thead>
+                        <th scope="col">#</th>
+                        <th scope="col">Material</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora de inicio</th>
+                        <th scope="col">Hora de término </th>
+                        <th scope="col">Estatus</th>
+                        <th scope="col">Notas </th>
+                        </thead>
+                        <tbody id="">
+                        <tr>
+                            <th scope="row"></th>
+                            <td>Colchoneta</td>
+                            <td>21/07/20</td>
+                            <td>12:20 pm</td>
+                            <td>14:20 pm</td>
+                            <td>Aceptado</td>
+                            <td>Todo correcto</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Finaliza Tabla Historial prestamos de materiales -->
+
+        <!-- Inicia Tabla Historial prestamo de areas -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="mt-5 mb-3"><strong>Historial Prestamos de Áreas</strong></h3>
+                </div>
+            </div>
+            <div class="row" id="">
+                <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
+                    <table class="table table-hover table-striped table-sm mt-3">
+                        <thead>
+                        <th scope="col">#</th>
+                        <th scope="col">Área</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora de inicio</th>
+                        <th scope="col">Hora de término </th>
+                        <th scope="col">Estatus</th>
+                        <th scope="col">Notas </th>
+                        </thead>
+                        <tbody id="">
+                        <tr>
+                            <th scope="row"></th>
+                            <td>Pista</td>
+                            <td>21/07/20</td>
+                            <td>12:20 pm</td>
+                            <td>14:20 pm</td>
+                            <td>Aceptado</td>
+                            <td>Todo correcto</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Finaliza Tabla Historial de prestamo de areas-->
+
         <!--Inicia Modal Material-->
         <div class="modal fade" id="modalMaterial" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-md">
