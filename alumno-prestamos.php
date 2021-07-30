@@ -135,7 +135,7 @@ if(empty($_SESSION['id_usuario'])) {
                     <h3 class="mt-5 mb-3"><strong>Historial Prestamos de Material</strong></h3>
                 </div>
             </div>
-            <div class="row" id="">
+            <div class="row" id="contenedorhistorialprestmat">
                 <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
                     <table class="table table-hover table-striped table-sm mt-3">
                         <thead>
@@ -147,16 +147,8 @@ if(empty($_SESSION['id_usuario'])) {
                         <th scope="col">Estatus</th>
                         <th scope="col">Notas </th>
                         </thead>
-                        <tbody id="">
-                        <tr>
-                            <th scope="row"></th>
-                            <td>Colchoneta</td>
-                            <td>21/07/20</td>
-                            <td>12:20 pm</td>
-                            <td>14:20 pm</td>
-                            <td>Aceptado</td>
-                            <td>Todo correcto</td>
-                        </tr>
+                        <tbody id="tablahistorialprestmat">
+                            <!--ajax-->
                         </tbody>
                     </table>
                 </div>
@@ -183,16 +175,8 @@ if(empty($_SESSION['id_usuario'])) {
                         <th scope="col">Estatus</th>
                         <th scope="col">Notas </th>
                         </thead>
-                        <tbody id="">
-                        <tr>
-                            <th scope="row"></th>
-                            <td>Pista</td>
-                            <td>21/07/20</td>
-                            <td>12:20 pm</td>
-                            <td>14:20 pm</td>
-                            <td>Aceptado</td>
-                            <td>Todo correcto</td>
-                        </tr>
+                        <tbody id="tablahistorialprestareas">
+                            <!--ajax-->
                         </tbody>
                     </table>
                 </div>
@@ -359,7 +343,8 @@ if(empty($_SESSION['id_usuario'])) {
         <script src="mail/contact.js"></script>
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
-    <script src="js/prestamo_alumnos.js"></script>
+        <script src="js/prestamo_alumnos.js"></script>
+        <script src="js/historial_prest_alumno.js"></script>
     </body>
 
 </html>

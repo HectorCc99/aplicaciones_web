@@ -81,3 +81,21 @@ function editar_contraAdmin($id,$contra){
     $obj_usuario->setContraseña(md5($contra));
     return $obj_usuario->modificar_contra_usuario() ? "Modificacion exitosa" : "falla al modificar";
 }
+
+function historialPrestMat($id){
+    include_once "../model/usuarios.php";
+    $obj_usuario = new usuarios();
+    $obj_usuario->setIdUsuario($id);
+    $result=$obj_usuario->historial_prest_mat();
+    $data =json_encode($result);
+    return $data;
+}
+
+function historialPrestArea($id){
+    include_once "../model/usuarios.php";
+    $obj_usuario = new usuarios();
+    $obj_usuario->setIdUsuario($id);
+    $result=$obj_usuario->historial_prest_area();
+    $data =json_encode($result);
+    return $data;
+}

@@ -277,4 +277,30 @@ class usuarios extends CONEXION_M
         return $result;
     }
 
+    function historial_prest_mat(){
+        $query="SELECT rr.nombre_recurso, p.id_prestamo, p.fecha_prestamo, p.hora_inicio, p.hora_fin, p.estatus_prestamo, p.notas
+                FROM usuario u, prestamo p, pres_recurso pr, recurso_recreativo rr
+                WHERE u.id_usuario = p.id_usuario
+                AND p.id_prestamo = pr.id_prestamo
+                AND pr.id_recurso = rr.id_recurso
+                AND u.id_usuario ='".$this->getIdUsuario()."' ORDER BY p.fecha_prestamo DESC";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+
+    function historial_prest_area(){
+        $query="SELECT er.nombre_espacio, p.id_prestamo, p.fecha_prestamo, p.hora_inicio, p.hora_fin, p.estatus_prestamo, p.notas
+                FROM usuario u, prestamo p, pres_espacio pe, espacio_recreativo er
+                WHERE u.id_usuario = p.id_usuario
+                AND p.id_prestamo = pe.id_prestamo
+                AND pe.id_espacio = er.id_espacio
+                AND u.id_usuario ='".$this->getIdUsuario()."' ORDER BY p.fecha_prestamo DESC";
+        $this->connect();
+        $result = $this->getData($query);
+        $this->close();
+        return $result;
+    }
+
 }
