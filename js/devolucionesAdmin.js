@@ -24,7 +24,7 @@ function tablaDevoluciones(){
                         <td>${obj_result.hora_inicio}</td>
                         <td>${obj_result.hora_fin}</td>
                         <td>${obj_result.estatus_prestamo == 3 ? "Devuelto optimamente" :
-                        obj_result.estatus_prestamo == 4 ? "Pesimas condiciones (Credencial retenida)" : 
+                        obj_result.estatus_prestamo == 4 ? "Credencial retenida" : 
                             obj_result.estatus_prestamo == 5 ? "Material repuesto" 
                             :obj_result.estatus_prestamo == 1 ? "" : obj_result.estatus_prestamo}</td>
                         <td>${obj_result.notas == null ? " " : obj_result.notas}</td>

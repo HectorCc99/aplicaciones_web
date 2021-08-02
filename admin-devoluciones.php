@@ -163,7 +163,7 @@ if(empty($_SESSION['id_Admin'])) {
                                     <select name="estatusEditarDevolucion" id="estatusEditarDevolucion" class="form-control ml-1">
 
                                         <option value="3">Devuelto optimamente</option>
-                                        <option value="4">Pesimas condiciones (Credencial retenida)</option>
+                                        <option value="4">Retener Credencial</option>
                                         <option value="5">Material repuesto</option>
                                     </select>
                                 </div>
