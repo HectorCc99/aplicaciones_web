@@ -201,10 +201,10 @@ if(empty($_SESSION['id_Admin'])) {
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-4 mb-3 mb-sm-0">
+                                <div class="col-sm-3 mb-3 mb-sm-0">
                                     <label for="imagen" class="col-form-label ml-1">Imagen:</label>
                                 </div>
-                                <div class="col-sm-8 mb-3 mb-sm-0">
+                                <div class="col-sm-9 mb-3 mb-sm-0">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" name="imagen" id="poster" accept="image/png,image/jpeg,image/jpg" required>
                                         <label class="custom-file-label" for="poster" data-browse="Buscar">Seleccione un archivo</label>
@@ -263,5 +263,12 @@ if(empty($_SESSION['id_Admin'])) {
         </script>
         <script src="js/main.js"></script>
         <script src="js/actividades_deportivas.js"></script>
+        <script>
+            //Se muestra el nombre del archivo sobre el input
+            $(".custom-file-input").on("change", function() {
+                var fileName = $(this).val().split("\\").pop();
+                $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            });
+    </script>
     </body>
 </html>

@@ -583,8 +583,14 @@ if(empty($_SESSION['id_Admin'])) {
     <script src="js/espacios.js"></script>
     <!--se ocupo para llamar a la función de semestres-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-
+    <script>
+        //Se muestra el nombre del archivo sobre el input
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
+            
 </body>
 
 </html>

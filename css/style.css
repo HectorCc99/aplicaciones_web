@@ -31,6 +31,18 @@
 /*******************************/
 /********* General CSS *********/
 /*******************************/
+.form-select{
+    height: 20px;
+    padding: 15px;
+    background: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid #ced4da;
+    font-family: inherit;
+    color: #495057;
+}
 
 .category {
     position: relative;
@@ -1680,14 +1692,14 @@ a:focus {
     border-radius: 5;
 }
 .registro .registro-form select {
-    height: auto;
+    height: 15px;
     padding: 15px;
     background: none;
     border-radius: 5;
 }
 
 .perfil .perfil-form select {
-    height: auto;
+    height: 15px;
     padding: 15px;
     background: none;
     border-radius: 5;
