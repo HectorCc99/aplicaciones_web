@@ -238,7 +238,7 @@ class usuario_actividad extends CONEXION_M
                     AND g.semestre = ua.año
                     AND ua.estatus_inscripcion = 1
                     AND ua.id_usuario = u.id_usuario
-                    AND u.id_usuario ='".$this->getIdUsuario()."'";
+                    AND u.id_usuario ='".$this->getIdUsuario()."'ORDER BY ua.año DESC";
         $this->connect();
         $result = $this->getData($query);
         $this->close();
