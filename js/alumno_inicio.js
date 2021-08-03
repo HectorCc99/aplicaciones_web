@@ -57,7 +57,7 @@ function historialInscripcionesAnteriores(){
                                 <td>${obj_result.nombre_actividad}</td>
                                 <td>${obj_result.nombre}</td>
                                 <td>${obj_result.grupo}</td>
-                                <td>${obj_result.año}</td>
+                                <td>${obj_result.semestre}</td>
                                 </tr>`;
                 }));
                 //se asigna al cuerpo de la tabla
@@ -107,7 +107,7 @@ function inscripcionesActuales(){
                                        <div class="class-meta">
                                             <p><span class="font-weight-bold">Categoría: </span>${obj_result.nombre}</p>
                                        </div>
-                                       
+                                      
                                        <div class="class-meta">
                                        <p><span class="font-weight-bold">Horarios: <br>
                                             ${obj_result.lunes!="-"? "Lunes: "+obj_result.lunes+"<br>":""}
@@ -119,6 +119,10 @@ function inscripcionesActuales(){
                                        
                                        <div class="class-meta">
                                             <p><span class="font-weight-bold">Ubicación: </span>${obj_result.nombre_espacio}</p>
+                                       </div>
+                                       
+                                       <div class="class-meta">
+                                            <p><span class="font-weight-bold">Semestre: </span>${obj_result.semestre}</p>
                                        </div>
                                        
                                        <div class="class-meta">

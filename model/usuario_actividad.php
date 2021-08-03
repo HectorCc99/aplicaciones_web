@@ -209,12 +209,12 @@ class usuario_actividad extends CONEXION_M
     //para solo un usuario (historial de inscripciones, todas de momento)
     function verIncripcionesAnteriores(){
         //u.nombre, u.primer_ap, u.segundo_ap, si dejo el nombre de usuario lo confunde con ta.nombre
-        $query = "SELECT  ar.nombre_actividad, ta.nombre, g.grupo, ua.año
+        $query = "SELECT  ar.nombre_actividad, ta.nombre, g.grupo, g.semestre
                 FROM usuario u, actividad_recreativa ar, tipo_actividad ta, grupo g, usuario_actividad ua
                 WHERE u.id_usuario = ua.id_usuario
                 AND ar.id_actividad = g.id_actividad
                 AND ar.tipo_actividad = ta.id_tipo
-		        AND g.semestre = ua.año
+                AND g.semestre = ua.año
                 AND ua.estatus_inscripcion = 1
                 AND g.id_grupo = ua.id_grupo
                 AND ua.año!=(SELECT MAX(ua.año) FROM usuario_actividad ua)
@@ -228,7 +228,7 @@ class usuario_actividad extends CONEXION_M
     //para un solo usuario (incripciones del semestre actual)
     function verIncripcionesActuales(){
         //u.nombre, u.primer_ap, u.segundo_ap, si dejo el nombre de usuario lo confunde con ta.nombre
-        $query = "SELECT g.profesor, g.grupo, h.*, ar.nombre_actividad,ar.img as img_deporte, ar.descripcion, ta.nombre, er.nombre_espacio, MAX(ua.año)
+        $query = "SELECT g.profesor, g.grupo, h.*, ar.nombre_actividad,ar.img as img_deporte, ta.nombre, er.nombre_espacio, ar.descripcion, g.semestre
                     FROM grupo g, horarios h, actividad_recreativa ar, tipo_actividad ta, usuario_actividad ua, usuario u, espacio_recreativo er
                     WHERE g.id_grupo = ua.id_grupo
                     AND g.id_actividad = ar.id_actividad
@@ -238,6 +238,7 @@ class usuario_actividad extends CONEXION_M
                     AND g.semestre = ua.año
                     AND ua.estatus_inscripcion = 1
                     AND ua.id_usuario = u.id_usuario
+                    AND ua.año=(SELECT MAX(ua.año) FROM usuario_actividad ua)
                     AND u.id_usuario ='".$this->getIdUsuario()."'ORDER BY ua.año DESC";
         $this->connect();
         $result = $this->getData($query);
