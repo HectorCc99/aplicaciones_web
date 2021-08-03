@@ -96,7 +96,7 @@ function inscripcionesActuales(){
                         template+=` <div class="col-lg-4 col-md-6 col-sm-12 class-item filter-1 wow fadeInUp" data-wow-delay="0.0s" id="tarjetainscripcionesA">
                                     <div class="class-wrap" >
                                    <div class="class-img">
-                                        <img src="./iconos/sports.svg" alt="" width="60px">
+                                        <img src="${obj_result.img_deporte}" alt="" width="60px">
                                    </div>
                                    <div class="class-text" >
                                        <div class="class-teacher">

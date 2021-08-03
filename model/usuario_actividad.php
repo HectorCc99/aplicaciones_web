@@ -226,7 +226,7 @@ class usuario_actividad extends CONEXION_M
     //para un solo usuario (incripciones del semestre actual)
     function verIncripcionesActuales(){
         //u.nombre, u.primer_ap, u.segundo_ap, si dejo el nombre de usuario lo confunde con ta.nombre
-        $query = "SELECT g.profesor, g.grupo, h.*, ar.nombre_actividad, ta.nombre, er.nombre_espacio
+        $query = "SELECT g.profesor, g.grupo, h.*, ar.nombre_actividad,ar.img as img_deporte, ta.nombre, er.nombre_espacio
                     FROM grupo g, horarios h, actividad_recreativa ar, tipo_actividad ta, usuario_actividad ua, usuario u, espacio_recreativo er
                     WHERE g.id_grupo = ua.id_grupo
                     AND g.id_actividad = ar.id_actividad
