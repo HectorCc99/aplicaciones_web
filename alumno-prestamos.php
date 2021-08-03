@@ -132,7 +132,7 @@ if(empty($_SESSION['id_usuario'])) {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="mt-5 mb-3"><strong>Historial Prestamos de Material</strong></h3>
+                    <h3 class="mt-5 mb-3"><strong>Historial Préstamos de Material</strong></h3>
                 </div>
             </div>
             <div class="row" id="contenedorhistorialprestmat">
@@ -160,10 +160,10 @@ if(empty($_SESSION['id_usuario'])) {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="mt-5 mb-3"><strong>Historial Prestamos de Áreas</strong></h3>
+                    <h3 class="mt-5 mb-3"><strong>Historial Préstamos de Áreas</strong></h3>
                 </div>
             </div>
-            <div class="row" id="">
+            <div class="row" id="contenedorhistorialprestarea">
                 <div class="col-lg-12 overflow-auto table-responsive-lg mt-3 mb-3">
                     <table class="table table-hover table-striped table-sm mt-3">
                         <thead>
