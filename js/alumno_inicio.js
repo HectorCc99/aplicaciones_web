@@ -57,7 +57,7 @@ function historialInscripcionesAnteriores(){
                                 <td>${obj_result.nombre_actividad}</td>
                                 <td>${obj_result.nombre}</td>
                                 <td>${obj_result.grupo}</td>
-                                <td>${obj_result.semestre}</td>
+                                <td>${obj_result.año}</td>
                                 </tr>`;
                 }));
                 //se asigna al cuerpo de la tabla
@@ -107,29 +107,26 @@ function inscripcionesActuales(){
                                        <div class="class-meta">
                                             <p><span class="font-weight-bold">Categoría: </span>${obj_result.nombre}</p>
                                        </div>
-                                       <span class="font-weight-bold">-----------------------------------</span>
+                                       
                                        <div class="class-meta">
-                                            <p><span class="font-weight-bold">Lunes: </span>${obj_result.lunes!="-"? obj_result.lunes:"" }</p>
+                                       <p><span class="font-weight-bold">Horarios: <br>
+                                            ${obj_result.lunes!="-"? "Lunes: "+obj_result.lunes+"<br>":""}
+                                            ${obj_result.martes!="-"? "Martes: "+obj_result.martes+"<br>":""}
+                                            ${obj_result.miercoles!="-"? "Miércoles: "+obj_result.miercoles+"<br>":""}
+                                            ${obj_result.jueves!="-"? "Jueves: "+obj_result.jueves+"<br>":""}
+                                            ${obj_result.viernes!="-"? "Viernes: "+obj_result.viernes+"<br>":""}
                                        </div>
-                                       <div class="class-meta">
-                                            <p><span class="font-weight-bold">Martes: </span>${obj_result.martes!="-"? obj_result.martes:"" }</p>
-                                       </div>
-                                       <div class="class-meta">
-                                            <p><span class="font-weight-bold">Miércoles: </span>${obj_result.miercoles!="-"? obj_result.miercoles:"" }</p>
-                                       </div>
-                                       <div class="class-meta">
-                                            <p><span class="font-weight-bold">Jueves: </span>${obj_result.jueves!="-"? obj_result.jueves:"" }</p>
-                                       </div>
-                                       <div class="class-meta">
-                                            <p><span class="font-weight-bold">Viernes: </span>${obj_result.viernes!="-"? obj_result.viernes:"" }</p>
-                                       </div>
-                                       <span class="font-weight-bold">-----------------------------------</span>
+                                       
                                        <div class="class-meta">
                                             <p><span class="font-weight-bold">Ubicación: </span>${obj_result.nombre_espacio}</p>
                                        </div>
-                                       <span class="font-weight-bold">-----------------------------------</span>
+                                       
                                        <div class="class-meta">
                                             <p><span class="font-weight-bold">Grupo: </span>${obj_result.grupo}</p>
+                                       </div>
+                                       
+                                       <div class="class-meta">
+                                            <p><span class="font-weight-bold">Descripción: </span>${obj_result.descripcion}</p>
                                        </div>
                                    </div>
                                    </div>
