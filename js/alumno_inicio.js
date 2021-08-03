@@ -165,20 +165,23 @@ function tablaEstatusDocumentos(){
             let obj_result=JSON.parse(response);
             let template="";
             let estatus="";
+            let suma=0;
             if(obj_result.length>0){
                 var cont=0;
                 obj_result.forEach((obj_result=>{
                     //console.log(response);
-
                     cont++;
                     if(obj_result.estatus_aprobado == 1){
                         estatus="Aceptado";
+                        suma=suma+1;
                     }
                     if(obj_result.estatus_aprobado == 2){
                         estatus="Rechazado";
+                        suma=suma+0;
                     }
                     if(obj_result.estatus_aprobado == 0){
                         estatus="Pendiente de Revisar";
+                        suma=suma+0;
                     }
 
                     template+=`<tr>
@@ -189,7 +192,20 @@ function tablaEstatusDocumentos(){
                                 </tr>`;
                 }));
                 //se asigna al cuerpo de la tabla
-                $("#tablaestadodocumentos").html(template);
+                if(suma==4){
+                    $("#mensaje_docs").empty();
+                    template=`<div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>!En hora buena!</strong> Todos tus documentos fueron aceptados.</p>
+                                Acude a las oficinas para recoger tu credencial deportiva.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>`;
+                    $("#mensaje_docs").html(template);
+                }else{
+                    $("#tablaestadodocumentos").html(template);
+                }
+
             }else{
                 $("#contenedorestdoc").empty();
                 template=`<div class="alert alert-warning alert-dismissible fade show" role="alert">

@@ -18,8 +18,15 @@ function agregarArchivo($id_usuario,$nombre_archivo,$semestre,$tipo_ar,$Archivo)
 
 }
 
-function eliminar_archivo(){
-
+function eliminar_archivo($id_alumno){
+    include_once "../model/archivos.php";
+    $obj_archivos = new archivos();
+    $obj_archivos->setIdUsuario($id_alumno);
+    //subri el archivo
+    $resultado=$obj_archivos->eliminararchivopath();
+    if($resultado==true){
+        return $obj_archivos->eliminararchivoBD();
+    }
 }
 
 function consultaArchivosP(){

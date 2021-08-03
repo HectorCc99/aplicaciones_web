@@ -267,7 +267,8 @@ class archivos extends CONEXION_M
         $query="SELECT  a.nombre_archivo, a.estatus_aprobado, a.notas
                 FROM archivos a, usuario u
                 WHERE a.id_usuario = u.id_usuario
-                AND u.id_usuario ='".$this->getIdUsuario()."'";
+                AND u.id_usuario ='".$this->getIdUsuario()."'
+                ORDER BY id_archivo DESC LIMIT 4";
         $this->connect();
         $result = $this->getData($query);
         $this->close();

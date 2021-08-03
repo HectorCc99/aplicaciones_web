@@ -257,7 +257,7 @@ if(empty($_SESSION['id_usuario'])) {
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" id="mensaje_docs">
                     <div class="row">
                         <div class="col-md-12">
                             <p>Si alguno de tus documentos aún no es aprobado, deberás volver a envíarlo para su verificación, revisa las notas para conocer los motivos de su rechazo.</p>
