@@ -69,12 +69,7 @@
                 <div class="row">
                     <div class="col-12">
                         <ul id="class-filter" >
-                            <li data-filter="*" class="filter-active">Todos los deportes</li>
-                            <li data-filter=".filter-1">Combate</li>
-                            <li data-filter=".filter-2">Conjunto con Pelota</li>
-                            <li data-filter=".filter-3">Individuales</li>
-                            <li data-filter=".filter-4">Fitness</li>
-                            <li data-filter=".filter-5">Para Mejorar la Salud</li>
+                            <!--AJAX-->
                         </ul>
                     </div>
                 </div>

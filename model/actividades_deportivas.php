@@ -178,7 +178,8 @@ class actividades_deportivas extends CONEXION_M
                     and grp.id_actividad=ar.id_actividad
                     and er.id_espacio=grp.id_espacio
                     ".$filtro_tipo."                                                                                                          
-                    and ar.tipo_actividad=tp.id_tipo ORDER BY ar.nombre_actividad ASC ";
+                    and ar.tipo_actividad=tp.id_tipo
+                    and grp.estatus_grupo =1 ORDER BY ar.nombre_actividad ASC ";
         $this->connect();
         $result = $this->getData($query);
         $this->close();
