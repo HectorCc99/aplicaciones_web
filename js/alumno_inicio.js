@@ -107,14 +107,16 @@ function inscripcionesActuales(){
                                        <div class="class-meta">
                                             <p><span class="font-weight-bold">Categoría: </span>${obj_result.nombre}</p>
                                        </div>
-                                      
+                                       <div class="class-meta">
+                                            <p><span class="font-weight-bold">Descripción: </span>${obj_result.descripcion}</p>
+                                       </div>
                                        <div class="class-meta">
                                        <p><span class="font-weight-bold">Horarios: <br>
-                                            ${obj_result.lunes!="-"? "Lunes: "+obj_result.lunes+"<br>":""}
-                                            ${obj_result.martes!="-"? "Martes: "+obj_result.martes+"<br>":""}
-                                            ${obj_result.miercoles!="-"? "Miércoles: "+obj_result.miercoles+"<br>":""}
-                                            ${obj_result.jueves!="-"? "Jueves: "+obj_result.jueves+"<br>":""}
-                                            ${obj_result.viernes!="-"? "Viernes: "+obj_result.viernes+"<br>":""}
+                                            ${obj_result.lunes!="-"? "Lun: "+obj_result.lunes+"<br>":""}
+                                            ${obj_result.martes!="-"? "Mar: "+obj_result.martes+"<br>":""}
+                                            ${obj_result.miercoles!="-"? "Mié: "+obj_result.miercoles+"<br>":""}
+                                            ${obj_result.jueves!="-"? "Jue: "+obj_result.jueves+"<br>":""}
+                                            ${obj_result.viernes!="-"? "Vie: "+obj_result.viernes+"<br>":""}
                                        </div>
                                        
                                        <div class="class-meta">
@@ -129,9 +131,6 @@ function inscripcionesActuales(){
                                             <p><span class="font-weight-bold">Grupo: </span>${obj_result.grupo}</p>
                                        </div>
                                        
-                                       <div class="class-meta">
-                                            <p><span class="font-weight-bold">Descripción: </span>${obj_result.descripcion}</p>
-                                       </div>
                                    </div>
                                    </div>
                                    </div>
@@ -196,7 +195,7 @@ function tablaEstatusDocumentos(){
                 if(suma==4){
                     $("#mensaje_docs").empty();
                     template=`<div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <strong>!En hora buena!</strong> Todos tus documentos fueron aceptados.</p>
+                                <strong>¡En hora buena!</strong> Todos tus documentos fueron aceptados.</p>
                                 Acude a las oficinas para recoger tu credencial deportiva.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>

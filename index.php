@@ -57,7 +57,7 @@ if(empty($_SESSION['id_Admin'])) {
                         <a href="index.php" class="nav-item nav-link mr-5"><img src="iconos/home.svg" alt="" width="15px"><span class="ml-2">Inicio</span></a>
                         <a href="admin-menu.php" class="nav-item nav-link mr-5"><img src="iconos/menu.svg" alt="" width="18px"><span class="ml-2">Menú</span></a>
                         <a href="admin-perfil.php" class="nav-item nav-link mr-5"><img src="iconos/user.svg" alt="" width="18px"><span class="ml-2">Perfil</span></a>
-                         <a href="control/cerrarSesion.php?cerrar=yes" class="nav-item nav-link mr-5"><img src="iconos/logout.png" alt="" width="18px"><span class="ml-2">Cerrar Sesión</span></a>
+                        <a href="control/cerrarSesion.php?cerrar=yes" class="nav-item nav-link mr-5"><img src="iconos/logout.png" alt="" width="18px"><span class="ml-2">Cerrar Sesión</span></a>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@ if(empty($_SESSION['id_Admin'])) {
                             <h1>Actividades Deportivas y Recreativas</h1>
                             <p>
                                 El departamento de actividades deportivas y recreativas, desarrolla la cultura física y deporte a través de sus programas deportivos y recreativos,
-                                fortmativos de salud y sociales con la finalidad de mejorar la calidad de vida de la comunidad estudiantil de la Facultad de Estudios Superiores Cuautitlán Campo 4.
+                                formativos de salud y sociales con la finalidad de mejorar la calidad de vida de la comunidad estudiantil de la Facultad de Estudios Superiores Cuautitlán Campo 4.
                             </p>
                         </div>
                     </div>

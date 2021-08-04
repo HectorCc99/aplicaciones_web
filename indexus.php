@@ -79,7 +79,7 @@ if(empty($_SESSION['id_usuario'])) {
                             <h1>Actividades Deportivas y Recreativas</h1>
                             <p>
                                 El departamento de actividades deportivas y recreativas, desarrolla la cultura física y deporte a través de sus programas deportivos y recreativos,
-                                fortmativos de salud y sociales con la finalidad de mejorar la calidad de vida de la comunidad estudiantil de la Facultad de Estudios Superiores Cuautitlán Campo 4.
+                                formativos de salud y sociales con la finalidad de mejorar la calidad de vida de la comunidad estudiantil de la Facultad de Estudios Superiores Cuautitlán Campo 4.
                             </p>
                         </div>
                     </div>

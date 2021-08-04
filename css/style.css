@@ -32,7 +32,7 @@
 /********* General CSS *********/
 /*******************************/
 .form-select{
-    height: 20px;
+    height: auto;
     padding: 15px;
     background: none;
     border-radius: 5px;
@@ -199,7 +199,7 @@ a:focus {
 }
 
 .select {
-    height: 30px;
+    height: auto;
     padding: 15px;
     background: none;
     border-radius: 5;
@@ -950,6 +950,8 @@ a:focus {
     border-right: 1px solid rgba(0, 0, 0, .07);
     border-bottom: 1px solid rgba(0, 0, 0, .07);
     border-left: 1px solid rgba(0, 0, 0, .07);
+    min-height: 450px;
+    max-height: 451px;
 }
 
 .class .class-text h2 {
@@ -1692,14 +1694,14 @@ a:focus {
     border-radius: 5;
 }
 .registro .registro-form select {
-    height: 15px;
+    height: auto;
     padding: 15px;
     background: none;
     border-radius: 5;
 }
 
 .perfil .perfil-form select {
-    height: 15px;
+    height: auto;
     padding: 15px;
     background: none;
     border-radius: 5;
