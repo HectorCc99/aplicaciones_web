@@ -88,7 +88,15 @@ function deportesindex(tipo){
                                     <p><span class="font-weight-bold">Categoría: </span>${obj_result.nombre}</p>
                                 </div>
                                 <div class="class-meta">
-                                    <p><span class="font-weight-bold">Horario: <br>
+                                    <span class="font-weight-bold"><p>Descripcion:</p> </span>
+                                </div>    
+                                    <div class="class-meta">
+                                   <p> ${obj_result.descripcion}</p>
+                                    </div>
+                                    
+                                
+                                <div class="class-meta">
+                                    <span class="font-weight-bold">Horario: <br>
                                     ${obj_result.lunes!="-"? "Lunes: "+obj_result.lunes+"<br>":""}
                                     ${obj_result.martes!="-"? "Martes: "+obj_result.martes+"<br>":""}
                                     ${obj_result.miercoles!="-"? "Miercoles: "+obj_result.miercoles+"<br>":""}
@@ -180,6 +188,12 @@ function deportesalumno(tipo){
                                 <div class="class-meta">
                                     <p><span class="font-weight-bold">Categoría: </span>${obj_result.nombre}</p>
                                 </div>
+                                <div class="class-meta">
+                                    <span class="font-weight-bold"><p>Descripcion:</p> </span>
+                                </div>    
+                                    <div class="class-meta">
+                                    <p>${obj_result.descripcion}</p>
+                                    </div>
                                 <div class="class-meta">
                                     <p><span class="font-weight-bold">Horario: <br>
                                     ${obj_result.lunes!="-"? "Lunes: "+obj_result.lunes+"<br>":""}
