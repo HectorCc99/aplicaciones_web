@@ -62,7 +62,7 @@ if(empty($_SESSION['id_usuario'])) {
                         <a href="indexus.php" class="nav-item nav-link mr-5"><img src="./iconos/home.svg" alt="" width="24px"></a>
                         <a href="alumno-inicio.php" class="nav-item nav-link mr-5">Inicio</a>
                         <a href="alumno-deportes.php" class="nav-item nav-link mr-5">Deportes</a>
-                        <a href="alumno-prestamos.php" class="nav-item nav-link mr-5">Préstamos</a>
+                        <a href="alumno-prestamo.php" class="nav-item nav-link mr-5">Préstamos</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cuenta</a>
                             <div class="dropdown-menu">

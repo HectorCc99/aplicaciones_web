@@ -81,9 +81,7 @@ if(empty($_SESSION['id_usuario'])) {
                         <p>Material y/o Área Deportiva</p>
                         <input type="hidden" id="id_alumno" value="<?php echo $_SESSION['id_usuario']; ?>">
                         <!--<input type="hidden" name="id_alumno" id="id_alumno" value="1">-->
-                        <div class="alert alert-warning" role="alert" style="width: 100%" id="alertaAM">
-                            ¡Para poder reservar una área o solicitar un material primero debes subir tu credencial y debe estar con estatus de aceptado!
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -337,14 +335,15 @@ if(empty($_SESSION['id_usuario'])) {
         <script src="lib/wow/wow.min.js"></script>
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
         <script src="lib/isotope/isotope.pkgd.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
+       <!-- <script src="lib/lightbox/js/lightbox.min.js"></script>-->
         <!-- Contact Javascript File -->
         <script src="mail/jqBootstrapValidation.min.js"></script>
         <script src="mail/contact.js"></script>
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+        <!--
         <script src="js/prestamo_alumnos.js"></script>
-        <script src="js/historial_prest_alumno.js"></script>
+        <script src="js/historial_prest_alumno.js"></script>-->
     </body>
 
 </html>
