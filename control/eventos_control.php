@@ -7,7 +7,6 @@ function insertarEvento($id_admin, $id_espr, $id_recurso,$id_recurso2,$id_recurs
     $obj_evento = new eventos();
     $obj_evento -> setIdAdministradorFk($id_admin);
     $obj_evento -> setIdEspacioRFk($id_espr);
-    $obj_evento -> setIdRecursoFk($id_recurso);
     $obj_evento -> setNombreActividad($nombact);
     $obj_evento -> setDescripcion($descrip);
     $obj_evento -> setEncargado($encargado);
@@ -24,11 +23,13 @@ function insertarEvento($id_admin, $id_espr, $id_recurso,$id_recurso2,$id_recurs
     if($resultado!=false){
         $obj_evento->setImagen($resultado);
         if ($id=$obj_evento->agregarEvento()) {
-            $obj_evento->insertarRecursoEvento($id_recurso, $id, $cantrec);
-            if(!Empty($cantrec2)){
+            if(!empty($id_recurso)){
+                $obj_evento->insertarRecursoEvento($id_recurso, $id, $cantrec);
+            }
+            if(!Empty($id_recurso2)){
                 $obj_evento->insertarRecursoEvento($id_recurso2, $id, $cantrec);
             }
-            if (!empty($cantrec3)){
+            if (!empty($id_recurso3)){
                 $obj_evento->insertarRecursoEvento($id_recurso3, $id, $cantrec);
             }
         }
@@ -67,12 +68,10 @@ function actualizarEvento($idev, $id_admin, $id_espr, $id_recurso, $nombact, $de
     $obj_evento ->setIdEvento($idev);
     $obj_evento -> setIdAdministradorFk($id_admin);
     $obj_evento -> setIdEspacioRFk($id_espr);
-    $obj_evento -> setIdRecursoFk($id_recurso);
     $obj_evento -> setNombreActividad($nombact);
     $obj_evento -> setDescripcion($descrip);
     $obj_evento -> setEncargado($encargado);
     $obj_evento -> setTelEncargado($telenc);
-    $obj_evento -> setCantidadRecurso($cantrec);
     $obj_evento -> setFechaInicio($finicio);
     $obj_evento -> setFechaFin($ffin);
     $obj_evento -> setHoraInicio($hinicio);

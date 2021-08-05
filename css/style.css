@@ -950,8 +950,8 @@ a:focus {
     border-right: 1px solid rgba(0, 0, 0, .07);
     border-bottom: 1px solid rgba(0, 0, 0, .07);
     border-left: 1px solid rgba(0, 0, 0, .07);
-    min-height: 450px;
-    max-height: 451px;
+    min-height: 480px;
+    max-height: 481px;
 }
 
 .class .class-text h2 {

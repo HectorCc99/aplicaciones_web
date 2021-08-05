@@ -88,19 +88,22 @@ function deportesindex(tipo){
                                     <p><span class="font-weight-bold">Categoría: </span>${obj_result.nombre}</p>
                                 </div>
                                 <div class="class-meta">
-                                    <span class="font-weight-bold"><p>Descripcion:</p> </span>
-                                </div>    
-                                <div class="class-meta">
-                                    <p> ${obj_result.descripcion}</p>
-                                </div>
+                                    <p><span class="font-weight-bold">Descripción: </span>${obj_result.descripcion}</p>
+                                </div> 
                                 <div class="class-meta">
                                     <p><span class="font-weight-bold">Horario: </p>
                                 </div>
                                 <div class="class-meta">
                                     <p class="font-weight-normal">${obj_result.lunes!="-"? "Lun: "+obj_result.lunes+"</p>":""}
                                     <p class="font-weight-normal">${obj_result.martes!="-"? "Mar: "+obj_result.martes+"</p>":""}
+                                </div>
+                                
+                                <div class="class-meta">
                                     <p class="font-weight-normal">${obj_result.miercoles!="-"? "Mié: "+obj_result.miercoles+"</p>":""}
                                     <p class="font-weight-normal">${obj_result.jueves!="-"? "Jue: "+obj_result.jueves+"</p>":""}
+                                </div>
+                                
+                                <div class="class-meta">
                                     <p class="font-weight-normal">${obj_result.viernes!="-"? "Vie: "+obj_result.viernes+"</p>":""}
                                 </div>
                                 <div class="class-meta">
@@ -188,17 +191,20 @@ function deportesalumno(tipo){
                                     <p><span class="font-weight-bold">Categoría: </span>${obj_result.nombre}</p>
                                 </div>
                                 <div class="class-meta">
-                                    <span class="font-weight-bold"><p>Descripcion:</p> </span>
+                                    <p><span class="font-weight-bold">Descripción: </span>${obj_result.descripcion}</p> 
                                 </div>    
-                                    <div class="class-meta">
-                                    <p>${obj_result.descripcion}</p>
-                                    </div>
                                 <div class="class-meta">
                                     <p><span class="font-weight-bold">Horario: </p>
+                                </div>
+                                <div class="class-meta">
                                     <p class="font-weight-normal">${obj_result.lunes!="-"? "Lun: "+obj_result.lunes+"</p>":""}
                                     <p class="font-weight-normal">${obj_result.martes!="-"? "Mar: "+obj_result.martes+"</p>":""}
+                                </div>
+                                <div class="class-meta">
                                     <p class="font-weight-normal">${obj_result.miercoles!="-"? "Mié: "+obj_result.miercoles+"</p>":""}
                                     <p class="font-weight-normal">${obj_result.jueves!="-"? "Jue: "+obj_result.jueves+"</p>":""}
+                                </div>
+                                <div class="class-meta">
                                     <p class="font-weight-normal">${obj_result.viernes!="-"? "Vie: "+obj_result.viernes+"</p>":""}
                                 </div>
                                 <div class="class-meta">

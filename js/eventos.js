@@ -34,8 +34,6 @@ function TablaEventos(filtro) {
                                 <td>${obj_result.encargado}</td>
                                 <td>${obj_result.telefono_encargado}</td>
                                 <td>${obj_result.nombre_espacio}</td>
-                                <td>${obj_result.nombre_recurso}</td>
-                                <td>${obj_result.cantidad_recurso}</td>
                                 <td>${obj_result.semestre}</td>
                                 <td>${obj_result.fecha_inicio} - ${obj_result.fecha_fin}</td>
                                 <td>${obj_result.hora_inicio} - ${obj_result.hora_fin}</td>

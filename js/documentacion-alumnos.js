@@ -135,7 +135,7 @@ function archivos_usuario(id,estatus){
                                     <label for="notas" class="col-form-label ml-1">Notas:</label>
                                     <textarea name="notas" id="notas${cont}" cols="30" class="form-control notas" rows="3"></textarea>
                                 </div>
-                                 <div class="btn-group" role="group" aria-label="Basic example"id_archivo="${obj_result.id_archivo}" >
+                                 <div class="boton" style="background: none;" role="group" aria-label="Basic example"id_archivo="${obj_result.id_archivo}" >
                                         <button type="button" class="btn btn-success aceptar_doc" numero="${cont}">Aceptar</button>
                                         <button type="button" class="btn btn-danger rechazar_doc" numero="${cont}">Rechazar</button>                                    
                                  </div>
@@ -146,7 +146,7 @@ function archivos_usuario(id,estatus){
                                     <label for="tira_materias" class="col-form-label">${obj_result.tipo_archivo}:</label>
                                 </div>
                                 <div class="col-sm-5 mb-3 mb-sm-0">
-                                    <a href="${obj_result.path_archivo}"><label for="tira_materias" class="col-form-label">${obj_result.nombre_archivo}</label></a>
+                                    <a href="${obj_result.path_archivo}" download="${obj_result.path_archivo}"><label for="tira_materias" class="col-form-label">${obj_result.nombre_archivo}</label></a>
                                 </div>
                                 <div class="col-sm-2 mb-3 mb-sm-0">
                                     ${icono}
@@ -167,7 +167,7 @@ function archivos_usuario(id,estatus){
                 $("#contenido_modal").empty();
                 // creamos un contenedor con un mensaje para el usuario
                 template=`<div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <strong>¡Felicidades!</strong> Ya no hay mas documentos por revisar, vuelva mas tarde.
+                                <strong>¡Excelente!</strong> Ya no hay más documentos por revisar, vuelva mas tarde.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -223,7 +223,7 @@ function doc_pendientes(){
                 $("#contenedor_tabla").empty();
                 // creamos un contenedor con un mensaje para el usuario
                 template=`<div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <strong>¡Felicidades!</strong> Ya no hay mas documentos por revisar, vuelva mas tarde.
+                                <strong>¡Excelente!</strong> Ya no hay mas documentos por revisar, vuelva mas tarde.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>

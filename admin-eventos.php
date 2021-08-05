@@ -82,8 +82,6 @@ if(empty($_SESSION['id_Admin'])) {
                         <th scope="col">Encargado</th>
                         <th scope="col">Teléfono</th>
                         <th scope="col">Lugar</th>
-                        <th scope="col">Recurso</th>
-                        <th scope="col">Cant. Recurso</th>
                         <th scope="col">Semestre</th>
                         <th scope="col">Fechas</th>
                         <th scope="col">Horarios</th>
@@ -184,7 +182,7 @@ if(empty($_SESSION['id_Admin'])) {
                                     <label for="material" class="col-form-label ml-1">Material:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <select name="materialEv" id="materialEv" class="form-control ml-2" required>
+                                    <select name="materialEv" id="materialEv" class="form-control ml-2" >
                                         <!-- Ajax -->
                                     </select>
                                 </div>
@@ -194,7 +192,7 @@ if(empty($_SESSION['id_Admin'])) {
                                     <label for="cantidadEv" class="col-form-label ml-1">Cantidad:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="cantidadEv" id="cantidadEv" class="form-control ml-2" required>
+                                    <input type="number" name="cantidadEv" id="cantidadEv" class="form-control ml-2" >
                                 </div>
                             </div>
 
@@ -203,13 +201,13 @@ if(empty($_SESSION['id_Admin'])) {
                             <div class="card">
                                 <div class="card-header" id="headingOne">
                                     <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                             Agregar más Materiales
                                         </button>
                                     </h2>
                                 </div>
 
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <div class="form-group row">
                                             <div class="col-sm-2 mb-3 mb-sm-0">
@@ -399,7 +397,7 @@ if(empty($_SESSION['id_Admin'])) {
                                     <label for="material" class="col-form-label ml-1">Material:</label>
                                 </div>
                                 <div class="col-sm-8 mb-3 mb-sm-0">
-                                    <select name="materialEvEd" id="materialEvEd" class="form-control ml-2" required>
+                                    <select name="materialEvEd" id="materialEvEd" class="form-control ml-2" >
                                         <!--ajax-->
                                     </select>
                                 </div>
@@ -412,20 +410,20 @@ if(empty($_SESSION['id_Admin'])) {
                                     <label for="cantidad" class="col-form-label ml-1">Cantidad:</label>
                                 </div>
                                 <div class="col-sm-10 mb-3 mb-sm-0">
-                                    <input type="number" name="cantidadEvEd" id="cantidadEvEd" class="form-control ml-2" required>
+                                    <input type="number" name="cantidadEvEd" id="cantidadEvEd" class="form-control ml-2" >
                                 </div>
                             </div>
                         <div class="accordion" id="accordionExample">
                             <div class="card">
                                 <div class="card-header" id="headingOne">
                                     <h2 class="mb-0">
-                                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                             Agregar más Materiales
                                         </button>
                                     </h2>
                                 </div>
 
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                                     <div class="card-body">
                                         <div class="form-group row">
                                             <div class="col-sm-2 mb-3 mb-sm-0">

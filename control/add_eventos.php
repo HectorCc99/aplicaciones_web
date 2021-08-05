@@ -8,8 +8,14 @@ if(isset($_FILES['poster'])){
     $telefono =$_POST['telefonoEv'];
     $sem =$_POST['semEv'];
     $lugar =$_POST['lugarEv'];
-    $material =$_POST['materialEv'];
-    $cantidad =$_POST['cantidadEv'];
+    if(isset($_POST['materialEv'])){
+        $material =$_POST['materialEv'];
+        $cantidad =$_POST['cantidadEv'];
+    }else{
+        $material="";
+        $cantidad="";
+    }
+   
     if(isset($_POST['materialEv2'])){
     $id_recurso2=$_POST['materialEv2'];
         $cantrec2=$_POST['cantidadEv2'];
@@ -34,10 +40,11 @@ if(isset($_FILES['poster'])){
     $nombreArchivo = $_FILES['poster']['name'];
     $Archivo = $_FILES['poster']['tmp_name'];
 
-    if(insertarEvento($id_admin, $lugar, $material,$id_recurso2,$id_recurso3,  $evento, $descrip,  $encargado, $telefono,
-                        $cantidad,$cantrec2,$cantrec3, 1, $finicio,  $fcierre, $hinicio, $hcierre, $sem, $nombreArchivo, $Archivo)){
-        header('Location: ../admin-eventos.php ');
-    }
+    insertarEvento($id_admin, $lugar, $material,$id_recurso2,$id_recurso3,  $evento, $descrip,  $encargado, $telefono,
+                        $cantidad,$cantrec2,$cantrec3, 1, $finicio,  $fcierre, $hinicio, $hcierre, $sem, $nombreArchivo, $Archivo);
+                            echo "<script> alert('Evento registrado con exito'); window.location = '../admin-eventos.php'; </script>";
+    
+    
 } else{
     echo "error al enviar el archivo";
 }

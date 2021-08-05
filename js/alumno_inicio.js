@@ -111,26 +111,28 @@ function inscripcionesActuales(){
                                             <p><span class="font-weight-bold">Descripción: </span>${obj_result.descripcion}</p>
                                        </div>
                                        <div class="class-meta">
-                                       <p><span class="font-weight-bold">Horarios: <br>
-                                            ${obj_result.lunes!="-"? "Lun: "+obj_result.lunes+"<br>":""}
-                                            ${obj_result.martes!="-"? "Mar: "+obj_result.martes+"<br>":""}
-                                            ${obj_result.miercoles!="-"? "Mié: "+obj_result.miercoles+"<br>":""}
-                                            ${obj_result.jueves!="-"? "Jue: "+obj_result.jueves+"<br>":""}
-                                            ${obj_result.viernes!="-"? "Vie: "+obj_result.viernes+"<br>":""}
+                                            <p><span class="font-weight-bold">Horarios: </p>
                                        </div>
-                                       
+                                       <div class="class-meta">
+                                            <p>${obj_result.lunes!="-"? "Lun: "+obj_result.lunes+"</p>":""}
+                                            <p>${obj_result.martes!="-"? "Mar: "+obj_result.martes+"</p>":""}
+                                       </div>
+                                       <div class="class-meta">
+                                            <p>${obj_result.miercoles!="-"? "Mié: "+obj_result.miercoles+"</p>":""}
+                                            <p>${obj_result.jueves!="-"? "Jue: "+obj_result.jueves+"</p>":""}
+                                       </div>
+                                       <div class="class-meta">
+                                            <P>${obj_result.viernes!="-"? "Vie: "+obj_result.viernes+"</P>":""}
+                                       </div>
                                        <div class="class-meta">
                                             <p><span class="font-weight-bold">Ubicación: </span>${obj_result.nombre_espacio}</p>
                                        </div>
-                                       
                                        <div class="class-meta">
                                             <p><span class="font-weight-bold">Semestre: </span>${obj_result.semestre}</p>
                                        </div>
-                                       
                                        <div class="class-meta">
                                             <p><span class="font-weight-bold">Grupo: </span>${obj_result.grupo}</p>
                                        </div>
-                                       
                                    </div>
                                    </div>
                                    </div>

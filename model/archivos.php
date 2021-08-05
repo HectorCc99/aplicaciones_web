@@ -249,7 +249,7 @@ class archivos extends CONEXION_M
     }
     function  consultadocumentosUsuario($estatus){
         $estatus2=$estatus==1?"and ar.estatus_aprobado >0 ":"and ar.estatus_aprobado=$estatus";
-        $query = "SELECT ar.*,c.nombre as carrera,u.* FROM archivos ar , usuario u, carreras c WHERE ar.id_usuario=u.id_usuario and u.id_carrera = c.id_carrera ".$estatus2." and u.`id_usuario`=".$this->getIdUsuario();
+        $query = "SELECT ar.*,c.nombre as carrera,u.* FROM archivos ar , usuario u, carreras c WHERE ar.id_usuario=u.id_usuario and u.id_carrera = c.id_carrera ".$estatus2." and u.`id_usuario`=".$this->getIdUsuario()." ORDER BY ar.id_archivo DESC LIMIT 4";
         $this->connect();
         $result = $this->getData($query);
         $this->close();

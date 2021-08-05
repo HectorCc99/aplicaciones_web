@@ -18,8 +18,14 @@ if(isset($_POST['filtro'])){
                 $tel=$_POST['telefonoEvEd'];
                 $semestre=$_POST['semEvEd'];
                 $espacio=$_POST['lugarEvEd'];
-                $recurso=$_POST['materialEvEd'];
-                $cant=$_POST['cantidadEvEd'];
+                if(isset($_POST['materialEvEd'])){
+                    $recurso=$_POST['materialEvEd'];
+                    $cant=$_POST['cantidadEvEd'];
+                }else{
+                    $recurso="";
+                    $cant="";
+                }
+                
                 $descrip=$_POST['descripcionEvEd'];
                 $fechai=$_POST['fecha_inicioEd'];
                 $fechaf=$_POST['fecha_cierreEd'];
